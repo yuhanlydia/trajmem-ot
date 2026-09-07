@@ -1,0 +1,16 @@
+.venv/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+
+# Large external artifacts and vendored upstream repositories.
+checkpoints/
+data/
+third_party/
+
+# Generated experiment artifacts (keep lightweight Markdown summaries).
+results/**/*.jsonl
+results/**/*.npz
+results/**/*.npy
+results/**/*.mp4
+results/**/*.png
