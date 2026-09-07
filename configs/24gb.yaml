@@ -1,0 +1,8 @@
+name: 24gb
+basis_directions: 16
+jvp_chunk_size: 4
+memory_views: 8
+noise_samples_per_view: 4
+response_rank: 8
+xla_memory_fraction: 0.88
+notes: "One environment state at a time; increase direction/noise batches only after profiling."

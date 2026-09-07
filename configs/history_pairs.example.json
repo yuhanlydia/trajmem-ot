@@ -1,0 +1,12 @@
+[
+  {
+    "a": 120,
+    "b": 124,
+    "note": "Replace with matched indices: same task/current decision context, different task-critical history."
+  },
+  {
+    "a": 813,
+    "b": 817,
+    "note": "Randomly chosen indices are not valid memory hypotheses."
+  }
+]

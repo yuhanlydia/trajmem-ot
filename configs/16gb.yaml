@@ -1,0 +1,8 @@
+name: 16gb
+basis_directions: 8
+jvp_chunk_size: 2
+memory_views: 4
+noise_samples_per_view: 2
+response_rank: 4
+xla_memory_fraction: 0.75
+notes: "One environment state at a time; batch JVP directions before episodes."

@@ -1,0 +1,203 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+from collections.abc import Sequence
+
+import numpy as np
+
+from .memory_basis import combine_basis
+
+Array = np.ndarray
+
+
+@dataclass(frozen=True)
+class MemoryViewBatch:
+    views: Array
+    deltas: Array
+    raw_delta_norms: Array
+    applied_delta_norms: Array
+    max_delta_norm: float
+
+
+@dataclass(frozen=True)
+class VarianceDecomposition:
+    total: float
+    within_noise: float
+    between_memory: float
+    memory_fraction: float
+
+
+@dataclass(frozen=True)
+class TargetCoverage:
+    covered: bool
+    covered_views: int
+    total_views: int
+    covered_samples: int
+    total_samples: int
+    min_distance: float
+
+
+def build_memory_views(
+    memory: Array,
+    basis: Array,
+    coefficients: Array,
+    *,
+    relative_radius: float,
+) -> MemoryViewBatch:
+    """Construct coherent memory views within one Frobenius trust region.
+
+    Each coefficient row defines one candidate interpretation in a shared
+    memory basis. Oversized edits are radially clipped rather than globally
+    rescaled, so a zero coefficient row remains the exact unedited memory.
+    """
+    memory_array = np.asarray(memory)
+    basis_array = np.asarray(basis)
+    coefficient_array = np.asarray(coefficients)
+    if memory_array.ndim < 1:
+        raise ValueError("memory must have at least one dimension")
+    if basis_array.ndim != memory_array.ndim + 1 or basis_array.shape[1:] != memory_array.shape:
+        raise ValueError(
+            f"basis must have shape [K, {memory_array.shape}], got {basis_array.shape}"
+        )
+    if coefficient_array.ndim != 2 or coefficient_array.shape[1] != basis_array.shape[0]:
+        raise ValueError(
+            f"coefficients must have shape [views, {basis_array.shape[0]}], got {coefficient_array.shape}"
+        )
+    if not np.isfinite(relative_radius) or relative_radius < 0:
+        raise ValueError("relative_radius must be a non-negative finite scalar")
+    if not np.isfinite(memory_array).all() or not np.isfinite(coefficient_array).all():
+        raise ValueError("memory and coefficients must be finite")
+
+    raw_deltas = np.stack(
+        [combine_basis(basis_array, row) for row in coefficient_array], axis=0
+    )
+    raw_norms = np.linalg.norm(raw_deltas.reshape(raw_deltas.shape[0], -1), axis=1)
+    max_norm = float(relative_radius * np.linalg.norm(memory_array))
+    scales = np.ones_like(raw_norms)
+    nonzero = raw_norms > 0
+    if max_norm == 0.0:
+        scales[nonzero] = 0.0
+    else:
+        scales[nonzero] = np.minimum(1.0, max_norm / raw_norms[nonzero])
+    reshape = (raw_deltas.shape[0],) + (1,) * memory_array.ndim
+    deltas = raw_deltas * scales.reshape(reshape)
+    views = memory_array[None, ...] + deltas
+    applied_norms = np.linalg.norm(deltas.reshape(deltas.shape[0], -1), axis=1)
+    return MemoryViewBatch(
+        views=views,
+        deltas=deltas,
+        raw_delta_norms=raw_norms,
+        applied_delta_norms=applied_norms,
+        max_delta_norm=max_norm,
+    )
+
+
+def variance_decomposition(actions: Array) -> VarianceDecomposition:
+    """Decompose action variability into memory-view and conditional-noise terms.
+
+    ``actions`` has shape ``[memory_views, noise_samples, ...action_shape]``.
+    The scalar components are mean squared Euclidean deviations, so the law of
+    total variance holds up to floating-point precision:
+
+    ``total = within_noise + between_memory``.
+    """
+    array = np.asarray(actions, dtype=np.float64)
+    if array.ndim < 3:
+        raise ValueError("actions must have shape [views, noises, ...action_shape]")
+    if array.shape[0] < 1 or array.shape[1] < 1:
+        raise ValueError("actions require at least one view and one noise sample")
+    if not np.isfinite(array).all():
+        raise ValueError("actions contain non-finite values")
+
+    flat = array.reshape(array.shape[0], array.shape[1], -1)
+    view_means = flat.mean(axis=1)
+    overall_mean = flat.mean(axis=(0, 1))
+    within = float(np.mean(np.sum(np.square(flat - view_means[:, None, :]), axis=-1)))
+    between = float(np.mean(np.sum(np.square(view_means - overall_mean[None, :]), axis=-1)))
+    total = float(np.mean(np.sum(np.square(flat - overall_mean[None, None, :]), axis=-1)))
+    fraction = between / total if total > 0 else 0.0
+    return VarianceDecomposition(
+        total=total,
+        within_noise=within,
+        between_memory=between,
+        memory_fraction=fraction,
+    )
+
+
+def nearest_target_coverage(
+    actions: Array, target: Array, *, tolerance: float
+) -> TargetCoverage:
+    """Measure whether any memory/noise branch reaches a target action mode."""
+    array = np.asarray(actions, dtype=np.float64)
+    target_array = np.asarray(target, dtype=np.float64)
+    if array.ndim < 3:
+        raise ValueError("actions must have shape [views, noises, ...action_shape]")
+    if array.shape[2:] != target_array.shape:
+        raise ValueError(
+            f"target shape {target_array.shape} != action shape {array.shape[2:]}"
+        )
+    if not np.isfinite(tolerance) or tolerance < 0:
+        raise ValueError("tolerance must be a non-negative finite scalar")
+    distances = np.linalg.norm(
+        (array - target_array[None, None, ...]).reshape(array.shape[0], array.shape[1], -1),
+        axis=-1,
+    )
+    covered_mask = distances <= tolerance
+    covered_views = int(np.sum(np.any(covered_mask, axis=1)))
+    covered_samples = int(np.sum(covered_mask))
+    return TargetCoverage(
+        covered=bool(covered_samples > 0),
+        covered_views=covered_views,
+        total_views=int(array.shape[0]),
+        covered_samples=covered_samples,
+        total_samples=int(array.shape[0] * array.shape[1]),
+        min_distance=float(distances.min()),
+    )
+
+
+def allocation_grid(
+    total_budget: int, *, memory_view_counts: Sequence[int]
+) -> tuple[tuple[int, int], ...]:
+    """Return matched-compute ``(memory_views, noises_per_view)`` allocations."""
+    if total_budget <= 0:
+        raise ValueError("total_budget must be positive")
+    allocations = []
+    for views in memory_view_counts:
+        value = int(views)
+        if value <= 0:
+            raise ValueError("memory view counts must be positive")
+        if total_budget % value != 0:
+            raise ValueError(f"memory view count {value} must divide total budget {total_budget}")
+        allocations.append((value, total_budget // value))
+    return tuple(allocations)
+
+
+def hypothesis_coefficients(
+    *, view_count: int, basis_size: int, seed: int, include_base: bool = True
+) -> Array:
+    """Generate symmetric unit coefficient vectors for competing memory views.
+
+    The first view is the unedited memory when ``include_base`` is true. The
+    remaining views are emitted in ``(+c, -c)`` pairs so downstream experiments
+    can distinguish directional effects from generic perturbation magnitude.
+    """
+    if view_count <= 0 or basis_size <= 0:
+        raise ValueError("view_count and basis_size must be positive")
+    if include_base and view_count < 1:
+        raise ValueError("include_base requires at least one view")
+    remaining = view_count - int(include_base)
+    if remaining % 2 != 0:
+        raise ValueError("non-base memory views must form symmetric pairs")
+    rng = np.random.default_rng(seed)
+    rows: list[Array] = []
+    if include_base:
+        rows.append(np.zeros(basis_size, dtype=np.float64))
+    for _ in range(remaining // 2):
+        vector = rng.normal(size=basis_size)
+        norm = np.linalg.norm(vector)
+        if norm <= 1e-12:
+            vector[0] = 1.0
+            norm = 1.0
+        vector = vector / norm
+        rows.extend([vector, -vector])
+    return np.stack(rows, axis=0)
