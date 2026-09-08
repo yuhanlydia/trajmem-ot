@@ -60,7 +60,7 @@ SVD is applied to the **action-response matrix** `Y`, not repeatedly to the full
 - matched-compute memory-view versus diffusion-noise branching (`E13`);
 - target-mode coverage and total-variance decomposition.
 
-The released-checkpoint E11–E13 experiments require an NVIDIA GPU and the upstream RoboMME/OpenPI environment. The released checkpoint and the 80-episode sample have now been downloaded locally; the first real E11 states are being evaluated on a 16GB RTX A4000. CPU mathematical tests and synthetic JAX smoke experiments remain available for fast regression checks.
+The released-checkpoint E11–E13 experiments require an NVIDIA GPU and the upstream RoboMME/OpenPI environment. The released checkpoint and the 80-episode sample have now been downloaded locally; eight real E11 verification states were evaluated on a 16GB RTX A4000. CPU mathematical tests and synthetic JAX smoke experiments remain available for fast regression checks.
 
 ## Repository layout
 
@@ -109,14 +109,25 @@ installed as a host dependency; the latter is handled in
 `jax_operator.py` by casting tangents to the primal memory dtype (commit
 `2e6cc03`).
 
-The exact JVP path now runs end to end on the released model. Finite-difference
-comparisons at the original tiny radii are not a valid success gate for this
-BF16 memory: the perturbations are below the representable spacing and produce
-large secant error. Larger diagnostic radii reduce this quantization effect but
-also introduce nonlinear secant error. Therefore the current scientific status
-is **operator execution succeeded; BF16 finite-difference validation is
-inconclusive**. E12 and E13 should wait until a dtype-aware FD protocol (or a
-FP32-safe comparison path) is fixed and rerun.
+The exact JVP path now runs end to end on all eight verification states. The
+aggregate report has median warmed latency `1.074 s` and median
+`effective_rank_90 = 2`; no state produced an OOM or runtime failure.
+
+Finite-difference comparisons at the original tiny radii are not a valid
+success gate for this BF16 memory: the perturbations are below the
+representable spacing and produce large secant error. Across eight states the
+median FD cosine was `0.0142` and the worst relative error was `2713`. Larger
+diagnostic radii reduce this quantization effect but also introduce nonlinear
+secant error. The final status is split explicitly:
+
+- **Execution:** success — exact JVP, chunking, SVD, and rank diagnostics run on
+  the released checkpoint and GPU.
+- **Numerical validation:** failure under the current BF16 FD protocol — the
+  secant comparison is inconclusive, so it must not be used to claim operator
+  correctness.
+
+E12 and E13 remain paused until a dtype-aware FD protocol (or an FP32-safe
+comparison path) is fixed and rerun.
 
 ## Bootstrap the real RoboMME runtime
 
