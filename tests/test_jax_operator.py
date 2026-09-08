@@ -61,6 +61,14 @@ def test_chunked_batched_jvps_match_single_direction_calls():
     np.testing.assert_allclose(np.asarray(actions), np.asarray(_toy_action_fn(memory)), rtol=1e-6, atol=1e-6)
 
 
+def test_jvp_casts_fp32_direction_to_bfloat16_memory():
+    memory = jnp.linspace(-0.4, 0.6, 6, dtype=jnp.bfloat16).reshape(2, 3)
+    direction = jnp.ones_like(memory, dtype=jnp.float32)
+    actions, tangent = action_jvp(_toy_action_fn, memory, direction)
+    assert actions.dtype == memory.dtype
+    assert tangent.dtype == memory.dtype
+
+
 def test_svd_ridge_pullback_reduces_action_target_residual():
     response = np.asarray(
         [

@@ -48,8 +48,12 @@ def action_jvp(
         raise ValueError(
             f"direction shape {_shape_tuple(direction)} != memory shape {_shape_tuple(memory)}"
         )
-    jax, _ = _jax_modules()
-    return jax.jvp(action_fn, (memory,), (direction,))
+    jax, jnp = _jax_modules()
+    memory_array = jnp.asarray(memory)
+    # Checkpoint memories are commonly BF16 while basis construction uses FP32.
+    # JAX forward-mode AD requires primal and tangent dtypes to match exactly.
+    direction_array = jnp.asarray(direction, dtype=memory_array.dtype)
+    return jax.jvp(action_fn, (memory_array,), (direction_array,))
 
 
 def batched_action_jvps(
@@ -66,7 +70,8 @@ def batched_action_jvps(
     inputs. The final short chunk is compiled separately when necessary.
     """
     jax, jnp = _jax_modules()
-    directions_array = jnp.asarray(directions)
+    memory_array = jnp.asarray(memory)
+    directions_array = jnp.asarray(directions, dtype=memory_array.dtype)
     if directions_array.ndim < 2:
         raise ValueError("directions must have shape [K, ...memory_shape]")
     if _shape_tuple(directions_array)[1:] != _shape_tuple(memory):
@@ -78,10 +83,10 @@ def batched_action_jvps(
     if chunk_size <= 0:
         raise ValueError("chunk_size must be positive")
 
-    base_actions = action_fn(memory)
+    base_actions = action_fn(memory_array)
 
     def one(direction):
-        return jax.jvp(action_fn, (memory,), (direction,))[1]
+        return jax.jvp(action_fn, (memory_array,), (direction,))[1]
 
     responses = []
     for start in range(0, int(directions_array.shape[0]), chunk_size):
@@ -106,7 +111,7 @@ def central_action_secant(
         raise ValueError("step must be a positive finite scalar")
     _, jnp = _jax_modules()
     memory_array = jnp.asarray(memory)
-    direction_array = jnp.asarray(direction)
+    direction_array = jnp.asarray(direction, dtype=memory_array.dtype)
     return (
         action_fn(memory_array + step * direction_array)
         - action_fn(memory_array - step * direction_array)
