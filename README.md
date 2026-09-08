@@ -60,7 +60,7 @@ SVD is applied to the **action-response matrix** `Y`, not repeatedly to the full
 - matched-compute memory-view versus diffusion-noise branching (`E13`);
 - target-mode coverage and total-variance decomposition.
 
-The real released-checkpoint E11–E13 experiments require an NVIDIA GPU and the upstream RoboMME/OpenPI environment. They were not executed in the CPU-only development container used to prepare this commit. CPU mathematical tests and synthetic JAX smoke experiments are included.
+The released-checkpoint E11–E13 experiments require an NVIDIA GPU and the upstream RoboMME/OpenPI environment. The released checkpoint and the 80-episode sample have now been downloaded locally; the first real E11 states are being evaluated on a 16GB RTX A4000. CPU mathematical tests and synthetic JAX smoke experiments remain available for fast regression checks.
 
 ## Repository layout
 
@@ -91,6 +91,32 @@ python scripts/run_e11_jvp_smoke.py \
 ```
 
 The smoke experiment checks that exact JVPs match central action secants and that the SVD-ridge inverse reduces its action-space residual.
+
+## Released-checkpoint verification status
+
+On 2026-09-08 the following setup was validated:
+
+- RoboMME upstream pinned to `ecf086c3be7c2223167d9bb2f6ef1f0a6e24353b`;
+- CUDA JAX detected `cuda:0` and the 16GB synthetic smoke passed;
+- the downloaded `perceptual-framesamp-modul/79999` checkpoint and
+  `robomme_preprocessed_data_sample` directory passed the required structure checks;
+- the repository test suite passed (`40 passed` after the BF16 tangent fix).
+
+The first released-checkpoint run exposed two environment/numerical issues. The
+upstream import needed the system `libGL.so.1` runtime, and the real checkpoint
+stores memory in BF16 while the generated basis starts in FP32. The former was
+installed as a host dependency; the latter is handled in
+`jax_operator.py` by casting tangents to the primal memory dtype (commit
+`2e6cc03`).
+
+The exact JVP path now runs end to end on the released model. Finite-difference
+comparisons at the original tiny radii are not a valid success gate for this
+BF16 memory: the perturbations are below the representable spacing and produce
+large secant error. Larger diagnostic radii reduce this quantization effect but
+also introduce nonlinear secant error. Therefore the current scientific status
+is **operator execution succeeded; BF16 finite-difference validation is
+inconclusive**. E12 and E13 should wait until a dtype-aware FD protocol (or a
+FP32-safe comparison path) is fixed and rerun.
 
 ## Bootstrap the real RoboMME runtime
 
