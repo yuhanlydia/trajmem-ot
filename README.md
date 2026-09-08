@@ -70,6 +70,8 @@ configs/                         16GB and 24GB experiment presets
 src/trajmem_ot/                 reusable OT, JAX, basis, view, and RoboMME adapters
 scripts/run_e11_jvp_smoke.py    hardware-independent JAX operator smoke test
 scripts/run_e11_robomme_jvp.py  exact released-checkpoint JVP/FD comparison
+scripts/run_e11_stage_localization.py
+                                memory encoder/modulation stage diagnostics
 scripts/run_e12_operator_basis.py
                                 reward-free memory-recovery experiment
 scripts/run_e13_memory_view_branching.py
@@ -101,8 +103,8 @@ On 2026-09-08 the following setup was validated:
 - CUDA JAX detected `cuda:0` and the 16GB synthetic smoke passed;
 - the downloaded `perceptual-framesamp-modul/79999` checkpoint and
   `robomme_preprocessed_data_sample` directory passed the required structure checks;
-- the repository test suite passed (`41 passed` after the BF16 tangent and
-  quantization-aware chord fixes).
+- the repository test suite passed (`44 passed` after the BF16 tangent,
+  quantization-aware chord, and channel-diagnostic additions).
 
 The first released-checkpoint run exposed two environment/numerical issues. The
 upstream import needed the system `libGL.so.1` runtime, and the real checkpoint
@@ -178,6 +180,14 @@ the `(B,N)=(2,4)/(4,2)` allocations on state 0 and `0.00023/0.00171` on
 state 1. With this small edit radius and two states, diffusion noise still
 dominates the observed action variance; this is a preliminary null result,
 not an environment-success claim.
+
+The stage-localization probe confirms this boundary on two states with one
+flow step: `static_image_emb -> mem_tokens` has transformed-primal delta
+`0.0`, while the first memory-modulation velocity has primal deltas `0.0612`
+and `0.0565`, with velocity JVP/chord cosines about `0.063` and `0.061`.
+This narrows the numerical failure to the modulation/LLM path. The remaining
+stage decomposition into every internal transformer block has not been used
+to make a scientific claim.
 
 The saved E11-C and E13-A JSON reports include channel splits, midpoint
 metrics, primal deltas, precision mode, and the exact allocation grid. No

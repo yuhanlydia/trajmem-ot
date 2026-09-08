@@ -42,6 +42,7 @@ def test_e11_smoke_script_runs_and_writes_operator_metrics(tmp_path: Path, prese
     "script",
     [
         "scripts/run_e11_robomme_jvp.py",
+        "scripts/run_e11_stage_localization.py",
         "scripts/run_e12_operator_basis.py",
         "scripts/build_history_difference_basis.py",
         "scripts/run_e13_memory_view_branching.py",

@@ -1,0 +1,51 @@
+{
+  "experiment": "E11-C_stage_localization",
+  "checkpoint": "/root/trajmem-ot/checkpoints/perceptual-framesamp-modul/79999",
+  "data": "/root/trajmem-ot/data/robomme_preprocessed_data_sample",
+  "index": 1,
+  "num_steps": 1,
+  "relative_radius": 0.00025,
+  "memory_shape": [
+    512,
+    2048
+  ],
+  "memory_dtype": "bfloat16",
+  "tokens_shape": [
+    512,
+    1024
+  ],
+  "tokens_dtype": "bfloat16",
+  "velocity_shape": [
+    20,
+    32
+  ],
+  "velocity_dtype": "bfloat16",
+  "memory_encoder_primal_delta_norm": 0.0,
+  "modulation_velocity_primal_delta_norm": 0.056481211047377036,
+  "memory_encoder": {
+    "jvp_origin_cosine": 0.16055089960848246,
+    "jvp_midpoint_cosine": 0.16055089960848246,
+    "jvp_norm": 1.3089747060809447,
+    "chord_norm": 8.322394656054701
+  },
+  "memory_modulation_velocity": {
+    "jvp_origin_cosine": 0.06108221602087493,
+    "jvp_midpoint_cosine": 0.06088276419784796,
+    "jvp_norm": 0.00027720475027717293,
+    "chord_norm": 0.035678507667381155,
+    "robot_8d": {
+      "cosine_robot_8d": 0.14214286431939302,
+      "cosine_padded_24d": 0.04945320844582069,
+      "cosine_all_32d": 0.06108221602087493,
+      "jvp_norm_robot_8d": 0.00027633062018136837,
+      "jvp_norm_padded_24d": 2.199686174003336e-05,
+      "jvp_norm_all_32d": 0.00027720475027717293,
+      "chord_norm_robot_8d": 0.014477302330616164,
+      "chord_norm_padded_24d": 0.03260925676244879,
+      "chord_norm_all_32d": 0.035678507667381155
+    }
+  },
+  "endpoint_changed_fraction_plus": 0.2480754852294922,
+  "endpoint_changed_fraction_minus": 0.24808883666992188,
+  "claim_scope": "stage localization only; no JVP correctness or environment claim"
+}
