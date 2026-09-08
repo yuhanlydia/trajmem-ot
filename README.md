@@ -127,9 +127,13 @@ actual-chord protocol. For each endpoint it explicitly forms BF16 `M+` and
 chord after converting action outputs to FP32. All 64 comparisons qualified
 the endpoint diagnostics: the changed fraction was roughly 2.6%–19.3% and
 the positive/negative asymmetry was below 0.062. The numerical comparison
-still failed: the median qualified cosine was `-0.00064`, with maximum
+still failed: the median qualified cosine was `-0.00046`, with maximum
 relative error `1.0044`. The action chord norm was around `5e-3`, while the
 local JVP response was typically `1e-6`–`1e-4`.
+
+A same-memory repeat call with the same fixed noise had action difference norm
+`0.0` on the rerun state, so the nearly radius-independent chord is not
+explained by sampling nondeterminism in this harness.
 
 This means endpoint quantization alone does not explain the discrepancy. It
 exposes a stronger BF16/model-path nonlinearity or a remaining derivative

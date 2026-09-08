@@ -120,6 +120,14 @@ def main() -> None:
     warm_latency = time.perf_counter() - started
 
     base_np = np.asarray(base_actions)
+    repeat_actions = problem.action_fn(problem.memory)
+    _block(repeat_actions)
+    repeat_delta_norm = float(
+        np.linalg.norm(
+            np.asarray(repeat_actions, dtype=np.float32)
+            - np.asarray(base_actions, dtype=np.float32)
+        )
+    )
     responses_np = np.asarray(responses)
     response_matrix = responses_np.reshape(responses_np.shape[0], -1).T
     _, singular_values, _ = response_svd(response_matrix)
@@ -199,6 +207,7 @@ def main() -> None:
         "jvp_chunk_size": preset.jvp_chunk_size,
         "first_call_latency_s": first_latency,
         "warm_call_latency_s": warm_latency,
+        "base_repeat_delta_norm": repeat_delta_norm,
         "singular_values": singular_values.tolist(),
         "effective_rank_90": energy_rank(singular_values, threshold=0.9),
         "fd_comparisons": comparisons,
