@@ -11,6 +11,7 @@ import time
 
 import numpy as np
 
+from trajmem_ot.action_diagnostics import action_slice_metrics, primal_delta_norm
 from trajmem_ot.jax_operator import (
     action_jvp,
     batched_action_jvps,
@@ -135,6 +136,11 @@ def main() -> None:
 
     comparisons = []
     memory_jax = jnp.asarray(problem.memory)
+    zero_tangent = jnp.zeros_like(memory_jax)
+    plain_base = problem.action_fn(memory_jax)
+    traced_base, _ = action_jvp(problem.action_fn, memory_jax, zero_tangent)
+    _block((plain_base, traced_base))
+    base_primal_delta_norm = primal_delta_norm(plain_base, traced_base)
     for direction_index in range(min(args.fd_directions, basis_np.shape[0])):
         exact = response_matrix[:, direction_index]
         for radius in args.fd_radii:
@@ -148,7 +154,31 @@ def main() -> None:
                 )
             )
             _, actual_jvp = action_jvp(problem.action_fn, memory_jax, actual_half)
-            _block((action_plus, action_minus, actual_half, memory_plus, memory_minus, actual_jvp))
+            midpoint = (memory_plus + memory_minus) / jnp.asarray(2, dtype=memory_jax.dtype)
+            plain_midpoint = problem.action_fn(midpoint)
+            midpoint_traced, midpoint_jvp = action_jvp(problem.action_fn, midpoint, actual_half)
+            plain_plus = problem.action_fn(memory_plus)
+            plus_traced, _ = action_jvp(problem.action_fn, memory_plus, zero_tangent)
+            plain_minus = problem.action_fn(memory_minus)
+            minus_traced, _ = action_jvp(problem.action_fn, memory_minus, zero_tangent)
+            _block(
+                (
+                    action_plus,
+                    action_minus,
+                    actual_half,
+                    memory_plus,
+                    memory_minus,
+                    actual_jvp,
+                    midpoint,
+                    plain_midpoint,
+                    midpoint_traced,
+                    midpoint_jvp,
+                    plain_plus,
+                    plus_traced,
+                    plain_minus,
+                    minus_traced,
+                )
+            )
             plus_np = np.asarray(memory_plus)
             minus_np = np.asarray(memory_minus)
             actual_half_np = np.asarray(actual_half)
@@ -156,8 +186,14 @@ def main() -> None:
             # Otherwise the chord itself can be dominated by output quantization.
             plus_action_np = np.asarray(action_plus, dtype=np.float32)
             minus_action_np = np.asarray(action_minus, dtype=np.float32)
-            chord = ((plus_action_np - minus_action_np) / 2.0).reshape(-1)
-            actual_jvp_np = np.asarray(actual_jvp, dtype=np.float32).reshape(-1)
+            chord_action = (plus_action_np - minus_action_np) / 2.0
+            chord = chord_action.reshape(-1)
+            actual_jvp_action_np = np.asarray(actual_jvp, dtype=np.float32)
+            actual_jvp_np = actual_jvp_action_np.reshape(-1)
+            midpoint_jvp_action_np = np.asarray(midpoint_jvp, dtype=np.float32)
+            midpoint_jvp_np = midpoint_jvp_action_np.reshape(-1)
+            midpoint_metrics = action_slice_metrics(midpoint_jvp_action_np, chord_action)
+            origin_metrics = action_slice_metrics(actual_jvp_action_np, chord_action)
             changed_plus = float(np.mean(plus_np != memory_np))
             changed_minus = float(np.mean(minus_np != memory_np))
             actual_radius = float(np.linalg.norm(actual_half_np) / max(memory_norm, 1e-12))
@@ -172,9 +208,20 @@ def main() -> None:
                     "nominal_relative_radius": radius,
                     "absolute_step": step,
                     "cosine": float(actual_jvp_np @ chord / denominator),
+                    "midpoint_cosine": float(midpoint_jvp_np @ chord / max(
+                        np.linalg.norm(midpoint_jvp_np) * np.linalg.norm(chord), 1e-12
+                    )),
                     "relative_error": float(
                         np.linalg.norm(actual_jvp_np - chord) / max(np.linalg.norm(chord), 1e-12)
                     ),
+                    "midpoint_relative_error": float(
+                        np.linalg.norm(midpoint_jvp_np - chord) / max(np.linalg.norm(chord), 1e-12)
+                    ),
+                    **origin_metrics,
+                    **{f"midpoint_{key}": value for key, value in midpoint_metrics.items()},
+                    "primal_delta_norm_midpoint": primal_delta_norm(plain_midpoint, midpoint_traced),
+                    "primal_delta_norm_plus": primal_delta_norm(plain_plus, plus_traced),
+                    "primal_delta_norm_minus": primal_delta_norm(plain_minus, minus_traced),
                     "exact_response_norm": float(np.linalg.norm(exact)),
                     "actual_jvp_norm": float(np.linalg.norm(actual_jvp_np)),
                     "action_chord_norm": float(np.linalg.norm(chord)),
@@ -197,6 +244,7 @@ def main() -> None:
         "data": str(args.data),
         "index": args.index,
         "preset": preset.name,
+        "num_steps": args.num_steps,
         "device": [str(device) for device in jax.devices()],
         "history_config": runtime.history_config_name,
         "memory_field": args.memory_field,
@@ -208,6 +256,7 @@ def main() -> None:
         "first_call_latency_s": first_latency,
         "warm_call_latency_s": warm_latency,
         "base_repeat_delta_norm": repeat_delta_norm,
+        "base_primal_delta_norm": base_primal_delta_norm,
         "singular_values": singular_values.tolist(),
         "effective_rank_90": energy_rank(singular_values, threshold=0.9),
         "fd_comparisons": comparisons,
@@ -215,6 +264,9 @@ def main() -> None:
         "max_fd_relative_error": max(row["relative_error"] for row in comparisons) if comparisons else None,
         "claim_scope": "operator correctness and local memory-to-action controllability only",
         "finite_difference_protocol": "quantization_aware_actual_chord",
+        "robot_action_dim": 8,
+        "padded_action_dim": int(base_np.shape[-1] - 8),
+        "jax_default_matmul_precision": os.environ.get("JAX_DEFAULT_MATMUL_PRECISION", "default"),
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n")

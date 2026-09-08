@@ -47,6 +47,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--view-counts", type=_parse_int_list)
     parser.add_argument("--target-actions", type=Path, help="optional normalized [H,A] target for coverage")
     parser.add_argument("--coverage-tolerance", type=float, default=1.0)
+    parser.add_argument("--robot-action-dim", type=int, default=8)
+    parser.add_argument(
+        "--phenomenon-only",
+        action="store_true",
+        help="label this forward-only run; no JVP or learned pullback is used",
+    )
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--artifacts", type=Path)
     return parser.parse_args()
@@ -149,6 +155,8 @@ def main() -> None:
         # loop result is [noise, view, H, A]; experiments use [view, noise, H, A]
         actions = np.stack(action_rows, axis=0).swapaxes(0, 1)
         decomposition = variance_decomposition(actions)
+        robot_decomposition = variance_decomposition(actions[..., : args.robot_action_dim])
+        padded_decomposition = variance_decomposition(actions[..., args.robot_action_dim :])
         row = {
             "memory_views": views_count,
             "noises_per_view": noises_count,
@@ -157,6 +165,25 @@ def main() -> None:
             "within_noise_variance": decomposition.within_noise,
             "between_memory_variance": decomposition.between_memory,
             "memory_variance_fraction": decomposition.memory_fraction,
+            "robot_action_dim": args.robot_action_dim,
+            "all_action_channels": {
+                "total_variance": decomposition.total,
+                "within_noise_variance": decomposition.within_noise,
+                "between_memory_variance": decomposition.between_memory,
+                "memory_variance_fraction": decomposition.memory_fraction,
+            },
+            "robot_action_8d": {
+                "total_variance": robot_decomposition.total,
+                "within_noise_variance": robot_decomposition.within_noise,
+                "between_memory_variance": robot_decomposition.between_memory,
+                "memory_variance_fraction": robot_decomposition.memory_fraction,
+            },
+            "padded_action_24d": {
+                "total_variance": padded_decomposition.total,
+                "within_noise_variance": padded_decomposition.within_noise,
+                "between_memory_variance": padded_decomposition.between_memory,
+                "memory_variance_fraction": padded_decomposition.memory_fraction,
+            },
             "max_applied_relative_edit": float(
                 view_batch.applied_delta_norms.max() / max(np.linalg.norm(memory), 1e-12)
             ),
@@ -188,6 +215,8 @@ def main() -> None:
         "relative_radius": args.relative_radius,
         "allocations": summaries,
         "claim_scope": "action-distribution uncertainty decomposition; environment success requires branch rollouts",
+        "protocol": "forward_only_phenomenon" if args.phenomenon_only else "forward_only",
+        "robot_action_dim": args.robot_action_dim,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n")

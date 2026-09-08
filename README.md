@@ -56,8 +56,9 @@ SVD is applied to the **action-response matrix** `Y`, not repeatedly to the full
 - action-response SVD, effective-rank diagnostics, and ridge pullback;
 - immutable RoboMME observation adapter that can edit history memory only;
 - in-process released-checkpoint loader, avoiding the NumPy/WebSocket autodiff break;
-- reward-free clean/degraded-memory recovery (`E12`);
-- matched-compute memory-view versus diffusion-noise branching (`E13`);
+- reward-free clean/degraded-memory recovery (`E12`, currently gated);
+- forward-only matched-compute memory-view versus diffusion-noise branching
+  (`E13-A`);
 - target-mode coverage and total-variance decomposition.
 
 The released-checkpoint E11–E13 experiments require an NVIDIA GPU and the upstream RoboMME/OpenPI environment. The released checkpoint and the 80-episode sample have now been downloaded locally; eight real E11 verification states were evaluated on a 16GB RTX A4000. CPU mathematical tests and synthetic JAX smoke experiments remain available for fast regression checks.
@@ -148,10 +149,39 @@ status is split explicitly:
   observable and symmetric, but the chord does not agree with the local JVP.
   It must not be used to claim operator correctness.
 
-E12 and E13 remain paused. The next diagnostic is the proposed FP32 shadow or
-structured-history path, with explicit recording of applied BF16 updates and
-top/low action-response directions. No task-success or reward improvement has
-been established.
+E12 remains paused because it consumes the unvalidated JVP as a pullback
+operator. E13-A is intentionally independent of JVP and now runs as a
+forward-only phenomenon test using coherent history-difference views.
+
+### E11-C localization and E13-A phenomenon check
+
+E11-C was run on states 0 and 1 at `num_steps` 1, 2, 5, and 10, with two
+directions per state. Every comparison reports the deployed robot channels
+`A[..., :8]`, the padded channels `A[..., 8:32]`, and all 32 channels. The
+chord midpoint `M_c=(M+ + M-) / 2` is also used for a second JVP comparison.
+The median robot-channel cosine over the eight default runs was `-0.0058`
+(`-0.0060` at the midpoint), essentially unchanged from the all-channel
+diagnostic. At `num_steps` 1/2/5/10 the robot-channel medians were
+`-0.019/-0.014/+0.039/-0.001`; there is no monotonic one-step rescue.
+
+The JVP transformed primal is not equal to the plain forward: the recorded
+`base_primal_delta_norm` ranges from `0.011` to `0.092` across these runs.
+This is a directly measured numerical-path discrepancy and must be resolved
+before interpreting the AD tangent as a deployed derivative. Setting
+`JAX_DEFAULT_MATMUL_PRECISION=highest` for states 0/1 at 10 steps changed the
+robot cosine median only to `0.0124` and did not remove the primal mismatch.
+
+E13-A uses eight same-task/different-episode history pairs to build a coherent
+history-difference basis and never calls JVP, SVD pullback, or E12. In the
+real 8D robot channels, memory-variance fractions were `0.00019/0.00170` for
+the `(B,N)=(2,4)/(4,2)` allocations on state 0 and `0.00023/0.00171` on
+state 1. With this small edit radius and two states, diffusion noise still
+dominates the observed action variance; this is a preliminary null result,
+not an environment-success claim.
+
+The saved E11-C and E13-A JSON reports include channel splits, midpoint
+metrics, primal deltas, precision mode, and the exact allocation grid. No
+task-success or reward improvement has been established.
 
 ## Bootstrap the real RoboMME runtime
 

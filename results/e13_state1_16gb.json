@@ -1,0 +1,131 @@
+{
+  "experiment": "E13_memory_view_vs_noise_branching",
+  "checkpoint": "/root/trajmem-ot/checkpoints/perceptual-framesamp-modul/79999",
+  "data": "/root/trajmem-ot/data/robomme_preprocessed_data_sample",
+  "index": 1,
+  "preset": "16gb",
+  "basis_source": "/root/trajmem-ot/results/e13_history_basis.npz",
+  "basis_directions": 7,
+  "relative_radius": 0.00025,
+  "allocations": [
+    {
+      "memory_views": 1,
+      "noises_per_view": 8,
+      "total_trajectories": 8,
+      "total_variance": 0.033268474242982946,
+      "within_noise_variance": 0.033268474242982946,
+      "between_memory_variance": 0.0,
+      "memory_variance_fraction": 0.0,
+      "robot_action_dim": 8,
+      "all_action_channels": {
+        "total_variance": 0.033268474242982946,
+        "within_noise_variance": 0.033268474242982946,
+        "between_memory_variance": 0.0,
+        "memory_variance_fraction": 0.0
+      },
+      "robot_action_8d": {
+        "total_variance": 0.033014260394635495,
+        "within_noise_variance": 0.033014260394635495,
+        "between_memory_variance": 0.0,
+        "memory_variance_fraction": 0.0
+      },
+      "padded_action_24d": {
+        "total_variance": 0.00025421384834746204,
+        "within_noise_variance": 0.00025421384834746204,
+        "between_memory_variance": 0.0,
+        "memory_variance_fraction": 0.0
+      },
+      "max_applied_relative_edit": 0.0
+    },
+    {
+      "memory_views": 2,
+      "noises_per_view": 4,
+      "total_trajectories": 8,
+      "total_variance": 0.01800163318066352,
+      "within_noise_variance": 0.01799236012582187,
+      "between_memory_variance": 9.273054841653616e-06,
+      "memory_variance_fraction": 0.0005151229751539589,
+      "robot_action_dim": 8,
+      "all_action_channels": {
+        "total_variance": 0.01800163318066352,
+        "within_noise_variance": 0.01799236012582187,
+        "between_memory_variance": 9.273054841653616e-06,
+        "memory_variance_fraction": 0.0005151229751539589
+      },
+      "robot_action_8d": {
+        "total_variance": 0.017741057325418242,
+        "within_noise_variance": 0.017736914811074634,
+        "between_memory_variance": 4.142514343608017e-06,
+        "memory_variance_fraction": 0.00023349872939494365
+      },
+      "padded_action_24d": {
+        "total_variance": 0.00026057585524527844,
+        "within_noise_variance": 0.00025544531474723287,
+        "between_memory_variance": 5.130540498045599e-06,
+        "memory_variance_fraction": 0.019689239792444517
+      },
+      "max_applied_relative_edit": 0.0002427669231506309
+    },
+    {
+      "memory_views": 4,
+      "noises_per_view": 2,
+      "total_trajectories": 8,
+      "total_variance": 0.005451115435912314,
+      "within_noise_variance": 0.0054256026258750235,
+      "between_memory_variance": 2.551281003729147e-05,
+      "memory_variance_fraction": 0.0046802916462218664,
+      "robot_action_dim": 8,
+      "all_action_channels": {
+        "total_variance": 0.005451115435912314,
+        "within_noise_variance": 0.0054256026258750235,
+        "between_memory_variance": 2.551281003729147e-05,
+        "memory_variance_fraction": 0.0046802916462218664
+      },
+      "robot_action_8d": {
+        "total_variance": 0.005260159317626998,
+        "within_noise_variance": 0.0052511549023306105,
+        "between_memory_variance": 9.004415296387513e-06,
+        "memory_variance_fraction": 0.0017118141776073907
+      },
+      "padded_action_24d": {
+        "total_variance": 0.00019095611828531686,
+        "within_noise_variance": 0.0001744477235444129,
+        "between_memory_variance": 1.6508394740903957e-05,
+        "memory_variance_fraction": 0.08645124800996404
+      },
+      "max_applied_relative_edit": 0.0002427669240963159
+    },
+    {
+      "memory_views": 8,
+      "noises_per_view": 1,
+      "total_trajectories": 8,
+      "total_variance": 5.8832333116640156e-05,
+      "within_noise_variance": 0.0,
+      "between_memory_variance": 5.8832333116640156e-05,
+      "memory_variance_fraction": 1.0,
+      "robot_action_dim": 8,
+      "all_action_channels": {
+        "total_variance": 5.8832333116640156e-05,
+        "within_noise_variance": 0.0,
+        "between_memory_variance": 5.8832333116640156e-05,
+        "memory_variance_fraction": 1.0
+      },
+      "robot_action_8d": {
+        "total_variance": 1.900946072497245e-05,
+        "within_noise_variance": 0.0,
+        "between_memory_variance": 1.900946072497245e-05,
+        "memory_variance_fraction": 1.0
+      },
+      "padded_action_24d": {
+        "total_variance": 3.982287239166771e-05,
+        "within_noise_variance": 0.0,
+        "between_memory_variance": 3.982287239166771e-05,
+        "memory_variance_fraction": 1.0
+      },
+      "max_applied_relative_edit": 0.00024276692634562496
+    }
+  ],
+  "claim_scope": "action-distribution uncertainty decomposition; environment success requires branch rollouts",
+  "protocol": "forward_only_phenomenon",
+  "robot_action_dim": 8
+}

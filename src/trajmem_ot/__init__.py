@@ -1,4 +1,5 @@
 from .adapters import EditableMemory, extract_robomme_history, replace_robomme_history
+from .action_diagnostics import action_slice_metrics, primal_delta_norm, vector_cosine
 from .core import MemoryEditConfig, MemoryEditResult, optimize_memory_ot
 from .evaluation import select_trust_radius, summarize_memory_line_search, summarize_paired_return
 from .jax_operator import (
@@ -40,6 +41,7 @@ __all__ = [
     "PullbackResult",
     "TargetCoverage",
     "VarianceDecomposition",
+    "action_slice_metrics",
     "action_jvp",
     "allocation_grid",
     "batched_action_jvps",
@@ -55,6 +57,7 @@ __all__ = [
     "nearest_target_coverage",
     "normalize_basis",
     "optimize_memory_ot",
+    "primal_delta_norm",
     "prepare_policy_observation",
     "random_rank_one_basis",
     "replace_observation_memory",
@@ -65,5 +68,6 @@ __all__ = [
     "summarize_memory_line_search",
     "summarize_paired_return",
     "svd_ridge_pullback",
+    "vector_cosine",
     "variance_decomposition",
 ]

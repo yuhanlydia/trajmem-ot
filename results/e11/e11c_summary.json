@@ -1,0 +1,36 @@
+{
+  "experiment": "E11-C_localization_aggregate",
+  "default": {
+    "n_runs": 8,
+    "median_base_primal_delta_norm": 0.032950844772451526,
+    "median_robot_cosine": -0.005753543314407134,
+    "median_robot_midpoint_cosine": -0.00603637974879615,
+    "median_all_cosine": 0.0009457868846123243,
+    "median_all_midpoint_cosine": 0.0010544811490115478,
+    "num_steps": [
+      1,
+      2,
+      5,
+      10
+    ],
+    "states": [
+      0,
+      1
+    ]
+  },
+  "highest_precision_steps10": {
+    "n_runs": 2,
+    "median_base_primal_delta_norm": 0.011354468000338977,
+    "median_robot_cosine": 0.012376387263730238,
+    "median_robot_midpoint_cosine": 0.012630615056273593,
+    "median_all_cosine": 0.007938315991090813,
+    "median_all_midpoint_cosine": 0.008057396691277651,
+    "num_steps": [
+      10
+    ],
+    "states": [
+      0,
+      1
+    ]
+  }
+}

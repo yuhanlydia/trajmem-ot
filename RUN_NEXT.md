@@ -130,7 +130,7 @@ Positive recovery under fresh noises means the edit changed the memory-condition
 
 ## 4. E13 — memory-view branching versus diffusion branching
 
-Use equal total forward-pass budgets. On 16GB the default total is 8 trajectories and evaluates `(B,N)=(1,8),(2,4),(4,2),(8,1)`. On 24GB the default total is 32 and evaluates `(1,32),(4,8),(8,4),(32,1)`.
+Use equal total forward-pass budgets. On 16GB the default total is 8 trajectories and evaluates `(B,N)=(1,8),(2,4),(4,2),(8,1)`. On 24GB the default total is 32 and evaluates `(1,32),(4,8),(8,4),(32,1)`. The phenomenon-only path does not use JVP or a pullback solver.
 
 ```bash
 uv run python "$TRAJMEM_ROOT/scripts/run_e13_memory_view_branching.py" \
@@ -138,8 +138,9 @@ uv run python "$TRAJMEM_ROOT/scripts/run_e13_memory_view_branching.py" \
   --data "$DATA" \
   --index 0 \
   --preset 16gb \
-  --basis "$TRAJMEM_ROOT/results/e12/history_basis.npz" \
+  --basis "$TRAJMEM_ROOT/results/e13_history_basis.npz" \
   --relative-radius 2.5e-4 \
+  --phenomenon-only \
   --output "$TRAJMEM_ROOT/results/e13/state0_16gb.json"
 ```
 

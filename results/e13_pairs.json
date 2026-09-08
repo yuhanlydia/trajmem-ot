@@ -1,0 +1,66 @@
+[
+  {
+    "a": 10340,
+    "b": 11092,
+    "prompt": "press the button to stop the cube just as it reaches the target for the fourth time",
+    "subgoal": "remain static",
+    "epis_a": "[30]",
+    "epis_b": "[33]"
+  },
+  {
+    "a": 6214,
+    "b": 6734,
+    "prompt": "watch the video carefully, then pick up the container hiding the green cube",
+    "subgoal": "pick up the container that hides the green cube",
+    "epis_a": "[22]",
+    "epis_b": "[24]"
+  },
+  {
+    "a": 14406,
+    "b": 14169,
+    "prompt": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+    "subgoal": "press the button",
+    "epis_a": "[41]",
+    "epis_b": "[40]"
+  },
+  {
+    "a": 16062,
+    "b": 14610,
+    "prompt": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+    "subgoal": "pick up the highlighted cube, which is red",
+    "epis_a": "[44]",
+    "epis_b": "[41]"
+  },
+  {
+    "a": 27275,
+    "b": 26565,
+    "prompt": "watch the video carefully, then pick up the container hiding the blue cube",
+    "subgoal": "pick up the container that hides the blue cube",
+    "epis_a": "[79]",
+    "epis_b": "[75]"
+  },
+  {
+    "a": 9889,
+    "b": 7647,
+    "prompt": "pick up the blue cube and place it on the target, repeating this action three times, then press the button to stop",
+    "subgoal": "place the blue cube onto the target",
+    "epis_a": "[29]",
+    "epis_b": "[26]"
+  },
+  {
+    "a": 24376,
+    "b": 25610,
+    "prompt": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for three times, finally put it down and press the button to stop",
+    "subgoal": "put it down",
+    "epis_a": "[71]",
+    "epis_b": "[73]"
+  },
+  {
+    "a": 17916,
+    "b": 17478,
+    "prompt": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+    "subgoal": "insert the peg from the right side",
+    "epis_a": "[53]",
+    "epis_b": "[51]"
+  }
+]

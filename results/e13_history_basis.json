@@ -1,0 +1,10 @@
+{
+  "pairs": 8,
+  "basis_count": 7,
+  "memory_shape": [
+    512,
+    2048
+  ],
+  "history_config": "perceptual-framesamp-modul.yaml",
+  "output": "/root/trajmem-ot/results/e13_history_basis.npz"
+}
