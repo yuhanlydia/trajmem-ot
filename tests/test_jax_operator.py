@@ -9,6 +9,7 @@ from trajmem_ot.jax_operator import (
     batched_action_jvps,
     central_action_secant,
     energy_rank,
+    quantized_action_chord,
     svd_ridge_pullback,
 )
 
@@ -67,6 +68,22 @@ def test_jvp_casts_fp32_direction_to_bfloat16_memory():
     actions, tangent = action_jvp(_toy_action_fn, memory, direction)
     assert actions.dtype == memory.dtype
     assert tangent.dtype == memory.dtype
+
+
+def test_quantized_action_chord_returns_actual_half_step():
+    memory = jnp.asarray([0.0, 1.0], dtype=jnp.bfloat16)
+    direction = jnp.asarray([1.0, -1.0], dtype=jnp.float32)
+
+    def linear(x):
+        return x * jnp.asarray([2.0, 3.0], dtype=x.dtype)
+
+    _, _, actual, memory_plus, memory_minus = quantized_action_chord(
+        linear, memory, direction, step=0.25
+    )
+    np.testing.assert_allclose(
+        np.asarray(actual),
+        (np.asarray(memory_plus) - np.asarray(memory_minus)) / 2,
+    )
 
 
 def test_svd_ridge_pullback_reduces_action_target_residual():

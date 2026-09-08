@@ -118,6 +118,36 @@ def central_action_secant(
     ) / (2.0 * step)
 
 
+def quantized_action_chord(
+    action_fn: ActionFn,
+    memory: ArrayLike,
+    direction: ArrayLike,
+    *,
+    step: float,
+) -> tuple[ArrayLike, ArrayLike, ArrayLike, ArrayLike, ArrayLike]:
+    """Evaluate a central action chord after the memory dtype quantizes inputs.
+
+    Returns ``(action_plus, action_minus, actual_half_step, memory_plus,
+    memory_minus)``. ``actual_half_step`` is the displacement that the two
+    quantized endpoints represent, so it can be passed to :func:`action_jvp`
+    for a dtype-consistent local comparison.
+    """
+    if not np.isfinite(step) or step <= 0:
+        raise ValueError("step must be a positive finite scalar")
+    _, jnp = _jax_modules()
+    memory_array = jnp.asarray(memory)
+    direction_array = jnp.asarray(direction, dtype=memory_array.dtype)
+    step_array = jnp.asarray(step, dtype=memory_array.dtype)
+    memory_plus = memory_array + step_array * direction_array
+    memory_minus = memory_array - step_array * direction_array
+    action_plus = action_fn(memory_plus)
+    action_minus = action_fn(memory_minus)
+    actual_half_step = (memory_plus - memory_minus) / jnp.asarray(
+        2, dtype=memory_array.dtype
+    )
+    return action_plus, action_minus, actual_half_step, memory_plus, memory_minus
+
+
 def energy_rank(singular_values: np.ndarray, *, threshold: float = 0.9) -> int:
     """Smallest rank explaining ``threshold`` of squared singular-value energy."""
     values = np.asarray(singular_values, dtype=np.float64)

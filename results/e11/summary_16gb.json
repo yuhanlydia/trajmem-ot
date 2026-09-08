@@ -1,0 +1,12 @@
+{
+  "experiment": "E11_exact_jvp_aggregate",
+  "n_states": 8,
+  "presets": [
+    "16gb"
+  ],
+  "median_warm_latency_s": 1.074096534983255,
+  "median_effective_rank_90": 2.0,
+  "min_fd_cosine": -0.06913941353559494,
+  "median_fd_cosine": 0.014230475760996342,
+  "max_fd_relative_error": 2713.411376953125
+}

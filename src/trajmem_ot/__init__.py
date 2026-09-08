@@ -7,6 +7,7 @@ from .jax_operator import (
     batched_action_jvps,
     central_action_secant,
     energy_rank,
+    quantized_action_chord,
     response_svd,
     svd_ridge_pullback,
 )
@@ -59,6 +60,7 @@ __all__ = [
     "replace_observation_memory",
     "replace_robomme_history",
     "response_svd",
+    "quantized_action_chord",
     "select_trust_radius",
     "summarize_memory_line_search",
     "summarize_paired_return",

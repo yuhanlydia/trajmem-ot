@@ -1,0 +1,22 @@
+{
+  "preset": "16gb",
+  "device": "cuda:0",
+  "basis_directions": 8,
+  "jvp_chunk_size": 2,
+  "response_rank_requested": 4,
+  "effective_rank_90": 6,
+  "jvp_secant_min_cosine": 0.9999999403953552,
+  "jvp_secant_max_relative_error": 0.00046546035446226597,
+  "first_call_latency_s": 3.2176802868489176,
+  "warm_call_latency_s": 0.007241032086312771,
+  "pullback_residual_before": 0.914319852479914,
+  "pullback_residual_after": 0.6956637951494608,
+  "action_shape": [
+    6,
+    4
+  ],
+  "response_shape": [
+    24,
+    8
+  ]
+}

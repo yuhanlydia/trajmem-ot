@@ -1,0 +1,22 @@
+{
+  "preset": "16gb",
+  "device": "TFRT_CPU_0",
+  "basis_directions": 8,
+  "jvp_chunk_size": 2,
+  "response_rank_requested": 4,
+  "effective_rank_90": 6,
+  "jvp_secant_min_cosine": 1.0,
+  "jvp_secant_max_relative_error": 0.0002672598056960851,
+  "first_call_latency_s": 0.15301825292408466,
+  "warm_call_latency_s": 0.004740708041936159,
+  "pullback_residual_before": 0.9142840313743335,
+  "pullback_residual_after": 0.6955412927704301,
+  "action_shape": [
+    6,
+    4
+  ],
+  "response_shape": [
+    24,
+    8
+  ]
+}

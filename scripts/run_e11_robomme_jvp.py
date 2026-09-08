@@ -12,9 +12,10 @@ import time
 import numpy as np
 
 from trajmem_ot.jax_operator import (
+    action_jvp,
     batched_action_jvps,
-    central_action_secant,
     energy_rank,
+    quantized_action_chord,
     response_svd,
 )
 from trajmem_ot.memory_basis import random_rank_one_basis
@@ -125,28 +126,60 @@ def main() -> None:
     memory_norm = float(np.linalg.norm(memory_np))
 
     comparisons = []
+    memory_jax = jnp.asarray(problem.memory)
     for direction_index in range(min(args.fd_directions, basis_np.shape[0])):
         exact = response_matrix[:, direction_index]
         for radius in args.fd_radii:
             step = radius * memory_norm
-            secant = np.asarray(
-                central_action_secant(
+            action_plus, action_minus, actual_half, memory_plus, memory_minus = (
+                quantized_action_chord(
                     problem.action_fn,
-                    problem.memory,
+                    memory_jax,
                     basis[direction_index],
                     step=step,
                 )
-            ).reshape(-1)
-            denominator = max(np.linalg.norm(exact) * np.linalg.norm(secant), 1e-12)
+            )
+            _, actual_jvp = action_jvp(problem.action_fn, memory_jax, actual_half)
+            _block((action_plus, action_minus, actual_half, memory_plus, memory_minus, actual_jvp))
+            plus_np = np.asarray(memory_plus)
+            minus_np = np.asarray(memory_minus)
+            actual_half_np = np.asarray(actual_half)
+            # Perform output subtraction in FP32 even when a model emits BF16.
+            # Otherwise the chord itself can be dominated by output quantization.
+            plus_action_np = np.asarray(action_plus, dtype=np.float32)
+            minus_action_np = np.asarray(action_minus, dtype=np.float32)
+            chord = ((plus_action_np - minus_action_np) / 2.0).reshape(-1)
+            actual_jvp_np = np.asarray(actual_jvp, dtype=np.float32).reshape(-1)
+            changed_plus = float(np.mean(plus_np != memory_np))
+            changed_minus = float(np.mean(minus_np != memory_np))
+            actual_radius = float(np.linalg.norm(actual_half_np) / max(memory_norm, 1e-12))
+            asymmetry = float(
+                np.linalg.norm((plus_np - memory_np) + (minus_np - memory_np))
+                / max(np.linalg.norm(plus_np - minus_np), 1e-12)
+            )
+            denominator = max(np.linalg.norm(actual_jvp_np) * np.linalg.norm(chord), 1e-12)
             comparisons.append(
                 {
                     "direction": direction_index,
-                    "relative_radius": radius,
+                    "nominal_relative_radius": radius,
                     "absolute_step": step,
-                    "cosine": float(exact @ secant / denominator),
+                    "cosine": float(actual_jvp_np @ chord / denominator),
                     "relative_error": float(
-                        np.linalg.norm(exact - secant) / max(np.linalg.norm(exact), 1e-12)
+                        np.linalg.norm(actual_jvp_np - chord) / max(np.linalg.norm(chord), 1e-12)
                     ),
+                    "exact_response_norm": float(np.linalg.norm(exact)),
+                    "actual_jvp_norm": float(np.linalg.norm(actual_jvp_np)),
+                    "action_chord_norm": float(np.linalg.norm(chord)),
+                    "memory_dtype": str(memory_jax.dtype),
+                    "actual_half_dtype": str(actual_half.dtype),
+                    "action_plus_dtype": str(action_plus.dtype),
+                    "action_minus_dtype": str(action_minus.dtype),
+                    "jvp_dtype": str(actual_jvp.dtype),
+                    "changed_fraction_plus": changed_plus,
+                    "changed_fraction_minus": changed_minus,
+                    "actual_relative_radius": actual_radius,
+                    "asymmetry": asymmetry,
+                    "qualified": bool(min(changed_plus, changed_minus) > 0.005 and asymmetry < 0.25),
                 }
             )
 
@@ -172,6 +205,7 @@ def main() -> None:
         "min_fd_cosine": min(row["cosine"] for row in comparisons) if comparisons else None,
         "max_fd_relative_error": max(row["relative_error"] for row in comparisons) if comparisons else None,
         "claim_scope": "operator correctness and local memory-to-action controllability only",
+        "finite_difference_protocol": "quantization_aware_actual_chord",
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n")

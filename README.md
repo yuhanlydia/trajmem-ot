@@ -100,7 +100,8 @@ On 2026-09-08 the following setup was validated:
 - CUDA JAX detected `cuda:0` and the 16GB synthetic smoke passed;
 - the downloaded `perceptual-framesamp-modul/79999` checkpoint and
   `robomme_preprocessed_data_sample` directory passed the required structure checks;
-- the repository test suite passed (`40 passed` after the BF16 tangent fix).
+- the repository test suite passed (`41 passed` after the BF16 tangent and
+  quantization-aware chord fixes).
 
 The first released-checkpoint run exposed two environment/numerical issues. The
 upstream import needed the system `libGL.so.1` runtime, and the real checkpoint
@@ -111,23 +112,42 @@ installed as a host dependency; the latter is handled in
 
 The exact JVP path now runs end to end on all eight verification states. The
 aggregate report has median warmed latency `1.074 s` and median
-`effective_rank_90 = 2`; no state produced an OOM or runtime failure.
+`effective_rank_90 = 2`; no state produced an OOM or runtime failure. This is
+an execution result and a preliminary sampled-rank signal, not yet a claim
+that the deployed action-controllable memory subspace has rank two.
 
 Finite-difference comparisons at the original tiny radii are not a valid
 success gate for this BF16 memory: the perturbations are below the
 representable spacing and produce large secant error. Across eight states the
-median FD cosine was `0.0142` and the worst relative error was `2713`. Larger
-diagnostic radii reduce this quantization effect but also introduce nonlinear
-secant error. The final status is split explicitly:
+legacy protocol had median FD cosine `0.0142` and worst relative error `2713`.
+
+E11-B was then run on the same eight states with the quantization-aware
+actual-chord protocol. For each endpoint it explicitly forms BF16 `M+` and
+`M-`, measures the actual half-step `(M+ - M-) / 2`, and computes the action
+chord after converting action outputs to FP32. All 64 comparisons qualified
+the endpoint diagnostics: the changed fraction was roughly 2.6%–19.3% and
+the positive/negative asymmetry was below 0.062. The numerical comparison
+still failed: the median qualified cosine was `-0.00064`, with maximum
+relative error `1.0044`. The action chord norm was around `5e-3`, while the
+local JVP response was typically `1e-6`–`1e-4`.
+
+This means endpoint quantization alone does not explain the discrepancy. It
+exposes a stronger BF16/model-path nonlinearity or a remaining derivative
+path mismatch. The qaware chord is therefore a diagnostic failure, not
+evidence that the exact JVP is correct or incorrect by itself. The final
+status is split explicitly:
 
 - **Execution:** success — exact JVP, chunking, SVD, and rank diagnostics run on
   the released checkpoint and GPU.
-- **Numerical validation:** failure under the current BF16 FD protocol — the
-  secant comparison is inconclusive, so it must not be used to claim operator
-  correctness.
+- **Numerical validation:** failure/inconclusive under both the legacy and
+  quantization-aware BF16 chord protocols. The endpoint diagnostics are
+  observable and symmetric, but the chord does not agree with the local JVP.
+  It must not be used to claim operator correctness.
 
-E12 and E13 remain paused until a dtype-aware FD protocol (or an FP32-safe
-comparison path) is fixed and rerun.
+E12 and E13 remain paused. The next diagnostic is the proposed FP32 shadow or
+structured-history path, with explicit recording of applied BF16 updates and
+top/low action-response directions. No task-success or reward improvement has
+been established.
 
 ## Bootstrap the real RoboMME runtime
 

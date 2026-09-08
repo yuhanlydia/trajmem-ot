@@ -1,0 +1,97 @@
+{
+  "experiment": "E11_exact_jvp",
+  "checkpoint": "/root/trajmem-ot/checkpoints/perceptual-framesamp-modul/79999",
+  "data": "/root/trajmem-ot/data/robomme_preprocessed_data_sample",
+  "index": 0,
+  "preset": "16gb",
+  "device": [
+    "cuda:0"
+  ],
+  "history_config": "perceptual-framesamp-modul.yaml",
+  "memory_field": "static_image_emb",
+  "memory_shape": [
+    512,
+    2048
+  ],
+  "memory_norm": 4118.40966796875,
+  "action_shape": [
+    20,
+    32
+  ],
+  "basis_directions": 8,
+  "jvp_chunk_size": 2,
+  "first_call_latency_s": 133.3046652728226,
+  "warm_call_latency_s": 1.059238427085802,
+  "singular_values": [
+    0.00016777194213286832,
+    4.658463884437952e-05,
+    3.0811653023444374e-05,
+    1.127901073261379e-05,
+    9.184413935837842e-06,
+    6.877204318355233e-06,
+    4.645152055760504e-06,
+    2.385131158689425e-06
+  ],
+  "effective_rank_90": 2,
+  "fd_comparisons": [
+    {
+      "direction": 0,
+      "relative_radius": 0.01,
+      "absolute_step": 41.1840966796875,
+      "cosine": 0.5965667366981506,
+      "relative_error": 1.6164538860321045
+    },
+    {
+      "direction": 0,
+      "relative_radius": 0.02,
+      "absolute_step": 82.368193359375,
+      "cosine": 0.7504274249076843,
+      "relative_error": 0.824184238910675
+    },
+    {
+      "direction": 0,
+      "relative_radius": 0.05,
+      "absolute_step": 205.9204833984375,
+      "cosine": 0.931960940361023,
+      "relative_error": 0.4005749821662903
+    },
+    {
+      "direction": 0,
+      "relative_radius": 0.1,
+      "absolute_step": 411.840966796875,
+      "cosine": 0.9697156548500061,
+      "relative_error": 0.26235130429267883
+    },
+    {
+      "direction": 1,
+      "relative_radius": 0.01,
+      "absolute_step": 41.1840966796875,
+      "cosine": 0.2319631427526474,
+      "relative_error": 4.964998722076416
+    },
+    {
+      "direction": 1,
+      "relative_radius": 0.02,
+      "absolute_step": 82.368193359375,
+      "cosine": 0.4467475116252899,
+      "relative_error": 2.751526355743408
+    },
+    {
+      "direction": 1,
+      "relative_radius": 0.05,
+      "absolute_step": 205.9204833984375,
+      "cosine": 0.6190527677536011,
+      "relative_error": 1.225495457649231
+    },
+    {
+      "direction": 1,
+      "relative_radius": 0.1,
+      "absolute_step": 411.840966796875,
+      "cosine": 0.8841462731361389,
+      "relative_error": 0.6471603512763977
+    }
+  ],
+  "min_fd_cosine": 0.2319631427526474,
+  "max_fd_relative_error": 4.964998722076416,
+  "claim_scope": "operator correctness and local memory-to-action controllability only"
+}

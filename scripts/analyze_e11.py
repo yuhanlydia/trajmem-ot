@@ -21,6 +21,8 @@ def main() -> None:
     args = parse_args()
     rows = [json.loads(path.read_text()) for path in args.inputs]
     comparisons = [entry for row in rows for entry in row.get("fd_comparisons", [])]
+    qualified = [entry for entry in comparisons if entry.get("qualified", False)]
+    response_norms = [entry["exact_response_norm"] for entry in comparisons if "exact_response_norm" in entry]
     report = {
         "experiment": "E11_exact_jvp_aggregate",
         "n_states": len(rows),
@@ -30,6 +32,18 @@ def main() -> None:
         "min_fd_cosine": min((row["cosine"] for row in comparisons), default=None),
         "median_fd_cosine": float(np.median([row["cosine"] for row in comparisons])) if comparisons else None,
         "max_fd_relative_error": max((row["relative_error"] for row in comparisons), default=None),
+        "finite_difference_protocol": rows[0].get("finite_difference_protocol", "legacy_nominal_secant"),
+        "n_comparisons": len(comparisons),
+        "n_qualified_comparisons": len(qualified),
+        "median_qualified_cosine": (
+            float(np.median([row["cosine"] for row in qualified])) if qualified else None
+        ),
+        "median_exact_response_norm": (
+            float(np.median(response_norms)) if response_norms else None
+        ),
+        "exact_response_norm_quantiles": (
+            np.quantile(response_norms, [0.25, 0.5, 0.75]).tolist() if response_norms else None
+        ),
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n")
