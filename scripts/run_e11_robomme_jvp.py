@@ -43,6 +43,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--history-config")
     parser.add_argument("--memory-field", choices=("static_image_emb", "recur_image_emb"), default="static_image_emb")
     parser.add_argument("--num-steps", type=int, default=10)
+    parser.add_argument(
+        "--fp32-shadow",
+        action="store_true",
+        help=(
+            "diagnostic only: run the model's transformer with FP32 embeddings "
+            "and direct sample_actions; this is not the deployed BF16 path"
+        ),
+    )
     parser.add_argument("--fd-directions", type=int, default=2)
     parser.add_argument(
         "--fd-radii",
@@ -59,6 +67,38 @@ def _block(tree):
     import jax
 
     return jax.tree.map(lambda value: value.block_until_ready(), tree)
+
+
+def _enable_fp32_shadow(model: object) -> list[str]:
+    """Promote only the history-to-transformer path for numerical diagnosis.
+
+    The released checkpoint is trained and deployed in BF16. This helper is
+    intentionally opt-in and does not change the default path. Promoting the
+    memory encoder as well as the transformer is necessary: promoting only
+    the transformer leaves a BF16 cast at the first memory projection, which
+    still makes infinitesimal JVPs incomparable with endpoint secants.
+    """
+    changed: list[str] = []
+    llm = getattr(getattr(model, "PaliGemma", None), "llm", None)
+    llm_module = getattr(llm, "module", None)
+    if llm_module is None or not hasattr(llm_module, "embed_dtype"):
+        raise RuntimeError("--fp32-shadow requires an upstream LLM module with embed_dtype")
+    llm_module.embed_dtype = "float32"
+    changed.append("PaliGemma.llm.embed_dtype")
+
+    memory_encoder = getattr(model, "mem_encoder", None)
+    feature_encoder = getattr(memory_encoder, "feature_encoder", None)
+    if feature_encoder is None:
+        raise RuntimeError("--fp32-shadow requires the perceptual memory encoder")
+    if hasattr(memory_encoder, "dtype"):
+        memory_encoder.dtype = "float32"
+        changed.append("mem_encoder.dtype")
+    for name in ("encoder_static", "pos_proj", "state_proj"):
+        layer = getattr(feature_encoder, name, None)
+        if layer is not None and hasattr(layer, "dtype"):
+            layer.dtype = "float32"
+            changed.append(f"mem_encoder.feature_encoder.{name}.dtype")
+    return changed
 
 
 def main() -> None:
@@ -78,6 +118,13 @@ def main() -> None:
         history_config_name=args.history_config,
     )
     model = runtime.policy._model
+    sample_actions_fn = None
+    fp32_shadow_components: list[str] = []
+    if args.fp32_shadow:
+        fp32_shadow_components = _enable_fp32_shadow(model)
+        # The policy's frozen module_jit captured the BF16 graph. Use the direct
+        # model method so this diagnostic actually exercises the FP32 shadow.
+        sample_actions_fn = model.sample_actions
     noise_key, model_key = jax.random.split(jax.random.key(args.seed + 101))
     noise = jax.random.normal(
         noise_key,
@@ -91,6 +138,7 @@ def main() -> None:
         rng=model_key,
         memory_field=args.memory_field,
         num_steps=args.num_steps,
+        sample_actions_fn=sample_actions_fn,
     )
     memory_np = np.asarray(problem.memory, dtype=np.float32)
     basis_np = random_rank_one_basis(
@@ -267,6 +315,9 @@ def main() -> None:
         "robot_action_dim": 8,
         "padded_action_dim": int(base_np.shape[-1] - 8),
         "jax_default_matmul_precision": os.environ.get("JAX_DEFAULT_MATMUL_PRECISION", "default"),
+        "fp32_shadow": bool(args.fp32_shadow),
+        "fp32_shadow_components": fp32_shadow_components,
+        "action_path": "direct_model_sample_actions" if args.fp32_shadow else "policy_module_jit",
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n")

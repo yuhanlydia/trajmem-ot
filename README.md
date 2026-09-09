@@ -193,6 +193,35 @@ The saved E11-C and E13-A JSON reports include channel splits, midpoint
 metrics, primal deltas, precision mode, and the exact allocation grid. No
 task-success or reward improvement has been established.
 
+### Root-cause check: FP32 shadow
+
+The E11-C boundary was reproduced with a single-step layer probe. An action
+projection alone had zero transformed-primal difference, while the first
+transformer LLM call had a BF16 primal difference of about `0.1` in norm even
+with a zero tangent. Promoting only the LLM reduced this but left a BF16 cast
+in the perceptual memory encoder. Promoting both the memory encoder and the
+LLM embedding/accumulation path, with
+`JAX_DEFAULT_MATMUL_PRECISION=highest`, reduced the transformed-primal
+difference to `3.55e-6` on state 0. The deployed robot-channel JVP–chord
+cosine was `0.99970` (all 32 channels: `0.99924`) at one flow step.
+
+This is a diagnostic shadow path, not a change to the released BF16 policy.
+It localizes the earlier BF16 mismatch to low-precision transformer/memory
+encoder arithmetic and fusion. Run it with:
+
+```bash
+JAX_DEFAULT_MATMUL_PRECISION=highest \
+  uv run python scripts/run_e11_robomme_jvp.py \
+  --checkpoint "$CHECKPOINT" --data "$DATA" --index 0 \
+  --preset 16gb --num-steps 1 --fd-directions 1 \
+  --fd-radii 2.5e-4 --fp32-shadow \
+  --output results/e11/state_0_fp32_shadow.json
+```
+
+The BF16 deployed path remains the authoritative behavior for intervention.
+Its finite response should be treated as a deployed secant response rather
+than silently interpreted through the unvalidated BF16 AD tangent.
+
 ## Bootstrap the real RoboMME runtime
 
 The helper pins the public upstream repository to a tested source revision and installs this package into the same `uv` environment:

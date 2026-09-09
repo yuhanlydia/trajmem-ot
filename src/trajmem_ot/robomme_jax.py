@@ -82,6 +82,7 @@ def build_fixed_noise_action_problem(
     rng: Any,
     memory_field: str = "static_image_emb",
     num_steps: int = 10,
+    sample_actions_fn: Callable[..., Any] | None = None,
 ) -> FixedNoiseActionProblem:
     """Expose an upstream MME-VLA policy as a pure fixed-context action function.
 
@@ -94,7 +95,7 @@ def build_fixed_noise_action_problem(
         raise ValueError(f"{memory_field!r} is not a history memory field")
     if num_steps <= 0:
         raise ValueError("num_steps must be positive")
-    sample_actions = getattr(policy, "_sample_actions", None)
+    sample_actions = sample_actions_fn or getattr(policy, "_sample_actions", None)
     if not callable(sample_actions):
         raise TypeError("policy must expose a callable _sample_actions")
 

@@ -92,6 +92,32 @@ def test_fixed_noise_action_problem_exposes_unbatched_memory_and_reuses_noise():
     assert all(seen is observation.state for seen in policy.seen_states)
 
 
+def test_fixed_noise_action_problem_accepts_explicit_sampler():
+    policy = DummyPolicy()
+    observation = DummyObservation(
+        static_image_emb=jnp.zeros((1, 3, 2)),
+        static_mask=jnp.ones((1, 3), dtype=bool),
+        state=jnp.asarray([[1.0, 2.0]]),
+        images={"base": jnp.ones((1, 2, 2, 3))},
+    )
+    noise = jnp.zeros((1, 2, 4), dtype=jnp.float32)
+    calls = []
+
+    def explicit_sampler(rng, obs, *, num_steps, noise):
+        calls.append((rng, obs, num_steps, noise))
+        return policy._sample_actions(rng, obs, num_steps=num_steps, noise=noise)
+
+    problem = build_fixed_noise_action_problem(
+        policy,
+        observation,
+        noise=noise,
+        rng=jax.random.key(0),
+        sample_actions_fn=explicit_sampler,
+    )
+    problem.action_fn(problem.memory)
+    assert len(calls) == 1
+
+
 def test_prepare_policy_observation_batches_current_inputs_and_history():
     policy = DummyPolicy()
     item = {
