@@ -1,0 +1,398 @@
+[
+  {
+    "a": 16076,
+    "b": 16450,
+    "prompt": "watch the video carefully, then move the cube to the target in the same manner as before",
+    "subgoal": "pick up the peg",
+    "episodes": [
+      45,
+      47
+    ],
+    "mining_diagnostics": {
+      "score": 0.00913503857289868,
+      "front_image_mae_downsampled": 0.006076388526707888,
+      "wrist_image_mae_downsampled": 0.0030586193315684795,
+      "current_state_l2": 6.142924462437804e-07
+    },
+    "source_pair_index": 0,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 17970,
+    "b": 17515,
+    "prompt": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+    "subgoal": "pick up the peg by grasping the near end",
+    "episodes": [
+      54,
+      52
+    ],
+    "mining_diagnostics": {
+      "score": 0.011280049295055505,
+      "front_image_mae_downsampled": 0.007322303950786591,
+      "wrist_image_mae_downsampled": 0.00395731208845973,
+      "current_state_l2": 8.66511618369259e-06
+    },
+    "source_pair_index": 1,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 10912,
+    "b": 10024,
+    "prompt": "press the button to stop the cube just as it reaches the target for the fourth time",
+    "subgoal": "move to the top of the button to prepare",
+    "episodes": [
+      33,
+      30
+    ],
+    "mining_diagnostics": {
+      "score": 0.011448121163994074,
+      "front_image_mae_downsampled": 0.006975081749260426,
+      "wrist_image_mae_downsampled": 0.004473039414733648,
+      "current_state_l2": 0.0
+    },
+    "source_pair_index": 2,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 10669,
+    "b": 10483,
+    "prompt": "press the button to stop the cube just as it reaches the target for the third time",
+    "subgoal": "move to the top of the button to prepare",
+    "episodes": [
+      32,
+      31
+    ],
+    "mining_diagnostics": {
+      "score": 0.012214052025228739,
+      "front_image_mae_downsampled": 0.0065972222946584225,
+      "wrist_image_mae_downsampled": 0.005616829730570316,
+      "current_state_l2": 0.0
+    },
+    "source_pair_index": 3,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 16267,
+    "b": 16790,
+    "prompt": "watch the video carefully, then move the cube to the target in the same manner as before",
+    "subgoal": "pick up the cube",
+    "episodes": [
+      46,
+      49
+    ],
+    "mining_diagnostics": {
+      "score": 0.012332048931421013,
+      "front_image_mae_downsampled": 0.006898488849401474,
+      "wrist_image_mae_downsampled": 0.005433006212115288,
+      "current_state_l2": 1.1077398085035384e-05
+    },
+    "source_pair_index": 4,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 16994,
+    "b": 17753,
+    "prompt": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+    "subgoal": "pick up the peg by grasping the far end",
+    "episodes": [
+      50,
+      53
+    ],
+    "mining_diagnostics": {
+      "score": 0.012383431313082838,
+      "front_image_mae_downsampled": 0.0076286764815449715,
+      "wrist_image_mae_downsampled": 0.0047538806684315205,
+      "current_state_l2": 1.7483262126916088e-05
+    },
+    "source_pair_index": 5,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 2908,
+    "b": 3493,
+    "prompt": "first press the button, then pick up the container hiding the red cube",
+    "subgoal": "press the button",
+    "episodes": [
+      10,
+      12
+    ],
+    "mining_diagnostics": {
+      "score": 0.0125868059694767,
+      "front_image_mae_downsampled": 0.008394608274102211,
+      "wrist_image_mae_downsampled": 0.004192197695374489,
+      "current_state_l2": 0.0
+    },
+    "source_pair_index": 6,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 14085,
+    "b": 15756,
+    "prompt": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+    "subgoal": "press the button",
+    "episodes": [
+      40,
+      44
+    ],
+    "mining_diagnostics": {
+      "score": 0.012923814821988344,
+      "front_image_mae_downsampled": 0.005616829730570316,
+      "wrist_image_mae_downsampled": 0.007306985091418028,
+      "current_state_l2": 0.0
+    },
+    "source_pair_index": 7,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 9379,
+    "b": 7459,
+    "prompt": "pick up the blue cube and place it on the target, repeating this action three times, then press the button to stop",
+    "subgoal": "pick up the blue cube for the first time",
+    "episodes": [
+      29,
+      26
+    ],
+    "mining_diagnostics": {
+      "score": 0.013459967914968729,
+      "front_image_mae_downsampled": 0.007204861380159855,
+      "wrist_image_mae_downsampled": 0.006255106534808874,
+      "current_state_l2": 0.0
+    },
+    "source_pair_index": 8,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 5889,
+    "b": 26601,
+    "prompt": "watch the video carefully, then pick up the container hiding the green cube",
+    "subgoal": "pick up the container that hides the green cube",
+    "episodes": [
+      20,
+      76
+    ],
+    "mining_diagnostics": {
+      "score": 0.013893995201215148,
+      "front_image_mae_downsampled": 0.011008987203240395,
+      "wrist_image_mae_downsampled": 0.0028850079979747534,
+      "current_state_l2": 0.0
+    },
+    "source_pair_index": 9,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 427,
+    "b": 2376,
+    "prompt": "first press both buttons on the table, then pick up the container hiding the blue cube, finally pick up another container hiding the green cube",
+    "subgoal": "press the first button",
+    "episodes": [
+      5,
+      9
+    ],
+    "mining_diagnostics": {
+      "score": 0.014195261523127556,
+      "front_image_mae_downsampled": 0.006658496800810099,
+      "wrist_image_mae_downsampled": 0.007536764722317457,
+      "current_state_l2": 0.0
+    },
+    "source_pair_index": 10,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 23789,
+    "b": 24814,
+    "prompt": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for two times, finally put it down and press the button to stop",
+    "subgoal": "pick up the correct cube for the first time",
+    "episodes": [
+      70,
+      72
+    ],
+    "mining_diagnostics": {
+      "score": 0.015068847096199534,
+      "front_image_mae_downsampled": 0.013245507143437862,
+      "wrist_image_mae_downsampled": 0.0018229166744276881,
+      "current_state_l2": 8.465566679660697e-06
+    },
+    "source_pair_index": 11,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 26428,
+    "b": 6047,
+    "prompt": "watch the video carefully, then pick up the container hiding the blue cube",
+    "subgoal": "pick up the container that hides the blue cube",
+    "episodes": [
+      75,
+      21
+    ],
+    "mining_diagnostics": {
+      "score": 0.015339052304625511,
+      "front_image_mae_downsampled": 0.010753676295280457,
+      "wrist_image_mae_downsampled": 0.004585376009345055,
+      "current_state_l2": 0.0
+    },
+    "source_pair_index": 12,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 8087,
+    "b": 6930,
+    "prompt": "pick up the red cube and place it on the target, repeating this action two times, then press the button to stop",
+    "subgoal": "pick up the red cube for the first time",
+    "episodes": [
+      27,
+      25
+    ],
+    "mining_diagnostics": {
+      "score": 0.01769812125712633,
+      "front_image_mae_downsampled": 0.009232026524841785,
+      "wrist_image_mae_downsampled": 0.008466094732284546,
+      "current_state_l2": 0.0
+    },
+    "source_pair_index": 13,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 4212,
+    "b": 3199,
+    "prompt": "first press the button, then pick up the container hiding the green cube",
+    "subgoal": "press the button",
+    "episodes": [
+      14,
+      11
+    ],
+    "mining_diagnostics": {
+      "score": 0.018448734190315008,
+      "front_image_mae_downsampled": 0.010723039507865906,
+      "wrist_image_mae_downsampled": 0.007725694682449102,
+      "current_state_l2": 0.0
+    },
+    "source_pair_index": 14,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 14393,
+    "b": 14669,
+    "prompt": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+    "subgoal": "press the button",
+    "episodes": [
+      41,
+      42
+    ],
+    "mining_diagnostics": {
+      "score": 0.019163602497428656,
+      "front_image_mae_downsampled": 0.011734068393707275,
+      "wrist_image_mae_downsampled": 0.00742953410372138,
+      "current_state_l2": 0.0
+    },
+    "source_pair_index": 15,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 6205,
+    "b": 6733,
+    "prompt": "watch the video carefully, then pick up the container hiding the green cube",
+    "subgoal": "pick up the container that hides the green cube",
+    "episodes": [
+      22,
+      24
+    ],
+    "mining_diagnostics": {
+      "score": 0.019235089886933565,
+      "front_image_mae_downsampled": 0.014910130761563778,
+      "wrist_image_mae_downsampled": 0.004324959125369787,
+      "current_state_l2": 0.0
+    },
+    "source_pair_index": 16,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 4818,
+    "b": 5063,
+    "prompt": "watch the video carefully, then place the blue cube on the target right after the button was pressed",
+    "subgoal": "pick up the cube",
+    "episodes": [
+      16,
+      17
+    ],
+    "mining_diagnostics": {
+      "score": 0.034089061592832336,
+      "front_image_mae_downsampled": 0.02019505761563778,
+      "wrist_image_mae_downsampled": 0.013893995434045792,
+      "current_state_l2": 1.7086297532387107e-07
+    },
+    "source_pair_index": 17,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 25263,
+    "b": 24224,
+    "prompt": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for three times, finally put it down and press the button to stop",
+    "subgoal": "pick up the correct cube for the first time",
+    "episodes": [
+      73,
+      71
+    ],
+    "mining_diagnostics": {
+      "score": 0.03552941235184335,
+      "front_image_mae_downsampled": 0.02034313790500164,
+      "wrist_image_mae_downsampled": 0.015185865573585033,
+      "current_state_l2": 8.177465133485384e-06
+    },
+    "source_pair_index": 18,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 394,
+    "b": 140,
+    "prompt": "watch the video carefully, then use the stick attached to the robot to retrace the same pattern",
+    "subgoal": "move right",
+    "episodes": [
+      4,
+      2
+    ],
+    "mining_diagnostics": {
+      "score": 0.09943495951592922,
+      "front_image_mae_downsampled": 0.015487132593989372,
+      "wrist_image_mae_downsampled": 0.07334558665752411,
+      "current_state_l2": 0.21204480528831482
+    },
+    "source_pair_index": 19,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 18961,
+    "b": 18311,
+    "prompt": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+    "subgoal": "move to the nearest right target by circling around the stick counterclockwise",
+    "episodes": [
+      59,
+      56
+    ],
+    "mining_diagnostics": {
+      "score": 0.11767271235585212,
+      "front_image_mae_downsampled": 0.02899816259741783,
+      "wrist_image_mae_downsampled": 0.0693219006061554,
+      "current_state_l2": 0.387052983045578
+    },
+    "source_pair_index": 20,
+    "quality_tier": "moderate"
+  },
+  {
+    "a": 18211,
+    "b": 18411,
+    "prompt": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+    "subgoal": "move to the nearest right target by circling around the stick clockwise",
+    "episodes": [
+      55,
+      57
+    ],
+    "mining_diagnostics": {
+      "score": 0.11798564605414867,
+      "front_image_mae_downsampled": 0.026894403621554375,
+      "wrist_image_mae_downsampled": 0.07777778059244156,
+      "current_state_l2": 0.2662692368030548
+    },
+    "source_pair_index": 21,
+    "quality_tier": "moderate"
+  }
+]

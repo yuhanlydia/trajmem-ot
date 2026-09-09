@@ -14,6 +14,7 @@ pytest.importorskip("jax")
         "scripts/run_e12_secant_recovery.py",
         "scripts/analyze_e12_secant.py",
         "scripts/audit_e13_pairs.py",
+        "scripts/mine_e13_strict_candidates.py",
         "scripts/run_e13_oracle_transplant.py",
         "scripts/analyze_e13_oracle.py",
         "scripts/run_e13_readout_mask_branching.py",

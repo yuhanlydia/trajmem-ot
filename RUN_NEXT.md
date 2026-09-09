@@ -32,6 +32,17 @@ All commands below run inside the upstream `uv` environment and call scripts fro
 
 ## 1. Audit pairs before looking at new outcomes
 
+To reproduce the expanded pre-outcome candidate set from the official sample before auditing:
+
+```bash
+python "$TRAJMEM_ROOT/scripts/mine_e13_strict_candidates.py" \
+  --data "$DATA" \
+  --limit 24 \
+  --output "$TRAJMEM_ROOT/results/e13b2/mined_candidates.json"
+```
+
+The miner uses only execution-start current images/state, prompt, subgoal, and episode identity. It does not load actions or outcome metrics. Its output still requires the history-aware audit below.
+
 ```bash
 uv run python "$TRAJMEM_ROOT/scripts/audit_e13_pairs.py" \
   --checkpoint "$CHECKPOINT" \

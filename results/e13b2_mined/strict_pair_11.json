@@ -1,0 +1,619 @@
+{
+  "experiment": "E13B2_oracle_history_transplant",
+  "pair_index": 11,
+  "source_pair_index": 11,
+  "preset": "16gb",
+  "robot_action_dim": 8,
+  "num_steps": 10,
+  "context_diagnostics": {
+    "prompt_match": true,
+    "prompt_a": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for two times, finally put it down and press the button to stop",
+    "prompt_b": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for two times, finally put it down and press the button to stop",
+    "front_image_mae": 0.012096849142336379,
+    "wrist_image_mae": 0.008614872951133579,
+    "state_l2": 8.465567169406876e-06,
+    "pair_metadata": {
+      "a": 23789,
+      "b": 24814,
+      "prompt": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for two times, finally put it down and press the button to stop",
+      "subgoal": "pick up the correct cube for the first time",
+      "episodes": [
+        70,
+        72
+      ],
+      "mining_diagnostics": {
+        "score": 0.015068847096199534,
+        "front_image_mae_downsampled": 0.013245507143437862,
+        "wrist_image_mae_downsampled": 0.0018229166744276881,
+        "current_state_l2": 8.465566679660697e-06
+      },
+      "source_pair_index": 11,
+      "quality_tier": "strict"
+    },
+    "quality": {
+      "eligible": true,
+      "source_pair_index": 11,
+      "quality_tier": "strict"
+    }
+  },
+  "directions": [
+    {
+      "direction": "context_a_correct_a_wrong_b",
+      "context_index": 23789,
+      "donor_history_index": 24814,
+      "budget_per_condition": 8,
+      "noise_only_allocation": {
+        "memory_views": 1,
+        "noises_per_view": 8
+      },
+      "oracle_branch_allocation": {
+        "memory_views": 2,
+        "noises_per_view": 4
+      },
+      "coverage": {
+        "tolerance": 0.32482989583666166,
+        "calibration": {
+          "tolerance": 0.32482989583666166,
+          "coverage_fraction": 1.0,
+          "covered_targets": 8,
+          "total_targets": 8,
+          "mean_nearest_distance": 0.17640278745969232,
+          "median_nearest_distance": 0.16992185247270097,
+          "maximum_nearest_distance": 0.27154015123182423
+        },
+        "noise_only": {
+          "tolerance": 0.32482989583666166,
+          "coverage_fraction": 1.0,
+          "covered_targets": 8,
+          "total_targets": 8,
+          "mean_nearest_distance": 0.13516312585514062,
+          "median_nearest_distance": 0.1283075295216099,
+          "maximum_nearest_distance": 0.18255520565710973
+        },
+        "branched": {
+          "tolerance": 0.32482989583666166,
+          "coverage_fraction": 1.0,
+          "covered_targets": 8,
+          "total_targets": 8,
+          "mean_nearest_distance": 0.11317263308878184,
+          "median_nearest_distance": 0.10869333045952487,
+          "maximum_nearest_distance": 0.1656973273406237
+        },
+        "correct_only": {
+          "tolerance": 0.32482989583666166,
+          "coverage_fraction": 1.0,
+          "covered_targets": 8,
+          "total_targets": 8,
+          "mean_nearest_distance": 0.14234016538265237,
+          "median_nearest_distance": 0.11417783215055999,
+          "maximum_nearest_distance": 0.23131186336706877
+        },
+        "coverage_gain": 0.0,
+        "mean_distance_improvement": 0.021990492766358782
+      },
+      "native_support_headroom_recovery": null,
+      "coverage_curve": [
+        {
+          "tolerance_multiplier": 0.75,
+          "coverage": {
+            "tolerance": 0.19489793750199702,
+            "calibration": {
+              "tolerance": 0.19489793750199702,
+              "coverage_fraction": 0.625,
+              "covered_targets": 5,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.17640278745969232,
+              "median_nearest_distance": 0.16992185247270097,
+              "maximum_nearest_distance": 0.27154015123182423
+            },
+            "noise_only": {
+              "tolerance": 0.19489793750199702,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.13516312585514062,
+              "median_nearest_distance": 0.1283075295216099,
+              "maximum_nearest_distance": 0.18255520565710973
+            },
+            "branched": {
+              "tolerance": 0.19489793750199702,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.11317263308878184,
+              "median_nearest_distance": 0.10869333045952487,
+              "maximum_nearest_distance": 0.1656973273406237
+            },
+            "correct_only": {
+              "tolerance": 0.19489793750199702,
+              "coverage_fraction": 0.75,
+              "covered_targets": 6,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.14234016538265237,
+              "median_nearest_distance": 0.11417783215055999,
+              "maximum_nearest_distance": 0.23131186336706877
+            },
+            "coverage_gain": 0.0,
+            "mean_distance_improvement": 0.021990492766358782
+          },
+          "headroom_recovery": null
+        },
+        {
+          "tolerance_multiplier": 1.0,
+          "coverage": {
+            "tolerance": 0.25986391666932934,
+            "calibration": {
+              "tolerance": 0.25986391666932934,
+              "coverage_fraction": 0.875,
+              "covered_targets": 7,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.17640278745969232,
+              "median_nearest_distance": 0.16992185247270097,
+              "maximum_nearest_distance": 0.27154015123182423
+            },
+            "noise_only": {
+              "tolerance": 0.25986391666932934,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.13516312585514062,
+              "median_nearest_distance": 0.1283075295216099,
+              "maximum_nearest_distance": 0.18255520565710973
+            },
+            "branched": {
+              "tolerance": 0.25986391666932934,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.11317263308878184,
+              "median_nearest_distance": 0.10869333045952487,
+              "maximum_nearest_distance": 0.1656973273406237
+            },
+            "correct_only": {
+              "tolerance": 0.25986391666932934,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.14234016538265237,
+              "median_nearest_distance": 0.11417783215055999,
+              "maximum_nearest_distance": 0.23131186336706877
+            },
+            "coverage_gain": 0.0,
+            "mean_distance_improvement": 0.021990492766358782
+          },
+          "headroom_recovery": null
+        },
+        {
+          "tolerance_multiplier": 1.25,
+          "coverage": {
+            "tolerance": 0.32482989583666166,
+            "calibration": {
+              "tolerance": 0.32482989583666166,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.17640278745969232,
+              "median_nearest_distance": 0.16992185247270097,
+              "maximum_nearest_distance": 0.27154015123182423
+            },
+            "noise_only": {
+              "tolerance": 0.32482989583666166,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.13516312585514062,
+              "median_nearest_distance": 0.1283075295216099,
+              "maximum_nearest_distance": 0.18255520565710973
+            },
+            "branched": {
+              "tolerance": 0.32482989583666166,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.11317263308878184,
+              "median_nearest_distance": 0.10869333045952487,
+              "maximum_nearest_distance": 0.1656973273406237
+            },
+            "correct_only": {
+              "tolerance": 0.32482989583666166,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.14234016538265237,
+              "median_nearest_distance": 0.11417783215055999,
+              "maximum_nearest_distance": 0.23131186336706877
+            },
+            "coverage_gain": 0.0,
+            "mean_distance_improvement": 0.021990492766358782
+          },
+          "headroom_recovery": null
+        },
+        {
+          "tolerance_multiplier": 1.5,
+          "coverage": {
+            "tolerance": 0.38979587500399404,
+            "calibration": {
+              "tolerance": 0.38979587500399404,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.17640278745969232,
+              "median_nearest_distance": 0.16992185247270097,
+              "maximum_nearest_distance": 0.27154015123182423
+            },
+            "noise_only": {
+              "tolerance": 0.38979587500399404,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.13516312585514062,
+              "median_nearest_distance": 0.1283075295216099,
+              "maximum_nearest_distance": 0.18255520565710973
+            },
+            "branched": {
+              "tolerance": 0.38979587500399404,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.11317263308878184,
+              "median_nearest_distance": 0.10869333045952487,
+              "maximum_nearest_distance": 0.1656973273406237
+            },
+            "correct_only": {
+              "tolerance": 0.38979587500399404,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.14234016538265237,
+              "median_nearest_distance": 0.11417783215055999,
+              "maximum_nearest_distance": 0.23131186336706877
+            },
+            "coverage_gain": 0.0,
+            "mean_distance_improvement": 0.021990492766358782
+          },
+          "headroom_recovery": null
+        },
+        {
+          "tolerance_multiplier": 2.0,
+          "coverage": {
+            "tolerance": 0.5197278333386587,
+            "calibration": {
+              "tolerance": 0.5197278333386587,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.17640278745969232,
+              "median_nearest_distance": 0.16992185247270097,
+              "maximum_nearest_distance": 0.27154015123182423
+            },
+            "noise_only": {
+              "tolerance": 0.5197278333386587,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.13516312585514062,
+              "median_nearest_distance": 0.1283075295216099,
+              "maximum_nearest_distance": 0.18255520565710973
+            },
+            "branched": {
+              "tolerance": 0.5197278333386587,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.11317263308878184,
+              "median_nearest_distance": 0.10869333045952487,
+              "maximum_nearest_distance": 0.1656973273406237
+            },
+            "correct_only": {
+              "tolerance": 0.5197278333386587,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.14234016538265237,
+              "median_nearest_distance": 0.11417783215055999,
+              "maximum_nearest_distance": 0.23131186336706877
+            },
+            "coverage_gain": 0.0,
+            "mean_distance_improvement": 0.021990492766358782
+          },
+          "headroom_recovery": null
+        }
+      ],
+      "paired_memory_effect_mean": 0.3651803731918335,
+      "paired_memory_effect_median": 0.36923718452453613,
+      "paired_memory_effect_to_noise_rms": 0.714640653870262,
+      "wrong_noise_variance": 0.22634986778163152,
+      "correct_noise_variance": 0.30755689324800234
+    },
+    {
+      "direction": "context_b_correct_b_wrong_a",
+      "context_index": 24814,
+      "donor_history_index": 23789,
+      "budget_per_condition": 8,
+      "noise_only_allocation": {
+        "memory_views": 1,
+        "noises_per_view": 8
+      },
+      "oracle_branch_allocation": {
+        "memory_views": 2,
+        "noises_per_view": 4
+      },
+      "coverage": {
+        "tolerance": 0.1656274388662738,
+        "calibration": {
+          "tolerance": 0.1656274388662738,
+          "coverage_fraction": 1.0,
+          "covered_targets": 8,
+          "total_targets": 8,
+          "mean_nearest_distance": 0.08379414447994998,
+          "median_nearest_distance": 0.08086201252460698,
+          "maximum_nearest_distance": 0.1459851337892293
+        },
+        "noise_only": {
+          "tolerance": 0.1656274388662738,
+          "coverage_fraction": 0.75,
+          "covered_targets": 6,
+          "total_targets": 8,
+          "mean_nearest_distance": 0.13319694663735476,
+          "median_nearest_distance": 0.11616829967766298,
+          "maximum_nearest_distance": 0.23774528216044094
+        },
+        "branched": {
+          "tolerance": 0.1656274388662738,
+          "coverage_fraction": 1.0,
+          "covered_targets": 8,
+          "total_targets": 8,
+          "mean_nearest_distance": 0.10675983412789056,
+          "median_nearest_distance": 0.1018028575786053,
+          "maximum_nearest_distance": 0.16356366814496293
+        },
+        "correct_only": {
+          "tolerance": 0.1656274388662738,
+          "coverage_fraction": 0.75,
+          "covered_targets": 6,
+          "total_targets": 8,
+          "mean_nearest_distance": 0.13986975836575927,
+          "median_nearest_distance": 0.12175703584577656,
+          "maximum_nearest_distance": 0.2797085927733607
+        },
+        "coverage_gain": 0.25,
+        "mean_distance_improvement": 0.026437112509464206
+      },
+      "native_support_headroom_recovery": 1.0,
+      "coverage_curve": [
+        {
+          "tolerance_multiplier": 0.75,
+          "coverage": {
+            "tolerance": 0.09937646331976428,
+            "calibration": {
+              "tolerance": 0.09937646331976428,
+              "coverage_fraction": 0.75,
+              "covered_targets": 6,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.08379414447994998,
+              "median_nearest_distance": 0.08086201252460698,
+              "maximum_nearest_distance": 0.1459851337892293
+            },
+            "noise_only": {
+              "tolerance": 0.09937646331976428,
+              "coverage_fraction": 0.25,
+              "covered_targets": 2,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.13319694663735476,
+              "median_nearest_distance": 0.11616829967766298,
+              "maximum_nearest_distance": 0.23774528216044094
+            },
+            "branched": {
+              "tolerance": 0.09937646331976428,
+              "coverage_fraction": 0.5,
+              "covered_targets": 4,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.10675983412789056,
+              "median_nearest_distance": 0.1018028575786053,
+              "maximum_nearest_distance": 0.16356366814496293
+            },
+            "correct_only": {
+              "tolerance": 0.09937646331976428,
+              "coverage_fraction": 0.375,
+              "covered_targets": 3,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.13986975836575927,
+              "median_nearest_distance": 0.12175703584577656,
+              "maximum_nearest_distance": 0.2797085927733607
+            },
+            "coverage_gain": 0.25,
+            "mean_distance_improvement": 0.026437112509464206
+          },
+          "headroom_recovery": 0.3333333333333333
+        },
+        {
+          "tolerance_multiplier": 1.0,
+          "coverage": {
+            "tolerance": 0.13250195109301904,
+            "calibration": {
+              "tolerance": 0.13250195109301904,
+              "coverage_fraction": 0.875,
+              "covered_targets": 7,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.08379414447994998,
+              "median_nearest_distance": 0.08086201252460698,
+              "maximum_nearest_distance": 0.1459851337892293
+            },
+            "noise_only": {
+              "tolerance": 0.13250195109301904,
+              "coverage_fraction": 0.75,
+              "covered_targets": 6,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.13319694663735476,
+              "median_nearest_distance": 0.11616829967766298,
+              "maximum_nearest_distance": 0.23774528216044094
+            },
+            "branched": {
+              "tolerance": 0.13250195109301904,
+              "coverage_fraction": 0.875,
+              "covered_targets": 7,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.10675983412789056,
+              "median_nearest_distance": 0.1018028575786053,
+              "maximum_nearest_distance": 0.16356366814496293
+            },
+            "correct_only": {
+              "tolerance": 0.13250195109301904,
+              "coverage_fraction": 0.625,
+              "covered_targets": 5,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.13986975836575927,
+              "median_nearest_distance": 0.12175703584577656,
+              "maximum_nearest_distance": 0.2797085927733607
+            },
+            "coverage_gain": 0.125,
+            "mean_distance_improvement": 0.026437112509464206
+          },
+          "headroom_recovery": 0.5
+        },
+        {
+          "tolerance_multiplier": 1.25,
+          "coverage": {
+            "tolerance": 0.1656274388662738,
+            "calibration": {
+              "tolerance": 0.1656274388662738,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.08379414447994998,
+              "median_nearest_distance": 0.08086201252460698,
+              "maximum_nearest_distance": 0.1459851337892293
+            },
+            "noise_only": {
+              "tolerance": 0.1656274388662738,
+              "coverage_fraction": 0.75,
+              "covered_targets": 6,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.13319694663735476,
+              "median_nearest_distance": 0.11616829967766298,
+              "maximum_nearest_distance": 0.23774528216044094
+            },
+            "branched": {
+              "tolerance": 0.1656274388662738,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.10675983412789056,
+              "median_nearest_distance": 0.1018028575786053,
+              "maximum_nearest_distance": 0.16356366814496293
+            },
+            "correct_only": {
+              "tolerance": 0.1656274388662738,
+              "coverage_fraction": 0.75,
+              "covered_targets": 6,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.13986975836575927,
+              "median_nearest_distance": 0.12175703584577656,
+              "maximum_nearest_distance": 0.2797085927733607
+            },
+            "coverage_gain": 0.25,
+            "mean_distance_improvement": 0.026437112509464206
+          },
+          "headroom_recovery": 1.0
+        },
+        {
+          "tolerance_multiplier": 1.5,
+          "coverage": {
+            "tolerance": 0.19875292663952857,
+            "calibration": {
+              "tolerance": 0.19875292663952857,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.08379414447994998,
+              "median_nearest_distance": 0.08086201252460698,
+              "maximum_nearest_distance": 0.1459851337892293
+            },
+            "noise_only": {
+              "tolerance": 0.19875292663952857,
+              "coverage_fraction": 0.875,
+              "covered_targets": 7,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.13319694663735476,
+              "median_nearest_distance": 0.11616829967766298,
+              "maximum_nearest_distance": 0.23774528216044094
+            },
+            "branched": {
+              "tolerance": 0.19875292663952857,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.10675983412789056,
+              "median_nearest_distance": 0.1018028575786053,
+              "maximum_nearest_distance": 0.16356366814496293
+            },
+            "correct_only": {
+              "tolerance": 0.19875292663952857,
+              "coverage_fraction": 0.875,
+              "covered_targets": 7,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.13986975836575927,
+              "median_nearest_distance": 0.12175703584577656,
+              "maximum_nearest_distance": 0.2797085927733607
+            },
+            "coverage_gain": 0.125,
+            "mean_distance_improvement": 0.026437112509464206
+          },
+          "headroom_recovery": 1.0
+        },
+        {
+          "tolerance_multiplier": 2.0,
+          "coverage": {
+            "tolerance": 0.2650039021860381,
+            "calibration": {
+              "tolerance": 0.2650039021860381,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.08379414447994998,
+              "median_nearest_distance": 0.08086201252460698,
+              "maximum_nearest_distance": 0.1459851337892293
+            },
+            "noise_only": {
+              "tolerance": 0.2650039021860381,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.13319694663735476,
+              "median_nearest_distance": 0.11616829967766298,
+              "maximum_nearest_distance": 0.23774528216044094
+            },
+            "branched": {
+              "tolerance": 0.2650039021860381,
+              "coverage_fraction": 1.0,
+              "covered_targets": 8,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.10675983412789056,
+              "median_nearest_distance": 0.1018028575786053,
+              "maximum_nearest_distance": 0.16356366814496293
+            },
+            "correct_only": {
+              "tolerance": 0.2650039021860381,
+              "coverage_fraction": 0.875,
+              "covered_targets": 7,
+              "total_targets": 8,
+              "mean_nearest_distance": 0.13986975836575927,
+              "median_nearest_distance": 0.12175703584577656,
+              "maximum_nearest_distance": 0.2797085927733607
+            },
+            "coverage_gain": 0.0,
+            "mean_distance_improvement": 0.026437112509464206
+          },
+          "headroom_recovery": null
+        }
+      ],
+      "paired_memory_effect_mean": 0.21081551909446716,
+      "paired_memory_effect_median": 0.24243178963661194,
+      "paired_memory_effect_to_noise_rms": 0.48165095456421037,
+      "wrong_noise_variance": 0.28959577544216586,
+      "correct_noise_variance": 0.21709649584828128
+    }
+  ],
+  "pair_mean_native_support_coverage_gain": 0.125,
+  "claim_scope": "oracle upper-bound test of native-history-conditioned action support; not ground-truth correctness, not a deployable hypothesis generator, and not environment success"
+}

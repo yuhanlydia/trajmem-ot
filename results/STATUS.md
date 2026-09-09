@@ -55,6 +55,16 @@ Supported:
 - E12-S2 contiguous rows: mean ours-minus-random was `+0.06538`, interval `[+0.03562,+0.09515]`.
 - E14 simulator smoke: blocked before reset by unavailable Vulkan support (`vk::createInstanceUnique: ErrorIncompatibleDriver`) under both GPU and documented CPU-renderer environment settings.
 
+## Expanded E13-B2 strict replication
+
+The pre-outcome execution-start miner produced 22 episode-disjoint candidates and the history-aware audit retained all 22 as strict. The preregistered primary pair-level result was null:
+
+- mean coverage gain `+0.07386`, 95% CI `[-0.04830,+0.21591]`;
+- median gain `-0.0625`;
+- 8 wins, 12 losses, 2 ties; exact sign-test `p=0.5034`.
+
+Nearest-support distance improved on average and tolerance multiplier `2.0` was weakly positive, but these are secondary sensitivity results. Per the decision table, non-oracle router scaling stops here. The required next dataset consists of identical serialized simulator/current states paired with distinct histories.
+
 Not yet established:
 
 - strict-pair conditional-support gain with a sufficiently large independent pair set;

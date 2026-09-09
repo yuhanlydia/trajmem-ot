@@ -51,6 +51,18 @@ The current code corrects these limitations. Existing JSON files remain as histo
 
 E14 simulator execution is currently blocked by the machine graphics stack. The pinned RoboMME benchmark installs, but SAPIEN cannot create a renderer because no compatible Vulkan ICD is exposed; both GPU and documented CPU-renderer attempts end with `vk::createInstanceUnique: ErrorIncompatibleDriver`. No return manifest was fabricated from proxy labels.
 
+### Expanded strict-pair replication
+
+A pre-outcome miner selected one execution-start state per episode/prompt/subgoal and greedily matched different episodes by current front image, wrist image, and robot state. It found 53 raw candidates and 22 episode-disjoint pairs; the full history-aware audit retained all 22 as strict. On this expanded set, E13-B2 did **not** replicate the earlier large oracle-support gain at the preregistered primary tolerance:
+
+- mean pair coverage gain: `+0.07386`;
+- 95% pair-bootstrap interval: `[-0.04830,+0.21591]`;
+- median pair gain: `-0.0625`;
+- positive pairs: `8/22`, losses: `12/22`, ties: `2/22`;
+- exact sign-test: `p=0.5034`.
+
+Mean nearest-support distance still improved (`+0.09098`, interval `[+0.00491,+0.21180]`), and the widest tolerance multiplier `2.0` had a slightly positive lower bound. These secondary signals do not rescue the null primary coverage result. The next pair experiment must use identical serialized simulator/current states with only history changed; learned-router scaling is paused until that stricter test supports the gap.
+
 ## Numerical resolution
 
 The released BF16 memory-modulation/LLM path is not faithfully described by an infinitesimal AD tangent. An FP32 shadow validates the JVP wiring on a smooth diagnostic path, but deployment uses finite BF16 interventions. The repository therefore separates three operators:
@@ -121,6 +133,7 @@ src/trajmem_ot/pair_quality.py         context-quality assessment
 src/trajmem_ot/stats.py                pair/state-level bootstrap and sign tests
 src/trajmem_ot/transport.py            NumPy return-tilted trajectory OT
 scripts/audit_e13_pairs.py             pre-outcome pair audit and approved files
+scripts/mine_e13_strict_candidates.py  pre-outcome episode-disjoint candidate mining
 scripts/run_e13_oracle_transplant.py   E13-B2
 scripts/run_e13_readout_mask_branching.py  E13-C2
 scripts/run_e13_pair_readout_recovery.py   E13-D
@@ -142,4 +155,4 @@ Released-checkpoint experiments require the upstream RoboMME/OpenPI runtime, che
 
 ## Claim boundary
 
-The repository does **not** yet establish improved RoboMME task success, a calibrated posterior over memory hypotheses, reliable non-oracle oracle-support recovery, or an OT advantage over best-of-N in closed loop. The next decisive evidence is a larger strict counterfactual pair set, a stronger learned readout generator, and paired simulator evaluation of E14 edits on a Vulkan-capable runtime.
+The repository does **not** establish a robust strict-pair coverage gain, improved RoboMME task success, a calibrated posterior over memory hypotheses, reliable non-oracle oracle-support recovery, or an OT advantage over best-of-N in closed loop. The next decisive evidence is a true same-simulator-state counterfactual history set and paired E14 evaluation on a Vulkan-capable runtime.
