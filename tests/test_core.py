@@ -1,8 +1,9 @@
+import numpy as np
 import torch
 
 from trajmem_ot.core import MemoryEditConfig, optimize_memory_ot, sinkhorn
 from trajmem_ot.adapters import extract_robomme_history, replace_robomme_history
-from trajmem_ot.robomme_branch import observation_fingerprint
+from trajmem_ot.robomme_branch import branch_fingerprint, observation_fingerprint
 from trajmem_ot.evaluation import select_trust_radius, summarize_memory_line_search, summarize_paired_return
 
 
@@ -59,6 +60,56 @@ def test_observation_fingerprint_is_content_sensitive():
     first = observation_fingerprint(observation)
     observation["front_rgb_list"][0][0, 0, 0] = 1
     assert observation_fingerprint(observation) != first
+
+
+def test_branch_fingerprint_uses_simulator_state_when_observation_has_no_images():
+    class Environment:
+        unwrapped = None
+
+        def __init__(self):
+            self.unwrapped = self
+            self.state = {"robot": {"qpos": np.array([1.0, 2.0], dtype=np.float32)}}
+
+        def get_state_dict(self):
+            return self.state
+
+    env = Environment()
+    first = branch_fingerprint(env, {})
+    env.state["robot"]["qpos"][0] = 3.0
+    assert branch_fingerprint(env, {}) != first
+
+
+def test_branch_fingerprint_ignores_runtime_object_ids_in_state_keys():
+    class Environment:
+        def __init__(self, runtime_id):
+            self.unwrapped = self
+            self.runtime_id = runtime_id
+
+        def get_state_dict(self):
+            return {f"highlight_disk_{self.runtime_id}_1": {"pose": np.zeros(7)}}
+
+    assert branch_fingerprint(Environment(140697370559120), {}) == branch_fingerprint(
+        Environment(140888123456789), {}
+    )
+
+
+def test_branch_fingerprint_sorts_after_runtime_id_normalization():
+    class Environment:
+        unwrapped = None
+
+        def __init__(self, keys):
+            self.unwrapped = self
+            self.keys = keys
+
+        def get_state_dict(self):
+            return {
+                self.keys[0]: {"pose": np.ones(2)},
+                self.keys[1]: {"pose": np.zeros(2)},
+            }
+
+    first = Environment(("disk_100000_1", "disk_200000_2"))
+    second = Environment(("disk_400000_1", "disk_300000_2"))
+    assert branch_fingerprint(first, {}) == branch_fingerprint(second, {})
 
 
 def test_e7_selection_does_not_promote_failed_descriptive_radius():

@@ -245,6 +245,20 @@ E14-A only establishes open-loop fit to a return-tilted action transport. Save t
 
 ## 7. Decision table
 
+### Renderer-free saved-action validation
+
+When Vulkan graphics are unavailable, fixed action archives can still be executed with real SAPIEN physics:
+
+```bash
+cd "$ROBOMME_DIR/third_party/robomme_benchmark"
+PYTHONPATH="$TRAJMEM_ROOT/src:$PWD/src" .venv/bin/python \
+  "$TRAJMEM_ROOT/scripts/run_saved_action_branches.py" \
+  --actions /absolute/path/to/actions.npz \
+  --task PatternLock --dataset test --episode 0 --physics-only
+```
+
+The archive must contain `original`, `positive`, `negative`, and `random`, each shaped `[steps, action_dim]`. This mode reconstructs the benchmark demonstration and verifies a canonical simulator-state fingerprint for every branch. It cannot render new policy observations. Treat zero MoveCube dense returns as non-informative because that task's benchmark reward implementation returns zero by construction.
+
 | Result | Interpretation | Next step |
 |---|---|---|
 | Strict E13-B2 positive | shared-memory support gap survives context controls | evaluate non-oracle views |

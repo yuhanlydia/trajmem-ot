@@ -77,9 +77,13 @@ The complete 22-pair E13-D run rejects the preregistered contiguous-mask generat
 
 An explicitly post-hoc history-language subset of 13 pairs gave the same direction (`-0.17596`, interval `[-0.26538,-0.07885]`). Across the tested `2/4`-view and `0.25/0.50/0.75` keep-fraction grid, no configuration recovered native support on average. This is evidence against contiguous hard masks, not against learned readout hypotheses or true counterfactual histories.
 
+An exploratory heterogeneity audit correlated the three-block pair gains with eight audit metrics. Front-image mismatch (`rho=0.453`, permutation `p=0.035`) and current-state mismatch (`rho=0.426`, `p=0.046`) were the largest associations, but neither survived BH correction (`q=0.185`). The current-state best-matched half averaged `-0.0606`, whereas the worse-matched half averaged `+0.2159`. These post-hoc statistics are consistent with current-context confounding but are not confirmatory and must not be used to select a favorable subset.
+
 ## Closed-loop runtime boundary
 
-E14 cannot run in this container because it was launched with `NVIDIA_DRIVER_CAPABILITIES=compute,utility`. The Vulkan loader and Mesa drivers were installed and the exact NVIDIA `595.84` userspace library was tested, but NVIDIA Vulkan still reports `VK_ERROR_INCOMPATIBLE_DRIVER`; CPU `llvmpipe` is enumerated but rejected by SAPIEN as an unsupported physical device. A fresh container must expose `graphics` (for example `NVIDIA_DRIVER_CAPABILITIES=compute,utility,graphics` or `all`) before simulator reset and paired branch execution are possible.
+The container was launched with `NVIDIA_DRIVER_CAPABILITIES=compute,utility`, so RGB rendering remains unavailable. A new renderer-free physics mode now strips visual geometry while retaining collision geometry, articulations, task counters, and demonstration replay. PatternLock reset/step and four saved-action branches completed with identical canonical simulator-state fingerprints at the branch point. A matched `train/MoveCube episode 45` reconstruction agreed with sample state 16076 to arm-state L2 `1.58e-5` and gripper error `2.2e-8`.
+
+This removes Vulkan as a blocker for executing fixed saved action chunks. It does not enable autoregressive policy rollouts because new RGB observations cannot be rendered. The 20-step pair-0 probe had zero return for every branch because MoveCube's nominal dense-reward implementation explicitly multiplies its reaching term by zero; it is an integration result, not an E14 return comparison. A graphics-capable container is still required for full closed-loop policy inference.
 
 Not yet established:
 
@@ -90,4 +94,4 @@ Not yet established:
 
 ## Next execution
 
-The remaining decisive experiment requires a Vulkan-capable container: serialize one simulator/current state, attach distinct valid histories, rerun E13-B2 on those true counterfactuals, and execute E14 actions from paired simulator branches. Do not scale the failed contiguous-mask family on the present offline sample.
+Fixed saved actions can now be executed with `--physics-only`. The remaining decisive experiment needs a graphics-capable container to serialize one rendered simulator/current state, attach distinct valid histories, generate actions autoregressively, and evaluate E14 over the full task horizon. Do not scale the failed contiguous-mask family on the present offline sample.

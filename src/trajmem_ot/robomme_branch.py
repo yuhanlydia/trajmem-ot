@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import hashlib
+import re
 from typing import Callable, Sequence
 
 import numpy as np
@@ -31,6 +32,40 @@ def observation_fingerprint(observation: dict) -> str:
     return digest.hexdigest()
 
 
+def _update_fingerprint(digest: "hashlib._Hash", value: object) -> None:
+    if isinstance(value, dict):
+        entries = []
+        for key, child in value.items():
+            stable_key = re.sub(r"(?<=_)\d{6,}(?=_|$)", "<runtime-id>", str(key))
+            child_digest = hashlib.sha256()
+            _update_fingerprint(child_digest, child)
+            entries.append((stable_key, child_digest.digest()))
+        for stable_key, child_hash in sorted(entries):
+            digest.update(stable_key.encode())
+            digest.update(child_hash)
+        return
+    if isinstance(value, (list, tuple)):
+        for item in value:
+            _update_fingerprint(digest, item)
+        return
+    array = np.asarray(value)
+    digest.update(array.dtype.str.encode())
+    digest.update(np.asarray(array.shape, dtype=np.int64).tobytes())
+    digest.update(array.tobytes())
+
+
+def branch_fingerprint(env: object, observation: dict) -> str:
+    """Fingerprint physics state when available, otherwise rendered observations."""
+
+    unwrapped = getattr(env, "unwrapped", env)
+    get_state_dict = getattr(unwrapped, "get_state_dict", None)
+    if callable(get_state_dict):
+        digest = hashlib.sha256()
+        _update_fingerprint(digest, get_state_dict())
+        return digest.hexdigest()
+    return observation_fingerprint(observation)
+
+
 class ReplayBranchRunner:
     """Exact paired branching by deterministic episode reconstruction.
 
@@ -53,10 +88,11 @@ class ReplayBranchRunner:
 
     def assert_deterministic(self, prefix: Sequence[np.ndarray]) -> str:
         first, obs_a, _ = self._restore_prefix(prefix)
+        fp_a = branch_fingerprint(first, obs_a)
         first.close()
         second, obs_b, _ = self._restore_prefix(prefix)
+        fp_b = branch_fingerprint(second, obs_b)
         second.close()
-        fp_a, fp_b = observation_fingerprint(obs_a), observation_fingerprint(obs_b)
         if fp_a != fp_b:
             raise RuntimeError(f"RoboMME replay is not deterministic: {fp_a} != {fp_b}")
         return fp_a
@@ -65,7 +101,7 @@ class ReplayBranchRunner:
         self, branch_id: str, prefix: Sequence[np.ndarray], future_actions: Sequence[np.ndarray]
     ) -> BranchOutcome:
         env, observation, info = self._restore_prefix(prefix)
-        start = observation_fingerprint(observation)
+        start = branch_fingerprint(env, observation)
         total_return = 0.0
         status = str(info.get("status", "unknown"))
         steps = 0
@@ -76,7 +112,7 @@ class ReplayBranchRunner:
             steps += 1
             if bool(terminated) or bool(truncated):
                 break
-        final = observation_fingerprint(observation)
+        final = branch_fingerprint(env, observation)
         env.close()
         return BranchOutcome(
             branch_id=branch_id,
@@ -87,4 +123,3 @@ class ReplayBranchRunner:
             start_fingerprint=start,
             final_fingerprint=final,
         )
-

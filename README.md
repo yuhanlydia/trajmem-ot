@@ -49,7 +49,7 @@ The current code corrects these limitations. Existing JSON files remain as histo
 - E12-S2 random-row recovery completed `4 states x 5 corruption seeds x 16 random controls x 4 fresh noises`. Mean ours-minus-random recovery was `+0.17031`, interval `[+0.16531,+0.17474]`; all four held-out states were positive.
 - The harder contiguous-row E12-S2 replication also remained positive: mean ours-minus-random `+0.06538`, interval `[+0.03562,+0.09515]`, with all four states positive.
 
-E14 simulator execution is currently blocked by the container graphics configuration. It exposes `NVIDIA_DRIVER_CAPABILITIES=compute,utility`, without `graphics`. Installing the Vulkan loader/Mesa stack and testing the exact NVIDIA `595.84` userspace library did not make a GPU physical device available; CPU `llvmpipe` is enumerated but SAPIEN rejects it. A new container must expose `graphics` before reset and paired branches can run. No return manifest was fabricated from proxy labels.
+The container exposes `NVIDIA_DRIVER_CAPABILITIES=compute,utility`, without `graphics`, so RGB observation rendering remains unavailable. A renderer-free physics path now removes visual geometry while retaining collisions, articulations, task counters, and deterministic demonstration replay. It validates identical-state execution of saved action chunks without Vulkan. Full closed-loop policy evaluation still needs rendered observations, and RoboMME's nominal `dense` reward is identically zero for at least MoveCube, so the headless smoke is not a return result. No return manifest was fabricated from proxy labels.
 
 ### Expanded strict-pair replication
 
@@ -66,6 +66,8 @@ Mean nearest-support distance still improved (`+0.09098`, interval `[+0.00491,+0
 Two independent diffusion-noise blocks confirmed that the primary uncertainty comes from pair choice. Averaging three blocks within each of the 22 pairs gave mean gain `+0.07765`, interval `[-0.03409,+0.21117]`, median `-0.04167`, and `7/15/0` wins/losses/ties (`p=0.1338`). Pair effects correlated `0.927--0.947` across blocks.
 
 The complete 22-pair E13-D run also rules out the preregistered contiguous-mask generator: mean coverage gain `-0.20227`, interval `[-0.26706,-0.12898]`, median `-0.275`, with 4 wins and 18 losses (`p=0.00434`). An explicitly post-hoc 13-pair history-language subset and the full view-count/keep-fraction grid had the same negative direction. Hard contiguous masks create different actions but systematically lose native-history support; this result does not test learned readout hypotheses.
+
+A post-hoc heterogeneity audit found that gain increased with current-context mismatch (`Spearman rho=0.426` for robot state and `0.453` for front image). Neither survived correction across eight audited metrics (`BH q>=0.185`). The best-matched half by current-state distance had mean gain `-0.0606`, compared with `+0.2159` in the worse-matched half. This diagnostic cannot establish confounding, but it strengthens the requirement for identical serialized current states.
 
 ## Numerical resolution
 
@@ -143,6 +145,7 @@ scripts/run_e13_readout_mask_branching.py  E13-C2
 scripts/run_e13_pair_readout_recovery.py   E13-D
 scripts/run_e12_secant_recovery.py     E12-S2
 scripts/run_e14_ot_pullback.py         E14-A
+scripts/run_saved_action_branches.py   identical-state action execution (`--physics-only`)
 RUN_NEXT.md                            exact 16GB execution handoff
 results/STATUS.md                      claim ledger
 ```

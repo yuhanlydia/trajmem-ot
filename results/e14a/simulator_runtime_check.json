@@ -18,12 +18,29 @@
     "error": "vk::createInstanceUnique: ErrorIncompatibleDriver",
     "diagnostic": "RoboMME/ManiSkill still constructs a SAPIEN Vulkan RenderSystem"
   },
-  "consequence": "No simulator return manifest or paired closed-loop E14 result was produced. A graphics-enabled container is required; proxy returns were not substituted.",
+  "consequence": "No E14 return claim was produced. Renderer-free integration is available for saved actions; graphics remains required for full closed-loop policy inference.",
   "container_diagnostic": {
     "NVIDIA_DRIVER_CAPABILITIES": "compute,utility",
     "vulkan_loader": "installed",
     "mesa_llvmpipe": "enumerated but rejected by SAPIEN",
     "exact_nvidia_userspace_595_84": "tested; VK_ERROR_INCOMPATIBLE_DRIVER remains",
     "required_relaunch": "NVIDIA_DRIVER_CAPABILITIES=compute,utility,graphics or all"
-  }
+  },
+  "physics_only_attempt": {
+    "status": "passed",
+    "render_backend": "none",
+    "visual_geometry": "disabled process-locally; collision geometry retained",
+    "benchmark_wrapper": "demonstration replay and task counters retained",
+    "deterministic_branch_state": true,
+    "saved_action_branches_completed": 4,
+    "matched_sample_state_check": {
+      "task": "MoveCube",
+      "dataset": "train",
+      "episode": 45,
+      "sample_index": 16076,
+      "arm_state_l2": 1.5758658264530823e-05,
+      "gripper_abs_error": 2.2351741790771484e-08
+    }
+  },
+  "remaining_boundary": "Fixed saved-action chunks can execute. Autoregressive policy rollouts still require RGB rendering; MoveCube dense reward is zero by implementation, so full task success/subgoal metrics remain necessary."
 }

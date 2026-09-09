@@ -1,0 +1,273 @@
+{
+  "experiment": "E13B2_exploratory_pair_heterogeneity",
+  "status": "post_hoc_exploratory",
+  "input": "three-noise-block per-pair mean gains",
+  "n_pairs": 22,
+  "metric_correlations": [
+    {
+      "metric": "front_image_mae",
+      "spearman_rho": 0.4533538184401445,
+      "permutation_p_two_sided": 0.03544822758862057,
+      "bh_fdr_q": 0.18519074046297684
+    },
+    {
+      "metric": "wrist_image_mae",
+      "spearman_rho": 0.3888336906268745,
+      "permutation_p_two_sided": 0.07664616769161542,
+      "bh_fdr_q": 0.20438978051097445
+    },
+    {
+      "metric": "current_state_l2",
+      "spearman_rho": 0.4255645906313355,
+      "permutation_p_two_sided": 0.04629768511574421,
+      "bh_fdr_q": 0.18519074046297684
+    },
+    {
+      "metric": "history_image_relative_l2",
+      "spearman_rho": 0.2820614437146491,
+      "permutation_p_two_sided": 0.20448977551122444,
+      "bh_fdr_q": 0.2593584606483962
+    },
+    {
+      "metric": "history_position_relative_l2",
+      "spearman_rho": 0.2661929798068037,
+      "permutation_p_two_sided": 0.22693865306734665,
+      "bh_fdr_q": 0.2593584606483962
+    },
+    {
+      "metric": "history_state_relative_l2",
+      "spearman_rho": 0.3351516006803559,
+      "permutation_p_two_sided": 0.12684365781710916,
+      "bh_fdr_q": 0.2536873156342183
+    },
+    {
+      "metric": "history_mask_iou",
+      "spearman_rho": null,
+      "permutation_p_two_sided": 1.0,
+      "bh_fdr_q": 1.0
+    },
+    {
+      "metric": "valid_history_tokens_a",
+      "spearman_rho": 0.2947063266260764,
+      "permutation_p_two_sided": 0.18534073296335182,
+      "bh_fdr_q": 0.2593584606483962
+    }
+  ],
+  "prompt_groups": [
+    {
+      "prompt": "first press both buttons on the table, then pick up the container hiding the blue cube, finally pick up another container hiding the green cube",
+      "n_pairs": 1,
+      "mean_gain": -0.08333333333333333,
+      "median_gain": -0.08333333333333333
+    },
+    {
+      "prompt": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+      "n_pairs": 2,
+      "mean_gain": 0.010416666666666668,
+      "median_gain": 0.010416666666666668
+    },
+    {
+      "prompt": "first press the button, then pick up the container hiding the green cube",
+      "n_pairs": 1,
+      "mean_gain": -0.0625,
+      "median_gain": -0.0625
+    },
+    {
+      "prompt": "first press the button, then pick up the container hiding the red cube",
+      "n_pairs": 1,
+      "mean_gain": -0.041666666666666664,
+      "median_gain": -0.041666666666666664
+    },
+    {
+      "prompt": "pick up the blue cube and place it on the target, repeating this action three times, then press the button to stop",
+      "n_pairs": 1,
+      "mean_gain": -0.10416666666666667,
+      "median_gain": -0.10416666666666667
+    },
+    {
+      "prompt": "pick up the red cube and place it on the target, repeating this action two times, then press the button to stop",
+      "n_pairs": 1,
+      "mean_gain": -0.041666666666666664,
+      "median_gain": -0.041666666666666664
+    },
+    {
+      "prompt": "press the button to stop the cube just as it reaches the target for the fourth time",
+      "n_pairs": 1,
+      "mean_gain": -0.0625,
+      "median_gain": -0.0625
+    },
+    {
+      "prompt": "press the button to stop the cube just as it reaches the target for the third time",
+      "n_pairs": 1,
+      "mean_gain": -0.14583333333333334,
+      "median_gain": -0.14583333333333334
+    },
+    {
+      "prompt": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+      "n_pairs": 2,
+      "mean_gain": 0.59375,
+      "median_gain": 0.59375
+    },
+    {
+      "prompt": "watch the video carefully, then move the cube to the target in the same manner as before",
+      "n_pairs": 2,
+      "mean_gain": -0.11458333333333334,
+      "median_gain": -0.11458333333333334
+    },
+    {
+      "prompt": "watch the video carefully, then pick up the container hiding the blue cube",
+      "n_pairs": 1,
+      "mean_gain": -0.041666666666666664,
+      "median_gain": -0.041666666666666664
+    },
+    {
+      "prompt": "watch the video carefully, then pick up the container hiding the green cube",
+      "n_pairs": 2,
+      "mean_gain": -0.020833333333333332,
+      "median_gain": -0.020833333333333332
+    },
+    {
+      "prompt": "watch the video carefully, then place the blue cube on the target right after the button was pressed",
+      "n_pairs": 1,
+      "mean_gain": -0.125,
+      "median_gain": -0.125
+    },
+    {
+      "prompt": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for three times, finally put it down and press the button to stop",
+      "n_pairs": 1,
+      "mean_gain": -0.041666666666666664,
+      "median_gain": -0.041666666666666664
+    },
+    {
+      "prompt": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for two times, finally put it down and press the button to stop",
+      "n_pairs": 1,
+      "mean_gain": 0.125,
+      "median_gain": 0.125
+    },
+    {
+      "prompt": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+      "n_pairs": 2,
+      "mean_gain": 0.4479166666666667,
+      "median_gain": 0.4479166666666667
+    },
+    {
+      "prompt": "watch the video carefully, then use the stick attached to the robot to retrace the same pattern",
+      "n_pairs": 1,
+      "mean_gain": 0.5,
+      "median_gain": 0.5
+    }
+  ],
+  "best_pairs": [
+    {
+      "pair_index": 20,
+      "gain": 0.9375,
+      "prompt": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path"
+    },
+    {
+      "pair_index": 1,
+      "gain": 0.7083333333333334,
+      "prompt": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box"
+    },
+    {
+      "pair_index": 19,
+      "gain": 0.5,
+      "prompt": "watch the video carefully, then use the stick attached to the robot to retrace the same pattern"
+    },
+    {
+      "pair_index": 5,
+      "gain": 0.4791666666666667,
+      "prompt": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box"
+    },
+    {
+      "pair_index": 11,
+      "gain": 0.125,
+      "prompt": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for two times, finally put it down and press the button to stop"
+    },
+    {
+      "pair_index": 7,
+      "gain": 0.0625,
+      "prompt": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table"
+    },
+    {
+      "pair_index": 16,
+      "gain": 0.041666666666666664,
+      "prompt": "watch the video carefully, then pick up the container hiding the green cube"
+    },
+    {
+      "pair_index": 6,
+      "gain": -0.041666666666666664,
+      "prompt": "first press the button, then pick up the container hiding the red cube"
+    },
+    {
+      "pair_index": 12,
+      "gain": -0.041666666666666664,
+      "prompt": "watch the video carefully, then pick up the container hiding the blue cube"
+    },
+    {
+      "pair_index": 13,
+      "gain": -0.041666666666666664,
+      "prompt": "pick up the red cube and place it on the target, repeating this action two times, then press the button to stop"
+    },
+    {
+      "pair_index": 15,
+      "gain": -0.041666666666666664,
+      "prompt": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table"
+    },
+    {
+      "pair_index": 18,
+      "gain": -0.041666666666666664,
+      "prompt": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for three times, finally put it down and press the button to stop"
+    },
+    {
+      "pair_index": 21,
+      "gain": -0.041666666666666664,
+      "prompt": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path"
+    },
+    {
+      "pair_index": 2,
+      "gain": -0.0625,
+      "prompt": "press the button to stop the cube just as it reaches the target for the fourth time"
+    },
+    {
+      "pair_index": 14,
+      "gain": -0.0625,
+      "prompt": "first press the button, then pick up the container hiding the green cube"
+    },
+    {
+      "pair_index": 9,
+      "gain": -0.08333333333333333,
+      "prompt": "watch the video carefully, then pick up the container hiding the green cube"
+    },
+    {
+      "pair_index": 10,
+      "gain": -0.08333333333333333,
+      "prompt": "first press both buttons on the table, then pick up the container hiding the blue cube, finally pick up another container hiding the green cube"
+    },
+    {
+      "pair_index": 0,
+      "gain": -0.10416666666666667,
+      "prompt": "watch the video carefully, then move the cube to the target in the same manner as before"
+    },
+    {
+      "pair_index": 8,
+      "gain": -0.10416666666666667,
+      "prompt": "pick up the blue cube and place it on the target, repeating this action three times, then press the button to stop"
+    },
+    {
+      "pair_index": 4,
+      "gain": -0.125,
+      "prompt": "watch the video carefully, then move the cube to the target in the same manner as before"
+    },
+    {
+      "pair_index": 17,
+      "gain": -0.125,
+      "prompt": "watch the video carefully, then place the blue cube on the target right after the button was pressed"
+    },
+    {
+      "pair_index": 3,
+      "gain": -0.14583333333333334,
+      "prompt": "press the button to stop the cube just as it reaches the target for the third time"
+    }
+  ],
+  "interpretation_constraint": "No metric or prompt group may be used as confirmatory pair selection; all associations are post-hoc and require an independent pair set."
+}

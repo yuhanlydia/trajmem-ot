@@ -23,6 +23,8 @@ pytest.importorskip("jax")
         "scripts/analyze_e13_pair_readout.py",
         "scripts/run_e14_ot_pullback.py",
         "scripts/analyze_e14.py",
+        "scripts/smoke_robomme_branches.py",
+        "scripts/run_saved_action_branches.py",
     ],
 )
 def test_rigorous_experiment_scripts_expose_help(script: str):
