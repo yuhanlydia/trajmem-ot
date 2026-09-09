@@ -78,6 +78,7 @@ def test_e13_oracle_analyzer_ignores_pair_audit_report(tmp_path: Path):
         json.dumps(
             {
                 "experiment": "E13B_oracle_history_transplant",
+                "pair_index": 0,
                 "directions": [
                     {
                         "coverage": {
@@ -109,5 +110,6 @@ def test_e13_oracle_analyzer_ignores_pair_audit_report(tmp_path: Path):
 
     assert completed.returncode == 0, completed.stderr
     report = json.loads(output.read_text())
-    assert report["n_pairs"] == 1
-    assert report["mean_coverage_gain"] == pytest.approx(0.25)
+    assert report["n_input_reports"] == 1
+    assert report["subsets"]["all"]["n_pairs"] == 1
+    assert report["subsets"]["all"]["mean_pair_coverage_gain_ci"]["estimate"] == pytest.approx(0.25)

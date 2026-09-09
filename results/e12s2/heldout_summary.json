@@ -1,0 +1,187 @@
+{
+  "experiment": "E12S2_deployed_secant_memory_recovery_aggregate",
+  "n_input_reports": 20,
+  "heldout_indices": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "groups": [
+    {
+      "basis": "history",
+      "probe_radius": 0.00025,
+      "corruption_mode": "random_rows",
+      "all": {
+        "n_states": 4,
+        "n_corruptions": 20,
+        "state_indices": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "median_fresh_noise_recovery": 0.17013357393868128,
+        "mean_fresh_noise_recovery_ci": {
+          "estimate": 0.16981600339641478,
+          "lower": 0.16474749055815185,
+          "upper": 0.17456694569241127,
+          "confidence": 0.95,
+          "resamples": 10000
+        },
+        "fraction_positive_fresh_noise_recovery": 1.0,
+        "median_random_control_recovery": -0.00032746706455718253,
+        "median_negative_control_recovery": -0.16455605821783048,
+        "median_same_noise_recovery": 0.1708958073817721,
+        "median_ours_minus_random": 0.17087553554832824,
+        "mean_ours_minus_random_ci": {
+          "estimate": 0.1703092302105216,
+          "lower": 0.16531272289784493,
+          "upper": 0.17473943218539165,
+          "confidence": 0.95,
+          "resamples": 10000
+        },
+        "ours_minus_random_sign_test": {
+          "wins": 4,
+          "losses": 0,
+          "ties": 0,
+          "p_value": 0.125
+        },
+        "maximum_control_norm_relative_error": 0.028560081562974203,
+        "median_response_fidelity_cosine": 0.7244879475351085,
+        "state_level": [
+          {
+            "state_index": 4,
+            "n_corruptions": 5,
+            "mean_fresh_recovery": 0.1699893095100931,
+            "mean_random_recovery": -0.00029694906196616464,
+            "mean_negative_recovery": -0.16541046421353228,
+            "mean_same_noise_recovery": 0.1729407394406985,
+            "mean_ours_minus_random": 0.17028625857205928,
+            "max_control_norm_error": 0.028560081562974203,
+            "mean_response_fidelity_cosine": 0.6812379049104758
+          },
+          {
+            "state_index": 5,
+            "n_corruptions": 5,
+            "mean_fresh_recovery": 0.17609282441985066,
+            "mean_random_recovery": -0.00013099896998510497,
+            "mean_negative_recovery": -0.1727470277617555,
+            "mean_same_noise_recovery": 0.17390643836722133,
+            "mean_ours_minus_random": 0.17622382338983575,
+            "max_control_norm_error": 0.013500301238357897,
+            "mean_response_fidelity_cosine": 0.716366590190711
+          },
+          {
+            "state_index": 6,
+            "n_corruptions": 5,
+            "mean_fresh_recovery": 0.162904041288446,
+            "mean_random_recovery": -0.0003579850671482004,
+            "mean_negative_recovery": -0.1637016522221287,
+            "mean_same_noise_recovery": 0.1614781684857591,
+            "mean_ours_minus_random": 0.16326202635559417,
+            "max_control_norm_error": 0.013105203610728297,
+            "mean_response_fidelity_cosine": 0.7391220658036615
+          },
+          {
+            "state_index": 7,
+            "n_corruptions": 5,
+            "mean_fresh_recovery": 0.17027783836726945,
+            "mean_random_recovery": -0.0011869741573277749,
+            "mean_negative_recovery": -0.16298380268490337,
+            "mean_same_noise_recovery": 0.1688508753228457,
+            "mean_ours_minus_random": 0.1714648125245972,
+            "max_control_norm_error": 0.01820473325255626,
+            "mean_response_fidelity_cosine": 0.7326093048795058
+          }
+        ]
+      },
+      "development": null,
+      "heldout": {
+        "n_states": 4,
+        "n_corruptions": 20,
+        "state_indices": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "median_fresh_noise_recovery": 0.17013357393868128,
+        "mean_fresh_noise_recovery_ci": {
+          "estimate": 0.16981600339641478,
+          "lower": 0.16474749055815185,
+          "upper": 0.17456694569241127,
+          "confidence": 0.95,
+          "resamples": 10000
+        },
+        "fraction_positive_fresh_noise_recovery": 1.0,
+        "median_random_control_recovery": -0.00032746706455718253,
+        "median_negative_control_recovery": -0.16455605821783048,
+        "median_same_noise_recovery": 0.1708958073817721,
+        "median_ours_minus_random": 0.17087553554832824,
+        "mean_ours_minus_random_ci": {
+          "estimate": 0.1703092302105216,
+          "lower": 0.16531272289784493,
+          "upper": 0.17473943218539165,
+          "confidence": 0.95,
+          "resamples": 10000
+        },
+        "ours_minus_random_sign_test": {
+          "wins": 4,
+          "losses": 0,
+          "ties": 0,
+          "p_value": 0.125
+        },
+        "maximum_control_norm_relative_error": 0.028560081562974203,
+        "median_response_fidelity_cosine": 0.7244879475351085,
+        "state_level": [
+          {
+            "state_index": 4,
+            "n_corruptions": 5,
+            "mean_fresh_recovery": 0.1699893095100931,
+            "mean_random_recovery": -0.00029694906196616464,
+            "mean_negative_recovery": -0.16541046421353228,
+            "mean_same_noise_recovery": 0.1729407394406985,
+            "mean_ours_minus_random": 0.17028625857205928,
+            "max_control_norm_error": 0.028560081562974203,
+            "mean_response_fidelity_cosine": 0.6812379049104758
+          },
+          {
+            "state_index": 5,
+            "n_corruptions": 5,
+            "mean_fresh_recovery": 0.17609282441985066,
+            "mean_random_recovery": -0.00013099896998510497,
+            "mean_negative_recovery": -0.1727470277617555,
+            "mean_same_noise_recovery": 0.17390643836722133,
+            "mean_ours_minus_random": 0.17622382338983575,
+            "max_control_norm_error": 0.013500301238357897,
+            "mean_response_fidelity_cosine": 0.716366590190711
+          },
+          {
+            "state_index": 6,
+            "n_corruptions": 5,
+            "mean_fresh_recovery": 0.162904041288446,
+            "mean_random_recovery": -0.0003579850671482004,
+            "mean_negative_recovery": -0.1637016522221287,
+            "mean_same_noise_recovery": 0.1614781684857591,
+            "mean_ours_minus_random": 0.16326202635559417,
+            "max_control_norm_error": 0.013105203610728297,
+            "mean_response_fidelity_cosine": 0.7391220658036615
+          },
+          {
+            "state_index": 7,
+            "n_corruptions": 5,
+            "mean_fresh_recovery": 0.17027783836726945,
+            "mean_random_recovery": -0.0011869741573277749,
+            "mean_negative_recovery": -0.16298380268490337,
+            "mean_same_noise_recovery": 0.1688508753228457,
+            "mean_ours_minus_random": 0.1714648125245972,
+            "max_control_norm_error": 0.01820473325255626,
+            "mean_response_fidelity_cosine": 0.7326093048795058
+          }
+        ]
+      }
+    }
+  ],
+  "inference_unit": "corruption seeds are averaged within state; bootstrap and sign tests resample states, not individual noise draws"
+}

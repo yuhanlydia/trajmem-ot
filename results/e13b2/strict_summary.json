@@ -1,0 +1,551 @@
+{
+  "experiment": "E13B2_oracle_history_transplant_pair_aggregate",
+  "n_input_reports": 2,
+  "inference_unit": "the two transplant directions are averaged within pair; bootstrap and sign tests use independent pairs",
+  "support_definition": "native-history-conditioned action support; not ground-truth task correctness",
+  "subsets": {
+    "all": {
+      "n_pairs": 2,
+      "pair_indices": [
+        0,
+        1
+      ],
+      "mean_pair_coverage_gain_ci": {
+        "estimate": 0.375,
+        "lower": 0.0,
+        "upper": 0.75,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_pair_coverage_gain": 0.375,
+      "fraction_positive_pairs": 0.5,
+      "pair_gain_sign_test": {
+        "wins": 1,
+        "losses": 0,
+        "ties": 1,
+        "p_value": 1.0
+      },
+      "mean_pair_distance_improvement_ci": {
+        "estimate": 0.4282522594966281,
+        "lower": 0.0004314073026312742,
+        "upper": 0.8560731116906249,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_headroom_recovery": 0.875,
+      "median_memory_effect_to_noise_rms": 2.150664365816457,
+      "tolerance_sensitivity": [
+        {
+          "tolerance_multiplier": 0.75,
+          "n_pairs": 2,
+          "mean_pair_gain_ci": {
+            "estimate": 0.28125,
+            "lower": 0.0,
+            "upper": 0.5625,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.5
+        },
+        {
+          "tolerance_multiplier": 1.0,
+          "n_pairs": 2,
+          "mean_pair_gain_ci": {
+            "estimate": 0.46875,
+            "lower": 0.125,
+            "upper": 0.8125,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 1.0
+        },
+        {
+          "tolerance_multiplier": 1.25,
+          "n_pairs": 2,
+          "mean_pair_gain_ci": {
+            "estimate": 0.375,
+            "lower": 0.0,
+            "upper": 0.75,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.5
+        },
+        {
+          "tolerance_multiplier": 1.5,
+          "n_pairs": 2,
+          "mean_pair_gain_ci": {
+            "estimate": 0.375,
+            "lower": 0.0,
+            "upper": 0.75,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.5
+        },
+        {
+          "tolerance_multiplier": 2.0,
+          "n_pairs": 2,
+          "mean_pair_gain_ci": {
+            "estimate": 0.375,
+            "lower": 0.0,
+            "upper": 0.75,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.5
+        }
+      ],
+      "pair_level": [
+        {
+          "pair_index": 0,
+          "source_pair_index": 0,
+          "pair_mean_coverage_gain": 0.0,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": 0.0004314073026312742,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.5582835741002052,
+          "direction_gains": [
+            0.0,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.0,
+            "1": 0.125,
+            "1.25": 0.0,
+            "1.5": 0.0,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "press the button to stop the cube just as it reaches the target for the fourth time",
+            "prompt_b": "press the button to stop the cube just as it reaches the target for the fourth time",
+            "front_image_mae": 0.009199594048892751,
+            "wrist_image_mae": 0.06254717134961894,
+            "state_l2": 0.5593515642084573,
+            "pair_metadata": {
+              "a": 10340,
+              "b": 11092,
+              "prompt": "press the button to stop the cube just as it reaches the target for the fourth time",
+              "subgoal": "remain static",
+              "epis_a": "[30]",
+              "epis_b": "[33]",
+              "source_pair_index": 0,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 0,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 1,
+          "source_pair_index": 1,
+          "pair_mean_coverage_gain": 0.75,
+          "pair_min_coverage_gain": 0.75,
+          "pair_mean_distance_improvement": 0.8560731116906249,
+          "pair_mean_headroom_recovery": 0.875,
+          "pair_median_memory_effect_to_noise_rms": 3.743045157532709,
+          "direction_gains": [
+            0.75,
+            0.75
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.5625,
+            "1": 0.8125,
+            "1.25": 0.75,
+            "1.5": 0.75,
+            "2": 0.75
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then pick up the container hiding the green cube",
+            "prompt_b": "watch the video carefully, then pick up the container hiding the green cube",
+            "front_image_mae": 0.013175415525249406,
+            "wrist_image_mae": 0.007191596779168821,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 6214,
+              "b": 6734,
+              "prompt": "watch the video carefully, then pick up the container hiding the green cube",
+              "subgoal": "pick up the container that hides the green cube",
+              "epis_a": "[22]",
+              "epis_b": "[24]",
+              "source_pair_index": 1,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 1,
+              "quality_tier": "strict"
+            }
+          }
+        }
+      ]
+    },
+    "strict": {
+      "n_pairs": 2,
+      "pair_indices": [
+        0,
+        1
+      ],
+      "mean_pair_coverage_gain_ci": {
+        "estimate": 0.375,
+        "lower": 0.0,
+        "upper": 0.75,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_pair_coverage_gain": 0.375,
+      "fraction_positive_pairs": 0.5,
+      "pair_gain_sign_test": {
+        "wins": 1,
+        "losses": 0,
+        "ties": 1,
+        "p_value": 1.0
+      },
+      "mean_pair_distance_improvement_ci": {
+        "estimate": 0.4282522594966281,
+        "lower": 0.0004314073026312742,
+        "upper": 0.8560731116906249,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_headroom_recovery": 0.875,
+      "median_memory_effect_to_noise_rms": 2.150664365816457,
+      "tolerance_sensitivity": [
+        {
+          "tolerance_multiplier": 0.75,
+          "n_pairs": 2,
+          "mean_pair_gain_ci": {
+            "estimate": 0.28125,
+            "lower": 0.0,
+            "upper": 0.5625,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.5
+        },
+        {
+          "tolerance_multiplier": 1.0,
+          "n_pairs": 2,
+          "mean_pair_gain_ci": {
+            "estimate": 0.46875,
+            "lower": 0.125,
+            "upper": 0.8125,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 1.0
+        },
+        {
+          "tolerance_multiplier": 1.25,
+          "n_pairs": 2,
+          "mean_pair_gain_ci": {
+            "estimate": 0.375,
+            "lower": 0.0,
+            "upper": 0.75,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.5
+        },
+        {
+          "tolerance_multiplier": 1.5,
+          "n_pairs": 2,
+          "mean_pair_gain_ci": {
+            "estimate": 0.375,
+            "lower": 0.0,
+            "upper": 0.75,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.5
+        },
+        {
+          "tolerance_multiplier": 2.0,
+          "n_pairs": 2,
+          "mean_pair_gain_ci": {
+            "estimate": 0.375,
+            "lower": 0.0,
+            "upper": 0.75,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.5
+        }
+      ],
+      "pair_level": [
+        {
+          "pair_index": 0,
+          "source_pair_index": 0,
+          "pair_mean_coverage_gain": 0.0,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": 0.0004314073026312742,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.5582835741002052,
+          "direction_gains": [
+            0.0,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.0,
+            "1": 0.125,
+            "1.25": 0.0,
+            "1.5": 0.0,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "press the button to stop the cube just as it reaches the target for the fourth time",
+            "prompt_b": "press the button to stop the cube just as it reaches the target for the fourth time",
+            "front_image_mae": 0.009199594048892751,
+            "wrist_image_mae": 0.06254717134961894,
+            "state_l2": 0.5593515642084573,
+            "pair_metadata": {
+              "a": 10340,
+              "b": 11092,
+              "prompt": "press the button to stop the cube just as it reaches the target for the fourth time",
+              "subgoal": "remain static",
+              "epis_a": "[30]",
+              "epis_b": "[33]",
+              "source_pair_index": 0,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 0,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 1,
+          "source_pair_index": 1,
+          "pair_mean_coverage_gain": 0.75,
+          "pair_min_coverage_gain": 0.75,
+          "pair_mean_distance_improvement": 0.8560731116906249,
+          "pair_mean_headroom_recovery": 0.875,
+          "pair_median_memory_effect_to_noise_rms": 3.743045157532709,
+          "direction_gains": [
+            0.75,
+            0.75
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.5625,
+            "1": 0.8125,
+            "1.25": 0.75,
+            "1.5": 0.75,
+            "2": 0.75
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then pick up the container hiding the green cube",
+            "prompt_b": "watch the video carefully, then pick up the container hiding the green cube",
+            "front_image_mae": 0.013175415525249406,
+            "wrist_image_mae": 0.007191596779168821,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 6214,
+              "b": 6734,
+              "prompt": "watch the video carefully, then pick up the container hiding the green cube",
+              "subgoal": "pick up the container that hides the green cube",
+              "epis_a": "[22]",
+              "epis_b": "[24]",
+              "source_pair_index": 1,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 1,
+              "quality_tier": "strict"
+            }
+          }
+        }
+      ]
+    },
+    "moderate": {
+      "n_pairs": 2,
+      "pair_indices": [
+        0,
+        1
+      ],
+      "mean_pair_coverage_gain_ci": {
+        "estimate": 0.375,
+        "lower": 0.0,
+        "upper": 0.75,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_pair_coverage_gain": 0.375,
+      "fraction_positive_pairs": 0.5,
+      "pair_gain_sign_test": {
+        "wins": 1,
+        "losses": 0,
+        "ties": 1,
+        "p_value": 1.0
+      },
+      "mean_pair_distance_improvement_ci": {
+        "estimate": 0.4282522594966281,
+        "lower": 0.0004314073026312742,
+        "upper": 0.8560731116906249,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_headroom_recovery": 0.875,
+      "median_memory_effect_to_noise_rms": 2.150664365816457,
+      "tolerance_sensitivity": [
+        {
+          "tolerance_multiplier": 0.75,
+          "n_pairs": 2,
+          "mean_pair_gain_ci": {
+            "estimate": 0.28125,
+            "lower": 0.0,
+            "upper": 0.5625,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.5
+        },
+        {
+          "tolerance_multiplier": 1.0,
+          "n_pairs": 2,
+          "mean_pair_gain_ci": {
+            "estimate": 0.46875,
+            "lower": 0.125,
+            "upper": 0.8125,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 1.0
+        },
+        {
+          "tolerance_multiplier": 1.25,
+          "n_pairs": 2,
+          "mean_pair_gain_ci": {
+            "estimate": 0.375,
+            "lower": 0.0,
+            "upper": 0.75,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.5
+        },
+        {
+          "tolerance_multiplier": 1.5,
+          "n_pairs": 2,
+          "mean_pair_gain_ci": {
+            "estimate": 0.375,
+            "lower": 0.0,
+            "upper": 0.75,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.5
+        },
+        {
+          "tolerance_multiplier": 2.0,
+          "n_pairs": 2,
+          "mean_pair_gain_ci": {
+            "estimate": 0.375,
+            "lower": 0.0,
+            "upper": 0.75,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.5
+        }
+      ],
+      "pair_level": [
+        {
+          "pair_index": 0,
+          "source_pair_index": 0,
+          "pair_mean_coverage_gain": 0.0,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": 0.0004314073026312742,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.5582835741002052,
+          "direction_gains": [
+            0.0,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.0,
+            "1": 0.125,
+            "1.25": 0.0,
+            "1.5": 0.0,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "press the button to stop the cube just as it reaches the target for the fourth time",
+            "prompt_b": "press the button to stop the cube just as it reaches the target for the fourth time",
+            "front_image_mae": 0.009199594048892751,
+            "wrist_image_mae": 0.06254717134961894,
+            "state_l2": 0.5593515642084573,
+            "pair_metadata": {
+              "a": 10340,
+              "b": 11092,
+              "prompt": "press the button to stop the cube just as it reaches the target for the fourth time",
+              "subgoal": "remain static",
+              "epis_a": "[30]",
+              "epis_b": "[33]",
+              "source_pair_index": 0,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 0,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 1,
+          "source_pair_index": 1,
+          "pair_mean_coverage_gain": 0.75,
+          "pair_min_coverage_gain": 0.75,
+          "pair_mean_distance_improvement": 0.8560731116906249,
+          "pair_mean_headroom_recovery": 0.875,
+          "pair_median_memory_effect_to_noise_rms": 3.743045157532709,
+          "direction_gains": [
+            0.75,
+            0.75
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.5625,
+            "1": 0.8125,
+            "1.25": 0.75,
+            "1.5": 0.75,
+            "2": 0.75
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then pick up the container hiding the green cube",
+            "prompt_b": "watch the video carefully, then pick up the container hiding the green cube",
+            "front_image_mae": 0.013175415525249406,
+            "wrist_image_mae": 0.007191596779168821,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 6214,
+              "b": 6734,
+              "prompt": "watch the video carefully, then pick up the container hiding the green cube",
+              "subgoal": "pick up the container that hides the green cube",
+              "epis_a": "[22]",
+              "epis_b": "[24]",
+              "source_pair_index": 1,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 1,
+              "quality_tier": "strict"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

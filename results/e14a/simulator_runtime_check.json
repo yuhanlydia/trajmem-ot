@@ -1,0 +1,22 @@
+{
+  "experiment": "E14_simulator_runtime_check",
+  "date": "2026-09-09",
+  "benchmark_commit": "856bc3a189d4172f3f47dbee4424d585f8d78db3",
+  "task": "PatternLock",
+  "dataset": "test",
+  "episode": 0,
+  "gpu_attempt": {
+    "SAPIEN_RENDER_DEVICE": "0",
+    "status": "failed_before_reset",
+    "error": "vk::createInstanceUnique: ErrorIncompatibleDriver",
+    "diagnostic": "NVIDIA driver does not expose a compatible Vulkan ICD"
+  },
+  "cpu_attempt": {
+    "SAPIEN_RENDER_DEVICE": "cpu",
+    "MUJOCO_GL": "osmesa",
+    "status": "failed_before_reset",
+    "error": "vk::createInstanceUnique: ErrorIncompatibleDriver",
+    "diagnostic": "RoboMME/ManiSkill still constructs a SAPIEN Vulkan RenderSystem"
+  },
+  "consequence": "No simulator return manifest or paired closed-loop E14 result was produced. Proxy returns were not substituted."
+}

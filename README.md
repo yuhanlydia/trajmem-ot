@@ -40,6 +40,17 @@ These results are promising, but the previous protocols had three important limi
 
 The current code corrects these limitations. Existing JSON files remain as historical evidence and must not be reinterpreted as results from the corrected protocols.
 
+## Corrected-protocol results (2026-09-09)
+
+- The pre-outcome audit retained `2/8` legacy pairs as strict and `4/8` as moderate. The strict set is a smoke set, not the approximately 20 independent strict pairs needed for a paper-level claim.
+- E13-B2 on the two strict pairs produced mean pair-level coverage gain `+0.375`, bootstrap interval `[0.0, 0.75]`, and one positive/one tied pair. At tolerance multiplier `1.0`, both pairs were positive and the mean gain was `+0.46875`; the sample remains underpowered.
+- E13-D produced mean pair-level primary coverage gain `+0.16875`, interval `[-0.0125, 0.35]`, with one positive and one negative pair. Contiguous readout masks therefore do not yet show reliable non-oracle support recovery.
+- E13-C2 completed eight states and five noise blocks. The `(B,N)=(4,2)` allocation had mean memory-main fraction `0.37489` with interval `[0.34740, 0.39766]`, but native-support coverage gain was `-0.25938` with interval `[-0.28125, -0.23750]`. The masks create action diversity while moving away from native support.
+- E12-S2 random-row recovery completed `4 states x 5 corruption seeds x 16 random controls x 4 fresh noises`. Mean ours-minus-random recovery was `+0.17031`, interval `[+0.16531,+0.17474]`; all four held-out states were positive.
+- The harder contiguous-row E12-S2 replication also remained positive: mean ours-minus-random `+0.06538`, interval `[+0.03562,+0.09515]`, with all four states positive.
+
+E14 simulator execution is currently blocked by the machine graphics stack. The pinned RoboMME benchmark installs, but SAPIEN cannot create a renderer because no compatible Vulkan ICD is exposed; both GPU and documented CPU-renderer attempts end with `vk::createInstanceUnique: ErrorIncompatibleDriver`. No return manifest was fabricated from proxy labels.
+
 ## Numerical resolution
 
 The released BF16 memory-modulation/LLM path is not faithfully described by an infinitesimal AD tangent. An FP32 shadow validates the JVP wiring on a smooth diagnostic path, but deployment uses finite BF16 interventions. The repository therefore separates three operators:
@@ -131,4 +142,4 @@ Released-checkpoint experiments require the upstream RoboMME/OpenPI runtime, che
 
 ## Claim boundary
 
-The repository does **not** yet establish improved RoboMME task success, a calibrated posterior over memory hypotheses, or an OT advantage over best-of-N in closed loop. The next decisive evidence is: strict-pair E13-B2, non-oracle E13-D support recovery, multi-corruption E12-S2, and paired simulator evaluation of E14 edits.
+The repository does **not** yet establish improved RoboMME task success, a calibrated posterior over memory hypotheses, reliable non-oracle oracle-support recovery, or an OT advantage over best-of-N in closed loop. The next decisive evidence is a larger strict counterfactual pair set, a stronger learned readout generator, and paired simulator evaluation of E14 edits on a Vulkan-capable runtime.

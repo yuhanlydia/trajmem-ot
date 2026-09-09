@@ -1,0 +1,22 @@
+[
+  {
+    "a": 10340,
+    "b": 11092,
+    "prompt": "press the button to stop the cube just as it reaches the target for the fourth time",
+    "subgoal": "remain static",
+    "epis_a": "[30]",
+    "epis_b": "[33]",
+    "source_pair_index": 0,
+    "quality_tier": "strict"
+  },
+  {
+    "a": 6214,
+    "b": 6734,
+    "prompt": "watch the video carefully, then pick up the container hiding the green cube",
+    "subgoal": "pick up the container that hides the green cube",
+    "epis_a": "[22]",
+    "epis_b": "[24]",
+    "source_pair_index": 1,
+    "quality_tier": "strict"
+  }
+]

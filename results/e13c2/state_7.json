@@ -1,0 +1,726 @@
+{
+  "experiment": "E13C2_history_readout_mask_branching",
+  "checkpoint": "/root/trajmem-ot/checkpoints/perceptual-framesamp-modul/79999",
+  "data": "/root/trajmem-ot/data/robomme_preprocessed_data_sample",
+  "index": 7,
+  "preset": "16gb",
+  "robot_action_dim": 8,
+  "matched_noise_seeds": true,
+  "noise_blocks": 5,
+  "allocations": [
+    {
+      "memory_views": 1,
+      "noises_per_view": 8,
+      "noise_blocks": 5,
+      "total_trajectories_per_block": 8,
+      "total_policy_calls": 40,
+      "keep_fraction": 1.0,
+      "includes_full_memory_view": true,
+      "valid_tokens_per_view": [
+        512
+      ],
+      "all_action_channels": {
+        "total_variance": 0.014468474515241858,
+        "within_noise_variance": 0.014468474515241858,
+        "between_memory_variance": 0.0,
+        "memory_variance_fraction": 0.0,
+        "matched_memory_main_variance": 0.0,
+        "matched_noise_main_variance": 0.014468474515241858,
+        "matched_interaction_variance": 0.0,
+        "matched_memory_main_fraction": 0.0,
+        "matched_noise_main_fraction": 1.0,
+        "matched_interaction_fraction": 0.0
+      },
+      "robot_action_8d": {
+        "total_variance": 0.014110533242227871,
+        "within_noise_variance": 0.014110533242227871,
+        "between_memory_variance": 0.0,
+        "memory_variance_fraction": 0.0,
+        "matched_memory_main_variance": 0.0,
+        "matched_noise_main_variance": 0.014110533242227871,
+        "matched_interaction_variance": 0.0,
+        "matched_memory_main_fraction": 0.0,
+        "matched_noise_main_fraction": 1.0,
+        "matched_interaction_fraction": 0.0
+      },
+      "blocks": [
+        {
+          "block_index": 0,
+          "all_action_channels": {
+            "total_variance": 0.011324286362978388,
+            "within_noise_variance": 0.011324286362978388,
+            "between_memory_variance": 0.0,
+            "memory_variance_fraction": 0.0,
+            "matched_memory_main_variance": 0.0,
+            "matched_noise_main_variance": 0.011324286362978388,
+            "matched_interaction_variance": 0.0,
+            "matched_memory_main_fraction": 0.0,
+            "matched_noise_main_fraction": 1.0,
+            "matched_interaction_fraction": 0.0
+          },
+          "robot_action_8d": {
+            "total_variance": 0.011006566287775644,
+            "within_noise_variance": 0.011006566287775644,
+            "between_memory_variance": 0.0,
+            "memory_variance_fraction": 0.0,
+            "matched_memory_main_variance": 0.0,
+            "matched_noise_main_variance": 0.011006566287775644,
+            "matched_interaction_variance": 0.0,
+            "matched_memory_main_fraction": 0.0,
+            "matched_noise_main_fraction": 1.0,
+            "matched_interaction_fraction": 0.0
+          },
+          "native_support": {
+            "tolerance": 0.14628337277092182,
+            "coverage_fraction": 1.0,
+            "covered_targets": 8,
+            "total_targets": 8,
+            "mean_nearest_distance": 0.09058276304654969,
+            "median_nearest_distance": 0.09019162744767571,
+            "maximum_nearest_distance": 0.10700912411199004,
+            "coverage_gain_vs_noise_only": 0.0
+          }
+        },
+        {
+          "block_index": 1,
+          "all_action_channels": {
+            "total_variance": 0.02230281609617115,
+            "within_noise_variance": 0.02230281609617115,
+            "between_memory_variance": 0.0,
+            "memory_variance_fraction": 0.0,
+            "matched_memory_main_variance": 0.0,
+            "matched_noise_main_variance": 0.02230281609617115,
+            "matched_interaction_variance": 0.0,
+            "matched_memory_main_fraction": 0.0,
+            "matched_noise_main_fraction": 1.0,
+            "matched_interaction_fraction": 0.0
+          },
+          "robot_action_8d": {
+            "total_variance": 0.02187212419437745,
+            "within_noise_variance": 0.02187212419437745,
+            "between_memory_variance": 0.0,
+            "memory_variance_fraction": 0.0,
+            "matched_memory_main_variance": 0.0,
+            "matched_noise_main_variance": 0.02187212419437745,
+            "matched_interaction_variance": 0.0,
+            "matched_memory_main_fraction": 0.0,
+            "matched_noise_main_fraction": 1.0,
+            "matched_interaction_fraction": 0.0
+          },
+          "native_support": {
+            "tolerance": 0.14628337277092182,
+            "coverage_fraction": 1.0,
+            "covered_targets": 8,
+            "total_targets": 8,
+            "mean_nearest_distance": 0.1153681055478181,
+            "median_nearest_distance": 0.11274415201691154,
+            "maximum_nearest_distance": 0.14582039483028894,
+            "coverage_gain_vs_noise_only": 0.0
+          }
+        },
+        {
+          "block_index": 2,
+          "all_action_channels": {
+            "total_variance": 0.01328464791482626,
+            "within_noise_variance": 0.01328464791482626,
+            "between_memory_variance": 0.0,
+            "memory_variance_fraction": 0.0,
+            "matched_memory_main_variance": 0.0,
+            "matched_noise_main_variance": 0.01328464791482626,
+            "matched_interaction_variance": 0.0,
+            "matched_memory_main_fraction": 0.0,
+            "matched_noise_main_fraction": 1.0,
+            "matched_interaction_fraction": 0.0
+          },
+          "robot_action_8d": {
+            "total_variance": 0.01294887364691653,
+            "within_noise_variance": 0.01294887364691653,
+            "between_memory_variance": 0.0,
+            "memory_variance_fraction": 0.0,
+            "matched_memory_main_variance": 0.0,
+            "matched_noise_main_variance": 0.01294887364691653,
+            "matched_interaction_variance": 0.0,
+            "matched_memory_main_fraction": 0.0,
+            "matched_noise_main_fraction": 1.0,
+            "matched_interaction_fraction": 0.0
+          },
+          "native_support": {
+            "tolerance": 0.14628337277092182,
+            "coverage_fraction": 1.0,
+            "covered_targets": 8,
+            "total_targets": 8,
+            "mean_nearest_distance": 0.07993074848383472,
+            "median_nearest_distance": 0.07757967550552897,
+            "maximum_nearest_distance": 0.11533675334312643,
+            "coverage_gain_vs_noise_only": 0.0
+          }
+        },
+        {
+          "block_index": 3,
+          "all_action_channels": {
+            "total_variance": 0.01390842534149741,
+            "within_noise_variance": 0.01390842534149741,
+            "between_memory_variance": 0.0,
+            "memory_variance_fraction": 0.0,
+            "matched_memory_main_variance": 0.0,
+            "matched_noise_main_variance": 0.01390842534149741,
+            "matched_interaction_variance": 0.0,
+            "matched_memory_main_fraction": 0.0,
+            "matched_noise_main_fraction": 1.0,
+            "matched_interaction_fraction": 0.0
+          },
+          "robot_action_8d": {
+            "total_variance": 0.013563702291456172,
+            "within_noise_variance": 0.013563702291456172,
+            "between_memory_variance": 0.0,
+            "memory_variance_fraction": 0.0,
+            "matched_memory_main_variance": 0.0,
+            "matched_noise_main_variance": 0.013563702291456172,
+            "matched_interaction_variance": 0.0,
+            "matched_memory_main_fraction": 0.0,
+            "matched_noise_main_fraction": 1.0,
+            "matched_interaction_fraction": 0.0
+          },
+          "native_support": {
+            "tolerance": 0.14628337277092182,
+            "coverage_fraction": 1.0,
+            "covered_targets": 8,
+            "total_targets": 8,
+            "mean_nearest_distance": 0.08911234636032765,
+            "median_nearest_distance": 0.0881116599172953,
+            "maximum_nearest_distance": 0.11382340156619222,
+            "coverage_gain_vs_noise_only": 0.0
+          }
+        },
+        {
+          "block_index": 4,
+          "all_action_channels": {
+            "total_variance": 0.011522196860736083,
+            "within_noise_variance": 0.011522196860736083,
+            "between_memory_variance": 0.0,
+            "memory_variance_fraction": 0.0,
+            "matched_memory_main_variance": 0.0,
+            "matched_noise_main_variance": 0.011522196860736083,
+            "matched_interaction_variance": 0.0,
+            "matched_memory_main_fraction": 0.0,
+            "matched_noise_main_fraction": 1.0,
+            "matched_interaction_fraction": 0.0
+          },
+          "robot_action_8d": {
+            "total_variance": 0.011161399790613546,
+            "within_noise_variance": 0.011161399790613546,
+            "between_memory_variance": 0.0,
+            "memory_variance_fraction": 0.0,
+            "matched_memory_main_variance": 0.0,
+            "matched_noise_main_variance": 0.011161399790613546,
+            "matched_interaction_variance": 0.0,
+            "matched_memory_main_fraction": 0.0,
+            "matched_noise_main_fraction": 1.0,
+            "matched_interaction_fraction": 0.0
+          },
+          "native_support": {
+            "tolerance": 0.14628337277092182,
+            "coverage_fraction": 1.0,
+            "covered_targets": 8,
+            "total_targets": 8,
+            "mean_nearest_distance": 0.08506228256079529,
+            "median_nearest_distance": 0.08492534685909466,
+            "maximum_nearest_distance": 0.10858537214563885,
+            "coverage_gain_vs_noise_only": 0.0
+          }
+        }
+      ],
+      "native_support": {
+        "mean_coverage_fraction": 1.0,
+        "mean_coverage_gain_vs_noise_only": 0.0,
+        "coverage_gains_by_block": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "memory_views": 2,
+      "noises_per_view": 4,
+      "noise_blocks": 5,
+      "total_trajectories_per_block": 8,
+      "total_policy_calls": 40,
+      "keep_fraction": 0.5,
+      "includes_full_memory_view": true,
+      "valid_tokens_per_view": [
+        512,
+        256
+      ],
+      "all_action_channels": {
+        "total_variance": 0.018126843696147695,
+        "within_noise_variance": 0.015073264672301323,
+        "between_memory_variance": 0.0030535790238463718,
+        "memory_variance_fraction": 0.1739993401968219,
+        "matched_memory_main_variance": 0.0030535790238463718,
+        "matched_noise_main_variance": 0.014998131197425846,
+        "matched_interaction_variance": 7.513347487547732e-05,
+        "matched_memory_main_fraction": 0.1739993401968219,
+        "matched_noise_main_fraction": 0.8217988688606365,
+        "matched_interaction_fraction": 0.004201790942541773
+      },
+      "robot_action_8d": {
+        "total_variance": 0.017827182190981956,
+        "within_noise_variance": 0.01478461428575419,
+        "between_memory_variance": 0.0030425679052277707,
+        "memory_variance_fraction": 0.17636052247072975,
+        "matched_memory_main_variance": 0.0030425679052277707,
+        "matched_noise_main_variance": 0.01473755476452028,
+        "matched_interaction_variance": 4.705952123390672e-05,
+        "matched_memory_main_fraction": 0.17636052247072975,
+        "matched_noise_main_fraction": 0.8209756792947328,
+        "matched_interaction_fraction": 0.0026637982345375072
+      },
+      "blocks": [
+        {
+          "block_index": 0,
+          "all_action_channels": {
+            "total_variance": 0.01766582942954273,
+            "within_noise_variance": 0.014290344082236483,
+            "between_memory_variance": 0.0033754853473062438,
+            "memory_variance_fraction": 0.191074263496589,
+            "matched_memory_main_variance": 0.0033754853473062438,
+            "matched_noise_main_variance": 0.014213341437497529,
+            "matched_interaction_variance": 7.70026447389563e-05,
+            "matched_memory_main_fraction": 0.191074263496589,
+            "matched_noise_main_fraction": 0.8045668896660141,
+            "matched_interaction_fraction": 0.00435884683739695
+          },
+          "robot_action_8d": {
+            "total_variance": 0.017391798290478218,
+            "within_noise_variance": 0.014027300900862122,
+            "between_memory_variance": 0.0033644973896160973,
+            "memory_variance_fraction": 0.1934531055053758,
+            "matched_memory_main_variance": 0.0033644973896160973,
+            "matched_noise_main_variance": 0.013978571338880983,
+            "matched_interaction_variance": 4.8729561981139535e-05,
+            "matched_memory_main_fraction": 0.1934531055053758,
+            "matched_noise_main_fraction": 0.8037450242585936,
+            "matched_interaction_fraction": 0.0028018702360306427
+          },
+          "native_support": {
+            "tolerance": 0.14628337277092182,
+            "coverage_fraction": 1.0,
+            "covered_targets": 8,
+            "total_targets": 8,
+            "mean_nearest_distance": 0.10599706284664615,
+            "median_nearest_distance": 0.09910094691035498,
+            "maximum_nearest_distance": 0.14271456600146376,
+            "coverage_gain_vs_noise_only": 0.0
+          }
+        },
+        {
+          "block_index": 1,
+          "all_action_channels": {
+            "total_variance": 0.02261891033497216,
+            "within_noise_variance": 0.01977806111993758,
+            "between_memory_variance": 0.00284084921503458,
+            "memory_variance_fraction": 0.12559620127421475,
+            "matched_memory_main_variance": 0.00284084921503458,
+            "matched_noise_main_variance": 0.019695331806514567,
+            "matched_interaction_variance": 8.272931342301337e-05,
+            "matched_memory_main_fraction": 0.12559620127421475,
+            "matched_noise_main_fraction": 0.8707462700386008,
+            "matched_interaction_fraction": 0.0036575286871844436
+          },
+          "robot_action_8d": {
+            "total_variance": 0.022234012851603646,
+            "within_noise_variance": 0.01940500415163282,
+            "between_memory_variance": 0.0028290086999708253,
+            "memory_variance_fraction": 0.12723788183682644,
+            "matched_memory_main_variance": 0.0028290086999708253,
+            "matched_noise_main_variance": 0.019349312247568085,
+            "matched_interaction_variance": 5.569190406473634e-05,
+            "matched_memory_main_fraction": 0.12723788183682644,
+            "matched_noise_main_fraction": 0.8702573114763896,
+            "matched_interaction_fraction": 0.0025048066867839162
+          },
+          "native_support": {
+            "tolerance": 0.14628337277092182,
+            "coverage_fraction": 0.625,
+            "covered_targets": 5,
+            "total_targets": 8,
+            "mean_nearest_distance": 0.13908579502816157,
+            "median_nearest_distance": 0.1425403416481216,
+            "maximum_nearest_distance": 0.1851063558980912,
+            "coverage_gain_vs_noise_only": -0.375
+          }
+        },
+        {
+          "block_index": 2,
+          "all_action_channels": {
+            "total_variance": 0.014959468848916375,
+            "within_noise_variance": 0.01180239184201208,
+            "between_memory_variance": 0.0031570770069042926,
+            "memory_variance_fraction": 0.2110420522806853,
+            "matched_memory_main_variance": 0.0031570770069042926,
+            "matched_noise_main_variance": 0.011745397757495678,
+            "matched_interaction_variance": 5.699408451640439e-05,
+            "matched_memory_main_fraction": 0.2110420522806853,
+            "matched_noise_main_fraction": 0.7851480474419709,
+            "matched_interaction_fraction": 0.003809900277343931
+          },
+          "robot_action_8d": {
+            "total_variance": 0.014711561232283097,
+            "within_noise_variance": 0.01156540421614308,
+            "between_memory_variance": 0.0031461570161400165,
+            "memory_variance_fraction": 0.2138560936167726,
+            "matched_memory_main_variance": 0.0031461570161400165,
+            "matched_noise_main_variance": 0.011533897000766877,
+            "matched_interaction_variance": 3.1507215376203046e-05,
+            "matched_memory_main_fraction": 0.2138560936167726,
+            "matched_noise_main_fraction": 0.7840022427705944,
+            "matched_interaction_fraction": 0.0021416636126330027
+          },
+          "native_support": {
+            "tolerance": 0.14628337277092182,
+            "coverage_fraction": 1.0,
+            "covered_targets": 8,
+            "total_targets": 8,
+            "mean_nearest_distance": 0.10056626896250748,
+            "median_nearest_distance": 0.10806235475416906,
+            "maximum_nearest_distance": 0.12560625031766984,
+            "coverage_gain_vs_noise_only": 0.0
+          }
+        },
+        {
+          "block_index": 3,
+          "all_action_channels": {
+            "total_variance": 0.020454547962667154,
+            "within_noise_variance": 0.017555187274710775,
+            "between_memory_variance": 0.00289936068795638,
+            "memory_variance_fraction": 0.14174650514145706,
+            "matched_memory_main_variance": 0.00289936068795638,
+            "matched_noise_main_variance": 0.017474416305243524,
+            "matched_interaction_variance": 8.077096946724821e-05,
+            "matched_memory_main_fraction": 0.14174650514145706,
+            "matched_noise_main_fraction": 0.85430469239101,
+            "matched_interaction_fraction": 0.003948802467532807
+          },
+          "robot_action_8d": {
+            "total_variance": 0.02017429061387485,
+            "within_noise_variance": 0.017285116591278654,
+            "between_memory_variance": 0.0028891740225962005,
+            "memory_variance_fraction": 0.14321068720052904,
+            "matched_memory_main_variance": 0.0028891740225962005,
+            "matched_noise_main_variance": 0.01723598957551516,
+            "matched_interaction_variance": 4.912701576349418e-05,
+            "matched_memory_main_fraction": 0.14321068720052904,
+            "matched_noise_main_fraction": 0.854354183024464,
+            "matched_interaction_fraction": 0.002435129775007163
+          },
+          "native_support": {
+            "tolerance": 0.14628337277092182,
+            "coverage_fraction": 1.0,
+            "covered_targets": 8,
+            "total_targets": 8,
+            "mean_nearest_distance": 0.10266550010539452,
+            "median_nearest_distance": 0.10259053103463442,
+            "maximum_nearest_distance": 0.14107513538271205,
+            "coverage_gain_vs_noise_only": 0.0
+          }
+        },
+        {
+          "block_index": 4,
+          "all_action_channels": {
+            "total_variance": 0.01493546190464005,
+            "within_noise_variance": 0.011940339042609688,
+            "between_memory_variance": 0.002995122862030363,
+            "memory_variance_fraction": 0.20053767879116335,
+            "matched_memory_main_variance": 0.002995122862030363,
+            "matched_noise_main_variance": 0.011862168680377923,
+            "matched_interaction_variance": 7.817036223176435e-05,
+            "matched_memory_main_fraction": 0.20053767879116335,
+            "matched_noise_main_fraction": 0.7942284447655861,
+            "matched_interaction_fraction": 0.0052338764432507375
+          },
+          "robot_action_8d": {
+            "total_variance": 0.014624247966669977,
+            "within_noise_variance": 0.011640245568854263,
+            "between_memory_variance": 0.002984002397815714,
+            "memory_variance_fraction": 0.2040448441941448,
+            "matched_memory_main_variance": 0.002984002397815714,
+            "matched_noise_main_variance": 0.011590003659870302,
+            "matched_interaction_variance": 5.02419089839605e-05,
+            "matched_memory_main_fraction": 0.2040448441941448,
+            "matched_noise_main_fraction": 0.7925196349436224,
+            "matched_interaction_fraction": 0.003435520862232813
+          },
+          "native_support": {
+            "tolerance": 0.14628337277092182,
+            "coverage_fraction": 0.875,
+            "covered_targets": 7,
+            "total_targets": 8,
+            "mean_nearest_distance": 0.1088842264485965,
+            "median_nearest_distance": 0.10651018938356657,
+            "maximum_nearest_distance": 0.15530959435169892,
+            "coverage_gain_vs_noise_only": -0.125
+          }
+        }
+      ],
+      "native_support": {
+        "mean_coverage_fraction": 0.9,
+        "mean_coverage_gain_vs_noise_only": -0.1,
+        "coverage_gains_by_block": [
+          0.0,
+          -0.375,
+          0.0,
+          0.0,
+          -0.125
+        ]
+      }
+    },
+    {
+      "memory_views": 4,
+      "noises_per_view": 2,
+      "noise_blocks": 5,
+      "total_trajectories_per_block": 8,
+      "total_policy_calls": 40,
+      "keep_fraction": 0.5,
+      "includes_full_memory_view": true,
+      "valid_tokens_per_view": [
+        512,
+        256,
+        256,
+        256
+      ],
+      "all_action_channels": {
+        "total_variance": 0.013418288131822189,
+        "within_noise_variance": 0.009967258041070303,
+        "between_memory_variance": 0.003451030090751888,
+        "memory_variance_fraction": 0.28783444622262466,
+        "matched_memory_main_variance": 0.003451030090751888,
+        "matched_noise_main_variance": 0.009893423400830065,
+        "matched_interaction_variance": 7.383464024023848e-05,
+        "matched_memory_main_fraction": 0.28783444622262466,
+        "matched_noise_main_fraction": 0.7062791080538287,
+        "matched_interaction_fraction": 0.0058864457235468055
+      },
+      "robot_action_8d": {
+        "total_variance": 0.01316666887392776,
+        "within_noise_variance": 0.009744945226680587,
+        "between_memory_variance": 0.003421723647247172,
+        "memory_variance_fraction": 0.29226221579064227,
+        "matched_memory_main_variance": 0.003421723647247172,
+        "matched_noise_main_variance": 0.009698260341095513,
+        "matched_interaction_variance": 4.668488558507485e-05,
+        "matched_memory_main_fraction": 0.29226221579064227,
+        "matched_noise_main_fraction": 0.7040040451979681,
+        "matched_interaction_fraction": 0.003733739011389655
+      },
+      "blocks": [
+        {
+          "block_index": 0,
+          "all_action_channels": {
+            "total_variance": 0.007253454862054559,
+            "within_noise_variance": 0.0034965251219227144,
+            "between_memory_variance": 0.003756929740131846,
+            "memory_variance_fraction": 0.5179503852413423,
+            "matched_memory_main_variance": 0.003756929740131846,
+            "matched_noise_main_variance": 0.003433921007535323,
+            "matched_interaction_variance": 6.260411438739144e-05,
+            "matched_memory_main_fraction": 0.5179503852413423,
+            "matched_noise_main_fraction": 0.4734186774221762,
+            "matched_interaction_fraction": 0.008630937336481704
+          },
+          "robot_action_8d": {
+            "total_variance": 0.007000808360493022,
+            "within_noise_variance": 0.003273387563690597,
+            "between_memory_variance": 0.0037274207968024248,
+            "memory_variance_fraction": 0.5324272005268726,
+            "matched_memory_main_variance": 0.0037274207968024248,
+            "matched_noise_main_variance": 0.0032381639100975135,
+            "matched_interaction_variance": 3.5223653593083326e-05,
+            "matched_memory_main_fraction": 0.5324272005268726,
+            "matched_noise_main_fraction": 0.46254142998273284,
+            "matched_interaction_fraction": 0.005031369490394499
+          },
+          "native_support": {
+            "tolerance": 0.14628337277092182,
+            "coverage_fraction": 0.875,
+            "covered_targets": 7,
+            "total_targets": 8,
+            "mean_nearest_distance": 0.12148901107252251,
+            "median_nearest_distance": 0.11635461212419196,
+            "maximum_nearest_distance": 0.17899929739336184,
+            "coverage_gain_vs_noise_only": -0.125
+          }
+        },
+        {
+          "block_index": 1,
+          "all_action_channels": {
+            "total_variance": 0.01849094799800648,
+            "within_noise_variance": 0.015158230142515307,
+            "between_memory_variance": 0.0033327178554911734,
+            "memory_variance_fraction": 0.18023509967420143,
+            "matched_memory_main_variance": 0.0033327178554911734,
+            "matched_noise_main_variance": 0.015087300424893948,
+            "matched_interaction_variance": 7.0929717621359e-05,
+            "matched_memory_main_fraction": 0.18023509967420143,
+            "matched_noise_main_fraction": 0.8159289846318598,
+            "matched_interaction_fraction": 0.003835915693938784
+          },
+          "robot_action_8d": {
+            "total_variance": 0.01817159719867391,
+            "within_noise_variance": 0.014867217114942325,
+            "between_memory_variance": 0.0033043800837315833,
+            "memory_variance_fraction": 0.18184312846053644,
+            "matched_memory_main_variance": 0.0033043800837315833,
+            "matched_noise_main_variance": 0.014822893058248902,
+            "matched_interaction_variance": 4.4324056693422625e-05,
+            "matched_memory_main_fraction": 0.18184312846053644,
+            "matched_noise_main_fraction": 0.815717677218303,
+            "matched_interaction_fraction": 0.0024391943211605647
+          },
+          "native_support": {
+            "tolerance": 0.14628337277092182,
+            "coverage_fraction": 0.375,
+            "covered_targets": 3,
+            "total_targets": 8,
+            "mean_nearest_distance": 0.15584302834339886,
+            "median_nearest_distance": 0.15680398198639256,
+            "maximum_nearest_distance": 0.19258180867856134,
+            "coverage_gain_vs_noise_only": -0.625
+          }
+        },
+        {
+          "block_index": 2,
+          "all_action_channels": {
+            "total_variance": 0.013170937715579256,
+            "within_noise_variance": 0.009557023668218315,
+            "between_memory_variance": 0.0036139140473609396,
+            "memory_variance_fraction": 0.27438547849833184,
+            "matched_memory_main_variance": 0.0036139140473609396,
+            "matched_noise_main_variance": 0.009492846295072807,
+            "matched_interaction_variance": 6.417737314550831e-05,
+            "matched_memory_main_fraction": 0.27438547849833184,
+            "matched_noise_main_fraction": 0.7207418712370179,
+            "matched_interaction_fraction": 0.004872650264650181
+          },
+          "robot_action_8d": {
+            "total_variance": 0.012958719387040248,
+            "within_noise_variance": 0.009375265467003575,
+            "between_memory_variance": 0.003583453920036672,
+            "memory_variance_fraction": 0.27652839860244305,
+            "matched_memory_main_variance": 0.003583453920036672,
+            "matched_noise_main_variance": 0.00933958971270605,
+            "matched_interaction_variance": 3.567575429752612e-05,
+            "matched_memory_main_fraction": 0.27652839860244305,
+            "matched_noise_main_fraction": 0.7207185705438134,
+            "matched_interaction_fraction": 0.00275303085374352
+          },
+          "native_support": {
+            "tolerance": 0.14628337277092182,
+            "coverage_fraction": 1.0,
+            "covered_targets": 8,
+            "total_targets": 8,
+            "mean_nearest_distance": 0.09625778448805355,
+            "median_nearest_distance": 0.10694754654223063,
+            "maximum_nearest_distance": 0.11933307678223076,
+            "coverage_gain_vs_noise_only": 0.0
+          }
+        },
+        {
+          "block_index": 3,
+          "all_action_channels": {
+            "total_variance": 0.01467757799185436,
+            "within_noise_variance": 0.011526078059651742,
+            "between_memory_variance": 0.0031514999322026166,
+            "memory_variance_fraction": 0.21471525710519881,
+            "matched_memory_main_variance": 0.0031514999322026166,
+            "matched_noise_main_variance": 0.011423650151769714,
+            "matched_interaction_variance": 0.00010242790788202952,
+            "matched_memory_main_fraction": 0.21471525710519881,
+            "matched_noise_main_fraction": 0.7783062136075527,
+            "matched_interaction_fraction": 0.0069785292872484896
+          },
+          "robot_action_8d": {
+            "total_variance": 0.014465360412231686,
+            "within_noise_variance": 0.011342002675324751,
+            "between_memory_variance": 0.003123357736906935,
+            "memory_variance_fraction": 0.21591980067540328,
+            "matched_memory_main_variance": 0.003123357736906935,
+            "matched_noise_main_variance": 0.011266474856719475,
+            "matched_interaction_variance": 7.552781860527616e-05,
+            "matched_memory_main_fraction": 0.21591980067540328,
+            "matched_noise_main_fraction": 0.778858910918854,
+            "matched_interaction_fraction": 0.005221288405742798
+          },
+          "native_support": {
+            "tolerance": 0.14628337277092182,
+            "coverage_fraction": 0.625,
+            "covered_targets": 5,
+            "total_targets": 8,
+            "mean_nearest_distance": 0.13950344579477972,
+            "median_nearest_distance": 0.13302075342973535,
+            "maximum_nearest_distance": 0.19314700480986402,
+            "coverage_gain_vs_noise_only": -0.375
+          }
+        },
+        {
+          "block_index": 4,
+          "all_action_channels": {
+            "total_variance": 0.013498522091616302,
+            "within_noise_variance": 0.010098433213043436,
+            "between_memory_variance": 0.0034000888785728654,
+            "memory_variance_fraction": 0.2518860105940488,
+            "matched_memory_main_variance": 0.0034000888785728654,
+            "matched_noise_main_variance": 0.010029399124878532,
+            "matched_interaction_variance": 6.903408816490413e-05,
+            "matched_memory_main_fraction": 0.2518860105940488,
+            "matched_noise_main_fraction": 0.7429997933705363,
+            "matched_interaction_fraction": 0.00511419603541487
+          },
+          "robot_action_8d": {
+            "total_variance": 0.013236859011199939,
+            "within_noise_variance": 0.009866853312441696,
+            "between_memory_variance": 0.0033700056987582437,
+            "memory_variance_fraction": 0.2545925506879557,
+            "matched_memory_main_variance": 0.0033700056987582437,
+            "matched_noise_main_variance": 0.009824180167705629,
+            "matched_interaction_variance": 4.267314473606603e-05,
+            "matched_memory_main_fraction": 0.2545925506879557,
+            "matched_noise_main_fraction": 0.7421836373261373,
+            "matched_interaction_fraction": 0.0032238119859068935
+          },
+          "native_support": {
+            "tolerance": 0.14628337277092182,
+            "coverage_fraction": 1.0,
+            "covered_targets": 8,
+            "total_targets": 8,
+            "mean_nearest_distance": 0.10061268903731475,
+            "median_nearest_distance": 0.09987880521883502,
+            "maximum_nearest_distance": 0.13906503365958287,
+            "coverage_gain_vs_noise_only": 0.0
+          }
+        }
+      ],
+      "native_support": {
+        "mean_coverage_fraction": 0.775,
+        "mean_coverage_gain_vs_noise_only": -0.225,
+        "coverage_gains_by_block": [
+          -0.125,
+          -0.625,
+          0.0,
+          -0.375,
+          0.0
+        ]
+      }
+    }
+  ],
+  "native_support_calibration": {
+    "tolerance": 0.14628337277092182,
+    "reference_samples": 8,
+    "target_samples": 8,
+    "tolerance_quantile": 0.95,
+    "tolerance_multiplier": 1.25
+  },
+  "claim_scope": "deployment-faithful readout branching with matched two-way variance and optional native-history support coverage; not task success or calibrated belief uncertainty"
+}

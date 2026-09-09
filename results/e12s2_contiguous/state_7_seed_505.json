@@ -1,0 +1,507 @@
+{
+  "experiment": "E12S2_deployed_secant_memory_recovery",
+  "checkpoint": "/root/trajmem-ot/checkpoints/perceptual-framesamp-modul/79999",
+  "data": "/root/trajmem-ot/data/robomme_preprocessed_data_sample",
+  "index": 7,
+  "preset": "16gb",
+  "basis": "history",
+  "basis_directions": 7,
+  "corruption_mode": "contiguous_rows",
+  "corruption_seed": 505,
+  "drop_fraction": 0.2,
+  "dropped_history_rows": [
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    345,
+    346,
+    347,
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360,
+    361,
+    362,
+    363,
+    364,
+    365,
+    366,
+    367,
+    368,
+    369,
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377,
+    378,
+    379,
+    380,
+    381,
+    382,
+    383,
+    384,
+    385,
+    386,
+    387,
+    388,
+    389,
+    390,
+    391,
+    392,
+    393,
+    394,
+    395,
+    396,
+    397,
+    398,
+    399,
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407,
+    408,
+    409,
+    410,
+    411,
+    412,
+    413,
+    414,
+    415,
+    416,
+    417,
+    418,
+    419,
+    420,
+    421,
+    422,
+    423,
+    424,
+    425,
+    426,
+    427,
+    428,
+    429,
+    430,
+    431,
+    432,
+    433,
+    434
+  ],
+  "max_update_radius": 0.0025,
+  "random_controls": 16,
+  "control_norm_tolerance": 0.03,
+  "robot_action_dim": 8,
+  "radius_results": [
+    {
+      "probe_radius": 0.00025,
+      "response_rank": 4,
+      "linear_target_residual_before": 0.2364976555109024,
+      "linear_target_residual_after": 0.22884830552399876,
+      "actual_target_residual_after": 0.22973565757274628,
+      "applied_relative_delta_norm": 0.0010898455533336399,
+      "same_noise_recovery": 0.028592240897899357,
+      "fresh_noise_recoveries": [
+        0.0282113018602832,
+        0.02849000608377672,
+        0.028108117370928998,
+        0.03806729067063608
+      ],
+      "fresh_noise_mean_recovery": 0.03071917899640625,
+      "response_fidelity": {
+        "actual_vs_linear_cosine": 0.3163735407850153,
+        "relative_error_to_actual": 2.1854494439912373,
+        "actual_response_norm": 0.01006163377314806,
+        "linear_prediction_norm": 0.02299285532518438,
+        "actual_to_predicted_norm_ratio": 0.43759827263069057
+      },
+      "negative_control": {
+        "applied_norm": 4.00974178314209,
+        "target_norm": 4.0108442306518555,
+        "relative_norm_error": 0.00027486669797357143,
+        "scale": 4.0108442306518555,
+        "changed_fraction": 0.4252052307128906,
+        "same_noise_recovery": -0.0338682493683955,
+        "fresh_noise_recoveries": [
+          -0.026777585336343446,
+          -0.029482517895713656,
+          -0.03301863743840361,
+          -0.030697846891964087
+        ],
+        "fresh_noise_mean_recovery": -0.0299941468906062
+      },
+      "random_controls": [
+        {
+          "applied_norm": 3.963334083557129,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.011845423148483894,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6650247573852539,
+          "same_noise_recovery": -0.0017033487746178633,
+          "fresh_noise_recoveries": [
+            -0.0031074831181292506,
+            0.0018425034959831388,
+            -0.0034801425062849223,
+            0.006078546079161029
+          ],
+          "fresh_noise_mean_recovery": 0.00033335598768249874
+        },
+        {
+          "applied_norm": 3.9603683948516846,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.012584840721168422,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6664571762084961,
+          "same_noise_recovery": 0.0013947373113464279,
+          "fresh_noise_recoveries": [
+            0.002749738595961171,
+            0.000423525504811173,
+            0.0027093851903458033,
+            0.007438889975149188
+          ],
+          "fresh_noise_mean_recovery": 0.0033303848165668337
+        },
+        {
+          "applied_norm": 3.9620864391326904,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.012156490931895593,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6656503677368164,
+          "same_noise_recovery": -0.0021534754168412995,
+          "fresh_noise_recoveries": [
+            -0.0029208034033041397,
+            -0.0006380579621974025,
+            -0.003282889727749483,
+            0.002562544939638922
+          ],
+          "fresh_noise_mean_recovery": -0.0010698015384030257
+        },
+        {
+          "applied_norm": 3.962071418762207,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.012160235871768503,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6657419204711914,
+          "same_noise_recovery": -0.0005472214288508859,
+          "fresh_noise_recoveries": [
+            0.000780861903273089,
+            0.002126517935104877,
+            -0.0012557247232858337,
+            0.0038794603248689663
+          ],
+          "fresh_noise_mean_recovery": 0.0013827788599902746
+        },
+        {
+          "applied_norm": 3.9621591567993164,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.012138360667431507,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6659917831420898,
+          "same_noise_recovery": -0.0037517274334484263,
+          "fresh_noise_recoveries": [
+            -0.001365255642254537,
+            -0.0034827843344940046,
+            -0.003088865512161476,
+            -0.000829215180452314
+          ],
+          "fresh_noise_mean_recovery": -0.002191530167340583
+        },
+        {
+          "applied_norm": 3.961296796798706,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.012353367770928566,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6657123565673828,
+          "same_noise_recovery": -0.0004095497164686712,
+          "fresh_noise_recoveries": [
+            0.0014984484724950287,
+            0.0015928881088427271,
+            -0.00027535916676257877,
+            0.0077870407747068215
+          ],
+          "fresh_noise_mean_recovery": 0.0026507545473204996
+        },
+        {
+          "applied_norm": 3.9608752727508545,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.012458463861330227,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6659383773803711,
+          "same_noise_recovery": 0.0024337334382033005,
+          "fresh_noise_recoveries": [
+            0.0012089900382716845,
+            0.0009159858891395478,
+            -0.00026567347792028073,
+            0.008448783528649972
+          ],
+          "fresh_noise_mean_recovery": 0.002577021494535231
+        },
+        {
+          "applied_norm": 3.9607629776000977,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.01248646174514198,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6659708023071289,
+          "same_noise_recovery": -0.0016049308273680118,
+          "fresh_noise_recoveries": [
+            -0.001018930977797261,
+            7.379041170541001e-05,
+            -0.0026441930539082836,
+            0.0025187222215213856
+          ],
+          "fresh_noise_mean_recovery": -0.00026765284961968727
+        },
+        {
+          "applied_norm": 3.960029363632202,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.0126693693640141,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6656675338745117,
+          "same_noise_recovery": -0.0036473237595731067,
+          "fresh_noise_recoveries": [
+            0.001650635555866864,
+            -0.0007283982160091185,
+            -0.00488487782714242,
+            0.005316806058388912
+          ],
+          "fresh_noise_mean_recovery": 0.00033854139277605944
+        },
+        {
+          "applied_norm": 3.963038444519043,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.011919133076141166,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6653623580932617,
+          "same_noise_recovery": -0.00195468628523221,
+          "fresh_noise_recoveries": [
+            -0.001348825030650147,
+            -0.000502786938700428,
+            -0.0006296318624889885,
+            0.003437750978685483
+          ],
+          "fresh_noise_mean_recovery": 0.0002391267867114799
+        },
+        {
+          "applied_norm": 3.9617652893066406,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.012236561312987808,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6659011840820312,
+          "same_noise_recovery": -0.0028071797719739777,
+          "fresh_noise_recoveries": [
+            -0.0019568741891755614,
+            0.0007101386794703402,
+            -0.0036632392780511225,
+            -0.0012269704060650088
+          ],
+          "fresh_noise_mean_recovery": -0.0015342362984553382
+        },
+        {
+          "applied_norm": 3.9615604877471924,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.012287623270937484,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6654644012451172,
+          "same_noise_recovery": -0.0010996094848942928,
+          "fresh_noise_recoveries": [
+            -0.0020003395659731193,
+            2.4346048718371094e-05,
+            -0.0038516755962301197,
+            0.0023936927873718927
+          ],
+          "fresh_noise_mean_recovery": -0.0008584940815282438
+        },
+        {
+          "applied_norm": 3.9577720165252686,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.013232180327771403,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6651439666748047,
+          "same_noise_recovery": -7.504210958675372e-05,
+          "fresh_noise_recoveries": [
+            0.0009873515753519024,
+            0.002284835639551508,
+            -0.0027415466443216907,
+            0.006321969123577187
+          ],
+          "fresh_noise_mean_recovery": 0.0017131524235397266
+        },
+        {
+          "applied_norm": 3.962925672531128,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.011947249846933013,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6661195755004883,
+          "same_noise_recovery": -0.0022929743510353706,
+          "fresh_noise_recoveries": [
+            0.00021429712581988447,
+            0.003522517633104516,
+            -0.0036711244221725448,
+            0.007295661301241707
+          ],
+          "fresh_noise_mean_recovery": 0.0018403379094983907
+        },
+        {
+          "applied_norm": 3.9598402976989746,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.012716508051620726,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6657791137695312,
+          "same_noise_recovery": 0.0024064511263215405,
+          "fresh_noise_recoveries": [
+            0.0007362312348723199,
+            0.00446838898092361,
+            -0.0001855181939767192,
+            0.004622344093617392
+          ],
+          "fresh_noise_mean_recovery": 0.0024103615288591507
+        },
+        {
+          "applied_norm": 3.9593188762664795,
+          "target_norm": 4.0108442306518555,
+          "relative_norm_error": 0.01284651096435174,
+          "scale": 4.0108442306518555,
+          "changed_fraction": 0.6652593612670898,
+          "same_noise_recovery": -0.002054301377807155,
+          "fresh_noise_recoveries": [
+            -0.003519064112363024,
+            -0.0027117121454505178,
+            -0.004312366693722369,
+            0.0042770841480285204
+          ],
+          "fresh_noise_mean_recovery": -0.0015665147008768476
+        }
+      ],
+      "negative_direction_recovery": -0.0338682493683955,
+      "random_direction_recovery": -0.0016541398009929376,
+      "fresh_noise_negative_mean_recovery": -0.0299941468906062,
+      "fresh_noise_random_median_recovery": 0.0003359486902292791,
+      "fresh_noise_random_all_mean_recoveries": [
+        0.00033335598768249874,
+        0.0033303848165668337,
+        -0.0010698015384030257,
+        0.0013827788599902746,
+        -0.002191530167340583,
+        0.0026507545473204996,
+        0.002577021494535231,
+        -0.00026765284961968727,
+        0.00033854139277605944,
+        0.0002391267867114799,
+        -0.0015342362984553382,
+        -0.0008584940815282438,
+        0.0017131524235397266,
+        0.0018403379094983907,
+        0.0024103615288591507,
+        -0.0015665147008768476
+      ],
+      "fresh_noise_ours_minus_random_median": 0.03038323030617697,
+      "secant_columns": [
+        {
+          "direction_index": 0,
+          "nominal_relative_radius": 0.00025,
+          "actual_relative_radius": 0.00014831883098069375,
+          "changed_fraction_plus": 0.2197246551513672,
+          "changed_fraction_minus": 0.21970367431640625,
+          "asymmetry": 0.003350830213422281,
+          "input_half_norm": 0.5458422303199768,
+          "action_half_norm": 0.0033415823709219694
+        },
+        {
+          "direction_index": 1,
+          "nominal_relative_radius": 0.00025,
+          "actual_relative_radius": 0.00019773588020182691,
+          "changed_fraction_plus": 0.32913684844970703,
+          "changed_fraction_minus": 0.3291778564453125,
+          "asymmetry": 0.0333816156106928,
+          "input_half_norm": 0.7277066111564636,
+          "action_half_norm": 0.003585017751902342
+        },
+        {
+          "direction_index": 2,
+          "nominal_relative_radius": 0.00025,
+          "actual_relative_radius": 0.0001942018198404526,
+          "changed_fraction_plus": 0.3349761962890625,
+          "changed_fraction_minus": 0.33498573303222656,
+          "asymmetry": 0.032566784626239194,
+          "input_half_norm": 0.7147005796432495,
+          "action_half_norm": 0.003539040219038725
+        },
+        {
+          "direction_index": 3,
+          "nominal_relative_radius": 0.00025,
+          "actual_relative_radius": 0.0001967985982551571,
+          "changed_fraction_plus": 0.33118724822998047,
+          "changed_fraction_minus": 0.3312091827392578,
+          "asymmetry": 0.03303335866317055,
+          "input_half_norm": 0.724257230758667,
+          "action_half_norm": 0.003386505413800478
+        },
+        {
+          "direction_index": 4,
+          "nominal_relative_radius": 0.00025,
+          "actual_relative_radius": 0.00018940459669314623,
+          "changed_fraction_plus": 0.3345956802368164,
+          "changed_fraction_minus": 0.33465576171875,
+          "asymmetry": 0.03521071208931934,
+          "input_half_norm": 0.6970458626747131,
+          "action_half_norm": 0.003256381256505847
+        },
+        {
+          "direction_index": 5,
+          "nominal_relative_radius": 0.00025,
+          "actual_relative_radius": 0.000192701190484009,
+          "changed_fraction_plus": 0.335693359375,
+          "changed_fraction_minus": 0.335662841796875,
+          "asymmetry": 0.03600947186135252,
+          "input_half_norm": 0.7091779708862305,
+          "action_half_norm": 0.002992762718349695
+        },
+        {
+          "direction_index": 6,
+          "nominal_relative_radius": 0.00025,
+          "actual_relative_radius": 0.00019349907297818992,
+          "changed_fraction_plus": 0.3329143524169922,
+          "changed_fraction_minus": 0.33292388916015625,
+          "asymmetry": 0.034243742516611504,
+          "input_half_norm": 0.7121143341064453,
+          "action_half_norm": 0.0032672607339918613
+        }
+      ],
+      "singular_values": [
+        0.006502693858965031,
+        0.0056093651190661665,
+        0.004958821291015542,
+        0.004668154776642766,
+        0.004482820504606405,
+        0.004128605104305121,
+        0.003397439171938297
+      ]
+    }
+  ],
+  "claim_scope": "reward-free action recovery using deployed BF16 finite responses with applied-norm-matched controls; not environment success"
+}

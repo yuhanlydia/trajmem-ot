@@ -1,0 +1,82 @@
+{
+  "experiment": "E13C2_history_readout_mask_branching_aggregate",
+  "n_states": 8,
+  "allocations": [
+    {
+      "memory_views": 1,
+      "noises_per_view": 8,
+      "n_states": 8,
+      "decomposition": "matched_two_way",
+      "median_memory_main_fraction": 0.0,
+      "memory_main_fraction_mean_ci": {
+        "estimate": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_noise_main_fraction": 1.0,
+      "median_interaction_fraction": 0.0,
+      "median_memory_main_variance": 0.0,
+      "median_native_support_coverage_gain": 0.0,
+      "native_support_coverage_gain_mean_ci": {
+        "estimate": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "confidence": 0.95,
+        "resamples": 10000
+      }
+    },
+    {
+      "memory_views": 2,
+      "noises_per_view": 4,
+      "n_states": 8,
+      "decomposition": "matched_two_way",
+      "median_memory_main_fraction": 0.18584683669799112,
+      "memory_main_fraction_mean_ci": {
+        "estimate": 0.19546963279852367,
+        "lower": 0.1779821766925359,
+        "upper": 0.21713111294028298,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_noise_main_fraction": 0.8093964805838845,
+      "median_interaction_fraction": 0.0030417588031395773,
+      "median_memory_main_variance": 0.005912549145679836,
+      "median_native_support_coverage_gain": -0.15,
+      "native_support_coverage_gain_mean_ci": {
+        "estimate": -0.15,
+        "lower": -0.16249999999999998,
+        "upper": -0.134375,
+        "confidence": 0.95,
+        "resamples": 10000
+      }
+    },
+    {
+      "memory_views": 4,
+      "noises_per_view": 2,
+      "n_states": 8,
+      "decomposition": "matched_two_way",
+      "median_memory_main_fraction": 0.38631917583745123,
+      "memory_main_fraction_mean_ci": {
+        "estimate": 0.37488873550410656,
+        "lower": 0.34740191315458424,
+        "upper": 0.39766109694926466,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_noise_main_fraction": 0.6090589405565718,
+      "median_interaction_fraction": 0.004814245363429047,
+      "median_memory_main_variance": 0.006653258729868537,
+      "median_native_support_coverage_gain": -0.2625,
+      "native_support_coverage_gain_mean_ci": {
+        "estimate": -0.259375,
+        "lower": -0.28125,
+        "upper": -0.23750000000000002,
+        "confidence": 0.95,
+        "resamples": 10000
+      }
+    }
+  ],
+  "interpretation": "matched_memory_main_fraction is the balanced view main effect under seed-matched noise blocks; interaction is reported separately. It is an action-separation statistic, not calibrated belief uncertainty."
+}

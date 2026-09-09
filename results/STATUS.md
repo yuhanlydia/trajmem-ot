@@ -45,11 +45,20 @@ Supported:
 - history readout is a strong action-control surface;
 - deployed finite responses can recover behavior after synthetic memory corruption.
 
+## Corrected-protocol execution on 2026-09-09
+
+- Pair audit: `2/8` strict and `4/8` moderate legacy pairs.
+- E13-B2 strict smoke: two pairs, mean pair gain `+0.375`, 95% bootstrap interval `[0.0,0.75]`; one pair was positive and one tied.
+- E13-D strict smoke: mean gain `+0.16875`, interval `[-0.0125,0.35]`; one positive and one negative pair.
+- E13-C2: eight states and five noise blocks. `(4,2)` mean memory-main fraction was `0.37489`, while mean native-support coverage gain was `-0.25938` with interval `[-0.28125,-0.23750]`.
+- E12-S2 random rows: 20 held-out corruptions and 16 applied-norm-matched controls per corruption. Mean ours-minus-random was `+0.17031`, interval `[+0.16531,+0.17474]`.
+- E12-S2 contiguous rows: mean ours-minus-random was `+0.06538`, interval `[+0.03562,+0.09515]`.
+- E14 simulator smoke: blocked before reset by unavailable Vulkan support (`vk::createInstanceUnique: ErrorIncompatibleDriver`) under both GPU and documented CPU-renderer environment settings.
+
 Not yet established:
 
 - strict-pair conditional-support gain with a sufficiently large independent pair set;
 - non-oracle readout recovery of that support;
-- robustness of finite-response recovery across multiple corruption seeds and applied-norm-matched controls;
 - closed-loop task-success improvement;
 - an advantage of OT over best-of-N or return-weighted centroids.
 
