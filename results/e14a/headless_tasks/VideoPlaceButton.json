@@ -1,0 +1,32 @@
+{
+  "deterministic_start": "810e33221e823dc98198a08aa72cf646875528bbf8676e9a4df2305d176c4fb7",
+  "branches": {
+    "negative": {
+      "branch_id": "negative",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 1,
+      "start_fingerprint": "810e33221e823dc98198a08aa72cf646875528bbf8676e9a4df2305d176c4fb7",
+      "final_fingerprint": "4e77204ffc2f7c37f110d6e229b1079d0be202ae64446998a631f15f9002dfcd"
+    },
+    "original": {
+      "branch_id": "original",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 1,
+      "start_fingerprint": "810e33221e823dc98198a08aa72cf646875528bbf8676e9a4df2305d176c4fb7",
+      "final_fingerprint": "821aa02b66111e175b842af76e7b2928c72b2ebeaecb3e103159db8dd6ae5552"
+    },
+    "positive": {
+      "branch_id": "positive",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 1,
+      "start_fingerprint": "810e33221e823dc98198a08aa72cf646875528bbf8676e9a4df2305d176c4fb7",
+      "final_fingerprint": "c4686a968864bc42411caae78622a4314dcce32088e9cf307090cd6baf7a73f1"
+    }
+  }
+}

@@ -81,7 +81,7 @@ An exploratory heterogeneity audit correlated the three-block pair gains with ei
 
 ## Closed-loop runtime boundary
 
-The container was launched with `NVIDIA_DRIVER_CAPABILITIES=compute,utility`, so RGB rendering remains unavailable. A new renderer-free physics mode now strips visual geometry while retaining collision geometry, articulations, task counters, and demonstration replay. PatternLock reset/step and four saved-action branches completed with identical canonical simulator-state fingerprints at the branch point. A matched `train/MoveCube episode 45` reconstruction agreed with sample state 16076 to arm-state L2 `1.58e-5` and gripper error `2.2e-8`.
+The container was launched with `NVIDIA_DRIVER_CAPABILITIES=compute,utility`, so RGB rendering remains unavailable. A new renderer-free physics mode now strips visual geometry while retaining collision geometry, articulations, task counters, and demonstration replay. Identical-state three-branch smokes passed on PickXtimes, VideoUnmask, VideoPlaceButton, and PatternLock; a four-way saved-action archive also completed from one canonical branch state. A matched `train/MoveCube episode 45` reconstruction agreed with sample state 16076 to arm-state L2 `1.58e-5` and gripper error `2.2e-8`.
 
 This removes Vulkan as a blocker for executing fixed saved action chunks. It does not enable autoregressive policy rollouts because new RGB observations cannot be rendered. The 20-step pair-0 probe had zero return for every branch because MoveCube's nominal dense-reward implementation explicitly multiplies its reaching term by zero; it is an integration result, not an E14 return comparison. A graphics-capable container is still required for full closed-loop policy inference.
 

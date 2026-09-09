@@ -40,7 +40,13 @@
       "sample_index": 16076,
       "arm_state_l2": 1.5758658264530823e-05,
       "gripper_abs_error": 2.2351741790771484e-08
-    }
+    },
+    "task_smokes": [
+      "PickXtimes",
+      "VideoUnmask",
+      "VideoPlaceButton",
+      "PatternLock"
+    ]
   },
   "remaining_boundary": "Fixed saved-action chunks can execute. Autoregressive policy rollouts still require RGB rendering; MoveCube dense reward is zero by implementation, so full task success/subgoal metrics remain necessary."
 }
