@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 from collections.abc import Sequence
+from dataclasses import dataclass
 
 import numpy as np
 
@@ -21,10 +21,30 @@ class MemoryViewBatch:
 
 @dataclass(frozen=True)
 class VarianceDecomposition:
+    """Legacy one-way decomposition retained for backward compatibility."""
+
     total: float
     within_noise: float
     between_memory: float
     memory_fraction: float
+
+
+@dataclass(frozen=True)
+class MatchedVarianceDecomposition:
+    """Balanced two-way decomposition for matched memory-view/noise grids.
+
+    For actions ``A[b,n]`` evaluated with the same noise seeds for every memory
+    view, the centered response is decomposed orthogonally into a memory-view
+    main effect, a diffusion-noise main effect, and their interaction.
+    """
+
+    total: float
+    memory_main: float
+    noise_main: float
+    interaction: float
+    memory_fraction: float
+    noise_fraction: float
+    interaction_fraction: float
 
 
 @dataclass(frozen=True)
@@ -37,6 +57,17 @@ class TargetCoverage:
     min_distance: float
 
 
+def _validate_action_grid(actions: Array) -> Array:
+    array = np.asarray(actions, dtype=np.float64)
+    if array.ndim < 3:
+        raise ValueError("actions must have shape [views, noises, ...action_shape]")
+    if array.shape[0] < 1 or array.shape[1] < 1:
+        raise ValueError("actions require at least one view and one noise sample")
+    if not np.isfinite(array).all():
+        raise ValueError("actions contain non-finite values")
+    return array
+
+
 def build_memory_views(
     memory: Array,
     basis: Array,
@@ -44,12 +75,8 @@ def build_memory_views(
     *,
     relative_radius: float,
 ) -> MemoryViewBatch:
-    """Construct coherent memory views within one Frobenius trust region.
+    """Construct memory views inside one Frobenius trust region."""
 
-    Each coefficient row defines one candidate interpretation in a shared
-    memory basis. Oversized edits are radially clipped rather than globally
-    rescaled, so a zero coefficient row remains the exact unedited memory.
-    """
     memory_array = np.asarray(memory)
     basis_array = np.asarray(basis)
     coefficient_array = np.asarray(coefficients)
@@ -93,34 +120,76 @@ def build_memory_views(
 
 
 def variance_decomposition(actions: Array) -> VarianceDecomposition:
-    """Decompose action variability into memory-view and conditional-noise terms.
+    """Legacy law-of-total-variance summary.
 
-    ``actions`` has shape ``[memory_views, noise_samples, ...action_shape]``.
-    The scalar components are mean squared Euclidean deviations, so the law of
-    total variance holds up to floating-point precision:
-
-    ``total = within_noise + between_memory``.
+    This mixes the diffusion main effect and memory-by-noise interaction in the
+    within-view term. Use :func:`matched_variance_decomposition` for balanced,
+    seed-matched branching experiments.
     """
-    array = np.asarray(actions, dtype=np.float64)
-    if array.ndim < 3:
-        raise ValueError("actions must have shape [views, noises, ...action_shape]")
-    if array.shape[0] < 1 or array.shape[1] < 1:
-        raise ValueError("actions require at least one view and one noise sample")
-    if not np.isfinite(array).all():
-        raise ValueError("actions contain non-finite values")
 
+    array = _validate_action_grid(actions)
     flat = array.reshape(array.shape[0], array.shape[1], -1)
     view_means = flat.mean(axis=1)
     overall_mean = flat.mean(axis=(0, 1))
     within = float(np.mean(np.sum(np.square(flat - view_means[:, None, :]), axis=-1)))
     between = float(np.mean(np.sum(np.square(view_means - overall_mean[None, :]), axis=-1)))
     total = float(np.mean(np.sum(np.square(flat - overall_mean[None, None, :]), axis=-1)))
-    fraction = between / total if total > 0 else 0.0
     return VarianceDecomposition(
         total=total,
         within_noise=within,
         between_memory=between,
-        memory_fraction=fraction,
+        memory_fraction=between / total if total > 0 else 0.0,
+    )
+
+
+def matched_variance_decomposition(actions: Array) -> MatchedVarianceDecomposition:
+    """Orthogonally decompose a balanced ``[view, noise, ...]`` response grid.
+
+    The same ordered noise seeds must be used for every view. Under that design,
+    the decomposition is exact in sample space:
+
+    ``total = memory_main + noise_main + interaction``.
+
+    Unlike the legacy one-way fraction, this does not fold the shared noise main
+    effect into a view-dependent term when allocations use different numbers of
+    noise samples.
+    """
+
+    array = _validate_action_grid(actions)
+    flat = array.reshape(array.shape[0], array.shape[1], -1)
+    grand = flat.mean(axis=(0, 1))
+    memory_effect = flat.mean(axis=1) - grand[None, :]
+    noise_effect = flat.mean(axis=0) - grand[None, :]
+    interaction = (
+        flat
+        - grand[None, None, :]
+        - memory_effect[:, None, :]
+        - noise_effect[None, :, :]
+    )
+
+    total = float(np.mean(np.sum(np.square(flat - grand[None, None, :]), axis=-1)))
+    memory_main = float(np.mean(np.sum(np.square(memory_effect), axis=-1)))
+    noise_main = float(np.mean(np.sum(np.square(noise_effect), axis=-1)))
+    interaction_value = float(np.mean(np.sum(np.square(interaction), axis=-1)))
+
+    memory_main = max(memory_main, 0.0)
+    noise_main = max(noise_main, 0.0)
+    interaction_value = max(interaction_value, 0.0)
+    if total <= 0.0:
+        memory_fraction = noise_fraction = interaction_fraction = 0.0
+    else:
+        memory_fraction = memory_main / total
+        noise_fraction = noise_main / total
+        interaction_fraction = interaction_value / total
+
+    return MatchedVarianceDecomposition(
+        total=total,
+        memory_main=memory_main,
+        noise_main=noise_main,
+        interaction=interaction_value,
+        memory_fraction=memory_fraction,
+        noise_fraction=noise_fraction,
+        interaction_fraction=interaction_fraction,
     )
 
 
@@ -128,10 +197,9 @@ def nearest_target_coverage(
     actions: Array, target: Array, *, tolerance: float
 ) -> TargetCoverage:
     """Measure whether any memory/noise branch reaches a target action mode."""
-    array = np.asarray(actions, dtype=np.float64)
+
+    array = _validate_action_grid(actions)
     target_array = np.asarray(target, dtype=np.float64)
-    if array.ndim < 3:
-        raise ValueError("actions must have shape [views, noises, ...action_shape]")
     if array.shape[2:] != target_array.shape:
         raise ValueError(
             f"target shape {target_array.shape} != action shape {array.shape[2:]}"
@@ -159,6 +227,7 @@ def allocation_grid(
     total_budget: int, *, memory_view_counts: Sequence[int]
 ) -> tuple[tuple[int, int], ...]:
     """Return matched-compute ``(memory_views, noises_per_view)`` allocations."""
+
     if total_budget <= 0:
         raise ValueError("total_budget must be positive")
     allocations = []
@@ -175,18 +244,12 @@ def allocation_grid(
 def hypothesis_coefficients(
     *, view_count: int, basis_size: int, seed: int, include_base: bool = True
 ) -> Array:
-    """Generate symmetric unit coefficient vectors for competing memory views.
+    """Generate symmetric unit coefficient vectors for competing memory views."""
 
-    The first view is the unedited memory when ``include_base`` is true. The
-    remaining views are emitted in ``(+c, -c)`` pairs so downstream experiments
-    can distinguish directional effects from generic perturbation magnitude.
-    """
     if view_count <= 0 or basis_size <= 0:
         raise ValueError("view_count and basis_size must be positive")
-    if include_base and view_count < 1:
-        raise ValueError("include_base requires at least one view")
     remaining = view_count - int(include_base)
-    if remaining % 2 != 0:
+    if remaining < 0 or remaining % 2 != 0:
         raise ValueError("non-base memory views must form symmetric pairs")
     rng = np.random.default_rng(seed)
     rows: list[Array] = []
@@ -210,12 +273,8 @@ def contiguous_history_mask_views(
     keep_fraction: float,
     include_full: bool = False,
 ) -> Array:
-    """Create coherent readout views from contiguous valid history spans.
+    """Create readout views from contiguous valid history spans."""
 
-    The memory values are not modified. Only the boolean history-attention mask
-    changes, so this is a deployment-faithful readout intervention that avoids
-    interpreting an unvalidated BF16 raw-memory AD tangent as a deployed edit.
-    """
     base = np.asarray(mask, dtype=bool)
     if base.ndim != 1:
         raise ValueError("mask must be one-dimensional")

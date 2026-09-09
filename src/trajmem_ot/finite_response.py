@@ -14,8 +14,6 @@ ActionFn = Callable[[ArrayLike], ArrayLike]
 
 @dataclass(frozen=True)
 class SecantColumnDiagnostics:
-    """Numerical diagnostics for one deployed finite-response direction."""
-
     direction_index: int
     nominal_relative_radius: float
     actual_relative_radius: float
@@ -28,15 +26,6 @@ class SecantColumnDiagnostics:
 
 @dataclass(frozen=True)
 class FiniteResponseModel:
-    """A local, deployment-faithful response model for BF16 memory edits.
-
-    ``unit_directions`` contains the actual quantized input chords normalized to
-    unit Frobenius norm. ``response_matrix[:, k]`` is the corresponding action
-    half-chord per unit input norm. The model therefore predicts
-    ``Delta A ~= response_matrix @ coefficients`` and
-    ``Delta M = sum_k coefficients[k] * unit_directions[k]``.
-    """
-
     unit_directions: np.ndarray
     response_matrix: np.ndarray
     base_action: np.ndarray
@@ -47,8 +36,6 @@ class FiniteResponseModel:
 
 @dataclass(frozen=True)
 class FinitePullbackResult:
-    """A bounded memory update solved in a finite-response subspace."""
-
     coefficients: np.ndarray
     nominal_delta: np.ndarray
     quantized_memory: np.ndarray
@@ -58,6 +45,20 @@ class FinitePullbackResult:
     linear_residual_norm: float
     singular_values: np.ndarray
     rank: int
+
+
+@dataclass(frozen=True)
+class QuantizedMatchedMemory:
+    """One finite-precision control matched in *applied* memory norm."""
+
+    quantized_memory: np.ndarray
+    applied_delta: np.ndarray
+    applied_norm: float
+    target_norm: float
+    relative_error: float
+    scale: float
+    iterations: int
+    changed_fraction: float
 
 
 def _jax_modules():
@@ -86,6 +87,103 @@ def _slice_robot_actions(actions: np.ndarray, robot_action_dim: int) -> np.ndarr
     return actions[..., :robot_action_dim]
 
 
+def quantized_norm_matched_memory(
+    memory: ArrayLike,
+    direction: np.ndarray,
+    *,
+    target_norm: float,
+    relative_tolerance: float = 0.02,
+    max_iterations: int = 48,
+    max_scale_multiplier: float = 128.0,
+) -> QuantizedMatchedMemory:
+    """Match a control to a target norm after casting to the deployed dtype.
+
+    Matching a dense FP32 delta before a BF16 cast is not a valid norm-matched
+    control: different directions cross different quantization thresholds. This
+    routine searches the scalar applied to a unit direction and retains the
+    quantized endpoint whose *actual* delta norm is closest to ``target_norm``.
+    """
+
+    if not np.isfinite(target_norm) or target_norm <= 0:
+        raise ValueError("target_norm must be a positive finite scalar")
+    if not np.isfinite(relative_tolerance) or not 0 < relative_tolerance < 1:
+        raise ValueError("relative_tolerance must lie in (0, 1)")
+    if max_iterations <= 0:
+        raise ValueError("max_iterations must be positive")
+    if not np.isfinite(max_scale_multiplier) or max_scale_multiplier <= 1:
+        raise ValueError("max_scale_multiplier must exceed one")
+
+    _, jnp = _jax_modules()
+    memory_jax = jnp.asarray(memory)
+    memory_fp32 = np.asarray(memory_jax, dtype=np.float32)
+    direction_fp32 = np.asarray(direction, dtype=np.float32)
+    if direction_fp32.shape != memory_fp32.shape:
+        raise ValueError(
+            f"direction shape {direction_fp32.shape} != memory shape {memory_fp32.shape}"
+        )
+    if not np.isfinite(direction_fp32).all():
+        raise ValueError("direction contains non-finite values")
+    direction_norm = float(np.linalg.norm(direction_fp32))
+    if direction_norm <= 1e-12:
+        raise ValueError("direction has zero-norm")
+    unit = direction_fp32 / direction_norm
+
+    def evaluate(scale: float) -> tuple[float, np.ndarray, np.ndarray]:
+        quantized = jnp.asarray(memory_fp32 + float(scale) * unit, dtype=memory_jax.dtype)
+        _block(quantized)
+        quantized_np = np.asarray(quantized, dtype=np.float32)
+        applied = quantized_np - memory_fp32
+        return float(np.linalg.norm(applied)), quantized_np, applied
+
+    evaluations = 0
+    low = 0.0
+    high = float(target_norm)
+    best: tuple[float, float, np.ndarray, np.ndarray] | None = None
+
+    def consider(scale: float) -> float:
+        nonlocal best, evaluations
+        norm, quantized, applied = evaluate(scale)
+        evaluations += 1
+        error = abs(norm - target_norm)
+        if best is None or error < best[0]:
+            best = (error, scale, quantized, applied)
+        return norm
+
+    high_norm = consider(high)
+    maximum_scale = float(target_norm) * float(max_scale_multiplier)
+    while high_norm < target_norm and high < maximum_scale:
+        low = high
+        high = min(maximum_scale, high * 2.0)
+        high_norm = consider(high)
+        if high == maximum_scale:
+            break
+
+    if high_norm >= target_norm:
+        for _ in range(max_iterations):
+            midpoint = 0.5 * (low + high)
+            midpoint_norm = consider(midpoint)
+            if best is not None and best[0] / target_norm <= relative_tolerance:
+                break
+            if midpoint_norm < target_norm:
+                low = midpoint
+            else:
+                high = midpoint
+
+    assert best is not None
+    error, scale, quantized_np, applied = best
+    applied_norm = float(np.linalg.norm(applied))
+    return QuantizedMatchedMemory(
+        quantized_memory=quantized_np,
+        applied_delta=applied,
+        applied_norm=applied_norm,
+        target_norm=float(target_norm),
+        relative_error=float(error / target_norm),
+        scale=float(scale),
+        iterations=evaluations,
+        changed_fraction=float(np.mean(quantized_np != memory_fp32)),
+    )
+
+
 def build_finite_response_model(
     action_fn: ActionFn,
     memory: ArrayLike,
@@ -95,12 +193,7 @@ def build_finite_response_model(
     robot_action_dim: int = 8,
     minimum_actual_norm: float = 1e-12,
 ) -> FiniteResponseModel:
-    """Build a response matrix from actual BF16 endpoint chords.
-
-    This is the deployment path used when an infinitesimal AD tangent does not
-    predict finite BF16 interventions. Every column is obtained from two real
-    policy calls at quantized endpoints. No JVP is used.
-    """
+    """Build a response matrix from actual finite-precision endpoint chords."""
 
     if not np.isfinite(relative_radius) or relative_radius <= 0:
         raise ValueError("relative_radius must be a positive finite scalar")
@@ -201,7 +294,7 @@ def solve_finite_response_pullback(
     rank: int | None,
     max_relative_norm: float,
 ) -> FinitePullbackResult:
-    """Solve and quantize a bounded update in a deployed secant subspace."""
+    """Solve and quantize a bounded update in a finite-response subspace."""
 
     if not np.isfinite(max_relative_norm) or max_relative_norm <= 0:
         raise ValueError("max_relative_norm must be a positive finite scalar")
@@ -230,10 +323,7 @@ def solve_finite_response_pullback(
     _, jnp = _jax_modules()
     memory_jax = jnp.asarray(memory)
     memory_fp32 = np.asarray(memory_jax, dtype=np.float32)
-    quantized = jnp.asarray(
-        memory_fp32 + nominal_delta,
-        dtype=memory_jax.dtype,
-    )
+    quantized = jnp.asarray(memory_fp32 + nominal_delta, dtype=memory_jax.dtype)
     _block(quantized)
     quantized_np = np.asarray(quantized, dtype=np.float32)
     applied_delta = quantized_np - memory_fp32

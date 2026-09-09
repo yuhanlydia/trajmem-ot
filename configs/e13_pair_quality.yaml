@@ -1,0 +1,15 @@
+strict:
+  require_prompt_match: true
+  max_front_image_mae: 0.03
+  max_wrist_image_mae: 0.08
+  max_current_state_l2: 0.75
+  min_history_mask_iou: 0.95
+  min_history_image_relative_l2: 0.03
+
+moderate:
+  require_prompt_match: true
+  max_front_image_mae: 0.06
+  max_wrist_image_mae: 0.15
+  max_current_state_l2: 1.50
+  min_history_mask_iou: 0.90
+  min_history_image_relative_l2: 0.03

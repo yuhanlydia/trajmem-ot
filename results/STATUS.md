@@ -1,72 +1,65 @@
 # TrajMem-OT scientific status
 
-## Current gap hypothesis
+## Current hypothesis
 
-Diffusion sampling under one fixed history memory explores conditional action stochasticity:
+Diffusion sampling under a fixed history memory explores conditional motor stochasticity,
 
 \[
-A_n=F_\theta(M,\epsilon_n).
+A_n=F_\theta(M,\epsilon_n),
 \]
 
-It may fail to cover futures associated with a different plausible interpretation of history. The proposed phenomenon is **shared-memory conditional-support failure**, not generic action variance.
+but may not cover action support associated with another plausible interpretation of history. The proposed phenomenon is **shared-memory conditional-support failure**.
 
-## Evidence established
+## Evidence already established
 
-- Released MME-VLA checkpoint and sample data run on a 16GB RTX A4000.
-- Fixed-noise repeated inference is deterministic.
-- A history-only intervention changes the frozen policy action.
-- Different memory-conditioned actions create different deterministic simulator futures.
-- Therefore \(M\rightarrow A\rightarrow S'\) is established.
-- E11-D replicated FP32-shadow JVP validation on eight released-checkpoint states at one and ten flow steps. The minimum robot-8D cosine was `0.99878` and `0.99989`, respectively.
-- E13-B ran eight pairs in both directions. Mean calibrated correct-mode coverage gain was `+0.640625`, median gain was `+1.0`, and `11/16` directions were positive.
-- E13-C ran eight states. For `(B,N)=(4,2)`, the median robot-action memory-variance fraction was `0.65513`; this is a separation result because no target-action set was supplied.
-- E12-S selected the history basis and `2.5e-4` probe radius on state 0, froze the configuration, and evaluated states 1--7. Fresh-noise recovery was positive for all eight states with median `+0.13243`; the random and negative controls had medians `-0.00304` and `-0.15160`.
+- The released MME-VLA checkpoint and official sample run on a 16GB RTX A4000.
+- Fixed-noise inference is deterministic.
+- History-only intervention changes frozen-policy actions and deterministic simulator futures, establishing \(M\rightarrow A\rightarrow S'\).
+- E11-D validates the smooth FP32-shadow JVP connection across eight states and one/ten flow steps (`min robot-8D cosine 0.99878/0.99989`).
+- The legacy E13-B all-pair oracle result reported mean native-history support gain `+0.640625`, median `+1.0`, with `11/16` positive directions.
+- The legacy E12-S run reported positive fresh-noise corruption recovery on `8/8` states, median `+0.13243`.
+- The legacy E13-C masks produced large open-loop action separation, including median between-view fraction `0.65513` at `(B,N)=(4,2)`.
 
-## Raw BF16 JVP diagnosis
+## Why the previous aggregates are not final
 
-Eight-state E11 execution succeeded and the sampled response energy was concentrated (`median effective_rank_90 = 2`). However, both nominal and quantization-aware BF16 chords disagreed with the AD tangent.
+- E13-B treated two directions from one pair as independent and several pairs have substantial current-context mismatch. It is an exploratory oracle result, not final pair-level evidence.
+- E13-C used one small noise block and no native-support target. The reported fraction is action separation under strong masks, not calibrated belief uncertainty or correct-mode recovery.
+- E12-S used one random control matched before BF16 quantization. Post-quantization applied norms and fresh-noise random/negative controls were not matched.
 
-E11-C localized the transformed-primal mismatch to the memory-modulation/LLM path. The memory encoder alone had zero transformed-primal difference, while the first modulation velocity showed nonzero primal drift.
+## Corrections implemented
 
-The FP32 shadow promoted the perceptual memory encoder and LLM embedding/accumulation path and used highest matmul precision. On state 0 with one flow step:
+1. `matched_variance_decomposition` separates memory main effect, noise main effect, and interaction under seed-matched grids.
+2. E13-C2 supports repeated noise blocks and independent native-history support calibration.
+3. Pair auditing now creates pre-outcome `strict`/`moderate` tiers.
+4. E13-B2 averages transplant directions within pair and uses pair-level bootstrap/sign tests, tolerance sensitivity, headroom recovery, and normalized effect size.
+5. E13-D tests contiguous readout masks on an incorrect donor history without inserting the correct memory into candidate branches.
+6. E12-S2 matches negative and multiple random controls in actual post-BF16 applied norm, evaluates all controls on fresh noises, and reports finite-response extrapolation fidelity.
+7. E14-A accepts return-labelled noise manifests and pulls return-tilted trajectory OT through the deployed BF16 finite-response operator.
 
-- transformed-primal difference: `3.55e-6`;
-- robot-8D JVP–chord cosine: `0.99970`;
-- all-channel cosine: `0.99924`;
-- relative error: `0.0393`.
+## Current claim boundary
 
-Interpretation: the JVP wiring is strongly supported on a smooth diagnostic path, but the released BF16 path must not be treated as an infinitesimal deployment control surface.
+Supported:
 
-## E13-A result
-
-Tiny global history-basis edits at relative radius `2.5e-4` produced very small robot-action memory variance fractions on two states (`0.00019–0.00171`). Diffusion noise dominated. This is a null result for small generic perturbations, not a test of complete competing history hypotheses.
-
-## Resolution implemented in the current code
-
-1. **FP32 JVP remains diagnostic only.**
-2. **Full history-bundle transplant** tests the gap without gradients (`E13-B`).
-3. **History-mask branching** changes readout support without changing BF16 memory values (`E13-C`).
-4. **Finite BF16 secant responses** replace AD-JVP for deployed inverse pullback (`E12-S`).
-5. SVD is performed on action-response matrices, not on all raw memory values at every step.
-
-## Open claims
+- history conditioning can change action support;
+- full-history oracle branching is a promising open-loop upper bound;
+- history readout is a strong action-control surface;
+- deployed finite responses can recover behavior after synthetic memory corruption.
 
 Not yet established:
 
-- oracle memory branching improves closed-loop task success;
-- contiguous masks recover calibrated correct modes from the oracle experiment;
-- an automatic learned readout view generator recovers the oracle gain;
-- trajectory OT improves simulator return or success;
-- memory branching outperforms matched-compute diffusion-only sampling in closed loop.
-
-E14 cannot yet be executed from this checkout: the repository contains the OT core but no released-checkpoint E14 runner or return-labelled paired simulator trajectories. Those are required to turn the validated E12-S control operator into a return-conditioned experiment.
+- strict-pair conditional-support gain with a sufficiently large independent pair set;
+- non-oracle readout recovery of that support;
+- robustness of finite-response recovery across multiple corruption seeds and applied-norm-matched controls;
+- closed-loop task-success improvement;
+- an advantage of OT over best-of-N or return-weighted centroids.
 
 ## Next execution
 
-Follow `RUN_NEXT.md` in this order:
+Follow `RUN_NEXT.md`:
 
-1. E11-D FP32-shadow replication;
-2. E13-B oracle history transplant;
-3. E13-C readout-mask branching;
-4. E12-S deployed secant recovery;
-5. E14 return/OT only after a useful control operator exists.
+1. audit and expand strict pairs;
+2. E13-B2 strict pair-level replication;
+3. E13-D non-oracle readout recovery;
+4. E13-C2 replicated mechanism decomposition;
+5. E12-S2 held-out multi-corruption recovery;
+6. E14-A open-loop OT, followed by paired simulator evaluation.

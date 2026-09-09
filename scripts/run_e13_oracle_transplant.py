@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""E13-B: oracle full-history transplant versus noise-only sampling.
-
-This is a phenomenon/upper-bound experiment. For a matched pair of histories,
-the current observation, current robot state, instruction, policy weights, and
-noise distribution are fixed. Only the complete history bundle is swapped.
-"""
+"""E13-B2: oracle history transplant with audited pairs and sensitivity curves."""
 
 from __future__ import annotations
 
@@ -17,12 +12,22 @@ from typing import Any
 
 import numpy as np
 
-from trajmem_ot.hypothesis_metrics import compare_hypothesis_coverage
-from trajmem_ot.robomme_jax import (
-    extract_observation_history,
-    replace_observation_history,
+from trajmem_ot.hypothesis_metrics import (
+    compare_hypothesis_coverage,
+    compare_hypothesis_coverage_curve,
+    headroom_recovery,
 )
+from trajmem_ot.robomme_jax import extract_observation_history, replace_observation_history
 from trajmem_ot.robomme_runtime import load_runtime_states
+
+
+def _parse_float_list(value: str) -> tuple[float, ...]:
+    values = tuple(float(part.strip()) for part in value.split(",") if part.strip())
+    if not values or any(item <= 0 for item in values):
+        raise argparse.ArgumentTypeError("expected comma-separated positive floats")
+    if tuple(sorted(values)) != values or len(set(values)) != len(values):
+        raise argparse.ArgumentTypeError("values must be strictly increasing")
+    return values
 
 
 def parse_args() -> argparse.Namespace:
@@ -31,6 +36,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--pairs", type=Path, required=True)
     parser.add_argument("--pair-index", type=int, required=True)
+    parser.add_argument("--audit", type=Path)
+    parser.add_argument("--require-tier")
     parser.add_argument("--preset", choices=("16gb", "24gb"), default="16gb")
     parser.add_argument("--seed", type=int, default=7)
     parser.add_argument("--config", default="mme_vla_suite")
@@ -41,6 +48,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--target-samples", type=int, default=4)
     parser.add_argument("--tolerance-quantile", type=float, default=0.95)
     parser.add_argument("--tolerance-multiplier", type=float, default=1.25)
+    parser.add_argument(
+        "--tolerance-multipliers",
+        type=_parse_float_list,
+        default=_parse_float_list("0.75,1.0,1.25,1.5,2.0"),
+    )
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--artifacts", type=Path)
     return parser.parse_args()
@@ -85,10 +97,7 @@ def _sample_set(
             dtype=jnp.float32,
         )
         actions = policy._sample_actions(
-            model_key,
-            observation,
-            num_steps=num_steps,
-            noise=noise,
+            model_key, observation, num_steps=num_steps, noise=noise
         )
         actions.block_until_ready()
         rows.append(np.asarray(actions[0], dtype=np.float32)[..., :robot_action_dim])
@@ -99,6 +108,45 @@ def _variance(actions: np.ndarray) -> float:
     flat = np.asarray(actions, dtype=np.float64).reshape(actions.shape[0], -1)
     mean = flat.mean(axis=0, keepdims=True)
     return float(np.mean(np.sum(np.square(flat - mean), axis=-1)))
+
+
+def _check_pair_eligibility(
+    *,
+    pair: dict[str, Any],
+    pair_index: int,
+    audit_path: Path | None,
+    required_tier: str | None,
+) -> dict[str, Any] | None:
+    if required_tier is None:
+        return None
+    if pair.get("quality_tier") == required_tier:
+        return {
+            "eligible": True,
+            "source_pair_index": pair.get("source_pair_index", pair_index),
+            "quality_tier": required_tier,
+        }
+    if audit_path is None:
+        raise ValueError("--require-tier requires --audit or an approved tier pair file")
+    audit = json.loads(audit_path.read_text())
+    source_index = int(pair.get("source_pair_index", pair_index))
+    try:
+        row = next(item for item in audit["pairs"] if int(item["pair_index"]) == source_index)
+    except StopIteration as exc:
+        raise ValueError(f"pair {source_index} is absent from audit") from exc
+    tiers = row.get("quality_tiers", {})
+    if required_tier not in tiers:
+        raise ValueError(f"audit has no quality tier {required_tier!r}")
+    if not bool(tiers[required_tier]["eligible"]):
+        raise ValueError(
+            f"pair {source_index} is not eligible for tier {required_tier}: "
+            + ", ".join(tiers[required_tier].get("failed_reasons", []))
+        )
+    return {
+        "eligible": True,
+        "source_pair_index": source_index,
+        "quality_tier": required_tier,
+        "audit_metrics": row,
+    }
 
 
 def _run_direction(
@@ -113,16 +161,15 @@ def _run_direction(
     policy = context_state.policy
     model = policy._model
     correct_observation = context_state.observation
-    donor_bundle = extract_observation_history(donor_state.observation, representation="static")
+    donor_bundle = extract_observation_history(
+        donor_state.observation, representation="static"
+    )
     wrong_observation = replace_observation_history(correct_observation, donor_bundle)
 
     reference_seeds = [args.seed + seed_offset + 100 + i for i in range(args.reference_samples)]
     target_seeds = [args.seed + seed_offset + 200 + i for i in range(args.target_samples)]
     candidate_seeds = [args.seed + seed_offset + 300 + i for i in range(budget)]
-    # Reuse noise seeds across hypotheses so the matched-compute comparison
-    # isolates the history intervention rather than an unrelated noise draw.
     branch_seeds = candidate_seeds[: budget // 2]
-    paired_seeds = branch_seeds[: min(4, len(branch_seeds))]
 
     correct_reference = _sample_set(
         policy,
@@ -156,18 +203,18 @@ def _run_direction(
         num_steps=args.num_steps,
         robot_action_dim=args.robot_action_dim,
     )
-    # Reuse already sampled, seed-aligned trajectories. Besides reducing GPU
-    # work, this makes the only difference between paired branches the history.
     branched_wrong = noise_only_wrong[: len(branch_seeds)]
     branched_correct = correct_only[: len(branch_seeds)]
     branched = np.concatenate([branched_wrong, branched_correct], axis=0)
 
-    paired_count = len(paired_seeds)
-    paired_correct = correct_only[:paired_count]
-    paired_wrong = noise_only_wrong[:paired_count]
+    paired_correct = correct_only[: len(branch_seeds)]
+    paired_wrong = noise_only_wrong[: len(branch_seeds)]
     paired_effects = np.linalg.norm(
         (paired_correct - paired_wrong).reshape(paired_correct.shape[0], -1), axis=1
     )
+    wrong_variance = _variance(noise_only_wrong)
+    correct_variance = _variance(correct_only)
+    noise_rms = float(np.sqrt(max(0.5 * (wrong_variance + correct_variance), 1e-12)))
 
     comparison = compare_hypothesis_coverage(
         correct_reference,
@@ -178,6 +225,16 @@ def _run_direction(
         tolerance_quantile=args.tolerance_quantile,
         tolerance_multiplier=args.tolerance_multiplier,
     )
+    curve = compare_hypothesis_coverage_curve(
+        correct_reference,
+        correct_targets,
+        noise_only_wrong,
+        branched,
+        correct_only=correct_only,
+        tolerance_quantile=args.tolerance_quantile,
+        tolerance_multipliers=args.tolerance_multipliers,
+    )
+    coverage = asdict(comparison)
     report = {
         "direction": label,
         "context_index": context_state.index,
@@ -185,11 +242,27 @@ def _run_direction(
         "budget_per_condition": budget,
         "noise_only_allocation": {"memory_views": 1, "noises_per_view": budget},
         "oracle_branch_allocation": {"memory_views": 2, "noises_per_view": budget // 2},
-        "coverage": asdict(comparison),
+        "coverage": coverage,
+        "native_support_headroom_recovery": headroom_recovery(
+            noise_coverage=comparison.noise_only.coverage_fraction,
+            branched_coverage=comparison.branched.coverage_fraction,
+        ),
+        "coverage_curve": [
+            {
+                "tolerance_multiplier": point.tolerance_multiplier,
+                "coverage": asdict(point.comparison),
+                "headroom_recovery": headroom_recovery(
+                    noise_coverage=point.comparison.noise_only.coverage_fraction,
+                    branched_coverage=point.comparison.branched.coverage_fraction,
+                ),
+            }
+            for point in curve
+        ],
         "paired_memory_effect_mean": float(np.mean(paired_effects)),
         "paired_memory_effect_median": float(np.median(paired_effects)),
-        "wrong_noise_variance": _variance(noise_only_wrong),
-        "correct_noise_variance": _variance(correct_only),
+        "paired_memory_effect_to_noise_rms": float(np.median(paired_effects) / noise_rms),
+        "wrong_noise_variance": wrong_variance,
+        "correct_noise_variance": correct_variance,
     }
     arrays = {
         f"{label}_correct_reference": correct_reference,
@@ -206,9 +279,9 @@ def _run_direction(
 
 def main() -> None:
     args = parse_args()
+    if args.reference_samples <= 0 or args.target_samples <= 0:
+        raise ValueError("reference-samples and target-samples must be positive")
     budget = 8 if args.preset == "16gb" else 32
-    if budget % 2:
-        raise ValueError("total budget must be divisible by two")
     os.environ.setdefault("XLA_PYTHON_CLIENT_PREALLOCATE", "false")
     os.environ.setdefault(
         "XLA_PYTHON_CLIENT_MEM_FRACTION", "0.75" if args.preset == "16gb" else "0.88"
@@ -218,6 +291,13 @@ def main() -> None:
     if args.pair_index < 0 or args.pair_index >= len(pairs):
         raise IndexError(f"pair-index {args.pair_index} outside [0, {len(pairs) - 1}]")
     pair = pairs[args.pair_index]
+    quality = _check_pair_eligibility(
+        pair=pair,
+        pair_index=args.pair_index,
+        audit_path=args.audit,
+        required_tier=args.require_tier,
+    )
+
     index_a, index_b = int(pair["a"]), int(pair["b"])
     state_a, state_b = load_runtime_states(
         checkpoint=args.checkpoint,
@@ -227,7 +307,6 @@ def main() -> None:
         train_config_name=args.config,
         history_config_name=args.history_config,
     )
-
     prompt_a = _to_string(state_a.item.get("prompt"))
     prompt_b = _to_string(state_b.item.get("prompt"))
     context = {
@@ -247,6 +326,7 @@ def main() -> None:
             )
         ),
         "pair_metadata": pair,
+        "quality": quality,
     }
 
     a_report, a_arrays = _run_direction(
@@ -270,17 +350,19 @@ def main() -> None:
         b_report["coverage"]["coverage_gain"],
     ]
     report = {
-        "experiment": "E13B_oracle_history_transplant",
+        "experiment": "E13B2_oracle_history_transplant",
         "pair_index": args.pair_index,
+        "source_pair_index": int(pair.get("source_pair_index", args.pair_index)),
         "preset": args.preset,
         "robot_action_dim": args.robot_action_dim,
         "num_steps": args.num_steps,
         "context_diagnostics": context,
         "directions": [a_report, b_report],
-        "mean_oracle_coverage_gain": float(np.mean(gains)),
+        "pair_mean_native_support_coverage_gain": float(np.mean(gains)),
         "claim_scope": (
-            "oracle upper-bound test of shared-memory conditional-support failure; "
-            "not a deployable hypothesis generator and not environment success"
+            "oracle upper-bound test of native-history-conditioned action support; "
+            "not ground-truth correctness, not a deployable hypothesis generator, "
+            "and not environment success"
         ),
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)

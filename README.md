@@ -4,186 +4,119 @@
 
 ## Research question
 
-A memory-augmented diffusion VLA normally compresses one interaction history into one internal memory and then spends test-time compute by varying only action noise:
+A memory-augmented diffusion VLA usually encodes one history and spends test-time compute by changing only diffusion noise:
 
 \[
 M_t=E(H_t),\qquad A_n=F_\theta(M_t,\epsilon_n).
 \]
 
-Those samples answer **how to act under one shared interpretation of the past**. They do not necessarily cover uncertainty over **which interpretation of the past is correct**. If the shared memory is wrong or ambiguous, many trajectories can agree while inheriting the same error.
-
-TrajMem-OT separates the two axes:
+Those samples explore **how to act under one shared interpretation of the past**. They do not necessarily cover uncertainty over **which interpretation of the past is correct**. TrajMem-OT separates these axes:
 
 \[
 A_{b,n}=F_\theta(M_t^{(b)},\epsilon_n),
 \]
 
-where `b` indexes a coherent history-memory hypothesis or readout view and `n` indexes conditional diffusion noise.
+where `b` indexes a coherent memory/readout hypothesis and `n` indexes conditional action noise.
 
-The central scientific question is therefore:
+The central question is:
 
-> Can branching over coherent history interpretations recover action modes that cannot be reached by drawing more diffusion samples from one shared memory?
+> Can branching over coherent history interpretations recover action support that additional diffusion samples under one shared memory cannot reach?
 
-## What the latest diagnostics changed
+## What is established
 
-The released `perceptual-framesamp-modul/79999` checkpoint stores and processes the history path largely in BF16. On that deployed path, an infinitesimal AD tangent did not predict finite memory interventions. The discrepancy was deterministic, survived quantization-aware endpoints, persisted in the real eight robot channels, and appeared at the memory-modulation/LLM boundary.
+On the released `perceptual-framesamp-modul/79999` checkpoint and RoboMME sample:
 
-An FP32 shadow diagnostic then promoted the perceptual memory encoder and the LLM embedding/accumulation path while keeping the checkpoint weights fixed. On state 0 with one flow step it reduced the transformed-primal discrepancy to `3.55e-6` and produced:
+- history-only interventions causally change frozen-policy actions and simulator futures;
+- FP32-shadow JVP diagnostics match finite chords over eight states at one and ten flow steps (`min robot-8D cosine = 0.99878/0.99989`);
+- the original E13-B oracle transplant produced an exploratory all-pair mean native-support gain of `+0.640625` over 16 directions;
+- contiguous readout masks strongly separate action distributions (`legacy median between-view fraction = 0.65513` at `(B,N)=(4,2)`);
+- deployed BF16 finite-response pullback produced positive fresh-noise corruption recovery on `8/8` states (`median +0.13243`).
 
-- robot-channel JVP–chord cosine: `0.99970`;
-- all-channel JVP–chord cosine: `0.99924`;
-- relative error: `0.0393`.
+These results are promising, but the previous protocols had three important limitations:
 
-This strongly supports the JVP wiring and mathematical connection. It also shows that **raw BF16 memory is not a reliable infinitesimal deployment control variable**.
+1. E13-B pooled two directions from each pair as if they were independent and included several poorly matched current contexts.
+2. E13-C reported a single small-noise-block separation statistic, not calibrated recovery of native-history support.
+3. E12-S used one random control whose norm was matched before BF16 quantization, not after the actual deployed cast.
 
-The repository now uses a split operator policy:
+The current code corrects these limitations. Existing JSON files remain as historical evidence and must not be reinterpreted as results from the corrected protocols.
 
-- **FP32 JVP** is a smooth diagnostic/oracle for mechanism analysis;
-- **BF16 finite secants** are the authoritative operator for deployed memory edits;
-- **history-bundle transplant and readout-mask branching** test the scientific phenomenon without requiring any gradient.
+## Numerical resolution
 
-## Current method stack
+The released BF16 memory-modulation/LLM path is not faithfully described by an infinitesimal AD tangent. An FP32 shadow validates the JVP wiring on a smooth diagnostic path, but deployment uses finite BF16 interventions. The repository therefore separates three operators:
 
-### 1. Oracle full-history transplant
+- **FP32 JVP:** mechanism/rank diagnostic only;
+- **BF16 finite response:** deployed inverse-control operator;
+- **full history transplant/readout masks:** gradient-free tests of the support gap.
 
-For a matched pair of histories, keep the current image, current robot state, instruction, model, and noise fixed. Replace the entire historical bundle:
-
-\[
-\mathcal H_M=
-\{M^{img},M^{pos},M^{state},m^{mask}\}.
-\]
-
-This gives a clean upper-bound experiment:
+For structured direction `d_k`, the deployed response is
 
 \[
-F(o_t,l,\mathcal H_M^{wrong},\epsilon)
-\quad\text{versus}\quad
-F(o_t,l,\mathcal H_M^{correct},\epsilon).
-\]
-
-E13-B compares equal compute:
-
-\[
-(1\text{ wrong memory},N\text{ noises})
-\quad\text{versus}\quad
-(2\text{ memory hypotheses},N/2\text{ noises each}).
-\]
-
-The target tolerance is calibrated from two independent samples of the correct-memory policy. The main output is correct-mode coverage gain, not raw action variance.
-
-### 2. Deployment-faithful readout branching
-
-Instead of modifying one million BF16 memory values, E13-C keeps all memory values fixed and changes only which valid history span may be read:
-
-\[
-m_t^{(b)}\subseteq m_t.
-\]
-
-The initial implementation uses contiguous boolean history-mask views. It is a parameter-free baseline for the eventual low-dimensional FP32 attention-bias router:
-
-\[
-\alpha^{(b)}=
-\operatorname{softmax}
-\left(
-\frac{QK^\top}{\sqrt d}+Uz_b
-\right).
-\]
-
-### 3. Deployed finite-response pullback
-
-For each structured memory direction `d_k`, form the actual quantized endpoints and record the deployed action half-chord:
-
-\[
-M_k^\pm=Q_{BF16}(M\pm h d_k),
-\]
-
-\[
+M_k^\pm=Q_{BF16}(M\pm h d_k),\qquad
 \delta_k=\frac{M_k^+-M_k^-}{2},
+\]
+
+\[
+r_k=\frac{F_{BF16}(M_k^+)-F_{BF16}(M_k^-)}{2},\qquad
+Y_{sec}=[r_k/\|\delta_k\|]_k.
+\]
+
+Given an action-space target `u`, the memory update is solved as
+
+\[
+c^*=\arg\min_c\|Y_{sec}c-u\|_2^2+\lambda\|c\|_2^2,
 \qquad
-r_k=\frac{F_{BF16}(M_k^+)-F_{BF16}(M_k^-)}{2}.
-\]
-
-After normalizing by \(\|\delta_k\|\), the response matrix is
-
-\[
-Y_{sec}=[r_1/\|\delta_1\|,\ldots,r_K/\|\delta_K\|].
-\]
-
-Given a desired robot-action change `u`, solve
-
-\[
-c^*=\arg\min_c
-\|Y_{sec}c-u\|_2^2+\lambda\|c\|_2^2,
-\]
-
-\[
 \Delta M=\sum_k c_k\frac{\delta_k}{\|\delta_k\|}.
 \]
 
-The resulting edit is clipped, quantized, and evaluated through the real BF16 policy. SVD is applied to the **finite action-response matrix**, never repeatedly to the full raw memory tensor.
+SVD is applied to the **action-response matrix** `Y_sec`, not repeatedly to the full raw memory tensor.
 
-### 4. Trajectory OT
+## Corrected experiments
 
-Once the phenomenon and deployed response operator are validated, multi-future returns can define a target trajectory distribution:
+### E13-B2 — audited oracle history transplant
+
+Pairs are audited before outcomes using named `strict` and `moderate` current-context tiers. The two transplant directions are averaged within each pair; bootstrap intervals and sign tests resample pairs. Results are reported as **native-history-conditioned support**, not ground-truth task correctness. A predeclared tolerance-multiplier curve and headroom-normalized recovery are included.
+
+### E13-C2 — matched readout branching
+
+All memory values remain unchanged; only valid history spans are exposed through boolean masks. The same diffusion seeds are reused across views. A balanced two-way decomposition reports:
 
 \[
-q_i\propto\exp(\beta R_i),
-\qquad
-\Gamma^*=\operatorname{Sinkhorn}(p,q,C).
+V_{total}=V_{memory}+V_{noise}+V_{interaction}.
 \]
 
-The barycentric action transport `u_OT` is then pulled back through `Y_sec` or a validated FP32 readout operator. Environment reward need not be differentiable.
+Independent noise blocks estimate stability. Optional native-history reference/target sets measure support coverage rather than variance alone.
 
-## Evidence so far
+### E13-D — non-oracle readout recovery
 
-### Established
+This is the decisive bridge from oracle to automatic views. Starting from an incorrect donor history, contiguous readout masks try to recover the native-history-conditioned action support **without inserting the correct memory into the candidate set**. Several keep fractions are compared under equal trajectory compute.
 
-- The released MME-VLA checkpoint and official 80-episode sample run on a 16GB RTX A4000.
-- History-only intervention changes the frozen action chunk.
-- Those action changes create different simulator futures under deterministic branch replay.
-- The causal chain \(M\rightarrow A\rightarrow S'\) is established.
-- Exact JAX JVP execution is feasible on the released checkpoint.
-- FP32 shadow analysis localizes the earlier JVP mismatch to low-precision memory-encoder/LLM arithmetic and validates the smooth JVP connection on the diagnostic path.
-- E11-D replicated the FP32-shadow result over eight states at one and ten flow steps. Robot-8D JVP--chord cosine was at least `0.99878` for one step and `0.99989` for ten steps.
-- E13-B completed eight pre-audited history pairs in both directions. Across 16 directions, oracle history branching achieved mean correct-mode coverage gain `+0.6406`, median gain `+1.0`, with `68.75%` positive directions under matched trajectory compute.
-- E13-C completed eight states. At allocation `(4 memory views, 2 noises/view)`, contiguous readout masks produced median robot-8D memory-variance fraction `0.6551`.
-- E12-S froze the history basis and probe radius after state 0, then evaluated all eight states. Fresh-noise recovery was positive on `8/8` states, with median `+0.1324`, versus median random-control recovery `-0.0030` and negative-direction recovery `-0.1516`.
+### E12-S2 — quantization-aware finite-response recovery
 
-### Preliminary or negative
+Corruption seeds and modes are explicit. Negative and multiple random controls are matched to the method edit in **actual post-BF16 applied norm**. The same controls are evaluated under fresh diffusion noise. The report includes actual-versus-linear response fidelity and state-level paired inference.
 
-- The old 16-direction scalar finite-difference estimator was weak and heterogeneous.
-- The sampled response energy appeared concentrated (`median r90=2` on eight BF16 runs; `r90=3` in the first FP32 shadow), but this is not a claim about the full Jacobian rank.
-- E13-A used tiny global history-basis edits and found that diffusion noise dominated action variance. This does not test complete competing history hypotheses.
+### E14-A — manifest-driven trajectory OT pullback
 
-### Not established
+A rollout manifest supplies noise seeds and scalar returns. Return-tilted OT constructs a multi-particle action transport, which is pulled back through `Y_sec`. This is an open-loop target-fit experiment; paired simulator execution is still required for any return/success claim.
 
-- environment success improvement;
-- a learned FP32 readout router;
-- trajectory-OT improvement on the released model.
-
-The E13-B result establishes an open-loop conditional-support gap for the audited sample pairs. It does not by itself establish improved closed-loop task success. E13-C currently measures action-distribution separation because no calibrated target-action file was supplied; it does not yet show that contiguous masks recover the correct oracle mode.
-
-## Repository layout
+## Key files
 
 ```text
-configs/                              16GB/24GB presets and pair examples
-src/trajmem_ot/finite_response.py     deployed BF16 secant-response operator
-src/trajmem_ot/hypothesis_metrics.py  calibrated set-coverage metrics
-src/trajmem_ot/memory_views.py        latent views and history-mask views
-src/trajmem_ot/robomme_jax.py         safe history-only interventions
-src/trajmem_ot/robomme_runtime.py     one-checkpoint multi-state loader
-scripts/run_e11_robomme_jvp.py        BF16 and FP32-shadow diagnostics
-scripts/run_e11_stage_localization.py layer/stage localization
-scripts/run_e12_secant_recovery.py    reward-free deployed secant recovery
-scripts/analyze_e12_secant.py         aggregate deployed recovery sweeps
-scripts/audit_e13_pairs.py            pre-outcome pair/context audit
-scripts/run_e13_oracle_transplant.py  oracle full-history hypothesis test
-scripts/run_e13_readout_mask_branching.py
-                                      history-readout branching baseline
-scripts/analyze_e13_oracle.py         aggregate oracle coverage gains
-scripts/analyze_e13_readout.py        aggregate readout-view diagnostics
-RUN_NEXT.md                           exact 16GB/24GB execution handoff
-results/STATUS.md                     claim ledger and current evidence
+configs/e13_pair_quality.yaml          pre-outcome strict/moderate pair tiers
+configs/e14_manifest.example.json      return-labelled OT manifest contract
+src/trajmem_ot/finite_response.py      BF16 finite response + quantized controls
+src/trajmem_ot/hypothesis_metrics.py   calibrated support and tolerance curves
+src/trajmem_ot/memory_views.py         matched memory/noise decomposition
+src/trajmem_ot/pair_quality.py         context-quality assessment
+src/trajmem_ot/stats.py                pair/state-level bootstrap and sign tests
+src/trajmem_ot/transport.py            NumPy return-tilted trajectory OT
+scripts/audit_e13_pairs.py             pre-outcome pair audit and approved files
+scripts/run_e13_oracle_transplant.py   E13-B2
+scripts/run_e13_readout_mask_branching.py  E13-C2
+scripts/run_e13_pair_readout_recovery.py   E13-D
+scripts/run_e12_secant_recovery.py     E12-S2
+scripts/run_e14_ot_pullback.py         E14-A
+RUN_NEXT.md                            exact 16GB execution handoff
+results/STATUS.md                      claim ledger
 ```
 
 ## Verification
@@ -194,8 +127,8 @@ pytest -q
 python -m compileall -q src scripts tests
 ```
 
-The real checkpoint experiments require the upstream RoboMME/OpenPI runtime, released checkpoint, and preprocessed sample data. Follow [`RUN_NEXT.md`](RUN_NEXT.md).
+Released-checkpoint experiments require the upstream RoboMME/OpenPI runtime, checkpoint, and preprocessed sample. Follow [`RUN_NEXT.md`](RUN_NEXT.md).
 
-## Compute policy
+## Claim boundary
 
-The 16GB path runs one environment state at a time. The deployed secant experiment uses eight structured directions sequentially; the oracle transplant uses eight candidate trajectories per condition; the readout experiment uses matched allocations `(B,N)=(1,8),(2,4),(4,2)`. The `(8,1)` allocation is not used as evidence for variance decomposition because within-view noise cannot be estimated from one sample.
+The repository does **not** yet establish improved RoboMME task success, a calibrated posterior over memory hypotheses, or an OT advantage over best-of-N in closed loop. The next decisive evidence is: strict-pair E13-B2, non-oracle E13-D support recovery, multi-corruption E12-S2, and paired simulator evaluation of E14 edits.

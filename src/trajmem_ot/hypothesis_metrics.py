@@ -27,6 +27,12 @@ class HypothesisCoverageComparison:
     mean_distance_improvement: float
 
 
+@dataclass(frozen=True)
+class CoverageCurvePoint:
+    tolerance_multiplier: float
+    comparison: HypothesisCoverageComparison
+
+
 def _flatten_samples(values: np.ndarray, *, name: str) -> np.ndarray:
     array = np.asarray(values, dtype=np.float64)
     if array.ndim < 2 or array.shape[0] < 1:
@@ -37,8 +43,6 @@ def _flatten_samples(values: np.ndarray, *, name: str) -> np.ndarray:
 
 
 def nearest_set_distances(candidates: np.ndarray, targets: np.ndarray) -> np.ndarray:
-    """Distance from each target sample to its nearest candidate sample."""
-
     candidate_flat = _flatten_samples(candidates, name="candidates")
     target_flat = _flatten_samples(targets, name="targets")
     if candidate_flat.shape[1] != target_flat.shape[1]:
@@ -79,6 +83,27 @@ def calibrated_set_coverage(
     )
 
 
+def calibrated_tolerance(
+    correct_reference: np.ndarray,
+    correct_targets: np.ndarray,
+    *,
+    tolerance_quantile: float = 0.95,
+    tolerance_multiplier: float = 1.25,
+    minimum_tolerance: float = 1e-6,
+) -> float:
+    if not 0.0 < tolerance_quantile <= 1.0:
+        raise ValueError("tolerance_quantile must be in (0, 1]")
+    if not np.isfinite(tolerance_multiplier) or tolerance_multiplier <= 0:
+        raise ValueError("tolerance_multiplier must be positive and finite")
+    if not np.isfinite(minimum_tolerance) or minimum_tolerance <= 0:
+        raise ValueError("minimum_tolerance must be positive and finite")
+    distances = nearest_set_distances(correct_reference, correct_targets)
+    return max(
+        minimum_tolerance,
+        float(np.quantile(distances, tolerance_quantile)) * tolerance_multiplier,
+    )
+
+
 def compare_hypothesis_coverage(
     correct_reference: np.ndarray,
     correct_targets: np.ndarray,
@@ -90,27 +115,14 @@ def compare_hypothesis_coverage(
     tolerance_multiplier: float = 1.25,
     minimum_tolerance: float = 1e-6,
 ) -> HypothesisCoverageComparison:
-    """Compare wrong-shared-memory sampling with oracle hypothesis branching.
-
-    The tolerance is calibrated using two independent samples from the correct
-    memory-conditioned policy. This avoids choosing an arbitrary action-space
-    distance threshold and makes the oracle-transplant experiment insensitive
-    to the natural diffusion spread of each state.
-    """
-
-    if not 0.0 < tolerance_quantile <= 1.0:
-        raise ValueError("tolerance_quantile must be in (0, 1]")
-    if not np.isfinite(tolerance_multiplier) or tolerance_multiplier <= 0:
-        raise ValueError("tolerance_multiplier must be positive and finite")
-    if not np.isfinite(minimum_tolerance) or minimum_tolerance <= 0:
-        raise ValueError("minimum_tolerance must be positive and finite")
-
-    calibration_distances = nearest_set_distances(correct_reference, correct_targets)
-    tolerance = max(
-        minimum_tolerance,
-        float(np.quantile(calibration_distances, tolerance_quantile))
-        * tolerance_multiplier,
+    tolerance = calibrated_tolerance(
+        correct_reference,
+        correct_targets,
+        tolerance_quantile=tolerance_quantile,
+        tolerance_multiplier=tolerance_multiplier,
+        minimum_tolerance=minimum_tolerance,
     )
+    calibration_distances = nearest_set_distances(correct_reference, correct_targets)
     calibration = coverage_from_distances(calibration_distances, tolerance=tolerance)
     noise_result = calibrated_set_coverage(noise_only, correct_targets, tolerance=tolerance)
     branched_result = calibrated_set_coverage(branched, correct_targets, tolerance=tolerance)
@@ -130,3 +142,56 @@ def compare_hypothesis_coverage(
             noise_result.mean_nearest_distance - branched_result.mean_nearest_distance
         ),
     )
+
+
+def compare_hypothesis_coverage_curve(
+    correct_reference: np.ndarray,
+    correct_targets: np.ndarray,
+    noise_only: np.ndarray,
+    branched: np.ndarray,
+    *,
+    correct_only: np.ndarray | None = None,
+    tolerance_quantile: float = 0.95,
+    tolerance_multipliers: tuple[float, ...] = (0.75, 1.0, 1.25, 1.5, 2.0),
+    minimum_tolerance: float = 1e-6,
+) -> tuple[CoverageCurvePoint, ...]:
+    """Evaluate the oracle conclusion over a predeclared tolerance grid."""
+
+    if not tolerance_multipliers:
+        raise ValueError("tolerance_multipliers must not be empty")
+    normalized = tuple(float(value) for value in tolerance_multipliers)
+    if any(not np.isfinite(value) or value <= 0 for value in normalized):
+        raise ValueError("tolerance multipliers must be positive and finite")
+    if tuple(sorted(normalized)) != normalized or len(set(normalized)) != len(normalized):
+        raise ValueError("tolerance multipliers must be strictly increasing")
+    return tuple(
+        CoverageCurvePoint(
+            tolerance_multiplier=multiplier,
+            comparison=compare_hypothesis_coverage(
+                correct_reference,
+                correct_targets,
+                noise_only,
+                branched,
+                correct_only=correct_only,
+                tolerance_quantile=tolerance_quantile,
+                tolerance_multiplier=multiplier,
+                minimum_tolerance=minimum_tolerance,
+            ),
+        )
+        for multiplier in normalized
+    )
+
+
+def headroom_recovery(
+    *, noise_coverage: float, branched_coverage: float, epsilon: float = 1e-12
+) -> float | None:
+    """Fraction of support missing under shared memory recovered by branching."""
+
+    noise = float(noise_coverage)
+    branched = float(branched_coverage)
+    if not (0.0 <= noise <= 1.0 and 0.0 <= branched <= 1.0):
+        raise ValueError("coverage values must lie in [0, 1]")
+    headroom = 1.0 - noise
+    if headroom <= epsilon:
+        return None
+    return (branched - noise) / headroom

@@ -1,0 +1,11 @@
+{
+  "index": 0,
+  "branch_state_id": "replace-with-audited-state-id",
+  "return_definition": "replace-with-simulator-return-or-preregistered-progress-score",
+  "particles": [
+    {"noise_seed": 12001, "return": 0.0},
+    {"noise_seed": 12002, "return": 0.1},
+    {"noise_seed": 12003, "return": 0.4},
+    {"noise_seed": 12004, "return": 1.0}
+  ]
+}
