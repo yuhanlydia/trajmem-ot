@@ -5,17 +5,20 @@ from typing import Any, Callable, Mapping
 
 import numpy as np
 
-_ALLOWED_HISTORY_FIELDS = frozenset({"static_image_emb", "recur_image_emb"})
-_HISTORY_INPUT_FIELDS = (
-    "static_image_emb",
-    "static_mask",
-    "static_pos_emb",
-    "static_state_emb",
-    "recur_image_emb",
-    "recur_mask",
-    "recur_pos_emb",
-    "recur_state_emb",
+_EDITABLE_MEMORY_FIELDS = frozenset({"static_image_emb", "recur_image_emb"})
+_ALLOWED_HISTORY_FIELDS = frozenset(
+    {
+        "static_image_emb",
+        "static_mask",
+        "static_pos_emb",
+        "static_state_emb",
+        "recur_image_emb",
+        "recur_mask",
+        "recur_pos_emb",
+        "recur_state_emb",
+    }
 )
+_HISTORY_INPUT_FIELDS = tuple(sorted(_ALLOWED_HISTORY_FIELDS))
 
 
 @dataclass(frozen=True)
@@ -48,30 +51,74 @@ def _get_field(observation: Any, field: str) -> Any:
     return getattr(observation, field)
 
 
-def replace_observation_memory(observation: Any, replacement: Any, *, field: str) -> Any:
-    """Replace only a recognized historical memory tensor.
+def extract_observation_history(
+    observation: Any, *, representation: str = "static"
+) -> dict[str, Any]:
+    """Extract a complete history-only bundle from an observation.
 
-    Current images, current state, prompt/instruction fields, masks, and model
+    The returned mapping never contains current RGB, current robot state,
+    instruction tokens, or model parameters.
+    """
+    if representation not in {"static", "recur"}:
+        raise ValueError("representation must be 'static' or 'recur'")
+    prefix = "static_" if representation == "static" else "recur_"
+    result: dict[str, Any] = {}
+    for field in sorted(name for name in _ALLOWED_HISTORY_FIELDS if name.startswith(prefix)):
+        try:
+            value = _get_field(observation, field)
+        except (KeyError, AttributeError):
+            continue
+        if value is not None:
+            result[field] = value
+    if not result:
+        raise ValueError(f"observation contains no {representation} history fields")
+    return result
+
+
+def replace_observation_history(
+    observation: Any, replacements: Mapping[str, Any]
+) -> Any:
+    """Atomically replace only recognized historical fields.
+
+    This is the intervention used by full-memory hypothesis transplants and
+    readout-mask branching. Current images, current state, prompts, and model
     parameters remain untouched by construction.
     """
-    if field not in _ALLOWED_HISTORY_FIELDS:
-        choices = ", ".join(sorted(_ALLOWED_HISTORY_FIELDS))
-        raise ValueError(f"{field!r} is not a history memory field; choose one of: {choices}")
-    current = _get_field(observation, field)
-    if tuple(np.shape(replacement)) != tuple(np.shape(current)):
-        raise ValueError(
-            f"replacement shape {tuple(np.shape(replacement))} != {field} shape {tuple(np.shape(current))}"
-        )
+    if not replacements:
+        raise ValueError("at least one history replacement is required")
+    invalid = sorted(set(replacements) - _ALLOWED_HISTORY_FIELDS)
+    if invalid:
+        raise ValueError("non-history fields cannot be replaced: " + ", ".join(invalid))
+
+    validated: dict[str, Any] = {}
+    for field, replacement in replacements.items():
+        current = _get_field(observation, field)
+        if tuple(np.shape(replacement)) != tuple(np.shape(current)):
+            raise ValueError(
+                f"replacement shape {tuple(np.shape(replacement))} != {field} shape {tuple(np.shape(current))}"
+            )
+        validated[field] = replacement
+
     if isinstance(observation, Mapping):
         result = dict(observation)
-        result[field] = replacement
+        result.update(validated)
         return result
     replace_method = getattr(observation, "replace", None)
     if callable(replace_method):
-        return replace_method(**{field: replacement})
+        return replace_method(**validated)
     if is_dataclass(observation):
-        return dataclass_replace(observation, **{field: replacement})
+        return dataclass_replace(observation, **validated)
     raise TypeError("observation must be a mapping or immutable dataclass-like object with replace()")
+
+
+def replace_observation_memory(observation: Any, replacement: Any, *, field: str) -> Any:
+    """Replace one differentiable history-memory tensor."""
+    if field not in _EDITABLE_MEMORY_FIELDS:
+        choices = ", ".join(sorted(_EDITABLE_MEMORY_FIELDS))
+        raise ValueError(
+            f"{field!r} is not an editable history memory field; choose one of: {choices}"
+        )
+    return replace_observation_history(observation, {field: replacement})
 
 
 def build_fixed_noise_action_problem(
@@ -86,13 +133,12 @@ def build_fixed_noise_action_problem(
 ) -> FixedNoiseActionProblem:
     """Expose an upstream MME-VLA policy as a pure fixed-context action function.
 
-    The upstream policy's compiled ``_sample_actions`` function is used in the
-    same process as JAX autodiff. The public function accepts an *unbatched*
-    history memory and returns an unbatched action chunk. This avoids crossing
-    the WebSocket/NumPy boundary that broke the original E7 gradient path.
+    The public function accepts an unbatched history memory and returns an
+    unbatched action chunk. Current images, state, prompt, model parameters, and
+    supplied flow noise remain fixed.
     """
-    if memory_field not in _ALLOWED_HISTORY_FIELDS:
-        raise ValueError(f"{memory_field!r} is not a history memory field")
+    if memory_field not in _EDITABLE_MEMORY_FIELDS:
+        raise ValueError(f"{memory_field!r} is not an editable history memory field")
     if num_steps <= 0:
         raise ValueError("num_steps must be positive")
     sample_actions = sample_actions_fn or getattr(policy, "_sample_actions", None)

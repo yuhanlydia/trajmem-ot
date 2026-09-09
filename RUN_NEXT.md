@@ -1,6 +1,17 @@
 # Next GPU Experiments
 
-This is the execution handoff for an agent working on an NVIDIA 16GB or 24GB GPU. Run the stages in order. Do not rerun the old scalar finite-difference E7 as the main experiment.
+This file is the current execution handoff. It supersedes the earlier plan that sent the released BF16 policy directly into JVP-based E12.
+
+## Why the protocol changed
+
+The FP32 shadow result shows that the JVP wiring is correct on a numerically smooth path, while the deployed BF16 modulation/LLM path is not faithfully described by its infinitesimal AD tangent. Therefore:
+
+1. use FP32 JVP only for mechanism diagnostics;
+2. use full forward transplants to test the research phenomenon;
+3. use boolean readout masks as the first deployment-safe view generator;
+4. use finite BF16 action responses for any deployed inverse pullback.
+
+Do **not** run `scripts/run_e12_operator_basis.py` as the main next experiment.
 
 ## 0. Pull and verify
 
@@ -8,112 +19,153 @@ This is the execution handoff for an agent working on an NVIDIA 16GB or 24GB GPU
 git pull --ff-only
 python -m pip install -e '.[dev,jax]'
 pytest -q
-python scripts/run_e11_jvp_smoke.py --preset 16gb --output results/e11/smoke_16gb.json
+python -m compileall -q src scripts tests
 ```
 
-For the released MME-VLA runtime:
+Prepare the released runtime:
 
 ```bash
-bash scripts/bootstrap_robomme.sh
 export TRAJMEM_ROOT="$(pwd)"
 export ROBOMME_DIR="$TRAJMEM_ROOT/third_party/robomme_policy_learning"
 export CHECKPOINT=/absolute/path/to/perceptual-framesamp-modul/79999
 export DATA=/absolute/path/to/robomme_preprocessed_data_sample
-mkdir -p "$TRAJMEM_ROOT/results/e11" "$TRAJMEM_ROOT/results/e12" "$TRAJMEM_ROOT/results/e13"
+
+bash scripts/bootstrap_robomme.sh
+mkdir -p results/e11d results/e12s results/e13b results/e13c
 cd "$ROBOMME_DIR"
+
+export XLA_PYTHON_CLIENT_PREALLOCATE=false
+export XLA_PYTHON_CLIENT_MEM_FRACTION=0.75
 ```
 
-All following commands execute inside the upstream `uv` environment but call scripts from this repository.
+All commands below execute from the upstream `uv` environment and call scripts in this repository.
 
-## 1. E11 — exact JAX memory-to-action operator
+## 1. E11-D — confirm the FP32 root-cause diagnosis
+
+Start with states 0 and 1:
+
+```bash
+for INDEX in 0 1; do
+  for STEPS in 1 10; do
+    JAX_DEFAULT_MATMUL_PRECISION=highest \
+    uv run python "$TRAJMEM_ROOT/scripts/run_e11_robomme_jvp.py" \
+      --checkpoint "$CHECKPOINT" \
+      --data "$DATA" \
+      --index "$INDEX" \
+      --preset 16gb \
+      --num-steps "$STEPS" \
+      --fd-directions 2 \
+      --fd-radii 2.5e-4 \
+      --fp32-shadow \
+      --output "$TRAJMEM_ROOT/results/e11d/state_${INDEX}_steps_${STEPS}.json"
+  done
+done
+```
+
+Then extend to states 0–7 at one and ten flow steps. Record separately:
+
+- `base_primal_delta_norm`;
+- `cosine_robot_8d`;
+- `relative_error`;
+- response singular values and `effective_rank_90`.
+
+This experiment validates the smooth diagnostic operator. It does not convert the released checkpoint into an FP32 deployment model.
+
+## 2. E13-B — oracle full-history transplant
+
+This is the first decisive test of the research gap. It uses complete history bundles rather than a `0.025%` perturbation.
+
+The committed `results/e13_pairs.json` contains candidate same-task pairs. Inspect the reported image/state distances and retain only pairs whose histories represent a plausible competing interpretation for the fixed current context.
 
 ### 16GB
 
 ```bash
-export XLA_PYTHON_CLIENT_PREALLOCATE=false
-export XLA_PYTHON_CLIENT_MEM_FRACTION=0.75
+for PAIR in 0 1 2 3 4 5 6 7; do
+  uv run python "$TRAJMEM_ROOT/scripts/run_e13_oracle_transplant.py" \
+    --checkpoint "$CHECKPOINT" \
+    --data "$DATA" \
+    --pairs "$TRAJMEM_ROOT/results/e13_pairs.json" \
+    --pair-index "$PAIR" \
+    --preset 16gb \
+    --reference-samples 4 \
+    --target-samples 4 \
+    --output "$TRAJMEM_ROOT/results/e13b/pair_${PAIR}.json"
+done
+
+uv run python "$TRAJMEM_ROOT/scripts/analyze_e13_oracle.py" \
+  "$TRAJMEM_ROOT"/results/e13b/pair_*.json \
+  --output "$TRAJMEM_ROOT/results/e13b/summary.json"
+```
+
+For each direction, the comparison is:
+
+\[
+(1\text{ wrong shared memory},8\text{ noises})
+\quad\text{vs}\quad
+(\text{wrong}+\text{correct memory},4\text{ noises each}).
+\]
+
+Primary outputs:
+
+- calibrated correct-mode coverage;
+- coverage gain from adding the correct memory hypothesis;
+- nearest-distance improvement;
+- paired action difference under identical noise;
+- prompt/image/state pair diagnostics.
+
+A positive oracle coverage gain shows that the missing action support can be recovered by changing the history hypothesis rather than drawing more noise from the wrong shared memory.
+
+## 3. E13-C — deployment-faithful readout-mask branching
+
+This experiment leaves all memory values unchanged and changes only the valid history span exposed to memory attention.
+
+```bash
 for INDEX in 0 1 2 3 4 5 6 7; do
-  uv run python "$TRAJMEM_ROOT/scripts/run_e11_robomme_jvp.py" \
+  uv run python "$TRAJMEM_ROOT/scripts/run_e13_readout_mask_branching.py" \
     --checkpoint "$CHECKPOINT" \
     --data "$DATA" \
     --index "$INDEX" \
     --preset 16gb \
-    --output "$TRAJMEM_ROOT/results/e11/state_${INDEX}_16gb.json"
-done
-uv run python "$TRAJMEM_ROOT/scripts/analyze_e11.py" \
-  "$TRAJMEM_ROOT"/results/e11/state_*_16gb.json \
-  --output "$TRAJMEM_ROOT/results/e11/summary_16gb.json"
-```
-
-### 24GB
-
-```bash
-export XLA_PYTHON_CLIENT_PREALLOCATE=false
-export XLA_PYTHON_CLIENT_MEM_FRACTION=0.88
-for INDEX in 0 1 2 3 4 5 6 7; do
-  uv run python "$TRAJMEM_ROOT/scripts/run_e11_robomme_jvp.py" \
-    --checkpoint "$CHECKPOINT" \
-    --data "$DATA" \
-    --index "$INDEX" \
-    --preset 24gb \
-    --output "$TRAJMEM_ROOT/results/e11/state_${INDEX}_24gb.json"
+    --keep-fraction 0.50 \
+    --view-counts 1,2,4 \
+    --output "$TRAJMEM_ROOT/results/e13c/state_${INDEX}.json"
 done
 ```
 
-Inspect:
+Matched allocations are `(1,8)`, `(2,4)`, and `(4,2)`. Do not interpret `(8,1)` as a variance comparison.
 
-- JVP–central-secant cosine across radii;
-- relative secant error;
-- first-call and warmed latency;
-- `effective_rank_90` and singular-value decay;
-- peak GPU memory externally with `nvidia-smi`.
+Primary outputs:
 
-A poor JVP–secant match indicates an implementation/numerical problem. A low response rank is a scientific observation about the local action-controllable memory subspace.
+- robot-8D between-memory variance;
+- within-view diffusion variance;
+- target-mode coverage when a target action file is supplied;
+- valid token count per readout view.
 
-## 2. Build a coherent history-difference basis
+If oracle transplants help but contiguous masks do not, the gap is real but the view generator is too weak. The next model should then learn a low-dimensional FP32 attention-logit bias.
 
-Create a JSON file whose entries are matched dataset indices, for example:
+## 4. E12-S — deployed BF16 finite-response recovery
 
-```json
-[
-  {"a": 120, "b": 124},
-  {"a": 813, "b": 817}
-]
-```
+Run this only after E13-B confirms that alternative history conditioning can recover a useful mode. This path never consumes the unvalidated BF16 AD tangent.
 
-Pairs should have the same task/current decision context but differ in the task-critical history variable. Then run:
-
-```bash
-uv run python "$TRAJMEM_ROOT/scripts/build_history_difference_basis.py" \
-  --data "$DATA" \
-  --pairs "$TRAJMEM_ROOT/configs/history_pairs.json" \
-  --history-config perceptual-framesamp-modul.yaml \
-  --count 16 \
-  --output "$TRAJMEM_ROOT/results/e12/history_basis.npz"
-```
-
-Do not describe random rank-one perturbations as memory hypotheses. They remain a control. The primary E13 result requires a coherent matched-history basis.
-
-## 3. E12 — reward-free clean/degraded-memory recovery
-
-This isolates operator quality without sparse simulator reward. The full-history policy is the self-teacher; the student receives a moderately degraded history. Current images, state, instruction, policy weights, and diffusion noise remain fixed.
+First build or reuse a coherent history basis, then run one-state diagnostics:
 
 ```bash
 for BASIS in random history hybrid; do
   EXTRA=()
   if [[ "$BASIS" != random ]]; then
-    EXTRA=(--history-basis "$TRAJMEM_ROOT/results/e12/history_basis.npz")
+    EXTRA=(--history-basis "$TRAJMEM_ROOT/results/e13_history_basis.npz")
   fi
-  uv run python "$TRAJMEM_ROOT/scripts/run_e12_operator_basis.py" \
+  uv run python "$TRAJMEM_ROOT/scripts/run_e12_secant_recovery.py" \
     --checkpoint "$CHECKPOINT" \
     --data "$DATA" \
     --index 0 \
     --preset 16gb \
     --basis "$BASIS" \
     --drop-fraction 0.20 \
-    --trust-radius 2.5e-4 \
+    --probe-radii 2.5e-4,1e-3,2.5e-3,5e-3 \
+    --max-update-radius 2.5e-3 \
     --fresh-noises 4 \
-    --output "$TRAJMEM_ROOT/results/e12/${BASIS}_state0.json" \
+    --output "$TRAJMEM_ROOT/results/e12s/${BASIS}_state0.json" \
     "${EXTRA[@]}"
 done
 ```
@@ -121,47 +173,46 @@ done
 Primary outputs:
 
 - same-noise recovery;
-- fresh-noise mean recovery;
-- negative-direction and norm-matched-random controls;
-- response effective rank;
-- applied relative memory norm.
+- fresh-noise recovery;
+- negative and norm-matched random controls;
+- actual quantized edit norm;
+- finite response singular values;
+- linear prediction residual versus actual recovery.
 
-Positive recovery under fresh noises means the edit changed the memory-conditioned policy rather than overfitting one diffusion sample. This is action-behavior recovery, not yet environment success.
+A useful deployed response model should improve fresh-noise recovery, not only fit the probe noise.
 
-## 4. E13 — memory-view branching versus diffusion branching
+## 5. E14 — trajectory OT in response/readout space
 
-Use equal total forward-pass budgets. On 16GB the default total is 8 trajectories and evaluates `(B,N)=(1,8),(2,4),(4,2),(8,1)`. On 24GB the default total is 32 and evaluates `(1,32),(4,8),(8,4),(32,1)`. The phenomenon-only path does not use JVP or a pullback solver.
-
-```bash
-uv run python "$TRAJMEM_ROOT/scripts/run_e13_memory_view_branching.py" \
-  --checkpoint "$CHECKPOINT" \
-  --data "$DATA" \
-  --index 0 \
-  --preset 16gb \
-  --basis "$TRAJMEM_ROOT/results/e13_history_basis.npz" \
-  --relative-radius 2.5e-4 \
-  --phenomenon-only \
-  --output "$TRAJMEM_ROOT/results/e13/state0_16gb.json"
-```
-
-Primary decomposition:
+Only after a useful E12-S or learned readout operator is established:
 
 \[
-V_\epsilon=\mathbb E_b[\operatorname{Var}_n(A_{b,n})],
-\qquad
-V_M=\operatorname{Var}_b[\mathbb E_n(A_{b,n})].
+\{\tau_i,R_i\}
+\rightarrow
+u^{OT}
+\rightarrow
+\Delta z\text{ or }\Delta M_{sec}.
 \]
 
-The phenomenon of interest is not generic action diversity. It is whether memory-dependent states have substantial `between_memory_variance`, and whether coherent memory branching covers a correct action mode that noise-only branching misses. Target coverage can be added with `--target-actions`; environment success requires the later paired simulator branch experiment.
+Compare:
 
-## 5. What not to claim yet
+- best-of-N;
+- return-weighted centroid;
+- OT transport;
+- random response-space edit;
+- negative transport direction.
 
-Do not claim:
+The primary endpoint is paired simulator success and subgoal progress under fresh diffusion noises.
 
-- improved RoboMME success before full simulator branches are evaluated;
-- that SVD of raw memory is the method;
-- that random perturbations are coherent hypotheses;
-- that action disagreement alone is calibrated belief uncertainty;
-- that the old finite-difference E7 invalidates or validates exact JVP.
+## Interpretation matrix
 
-The current method claim is narrower: exact JVP measures the action response of structured history-memory directions, and SVD-ridge computes a bounded inverse pullback in that response subspace.
+| Result | Meaning | Next action |
+|---|---|---|
+| E13-B positive | shared-memory support gap exists | improve automatic view generation |
+| E13-B null | current pair construction or core gap is unsupported | curate true counterfactual histories before method work |
+| E13-B positive, E13-C null | simple masks are too weak | implement learned FP32 attention-logit bias |
+| E12-S positive | deployed finite response is a usable pullback operator | connect return/OT |
+| E12-S null | raw memory is not a useful deployed control surface | optimize only the readout variable |
+
+## Claims that remain prohibited
+
+Do not claim improved RoboMME success, calibrated belief uncertainty, or a learned memory-hypothesis posterior until closed-loop paired simulator experiments are complete.

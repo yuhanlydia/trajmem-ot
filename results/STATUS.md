@@ -1,106 +1,66 @@
-# TrajMem-OT status
+# TrajMem-OT scientific status
 
-## Latest research direction
+## Current gap hypothesis
 
-The project now studies the **shared-memory false-consensus / memory-hypothesis coverage problem** in memory-augmented diffusion VLAs.
-
-A conventional sampler fixes one history memory and changes only diffusion noise:
+Diffusion sampling under one fixed history memory explores conditional action stochasticity:
 
 \[
 A_n=F_\theta(M,\epsilon_n).
 \]
 
-The new experiments explicitly separate coherent memory views from conditional action noise:
+It may fail to cover futures associated with a different plausible interpretation of history. The proposed phenomenon is **shared-memory conditional-support failure**, not generic action variance.
 
-\[
-A_{b,n}=F_\theta(M^{(b)},\epsilon_n).
-\]
+## Evidence established
 
-The core operator is the exact memory-to-action JVP:
+- Released MME-VLA checkpoint and sample data run on a 16GB RTX A4000.
+- Fixed-noise repeated inference is deterministic.
+- A history-only intervention changes the frozen policy action.
+- Different memory-conditioned actions create different deterministic simulator futures.
+- Therefore \(M\rightarrow A\rightarrow S'\) is established.
 
-\[
-Y=J_MD,
-\]
+## Raw BF16 JVP diagnosis
 
-followed by a regularized response-subspace pullback:
+Eight-state E11 execution succeeded and the sampled response energy was concentrated (`median effective_rank_90 = 2`). However, both nominal and quantization-aware BF16 chords disagreed with the AD tangent.
 
-\[
-c^*=\arg\min_c\|Yc-u\|^2+\lambda\|c\|^2,
-\qquad \Delta M=Dc^*.
-\]
+E11-C localized the transformed-primal mismatch to the memory-modulation/LLM path. The memory encoder alone had zero transformed-primal difference, while the first modulation velocity showed nonzero primal drift.
 
-Implemented experiment stages:
+The FP32 shadow promoted the perceptual memory encoder and LLM embedding/accumulation path and used highest matmul precision. On state 0 with one flow step:
 
-- **E11:** exact JAX JVP versus central action secants, speed, and response-rank diagnostics;
-- **E12:** reward-free clean/degraded-memory action recovery with random, history, and hybrid bases;
-- **E13:** matched-compute memory-view versus diffusion-noise branching and variance decomposition;
-- **E14 (existing core, not yet connected to real outcomes):** return-tilted Sinkhorn OT followed by memory pullback.
+- transformed-primal difference: `3.55e-6`;
+- robot-8D JVP–chord cosine: `0.99970`;
+- all-channel cosine: `0.99924`;
+- relative error: `0.0393`.
 
-The real GPU E11–E13 experiments remain to be run. Their scripts are present, but no released-checkpoint result is claimed from the CPU development environment.
+Interpretation: the JVP wiring is strongly supported on a smooth diagnostic path, but the released BF16 path must not be treated as an infinitesimal deployment control surface.
 
-## Evidence already established by the original experiments
+## E13-A result
 
-### Controlled synthetic video-memory system
+Tiny global history-basis edits at relative radius `2.5e-4` produced very small robot-action memory variance fractions on two states (`0.00019–0.00171`). Diffusion noise dominated. This is a null result for small generic perturbations, not a test of complete competing history hypotheses.
 
-Eight seeds and eight particles produced:
+## Resolution implemented in the current code
 
-- original return: `-0.553794`;
-- positive memory edit: `-0.551756`;
-- negative direction: `-0.555864`;
-- norm-matched random: `-0.553955`;
-- per-particle improvement rate: `96.875%`.
+1. **FP32 JVP remains diagnostic only.**
+2. **Full history-bundle transplant** tests the gap without gradients (`E13-B`).
+3. **History-mask branching** changes readout support without changing BF16 memory values (`E13-C`).
+4. **Finite BF16 secant responses** replace AD-JVP for deployed inverse pullback (`E12-S`).
+5. SVD is performed on action-response matrices, not on all raw memory values at every step.
 
-This is a controlled mechanism check, not RoboMME task performance.
+## Open claims
 
-### Released frozen MME-VLA plumbing
+Not yet established:
 
-- official sample dataloader read `27,452` samples;
-- released `perceptual-framesamp-modul` checkpoint restored on one RTX 3090;
-- the model produced finite action chunks of shape `[20, 8]`;
-- fixed-noise repeated inference was bit exact;
-- clearing an applied history delta restored the original action exactly;
-- a history-only memory edit changed the frozen model's action;
-- deterministic simulator reconstruction plus identical prefix replay produced identical branch starts;
-- different memory-conditioned actions produced distinct final physical-state fingerprints.
-
-Therefore the causal chain
-
-\[
-M\rightarrow A\rightarrow S'
-\]
-
-is established. The beneficial chain
-
-\[
-M^+\rightarrow R_{env}\uparrow
-\]
-
-is not yet established.
-
-## Original E7 — scalar black-box finite differences
-
-- backbone: frozen `pi0.5 / MME-VLA perceptual-framesamp-modul`;
-- 64 real training-demonstration states, 16 per selected task;
-- memory: `static_image_emb [512, 2048]`;
-- 16 random rank-one probe directions;
-- 64 norm-matched random controls for every nonzero radius;
-- best descriptive radius `0.1%`:
-  - `P(Q+ > Q0) = 56.25%`;
-  - `P(Q+ > Q-) = 60.94%`;
-  - `P(Q+ > Qrandom) = 58.03%`.
-
-The effect was weak and heterogeneous. This diagnoses the combination of sparse random directions and scalar finite-difference scores. It is not evidence about the exact action-response JVP added in E11.
-
-## Original compact E8
-
-- four tasks × two episodes × four conditions = 32 branches;
-- `M`, fixed random `probe_plus`, `probe_minus`, and norm-matched random;
-- 150-step cap;
-- all conditions had 25% success because `VideoUnmask` succeeded and the other tasks did not;
-- dense returns were zero.
-
-The probes were random sensitivity controls, not return-conditioned edits. The experiment validated paired closed-loop infrastructure but did not establish a beneficial method effect.
+- oracle memory branching improves correct-mode coverage;
+- an automatic readout view generator recovers the oracle gain;
+- finite-response pullback improves fresh-noise behavior;
+- trajectory OT improves simulator return or success;
+- memory branching outperforms matched-compute diffusion-only sampling in closed loop.
 
 ## Next execution
 
-Follow [`../RUN_NEXT.md`](../RUN_NEXT.md). The first required real-model result is E11 exact-JVP validity and response-rank measurement on the released checkpoint. E13 should use a coherent matched-history basis; random bases are controls only.
+Follow `RUN_NEXT.md` in this order:
+
+1. E11-D FP32-shadow replication;
+2. E13-B oracle history transplant;
+3. E13-C readout-mask branching;
+4. E12-S deployed secant recovery;
+5. E14 return/OT only after a useful control operator exists.

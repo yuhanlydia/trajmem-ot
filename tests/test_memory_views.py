@@ -4,6 +4,7 @@ import pytest
 from trajmem_ot.memory_views import (
     allocation_grid,
     build_memory_views,
+    contiguous_history_mask_views,
     nearest_target_coverage,
     variance_decomposition,
 )
@@ -24,7 +25,6 @@ def test_build_memory_views_respects_relative_trust_radius():
 
 
 def test_variance_decomposition_obeys_law_of_total_variance():
-    # Two memory views with large mean separation and small within-view noise.
     actions = np.asarray(
         [
             [[[0.0]], [[0.2]]],
@@ -73,3 +73,35 @@ def test_hypothesis_coefficients_include_base_and_symmetric_axes():
     np.testing.assert_array_equal(coefficients[1], -coefficients[2])
     np.testing.assert_array_equal(coefficients[3], -coefficients[4])
     np.testing.assert_allclose(np.linalg.norm(coefficients[1:], axis=1), 1.0)
+
+
+def test_contiguous_history_mask_views_preserve_only_valid_tokens():
+    mask = np.asarray([False, True, True, True, True, False])
+    views = contiguous_history_mask_views(
+        mask, view_count=2, keep_fraction=0.5, include_full=False
+    )
+    assert views.shape == (2, 6)
+    assert np.all(~views[:, [0, 5]])
+    assert np.all(views.sum(axis=1) == 2)
+    np.testing.assert_array_equal(
+        views[0], [False, True, True, False, False, False]
+    )
+    np.testing.assert_array_equal(
+        views[1], [False, False, False, True, True, False]
+    )
+
+
+def test_contiguous_history_mask_views_can_include_full_history():
+    mask = np.asarray([True, True, True, True])
+    views = contiguous_history_mask_views(
+        mask, view_count=3, keep_fraction=0.5, include_full=True
+    )
+    np.testing.assert_array_equal(views[0], mask)
+    assert np.all(views[1:].sum(axis=1) == 2)
+
+
+def test_contiguous_history_mask_views_reject_empty_history():
+    with pytest.raises(ValueError, match="no valid"):
+        contiguous_history_mask_views(
+            np.zeros(4, dtype=bool), view_count=2, keep_fraction=0.5
+        )

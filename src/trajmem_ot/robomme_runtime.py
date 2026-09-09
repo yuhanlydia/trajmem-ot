@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Sequence
 
 from .robomme_jax import prepare_policy_observation
 
@@ -13,6 +13,7 @@ class RoboMMERuntimeState:
     item: dict[str, Any]
     observation: Any
     history_config_name: str
+    index: int
 
 
 def resolve_history_config_name(checkpoint: str | Path, explicit: str | None) -> str:
@@ -33,28 +34,29 @@ def resolve_history_config_name(checkpoint: str | Path, explicit: str | None) ->
     return value
 
 
-def load_runtime_state(
+def load_runtime_states(
     *,
     checkpoint: str | Path,
     data: str | Path,
-    index: int,
+    indices: Sequence[int],
     seed: int,
     train_config_name: str = "mme_vla_suite",
     history_config_name: str | None = None,
-) -> RoboMMERuntimeState:
-    """Load one released RoboMME checkpoint state in the policy process.
+) -> tuple[RoboMMERuntimeState, ...]:
+    """Load several dataset states while restoring the released policy once."""
 
-    Imports are deliberately local so ordinary package imports and CPU unit
-    tests do not require the large upstream RoboMME/OpenPI environment.
-    """
-    if index < 0:
-        raise ValueError("index must be non-negative")
+    normalized = tuple(int(index) for index in indices)
+    if not normalized:
+        raise ValueError("indices must contain at least one dataset index")
+    if any(index < 0 for index in normalized):
+        raise ValueError("indices must be non-negative")
+
     try:
         from mme_vla_suite.models.config.utils import get_history_config
         from mme_vla_suite.policies import policy_config as _policy_config
         from mme_vla_suite.training import config as _config
         from mme_vla_suite.training.dataset import RoboMMEDataset
-    except ImportError as exc:  # pragma: no cover - only available in real runtime
+    except ImportError as exc:  # pragma: no cover - real runtime only
         raise RuntimeError(
             "RoboMME/OpenPI is not importable. Run scripts/bootstrap_robomme.sh "
             "and execute this command from the upstream uv environment."
@@ -73,13 +75,37 @@ def load_runtime_state(
         action_horizon=int(policy._model.action_horizon),
         compute_norm_stats=True,
     )
-    if index >= len(dataset):
-        raise IndexError(f"index {index} is outside dataset length {len(dataset)}")
-    item = dataset[index]
-    observation = prepare_policy_observation(policy, item)
-    return RoboMMERuntimeState(
-        policy=policy,
-        item=item,
-        observation=observation,
-        history_config_name=config_name,
-    )
+    states: list[RoboMMERuntimeState] = []
+    for index in normalized:
+        if index >= len(dataset):
+            raise IndexError(f"index {index} is outside dataset length {len(dataset)}")
+        item = dataset[index]
+        states.append(
+            RoboMMERuntimeState(
+                policy=policy,
+                item=item,
+                observation=prepare_policy_observation(policy, item),
+                history_config_name=config_name,
+                index=index,
+            )
+        )
+    return tuple(states)
+
+
+def load_runtime_state(
+    *,
+    checkpoint: str | Path,
+    data: str | Path,
+    index: int,
+    seed: int,
+    train_config_name: str = "mme_vla_suite",
+    history_config_name: str | None = None,
+) -> RoboMMERuntimeState:
+    return load_runtime_states(
+        checkpoint=checkpoint,
+        data=data,
+        indices=(index,),
+        seed=seed,
+        train_config_name=train_config_name,
+        history_config_name=history_config_name,
+    )[0]

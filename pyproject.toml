@@ -1,7 +1,7 @@
 [project]
 name = "trajmem-ot"
-version = "0.2.0"
-description = "Action-grounded memory-hypothesis branching and trajectory-to-memory transport for VLAs"
+version = "0.3.0"
+description = "Memory-hypothesis branching and deployed finite-response trajectory-to-memory transport for VLAs"
 requires-python = ">=3.10"
 dependencies = ["torch>=2.2", "numpy>=1.24", "pyyaml>=6"]
 

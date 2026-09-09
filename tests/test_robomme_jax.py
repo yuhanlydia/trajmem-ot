@@ -8,7 +8,9 @@ jnp = pytest.importorskip("jax.numpy")
 
 from trajmem_ot.robomme_jax import (
     build_fixed_noise_action_problem,
+    extract_observation_history,
     prepare_policy_observation,
+    replace_observation_history,
     replace_observation_memory,
 )
 
@@ -35,6 +37,20 @@ class DummyObservation:
         )
 
 
+@dataclass(frozen=True)
+class FullDummyObservation:
+    static_image_emb: object
+    static_pos_emb: object
+    static_state_emb: object
+    static_mask: object
+    state: object
+    images: object
+    prompt: object = None
+
+    def replace(self, **changes):
+        return replace(self, **changes)
+
+
 class DummyPolicy:
     def __init__(self):
         self._input_transform = lambda inputs: inputs
@@ -57,12 +73,49 @@ def test_replace_observation_memory_changes_only_history_field():
         images={"base": jnp.ones((1, 2, 2, 3))},
     )
     replacement = jnp.ones((1, 3, 2))
-    changed = replace_observation_memory(observation, replacement, field="static_image_emb")
-    np.testing.assert_array_equal(np.asarray(changed.static_image_emb), np.ones((1, 3, 2)))
+    changed = replace_observation_memory(
+        observation, replacement, field="static_image_emb"
+    )
+    np.testing.assert_array_equal(
+        np.asarray(changed.static_image_emb), np.ones((1, 3, 2))
+    )
     assert changed.state is observation.state
     assert changed.images is observation.images
-    with pytest.raises(ValueError, match="history memory"):
+    with pytest.raises(ValueError, match="editable history memory"):
         replace_observation_memory(observation, observation.state, field="state")
+
+
+def test_history_bundle_transplant_preserves_current_inputs():
+    base = FullDummyObservation(
+        static_image_emb=jnp.zeros((1, 3, 2)),
+        static_pos_emb=jnp.zeros((1, 3, 1)),
+        static_state_emb=jnp.zeros((1, 3, 2)),
+        static_mask=jnp.asarray([[True, True, False]]),
+        state=jnp.asarray([[1.0, 2.0]]),
+        images={"base": jnp.ones((1, 2, 2, 3))},
+        prompt="task",
+    )
+    donor = FullDummyObservation(
+        static_image_emb=jnp.ones((1, 3, 2)),
+        static_pos_emb=jnp.ones((1, 3, 1)),
+        static_state_emb=jnp.ones((1, 3, 2)),
+        static_mask=jnp.asarray([[False, True, True]]),
+        state=jnp.asarray([[9.0, 9.0]]),
+        images={"base": jnp.zeros((1, 2, 2, 3))},
+        prompt="other",
+    )
+    changed = replace_observation_history(
+        base, extract_observation_history(donor, representation="static")
+    )
+    np.testing.assert_array_equal(changed.static_image_emb, donor.static_image_emb)
+    np.testing.assert_array_equal(changed.static_pos_emb, donor.static_pos_emb)
+    np.testing.assert_array_equal(changed.static_state_emb, donor.static_state_emb)
+    np.testing.assert_array_equal(changed.static_mask, donor.static_mask)
+    assert changed.state is base.state
+    assert changed.images is base.images
+    assert changed.prompt == base.prompt
+    with pytest.raises(ValueError, match="non-history"):
+        replace_observation_history(base, {"state": donor.state})
 
 
 def test_fixed_noise_action_problem_exposes_unbatched_memory_and_reuses_noise():

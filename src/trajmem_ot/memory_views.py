@@ -201,3 +201,43 @@ def hypothesis_coefficients(
         vector = vector / norm
         rows.extend([vector, -vector])
     return np.stack(rows, axis=0)
+
+
+def contiguous_history_mask_views(
+    mask: Array,
+    *,
+    view_count: int,
+    keep_fraction: float,
+    include_full: bool = False,
+) -> Array:
+    """Create coherent readout views from contiguous valid history spans.
+
+    The memory values are not modified. Only the boolean history-attention mask
+    changes, so this is a deployment-faithful readout intervention that avoids
+    interpreting an unvalidated BF16 raw-memory AD tangent as a deployed edit.
+    """
+    base = np.asarray(mask, dtype=bool)
+    if base.ndim != 1:
+        raise ValueError("mask must be one-dimensional")
+    if view_count <= 0:
+        raise ValueError("view_count must be positive")
+    if not 0.0 < keep_fraction <= 1.0:
+        raise ValueError("keep_fraction must be in (0, 1]")
+    valid = np.flatnonzero(base)
+    if valid.size == 0:
+        raise ValueError("mask contains no valid history tokens")
+    window_count = view_count - int(include_full)
+    if window_count < 0:
+        raise ValueError("include_full requires at least one view")
+    keep = max(1, min(valid.size, int(round(valid.size * keep_fraction))))
+    rows: list[Array] = []
+    if include_full:
+        rows.append(base.copy())
+    if window_count:
+        max_start = valid.size - keep
+        starts = np.rint(np.linspace(0, max_start, num=window_count)).astype(int)
+        for start in starts:
+            row = np.zeros_like(base)
+            row[valid[start : start + keep]] = True
+            rows.append(row)
+    return np.stack(rows, axis=0)

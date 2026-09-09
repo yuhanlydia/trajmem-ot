@@ -44,9 +44,13 @@ def test_e11_smoke_script_runs_and_writes_operator_metrics(tmp_path: Path, prese
         "scripts/run_e11_robomme_jvp.py",
         "scripts/run_e11_stage_localization.py",
         "scripts/run_e12_operator_basis.py",
+        "scripts/run_e12_secant_recovery.py",
         "scripts/build_history_difference_basis.py",
         "scripts/run_e13_memory_view_branching.py",
+        "scripts/run_e13_oracle_transplant.py",
+        "scripts/run_e13_readout_mask_branching.py",
         "scripts/analyze_e11.py",
+        "scripts/analyze_e13_oracle.py",
     ],
 )
 def test_experiment_scripts_expose_help_without_robomme_install(script: str):
