@@ -63,7 +63,7 @@ The pre-outcome execution-start miner produced 22 episode-disjoint candidates an
 - median gain `-0.0625`;
 - 8 wins, 12 losses, 2 ties; exact sign-test `p=0.5034`.
 
-Nearest-support distance improved on average and tolerance multiplier `2.0` was weakly positive, but these are secondary sensitivity results. Per the decision table, non-oracle router scaling stops here. The required next dataset consists of identical serialized simulator/current states paired with distinct histories.
+Nearest-support distance improved in the first block, but this is a secondary sensitivity result. After four noise blocks, every predeclared tolerance multiplier from `0.75` through `2.0` had a pair-bootstrap coverage-gain interval crossing zero; the earlier weak `2.0` signal did not replicate. Per the decision table, non-oracle router scaling stops here. The required next dataset consists of identical serialized simulator/current states paired with distinct histories.
 
 Three independent diffusion-noise replications (`seed=17`, `27`, and `37`) did not change that conclusion. After averaging all four blocks within each pair, the mean gain was `+0.07386`, the pair-bootstrap interval was `[-0.03196,+0.20170]`, the median was `-0.03906`, and the exact sign test counted `6/15/1` wins/losses/ties (`p=0.07835`). Pair effects were highly correlated across blocks (`r=0.891--0.947`), so the uncertainty is dominated by stable pair heterogeneity rather than diffusion-noise sampling.
 

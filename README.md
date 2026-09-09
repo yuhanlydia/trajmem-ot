@@ -61,7 +61,7 @@ A pre-outcome miner selected one execution-start state per episode/prompt/subgoa
 - positive pairs: `8/22`, losses: `12/22`, ties: `2/22`;
 - exact sign-test: `p=0.5034`.
 
-Mean nearest-support distance still improved (`+0.09098`, interval `[+0.00491,+0.21180]`), and the widest tolerance multiplier `2.0` had a slightly positive lower bound. These secondary signals do not rescue the null primary coverage result. The next pair experiment must use identical serialized simulator/current states with only history changed; learned-router scaling is paused until that stricter test supports the gap.
+Mean nearest-support distance improved in the first block (`+0.09098`, interval `[+0.00491,+0.21180]`). After four noise blocks, all five tolerance multipliers from `0.75` through `2.0` had coverage-gain intervals crossing zero; the earlier weakly positive `2.0` lower bound did not replicate. These secondary signals do not rescue the null primary coverage result. The next pair experiment must use identical serialized simulator/current states with only history changed; learned-router scaling is paused until that stricter test supports the gap.
 
 Three independent diffusion-noise replications confirmed that the primary uncertainty comes from pair choice. Averaging four blocks within each of the 22 pairs gave mean gain `+0.07386`, interval `[-0.03196,+0.20170]`, median `-0.03906`, and `6/15/1` wins/losses/ties (`p=0.07835`). Pair effects correlated `0.891--0.947` across blocks.
 

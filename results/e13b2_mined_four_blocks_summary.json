@@ -312,5 +312,92 @@
       "mean_gain": -0.03125
     }
   ],
-  "claim_scope": "offline native-history action-support coverage on mined cross-episode pairs; not task correctness and not a same-state counterfactual"
+  "claim_scope": "offline native-history action-support coverage on mined cross-episode pairs; not task correctness and not a same-state counterfactual",
+  "tolerance_sensitivity_four_block": {
+    "0.75": {
+      "mean_pair_gain_ci": {
+        "estimate": 0.03480113636363636,
+        "lower": -0.056107954545454544,
+        "upper": 0.13709161931818156,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_pair_gain": -0.0546875,
+      "fraction_positive_pairs": 0.36363636363636365,
+      "sign_test": {
+        "wins": 8,
+        "losses": 14,
+        "ties": 0,
+        "p_value": 0.28627872467041016
+      }
+    },
+    "1": {
+      "mean_pair_gain_ci": {
+        "estimate": 0.05042613636363636,
+        "lower": -0.05894886363636364,
+        "upper": 0.17826704545454544,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_pair_gain": -0.0859375,
+      "fraction_positive_pairs": 0.36363636363636365,
+      "sign_test": {
+        "wins": 8,
+        "losses": 13,
+        "ties": 1,
+        "p_value": 0.38331031799316406
+      }
+    },
+    "1.25": {
+      "mean_pair_gain_ci": {
+        "estimate": 0.07386363636363637,
+        "lower": -0.02911931818181818,
+        "upper": 0.19957386363636365,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_pair_gain": -0.0390625,
+      "fraction_positive_pairs": 0.2727272727272727,
+      "sign_test": {
+        "wins": 6,
+        "losses": 15,
+        "ties": 1,
+        "p_value": 0.0783538818359375
+      }
+    },
+    "1.5": {
+      "mean_pair_gain_ci": {
+        "estimate": 0.07457386363636363,
+        "lower": -0.015642755681818023,
+        "upper": 0.1796875,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_pair_gain": -0.03125,
+      "fraction_positive_pairs": 0.36363636363636365,
+      "sign_test": {
+        "wins": 8,
+        "losses": 13,
+        "ties": 1,
+        "p_value": 0.38331031799316406
+      }
+    },
+    "2": {
+      "mean_pair_gain_ci": {
+        "estimate": 0.06321022727272728,
+        "lower": -0.005681818181818182,
+        "upper": 0.1455965909090909,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_pair_gain": -0.015625,
+      "fraction_positive_pairs": 0.2727272727272727,
+      "sign_test": {
+        "wins": 6,
+        "losses": 12,
+        "ties": 4,
+        "p_value": 0.237884521484375
+      }
+    }
+  }
 }
