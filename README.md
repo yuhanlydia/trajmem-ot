@@ -49,7 +49,7 @@ The current code corrects these limitations. Existing JSON files remain as histo
 - E12-S2 random-row recovery completed `4 states x 5 corruption seeds x 16 random controls x 4 fresh noises`. Mean ours-minus-random recovery was `+0.17031`, interval `[+0.16531,+0.17474]`; all four held-out states were positive.
 - The harder contiguous-row E12-S2 replication also remained positive: mean ours-minus-random `+0.06538`, interval `[+0.03562,+0.09515]`, with all four states positive.
 
-E14 simulator execution is currently blocked by the machine graphics stack. The pinned RoboMME benchmark installs, but SAPIEN cannot create a renderer because no compatible Vulkan ICD is exposed; both GPU and documented CPU-renderer attempts end with `vk::createInstanceUnique: ErrorIncompatibleDriver`. No return manifest was fabricated from proxy labels.
+E14 simulator execution is currently blocked by the container graphics configuration. It exposes `NVIDIA_DRIVER_CAPABILITIES=compute,utility`, without `graphics`. Installing the Vulkan loader/Mesa stack and testing the exact NVIDIA `595.84` userspace library did not make a GPU physical device available; CPU `llvmpipe` is enumerated but SAPIEN rejects it. A new container must expose `graphics` before reset and paired branches can run. No return manifest was fabricated from proxy labels.
 
 ### Expanded strict-pair replication
 
@@ -62,6 +62,10 @@ A pre-outcome miner selected one execution-start state per episode/prompt/subgoa
 - exact sign-test: `p=0.5034`.
 
 Mean nearest-support distance still improved (`+0.09098`, interval `[+0.00491,+0.21180]`), and the widest tolerance multiplier `2.0` had a slightly positive lower bound. These secondary signals do not rescue the null primary coverage result. The next pair experiment must use identical serialized simulator/current states with only history changed; learned-router scaling is paused until that stricter test supports the gap.
+
+Two independent diffusion-noise blocks confirmed that the primary uncertainty comes from pair choice. Averaging three blocks within each of the 22 pairs gave mean gain `+0.07765`, interval `[-0.03409,+0.21117]`, median `-0.04167`, and `7/15/0` wins/losses/ties (`p=0.1338`). Pair effects correlated `0.927--0.947` across blocks.
+
+The complete 22-pair E13-D run also rules out the preregistered contiguous-mask generator: mean coverage gain `-0.20227`, interval `[-0.26706,-0.12898]`, median `-0.275`, with 4 wins and 18 losses (`p=0.00434`). An explicitly post-hoc 13-pair history-language subset and the full view-count/keep-fraction grid had the same negative direction. Hard contiguous masks create different actions but systematically lose native-history support; this result does not test learned readout hypotheses.
 
 ## Numerical resolution
 

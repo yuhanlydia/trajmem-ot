@@ -1,0 +1,3719 @@
+{
+  "experiment": "E13B2_oracle_history_transplant_pair_aggregate",
+  "n_input_reports": 22,
+  "inference_unit": "the two transplant directions are averaged within pair; bootstrap and sign tests use independent pairs",
+  "support_definition": "native-history-conditioned action support; not ground-truth task correctness",
+  "subsets": {
+    "all": {
+      "n_pairs": 22,
+      "pair_indices": [
+        0,
+        1,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        2,
+        20,
+        21,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mean_pair_coverage_gain_ci": {
+        "estimate": 0.022727272727272728,
+        "lower": -0.08522727272727272,
+        "upper": 0.15056818181818182,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_pair_coverage_gain": -0.0625,
+      "fraction_positive_pairs": 0.2727272727272727,
+      "pair_gain_sign_test": {
+        "wins": 6,
+        "losses": 14,
+        "ties": 2,
+        "p_value": 0.11531829833984375
+      },
+      "mean_pair_distance_improvement_ci": {
+        "estimate": 0.07991083328194488,
+        "lower": -0.015199779050433017,
+        "upper": 0.20677917754065747,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_headroom_recovery": -0.5,
+      "median_memory_effect_to_noise_rms": 0.35012376029619396,
+      "tolerance_sensitivity": [
+        {
+          "tolerance_multiplier": 0.75,
+          "n_pairs": 22,
+          "mean_pair_gain_ci": {
+            "estimate": 0.005681818181818182,
+            "lower": -0.11079545454545454,
+            "upper": 0.1278409090909091,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.36363636363636365
+        },
+        {
+          "tolerance_multiplier": 1.0,
+          "n_pairs": 22,
+          "mean_pair_gain_ci": {
+            "estimate": 0.014204545454545454,
+            "lower": -0.10511363636363637,
+            "upper": 0.14772727272727273,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.2727272727272727
+        },
+        {
+          "tolerance_multiplier": 1.25,
+          "n_pairs": 22,
+          "mean_pair_gain_ci": {
+            "estimate": 0.022727272727272728,
+            "lower": -0.08522727272727272,
+            "upper": 0.14772727272727273,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.2727272727272727
+        },
+        {
+          "tolerance_multiplier": 1.5,
+          "n_pairs": 22,
+          "mean_pair_gain_ci": {
+            "estimate": 0.028409090909090908,
+            "lower": -0.06534090909090909,
+            "upper": 0.13927556818181713,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.2727272727272727
+        },
+        {
+          "tolerance_multiplier": 2.0,
+          "n_pairs": 22,
+          "mean_pair_gain_ci": {
+            "estimate": 0.03977272727272727,
+            "lower": -0.045454545454545456,
+            "upper": 0.14488636363636365,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.18181818181818182
+        }
+      ],
+      "pair_level": [
+        {
+          "pair_index": 0,
+          "source_pair_index": 0,
+          "pair_mean_coverage_gain": -0.125,
+          "pair_min_coverage_gain": -0.25,
+          "pair_mean_distance_improvement": -0.14688582028701186,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.19441115777578424,
+          "direction_gains": [
+            -0.25,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.3125,
+            "1": -0.125,
+            "1.25": -0.125,
+            "1.5": -0.0625,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then move the cube to the target in the same manner as before",
+            "prompt_b": "watch the video carefully, then move the cube to the target in the same manner as before",
+            "front_image_mae": 0.004328589345894608,
+            "wrist_image_mae": 0.0028693304342382094,
+            "state_l2": 6.14292428260447e-07,
+            "pair_metadata": {
+              "a": 16076,
+              "b": 16450,
+              "prompt": "watch the video carefully, then move the cube to the target in the same manner as before",
+              "subgoal": "pick up the peg",
+              "episodes": [
+                45,
+                47
+              ],
+              "mining_diagnostics": {
+                "score": 0.00913503857289868,
+                "front_image_mae_downsampled": 0.006076388526707888,
+                "wrist_image_mae_downsampled": 0.0030586193315684795,
+                "current_state_l2": 6.142924462437804e-07
+              },
+              "source_pair_index": 0,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 0,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 1,
+          "source_pair_index": 1,
+          "pair_mean_coverage_gain": 0.625,
+          "pair_min_coverage_gain": 0.25,
+          "pair_mean_distance_improvement": 1.1029082499151224,
+          "pair_mean_headroom_recovery": 0.7,
+          "pair_median_memory_effect_to_noise_rms": 3.170231720135745,
+          "direction_gains": [
+            0.25,
+            1.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.5625,
+            "1": 0.625,
+            "1.25": 0.625,
+            "1.5": 0.5625,
+            "2": 0.6875
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+            "prompt_b": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+            "front_image_mae": 0.007687477504505831,
+            "wrist_image_mae": 0.004648525107140635,
+            "state_l2": 8.665116570293612e-06,
+            "pair_metadata": {
+              "a": 17970,
+              "b": 17515,
+              "prompt": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+              "subgoal": "pick up the peg by grasping the near end",
+              "episodes": [
+                54,
+                52
+              ],
+              "mining_diagnostics": {
+                "score": 0.011280049295055505,
+                "front_image_mae_downsampled": 0.007322303950786591,
+                "wrist_image_mae_downsampled": 0.00395731208845973,
+                "current_state_l2": 8.66511618369259e-06
+              },
+              "source_pair_index": 1,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 1,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 10,
+          "source_pair_index": 10,
+          "pair_mean_coverage_gain": -0.0625,
+          "pair_min_coverage_gain": -0.125,
+          "pair_mean_distance_improvement": -0.014403399631914091,
+          "pair_mean_headroom_recovery": -0.5,
+          "pair_median_memory_effect_to_noise_rms": 0.3513093236536097,
+          "direction_gains": [
+            -0.125,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.125,
+            "1": -0.125,
+            "1.25": -0.0625,
+            "1.5": -0.125,
+            "2": -0.125
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "first press both buttons on the table, then pick up the container hiding the blue cube, finally pick up another container hiding the green cube",
+            "prompt_b": "first press both buttons on the table, then pick up the container hiding the blue cube, finally pick up another container hiding the green cube",
+            "front_image_mae": 0.004642062561184752,
+            "wrist_image_mae": 0.00467531307070863,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 427,
+              "b": 2376,
+              "prompt": "first press both buttons on the table, then pick up the container hiding the blue cube, finally pick up another container hiding the green cube",
+              "subgoal": "press the first button",
+              "episodes": [
+                5,
+                9
+              ],
+              "mining_diagnostics": {
+                "score": 0.014195261523127556,
+                "front_image_mae_downsampled": 0.006658496800810099,
+                "wrist_image_mae_downsampled": 0.007536764722317457,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 10,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 10,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 11,
+          "source_pair_index": 11,
+          "pair_mean_coverage_gain": 0.0625,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": 0.047288466501001776,
+          "pair_mean_headroom_recovery": 1.0,
+          "pair_median_memory_effect_to_noise_rms": 0.676853368089547,
+          "direction_gains": [
+            0.0,
+            0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.3125,
+            "1": 0.125,
+            "1.25": 0.0625,
+            "1.5": 0.0625,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for two times, finally put it down and press the button to stop",
+            "prompt_b": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for two times, finally put it down and press the button to stop",
+            "front_image_mae": 0.012096849142336379,
+            "wrist_image_mae": 0.008614872951133579,
+            "state_l2": 8.465567169406876e-06,
+            "pair_metadata": {
+              "a": 23789,
+              "b": 24814,
+              "prompt": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for two times, finally put it down and press the button to stop",
+              "subgoal": "pick up the correct cube for the first time",
+              "episodes": [
+                70,
+                72
+              ],
+              "mining_diagnostics": {
+                "score": 0.015068847096199534,
+                "front_image_mae_downsampled": 0.013245507143437862,
+                "wrist_image_mae_downsampled": 0.0018229166744276881,
+                "current_state_l2": 8.465566679660697e-06
+              },
+              "source_pair_index": 11,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 11,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 12,
+          "source_pair_index": 12,
+          "pair_mean_coverage_gain": 0.0625,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": -0.0013555487739066174,
+          "pair_mean_headroom_recovery": 0.25,
+          "pair_median_memory_effect_to_noise_rms": 0.16693046954535937,
+          "direction_gains": [
+            0.0,
+            0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.0625,
+            "1": 0.0,
+            "1.25": 0.0625,
+            "1.5": 0.0625,
+            "2": -0.0625
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then pick up the container hiding the blue cube",
+            "prompt_b": "watch the video carefully, then pick up the container hiding the blue cube",
+            "front_image_mae": 0.013547131594489602,
+            "wrist_image_mae": 0.007235797713784611,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 26428,
+              "b": 6047,
+              "prompt": "watch the video carefully, then pick up the container hiding the blue cube",
+              "subgoal": "pick up the container that hides the blue cube",
+              "episodes": [
+                75,
+                21
+              ],
+              "mining_diagnostics": {
+                "score": 0.015339052304625511,
+                "front_image_mae_downsampled": 0.010753676295280457,
+                "wrist_image_mae_downsampled": 0.004585376009345055,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 12,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 12,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 13,
+          "source_pair_index": 13,
+          "pair_mean_coverage_gain": 0.0,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": -0.01602358054507893,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.25410168230102254,
+          "direction_gains": [
+            0.0,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.125,
+            "1": -0.125,
+            "1.25": 0.0,
+            "1.5": 0.0,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "pick up the red cube and place it on the target, repeating this action two times, then press the button to stop",
+            "prompt_b": "pick up the red cube and place it on the target, repeating this action two times, then press the button to stop",
+            "front_image_mae": 0.009654823939005535,
+            "wrist_image_mae": 0.008007014966478534,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 8087,
+              "b": 6930,
+              "prompt": "pick up the red cube and place it on the target, repeating this action two times, then press the button to stop",
+              "subgoal": "pick up the red cube for the first time",
+              "episodes": [
+                27,
+                25
+              ],
+              "mining_diagnostics": {
+                "score": 0.01769812125712633,
+                "front_image_mae_downsampled": 0.009232026524841785,
+                "wrist_image_mae_downsampled": 0.008466094732284546,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 13,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 13,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 14,
+          "source_pair_index": 14,
+          "pair_mean_coverage_gain": -0.125,
+          "pair_min_coverage_gain": -0.25,
+          "pair_mean_distance_improvement": -0.015610779074342385,
+          "pair_mean_headroom_recovery": -2.0,
+          "pair_median_memory_effect_to_noise_rms": 0.12820379645254848,
+          "direction_gains": [
+            -0.25,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.1875,
+            "1": -0.125,
+            "1.25": -0.125,
+            "1.5": -0.125,
+            "2": -0.125
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "first press the button, then pick up the container hiding the green cube",
+            "prompt_b": "first press the button, then pick up the container hiding the green cube",
+            "front_image_mae": 0.007573964081558527,
+            "wrist_image_mae": 0.00584561217064951,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 4212,
+              "b": 3199,
+              "prompt": "first press the button, then pick up the container hiding the green cube",
+              "subgoal": "press the button",
+              "episodes": [
+                14,
+                11
+              ],
+              "mining_diagnostics": {
+                "score": 0.018448734190315008,
+                "front_image_mae_downsampled": 0.010723039507865906,
+                "wrist_image_mae_downsampled": 0.007725694682449102,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 14,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 14,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 15,
+          "source_pair_index": 15,
+          "pair_mean_coverage_gain": -0.1875,
+          "pair_min_coverage_gain": -0.375,
+          "pair_mean_distance_improvement": -0.019787675050142565,
+          "pair_mean_headroom_recovery": -3.0,
+          "pair_median_memory_effect_to_noise_rms": 0.34893819693877826,
+          "direction_gains": [
+            -0.375,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.0625,
+            "1": -0.125,
+            "1.25": -0.1875,
+            "1.5": -0.1875,
+            "2": -0.1875
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+            "prompt_b": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+            "front_image_mae": 0.010533650716145834,
+            "wrist_image_mae": 0.008377693213668524,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 14393,
+              "b": 14669,
+              "prompt": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+              "subgoal": "press the button",
+              "episodes": [
+                41,
+                42
+              ],
+              "mining_diagnostics": {
+                "score": 0.019163602497428656,
+                "front_image_mae_downsampled": 0.011734068393707275,
+                "wrist_image_mae_downsampled": 0.00742953410372138,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 15,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 15,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 16,
+          "source_pair_index": 16,
+          "pair_mean_coverage_gain": 0.0,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": 0.0029417273340661618,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.8179186761439927,
+          "direction_gains": [
+            0.0,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.0625,
+            "1": 0.0625,
+            "1.25": 0.0,
+            "1.5": 0.0,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then pick up the container hiding the green cube",
+            "prompt_b": "watch the video carefully, then pick up the container hiding the green cube",
+            "front_image_mae": 0.013199949264526367,
+            "wrist_image_mae": 0.007192075486276664,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 6205,
+              "b": 6733,
+              "prompt": "watch the video carefully, then pick up the container hiding the green cube",
+              "subgoal": "pick up the container that hides the green cube",
+              "episodes": [
+                22,
+                24
+              ],
+              "mining_diagnostics": {
+                "score": 0.019235089886933565,
+                "front_image_mae_downsampled": 0.014910130761563778,
+                "wrist_image_mae_downsampled": 0.004324959125369787,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 16,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 16,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 17,
+          "source_pair_index": 17,
+          "pair_mean_coverage_gain": -0.3125,
+          "pair_min_coverage_gain": -0.375,
+          "pair_mean_distance_improvement": -0.1168269518143632,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.14380811110482716,
+          "direction_gains": [
+            -0.375,
+            -0.25
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.5,
+            "1": -0.375,
+            "1.25": -0.3125,
+            "1.5": -0.0625,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then place the blue cube on the target right after the button was pressed",
+            "prompt_b": "watch the video carefully, then place the blue cube on the target right after the button was pressed",
+            "front_image_mae": 0.017459605721866382,
+            "wrist_image_mae": 0.013077480652753045,
+            "state_l2": 1.7086297761554012e-07,
+            "pair_metadata": {
+              "a": 4818,
+              "b": 5063,
+              "prompt": "watch the video carefully, then place the blue cube on the target right after the button was pressed",
+              "subgoal": "pick up the cube",
+              "episodes": [
+                16,
+                17
+              ],
+              "mining_diagnostics": {
+                "score": 0.034089061592832336,
+                "front_image_mae_downsampled": 0.02019505761563778,
+                "wrist_image_mae_downsampled": 0.013893995434045792,
+                "current_state_l2": 1.7086297532387107e-07
+              },
+              "source_pair_index": 17,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 17,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 18,
+          "source_pair_index": 18,
+          "pair_mean_coverage_gain": -0.125,
+          "pair_min_coverage_gain": -0.25,
+          "pair_mean_distance_improvement": -0.014983630454255971,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.7109150899447176,
+          "direction_gains": [
+            -0.25,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.0625,
+            "1": 0.0,
+            "1.25": -0.125,
+            "1.5": -0.125,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for three times, finally put it down and press the button to stop",
+            "prompt_b": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for three times, finally put it down and press the button to stop",
+            "front_image_mae": 0.021191067789115156,
+            "wrist_image_mae": 0.016406588460884844,
+            "state_l2": 8.177465426778486e-06,
+            "pair_metadata": {
+              "a": 25263,
+              "b": 24224,
+              "prompt": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for three times, finally put it down and press the button to stop",
+              "subgoal": "pick up the correct cube for the first time",
+              "episodes": [
+                73,
+                71
+              ],
+              "mining_diagnostics": {
+                "score": 0.03552941235184335,
+                "front_image_mae_downsampled": 0.02034313790500164,
+                "wrist_image_mae_downsampled": 0.015185865573585033,
+                "current_state_l2": 8.177465133485384e-06
+              },
+              "source_pair_index": 18,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 18,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 19,
+          "source_pair_index": 19,
+          "pair_mean_coverage_gain": 0.375,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": 0.24442340745014238,
+          "pair_mean_headroom_recovery": 0.8571428571428571,
+          "pair_median_memory_effect_to_noise_rms": 2.751127303487449,
+          "direction_gains": [
+            0.0,
+            0.75
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.375,
+            "1": 0.4375,
+            "1.25": 0.375,
+            "1.5": 0.375,
+            "2": 0.25
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then use the stick attached to the robot to retrace the same pattern",
+            "prompt_b": "watch the video carefully, then use the stick attached to the robot to retrace the same pattern",
+            "front_image_mae": 0.013913263059129903,
+            "wrist_image_mae": 0.06510442845961627,
+            "state_l2": 0.21204480485967128,
+            "pair_metadata": {
+              "a": 394,
+              "b": 140,
+              "prompt": "watch the video carefully, then use the stick attached to the robot to retrace the same pattern",
+              "subgoal": "move right",
+              "episodes": [
+                4,
+                2
+              ],
+              "mining_diagnostics": {
+                "score": 0.09943495951592922,
+                "front_image_mae_downsampled": 0.015487132593989372,
+                "wrist_image_mae_downsampled": 0.07334558665752411,
+                "current_state_l2": 0.21204480528831482
+              },
+              "source_pair_index": 19,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 19,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 2,
+          "source_pair_index": 2,
+          "pair_mean_coverage_gain": -0.0625,
+          "pair_min_coverage_gain": -0.125,
+          "pair_mean_distance_improvement": -0.005197965681023233,
+          "pair_mean_headroom_recovery": -0.5,
+          "pair_median_memory_effect_to_noise_rms": 0.5220175773490585,
+          "direction_gains": [
+            -0.125,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.0625,
+            "1": -0.0625,
+            "1.25": -0.0625,
+            "1.5": 0.0,
+            "2": -0.125
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "press the button to stop the cube just as it reaches the target for the fourth time",
+            "prompt_b": "press the button to stop the cube just as it reaches the target for the fourth time",
+            "front_image_mae": 0.006708541570925245,
+            "wrist_image_mae": 0.0057645708906884285,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 10912,
+              "b": 10024,
+              "prompt": "press the button to stop the cube just as it reaches the target for the fourth time",
+              "subgoal": "move to the top of the button to prepare",
+              "episodes": [
+                33,
+                30
+              ],
+              "mining_diagnostics": {
+                "score": 0.011448121163994074,
+                "front_image_mae_downsampled": 0.006975081749260426,
+                "wrist_image_mae_downsampled": 0.004473039414733648,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 2,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 2,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 20,
+          "source_pair_index": 20,
+          "pair_mean_coverage_gain": 0.8125,
+          "pair_min_coverage_gain": 0.75,
+          "pair_mean_distance_improvement": 0.35017339713424883,
+          "pair_mean_headroom_recovery": 0.9285714285714286,
+          "pair_median_memory_effect_to_noise_rms": 2.4916071234927446,
+          "direction_gains": [
+            0.875,
+            0.75
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.625,
+            "1": 0.8125,
+            "1.25": 0.8125,
+            "1.5": 0.6875,
+            "2": 0.625
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+            "prompt_b": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+            "front_image_mae": 0.027294362760057637,
+            "wrist_image_mae": 0.07074421153349035,
+            "state_l2": 0.38705298520984194,
+            "pair_metadata": {
+              "a": 18961,
+              "b": 18311,
+              "prompt": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+              "subgoal": "move to the nearest right target by circling around the stick counterclockwise",
+              "episodes": [
+                59,
+                56
+              ],
+              "mining_diagnostics": {
+                "score": 0.11767271235585212,
+                "front_image_mae_downsampled": 0.02899816259741783,
+                "wrist_image_mae_downsampled": 0.0693219006061554,
+                "current_state_l2": 0.387052983045578
+              },
+              "source_pair_index": 20,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 20,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 21,
+          "source_pair_index": 21,
+          "pair_mean_coverage_gain": -0.0625,
+          "pair_min_coverage_gain": -0.125,
+          "pair_mean_distance_improvement": 0.0018583967341428004,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.5546791714739085,
+          "direction_gains": [
+            0.0,
+            -0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.1875,
+            "1": -0.125,
+            "1.25": -0.0625,
+            "1.5": 0.0,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+            "prompt_b": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+            "front_image_mae": 0.02638134862862381,
+            "wrist_image_mae": 0.07790762957404641,
+            "state_l2": 0.26626923730629953,
+            "pair_metadata": {
+              "a": 18211,
+              "b": 18411,
+              "prompt": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+              "subgoal": "move to the nearest right target by circling around the stick clockwise",
+              "episodes": [
+                55,
+                57
+              ],
+              "mining_diagnostics": {
+                "score": 0.11798564605414867,
+                "front_image_mae_downsampled": 0.026894403621554375,
+                "wrist_image_mae_downsampled": 0.07777778059244156,
+                "current_state_l2": 0.2662692368030548
+              },
+              "source_pair_index": 21,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 21,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 3,
+          "source_pair_index": 3,
+          "pair_mean_coverage_gain": -0.1875,
+          "pair_min_coverage_gain": -0.375,
+          "pair_mean_distance_improvement": -0.022679202974969802,
+          "pair_mean_headroom_recovery": -3.0,
+          "pair_median_memory_effect_to_noise_rms": 0.23165293252263316,
+          "direction_gains": [
+            -0.375,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.125,
+            "1": -0.125,
+            "1.25": -0.1875,
+            "1.5": -0.1875,
+            "2": -0.1875
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "press the button to stop the cube just as it reaches the target for the third time",
+            "prompt_b": "press the button to stop the cube just as it reaches the target for the third time",
+            "front_image_mae": 0.007575160849328135,
+            "wrist_image_mae": 0.005838890169181076,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 10669,
+              "b": 10483,
+              "prompt": "press the button to stop the cube just as it reaches the target for the third time",
+              "subgoal": "move to the top of the button to prepare",
+              "episodes": [
+                32,
+                31
+              ],
+              "mining_diagnostics": {
+                "score": 0.012214052025228739,
+                "front_image_mae_downsampled": 0.0065972222946584225,
+                "wrist_image_mae_downsampled": 0.005616829730570316,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 3,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 3,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 4,
+          "source_pair_index": 4,
+          "pair_mean_coverage_gain": -0.25,
+          "pair_min_coverage_gain": -0.375,
+          "pair_mean_distance_improvement": -0.08131550264275325,
+          "pair_mean_headroom_recovery": -3.0,
+          "pair_median_memory_effect_to_noise_rms": 0.10506379504979434,
+          "direction_gains": [
+            -0.125,
+            -0.375
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.1875,
+            "1": -0.3125,
+            "1.25": -0.25,
+            "1.5": -0.0625,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then move the cube to the target in the same manner as before",
+            "prompt_b": "watch the video carefully, then move the cube to the target in the same manner as before",
+            "front_image_mae": 0.0051326176699470075,
+            "wrist_image_mae": 0.0037887075368095847,
+            "state_l2": 1.1077397842998052e-05,
+            "pair_metadata": {
+              "a": 16267,
+              "b": 16790,
+              "prompt": "watch the video carefully, then move the cube to the target in the same manner as before",
+              "subgoal": "pick up the cube",
+              "episodes": [
+                46,
+                49
+              ],
+              "mining_diagnostics": {
+                "score": 0.012332048931421013,
+                "front_image_mae_downsampled": 0.006898488849401474,
+                "wrist_image_mae_downsampled": 0.005433006212115288,
+                "current_state_l2": 1.1077398085035384e-05
+              },
+              "source_pair_index": 4,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 4,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 5,
+          "source_pair_index": 5,
+          "pair_mean_coverage_gain": 0.5,
+          "pair_min_coverage_gain": 0.125,
+          "pair_mean_distance_improvement": 0.5327792235589728,
+          "pair_mean_headroom_recovery": 0.9375,
+          "pair_median_memory_effect_to_noise_rms": 1.839550284746882,
+          "direction_gains": [
+            0.875,
+            0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.375,
+            "1": 0.5,
+            "1.25": 0.5,
+            "1.5": 0.4375,
+            "2": 0.375
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+            "prompt_b": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+            "front_image_mae": 0.009028854557112151,
+            "wrist_image_mae": 0.005707963775185978,
+            "state_l2": 1.7483261465400317e-05,
+            "pair_metadata": {
+              "a": 16994,
+              "b": 17753,
+              "prompt": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+              "subgoal": "pick up the peg by grasping the far end",
+              "episodes": [
+                50,
+                53
+              ],
+              "mining_diagnostics": {
+                "score": 0.012383431313082838,
+                "front_image_mae_downsampled": 0.0076286764815449715,
+                "wrist_image_mae_downsampled": 0.0047538806684315205,
+                "current_state_l2": 1.7483262126916088e-05
+              },
+              "source_pair_index": 5,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 5,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 6,
+          "source_pair_index": 6,
+          "pair_mean_coverage_gain": -0.0625,
+          "pair_min_coverage_gain": -0.125,
+          "pair_mean_distance_improvement": -0.007883630503946967,
+          "pair_mean_headroom_recovery": -1.0,
+          "pair_median_memory_effect_to_noise_rms": 0.29760436566674364,
+          "direction_gains": [
+            -0.125,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.125,
+            "1": -0.0625,
+            "1.25": -0.0625,
+            "1.5": -0.125,
+            "2": -0.125
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "first press the button, then pick up the container hiding the red cube",
+            "prompt_b": "first press the button, then pick up the container hiding the red cube",
+            "front_image_mae": 0.007387049057904412,
+            "wrist_image_mae": 0.005260113641327503,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 2908,
+              "b": 3493,
+              "prompt": "first press the button, then pick up the container hiding the red cube",
+              "subgoal": "press the button",
+              "episodes": [
+                10,
+                12
+              ],
+              "mining_diagnostics": {
+                "score": 0.0125868059694767,
+                "front_image_mae_downsampled": 0.008394608274102211,
+                "wrist_image_mae_downsampled": 0.004192197695374489,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 6,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 6,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 7,
+          "source_pair_index": 7,
+          "pair_mean_coverage_gain": -0.0625,
+          "pair_min_coverage_gain": -0.25,
+          "pair_mean_distance_improvement": -0.011094584940964321,
+          "pair_mean_headroom_recovery": -0.5,
+          "pair_median_memory_effect_to_noise_rms": 0.5605485706816125,
+          "direction_gains": [
+            -0.25,
+            0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.0625,
+            "1": -0.0625,
+            "1.25": -0.0625,
+            "1.5": -0.1875,
+            "2": -0.0625
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+            "prompt_b": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+            "front_image_mae": 0.0077791700176164215,
+            "wrist_image_mae": 0.007281015433517157,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 14085,
+              "b": 15756,
+              "prompt": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+              "subgoal": "press the button",
+              "episodes": [
+                40,
+                44
+              ],
+              "mining_diagnostics": {
+                "score": 0.012923814821988344,
+                "front_image_mae_downsampled": 0.005616829730570316,
+                "wrist_image_mae_downsampled": 0.007306985091418028,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 7,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 7,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 8,
+          "source_pair_index": 8,
+          "pair_mean_coverage_gain": -0.1875,
+          "pair_min_coverage_gain": -0.375,
+          "pair_mean_distance_improvement": -0.01245944358987339,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.21487773244910136,
+          "direction_gains": [
+            -0.375,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.1875,
+            "1": -0.3125,
+            "1.25": -0.1875,
+            "1.5": -0.1875,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "pick up the blue cube and place it on the target, repeating this action three times, then press the button to stop",
+            "prompt_b": "pick up the blue cube and place it on the target, repeating this action three times, then press the button to stop",
+            "front_image_mae": 0.007996842440436868,
+            "wrist_image_mae": 0.006009808708639706,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 9379,
+              "b": 7459,
+              "prompt": "pick up the blue cube and place it on the target, repeating this action three times, then press the button to stop",
+              "subgoal": "pick up the blue cube for the first time",
+              "episodes": [
+                29,
+                26
+              ],
+              "mining_diagnostics": {
+                "score": 0.013459967914968729,
+                "front_image_mae_downsampled": 0.007204861380159855,
+                "wrist_image_mae_downsampled": 0.006255106534808874,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 8,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 8,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 9,
+          "source_pair_index": 9,
+          "pair_mean_coverage_gain": -0.125,
+          "pair_min_coverage_gain": -0.125,
+          "pair_mean_distance_improvement": -0.03782682046036306,
+          "pair_mean_headroom_recovery": -1.0,
+          "pair_median_memory_effect_to_noise_rms": 0.07757363711297004,
+          "direction_gains": [
+            -0.125,
+            -0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.3125,
+            "1": -0.1875,
+            "1.25": -0.125,
+            "1.5": -0.125,
+            "2": -0.0625
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then pick up the container hiding the green cube",
+            "prompt_b": "watch the video carefully, then pick up the container hiding the green cube",
+            "front_image_mae": 0.010160179699168485,
+            "wrist_image_mae": 0.005702319332197601,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 5889,
+              "b": 26601,
+              "prompt": "watch the video carefully, then pick up the container hiding the green cube",
+              "subgoal": "pick up the container that hides the green cube",
+              "episodes": [
+                20,
+                76
+              ],
+              "mining_diagnostics": {
+                "score": 0.013893995201215148,
+                "front_image_mae_downsampled": 0.011008987203240395,
+                "wrist_image_mae_downsampled": 0.0028850079979747534,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 9,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 9,
+              "quality_tier": "strict"
+            }
+          }
+        }
+      ]
+    },
+    "strict": {
+      "n_pairs": 22,
+      "pair_indices": [
+        0,
+        1,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        2,
+        20,
+        21,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mean_pair_coverage_gain_ci": {
+        "estimate": 0.022727272727272728,
+        "lower": -0.08522727272727272,
+        "upper": 0.1534090909090909,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_pair_coverage_gain": -0.0625,
+      "fraction_positive_pairs": 0.2727272727272727,
+      "pair_gain_sign_test": {
+        "wins": 6,
+        "losses": 14,
+        "ties": 2,
+        "p_value": 0.11531829833984375
+      },
+      "mean_pair_distance_improvement_ci": {
+        "estimate": 0.07991083328194488,
+        "lower": -0.012945056894424174,
+        "upper": 0.20500877765550657,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_headroom_recovery": -0.5,
+      "median_memory_effect_to_noise_rms": 0.35012376029619396,
+      "tolerance_sensitivity": [
+        {
+          "tolerance_multiplier": 0.75,
+          "n_pairs": 22,
+          "mean_pair_gain_ci": {
+            "estimate": 0.005681818181818182,
+            "lower": -0.10795454545454546,
+            "upper": 0.1278409090909091,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.36363636363636365
+        },
+        {
+          "tolerance_multiplier": 1.0,
+          "n_pairs": 22,
+          "mean_pair_gain_ci": {
+            "estimate": 0.014204545454545454,
+            "lower": -0.10227272727272728,
+            "upper": 0.14488636363636365,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.2727272727272727
+        },
+        {
+          "tolerance_multiplier": 1.25,
+          "n_pairs": 22,
+          "mean_pair_gain_ci": {
+            "estimate": 0.022727272727272728,
+            "lower": -0.08806818181818182,
+            "upper": 0.15056818181818182,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.2727272727272727
+        },
+        {
+          "tolerance_multiplier": 1.5,
+          "n_pairs": 22,
+          "mean_pair_gain_ci": {
+            "estimate": 0.028409090909090908,
+            "lower": -0.06534090909090909,
+            "upper": 0.14204545454545456,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.2727272727272727
+        },
+        {
+          "tolerance_multiplier": 2.0,
+          "n_pairs": 22,
+          "mean_pair_gain_ci": {
+            "estimate": 0.03977272727272727,
+            "lower": -0.048295454545454544,
+            "upper": 0.14488636363636365,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.18181818181818182
+        }
+      ],
+      "pair_level": [
+        {
+          "pair_index": 0,
+          "source_pair_index": 0,
+          "pair_mean_coverage_gain": -0.125,
+          "pair_min_coverage_gain": -0.25,
+          "pair_mean_distance_improvement": -0.14688582028701186,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.19441115777578424,
+          "direction_gains": [
+            -0.25,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.3125,
+            "1": -0.125,
+            "1.25": -0.125,
+            "1.5": -0.0625,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then move the cube to the target in the same manner as before",
+            "prompt_b": "watch the video carefully, then move the cube to the target in the same manner as before",
+            "front_image_mae": 0.004328589345894608,
+            "wrist_image_mae": 0.0028693304342382094,
+            "state_l2": 6.14292428260447e-07,
+            "pair_metadata": {
+              "a": 16076,
+              "b": 16450,
+              "prompt": "watch the video carefully, then move the cube to the target in the same manner as before",
+              "subgoal": "pick up the peg",
+              "episodes": [
+                45,
+                47
+              ],
+              "mining_diagnostics": {
+                "score": 0.00913503857289868,
+                "front_image_mae_downsampled": 0.006076388526707888,
+                "wrist_image_mae_downsampled": 0.0030586193315684795,
+                "current_state_l2": 6.142924462437804e-07
+              },
+              "source_pair_index": 0,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 0,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 1,
+          "source_pair_index": 1,
+          "pair_mean_coverage_gain": 0.625,
+          "pair_min_coverage_gain": 0.25,
+          "pair_mean_distance_improvement": 1.1029082499151224,
+          "pair_mean_headroom_recovery": 0.7,
+          "pair_median_memory_effect_to_noise_rms": 3.170231720135745,
+          "direction_gains": [
+            0.25,
+            1.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.5625,
+            "1": 0.625,
+            "1.25": 0.625,
+            "1.5": 0.5625,
+            "2": 0.6875
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+            "prompt_b": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+            "front_image_mae": 0.007687477504505831,
+            "wrist_image_mae": 0.004648525107140635,
+            "state_l2": 8.665116570293612e-06,
+            "pair_metadata": {
+              "a": 17970,
+              "b": 17515,
+              "prompt": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+              "subgoal": "pick up the peg by grasping the near end",
+              "episodes": [
+                54,
+                52
+              ],
+              "mining_diagnostics": {
+                "score": 0.011280049295055505,
+                "front_image_mae_downsampled": 0.007322303950786591,
+                "wrist_image_mae_downsampled": 0.00395731208845973,
+                "current_state_l2": 8.66511618369259e-06
+              },
+              "source_pair_index": 1,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 1,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 10,
+          "source_pair_index": 10,
+          "pair_mean_coverage_gain": -0.0625,
+          "pair_min_coverage_gain": -0.125,
+          "pair_mean_distance_improvement": -0.014403399631914091,
+          "pair_mean_headroom_recovery": -0.5,
+          "pair_median_memory_effect_to_noise_rms": 0.3513093236536097,
+          "direction_gains": [
+            -0.125,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.125,
+            "1": -0.125,
+            "1.25": -0.0625,
+            "1.5": -0.125,
+            "2": -0.125
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "first press both buttons on the table, then pick up the container hiding the blue cube, finally pick up another container hiding the green cube",
+            "prompt_b": "first press both buttons on the table, then pick up the container hiding the blue cube, finally pick up another container hiding the green cube",
+            "front_image_mae": 0.004642062561184752,
+            "wrist_image_mae": 0.00467531307070863,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 427,
+              "b": 2376,
+              "prompt": "first press both buttons on the table, then pick up the container hiding the blue cube, finally pick up another container hiding the green cube",
+              "subgoal": "press the first button",
+              "episodes": [
+                5,
+                9
+              ],
+              "mining_diagnostics": {
+                "score": 0.014195261523127556,
+                "front_image_mae_downsampled": 0.006658496800810099,
+                "wrist_image_mae_downsampled": 0.007536764722317457,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 10,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 10,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 11,
+          "source_pair_index": 11,
+          "pair_mean_coverage_gain": 0.0625,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": 0.047288466501001776,
+          "pair_mean_headroom_recovery": 1.0,
+          "pair_median_memory_effect_to_noise_rms": 0.676853368089547,
+          "direction_gains": [
+            0.0,
+            0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.3125,
+            "1": 0.125,
+            "1.25": 0.0625,
+            "1.5": 0.0625,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for two times, finally put it down and press the button to stop",
+            "prompt_b": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for two times, finally put it down and press the button to stop",
+            "front_image_mae": 0.012096849142336379,
+            "wrist_image_mae": 0.008614872951133579,
+            "state_l2": 8.465567169406876e-06,
+            "pair_metadata": {
+              "a": 23789,
+              "b": 24814,
+              "prompt": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for two times, finally put it down and press the button to stop",
+              "subgoal": "pick up the correct cube for the first time",
+              "episodes": [
+                70,
+                72
+              ],
+              "mining_diagnostics": {
+                "score": 0.015068847096199534,
+                "front_image_mae_downsampled": 0.013245507143437862,
+                "wrist_image_mae_downsampled": 0.0018229166744276881,
+                "current_state_l2": 8.465566679660697e-06
+              },
+              "source_pair_index": 11,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 11,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 12,
+          "source_pair_index": 12,
+          "pair_mean_coverage_gain": 0.0625,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": -0.0013555487739066174,
+          "pair_mean_headroom_recovery": 0.25,
+          "pair_median_memory_effect_to_noise_rms": 0.16693046954535937,
+          "direction_gains": [
+            0.0,
+            0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.0625,
+            "1": 0.0,
+            "1.25": 0.0625,
+            "1.5": 0.0625,
+            "2": -0.0625
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then pick up the container hiding the blue cube",
+            "prompt_b": "watch the video carefully, then pick up the container hiding the blue cube",
+            "front_image_mae": 0.013547131594489602,
+            "wrist_image_mae": 0.007235797713784611,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 26428,
+              "b": 6047,
+              "prompt": "watch the video carefully, then pick up the container hiding the blue cube",
+              "subgoal": "pick up the container that hides the blue cube",
+              "episodes": [
+                75,
+                21
+              ],
+              "mining_diagnostics": {
+                "score": 0.015339052304625511,
+                "front_image_mae_downsampled": 0.010753676295280457,
+                "wrist_image_mae_downsampled": 0.004585376009345055,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 12,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 12,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 13,
+          "source_pair_index": 13,
+          "pair_mean_coverage_gain": 0.0,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": -0.01602358054507893,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.25410168230102254,
+          "direction_gains": [
+            0.0,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.125,
+            "1": -0.125,
+            "1.25": 0.0,
+            "1.5": 0.0,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "pick up the red cube and place it on the target, repeating this action two times, then press the button to stop",
+            "prompt_b": "pick up the red cube and place it on the target, repeating this action two times, then press the button to stop",
+            "front_image_mae": 0.009654823939005535,
+            "wrist_image_mae": 0.008007014966478534,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 8087,
+              "b": 6930,
+              "prompt": "pick up the red cube and place it on the target, repeating this action two times, then press the button to stop",
+              "subgoal": "pick up the red cube for the first time",
+              "episodes": [
+                27,
+                25
+              ],
+              "mining_diagnostics": {
+                "score": 0.01769812125712633,
+                "front_image_mae_downsampled": 0.009232026524841785,
+                "wrist_image_mae_downsampled": 0.008466094732284546,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 13,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 13,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 14,
+          "source_pair_index": 14,
+          "pair_mean_coverage_gain": -0.125,
+          "pair_min_coverage_gain": -0.25,
+          "pair_mean_distance_improvement": -0.015610779074342385,
+          "pair_mean_headroom_recovery": -2.0,
+          "pair_median_memory_effect_to_noise_rms": 0.12820379645254848,
+          "direction_gains": [
+            -0.25,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.1875,
+            "1": -0.125,
+            "1.25": -0.125,
+            "1.5": -0.125,
+            "2": -0.125
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "first press the button, then pick up the container hiding the green cube",
+            "prompt_b": "first press the button, then pick up the container hiding the green cube",
+            "front_image_mae": 0.007573964081558527,
+            "wrist_image_mae": 0.00584561217064951,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 4212,
+              "b": 3199,
+              "prompt": "first press the button, then pick up the container hiding the green cube",
+              "subgoal": "press the button",
+              "episodes": [
+                14,
+                11
+              ],
+              "mining_diagnostics": {
+                "score": 0.018448734190315008,
+                "front_image_mae_downsampled": 0.010723039507865906,
+                "wrist_image_mae_downsampled": 0.007725694682449102,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 14,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 14,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 15,
+          "source_pair_index": 15,
+          "pair_mean_coverage_gain": -0.1875,
+          "pair_min_coverage_gain": -0.375,
+          "pair_mean_distance_improvement": -0.019787675050142565,
+          "pair_mean_headroom_recovery": -3.0,
+          "pair_median_memory_effect_to_noise_rms": 0.34893819693877826,
+          "direction_gains": [
+            -0.375,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.0625,
+            "1": -0.125,
+            "1.25": -0.1875,
+            "1.5": -0.1875,
+            "2": -0.1875
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+            "prompt_b": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+            "front_image_mae": 0.010533650716145834,
+            "wrist_image_mae": 0.008377693213668524,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 14393,
+              "b": 14669,
+              "prompt": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+              "subgoal": "press the button",
+              "episodes": [
+                41,
+                42
+              ],
+              "mining_diagnostics": {
+                "score": 0.019163602497428656,
+                "front_image_mae_downsampled": 0.011734068393707275,
+                "wrist_image_mae_downsampled": 0.00742953410372138,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 15,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 15,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 16,
+          "source_pair_index": 16,
+          "pair_mean_coverage_gain": 0.0,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": 0.0029417273340661618,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.8179186761439927,
+          "direction_gains": [
+            0.0,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.0625,
+            "1": 0.0625,
+            "1.25": 0.0,
+            "1.5": 0.0,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then pick up the container hiding the green cube",
+            "prompt_b": "watch the video carefully, then pick up the container hiding the green cube",
+            "front_image_mae": 0.013199949264526367,
+            "wrist_image_mae": 0.007192075486276664,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 6205,
+              "b": 6733,
+              "prompt": "watch the video carefully, then pick up the container hiding the green cube",
+              "subgoal": "pick up the container that hides the green cube",
+              "episodes": [
+                22,
+                24
+              ],
+              "mining_diagnostics": {
+                "score": 0.019235089886933565,
+                "front_image_mae_downsampled": 0.014910130761563778,
+                "wrist_image_mae_downsampled": 0.004324959125369787,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 16,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 16,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 17,
+          "source_pair_index": 17,
+          "pair_mean_coverage_gain": -0.3125,
+          "pair_min_coverage_gain": -0.375,
+          "pair_mean_distance_improvement": -0.1168269518143632,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.14380811110482716,
+          "direction_gains": [
+            -0.375,
+            -0.25
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.5,
+            "1": -0.375,
+            "1.25": -0.3125,
+            "1.5": -0.0625,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then place the blue cube on the target right after the button was pressed",
+            "prompt_b": "watch the video carefully, then place the blue cube on the target right after the button was pressed",
+            "front_image_mae": 0.017459605721866382,
+            "wrist_image_mae": 0.013077480652753045,
+            "state_l2": 1.7086297761554012e-07,
+            "pair_metadata": {
+              "a": 4818,
+              "b": 5063,
+              "prompt": "watch the video carefully, then place the blue cube on the target right after the button was pressed",
+              "subgoal": "pick up the cube",
+              "episodes": [
+                16,
+                17
+              ],
+              "mining_diagnostics": {
+                "score": 0.034089061592832336,
+                "front_image_mae_downsampled": 0.02019505761563778,
+                "wrist_image_mae_downsampled": 0.013893995434045792,
+                "current_state_l2": 1.7086297532387107e-07
+              },
+              "source_pair_index": 17,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 17,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 18,
+          "source_pair_index": 18,
+          "pair_mean_coverage_gain": -0.125,
+          "pair_min_coverage_gain": -0.25,
+          "pair_mean_distance_improvement": -0.014983630454255971,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.7109150899447176,
+          "direction_gains": [
+            -0.25,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.0625,
+            "1": 0.0,
+            "1.25": -0.125,
+            "1.5": -0.125,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for three times, finally put it down and press the button to stop",
+            "prompt_b": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for three times, finally put it down and press the button to stop",
+            "front_image_mae": 0.021191067789115156,
+            "wrist_image_mae": 0.016406588460884844,
+            "state_l2": 8.177465426778486e-06,
+            "pair_metadata": {
+              "a": 25263,
+              "b": 24224,
+              "prompt": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for three times, finally put it down and press the button to stop",
+              "subgoal": "pick up the correct cube for the first time",
+              "episodes": [
+                73,
+                71
+              ],
+              "mining_diagnostics": {
+                "score": 0.03552941235184335,
+                "front_image_mae_downsampled": 0.02034313790500164,
+                "wrist_image_mae_downsampled": 0.015185865573585033,
+                "current_state_l2": 8.177465133485384e-06
+              },
+              "source_pair_index": 18,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 18,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 19,
+          "source_pair_index": 19,
+          "pair_mean_coverage_gain": 0.375,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": 0.24442340745014238,
+          "pair_mean_headroom_recovery": 0.8571428571428571,
+          "pair_median_memory_effect_to_noise_rms": 2.751127303487449,
+          "direction_gains": [
+            0.0,
+            0.75
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.375,
+            "1": 0.4375,
+            "1.25": 0.375,
+            "1.5": 0.375,
+            "2": 0.25
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then use the stick attached to the robot to retrace the same pattern",
+            "prompt_b": "watch the video carefully, then use the stick attached to the robot to retrace the same pattern",
+            "front_image_mae": 0.013913263059129903,
+            "wrist_image_mae": 0.06510442845961627,
+            "state_l2": 0.21204480485967128,
+            "pair_metadata": {
+              "a": 394,
+              "b": 140,
+              "prompt": "watch the video carefully, then use the stick attached to the robot to retrace the same pattern",
+              "subgoal": "move right",
+              "episodes": [
+                4,
+                2
+              ],
+              "mining_diagnostics": {
+                "score": 0.09943495951592922,
+                "front_image_mae_downsampled": 0.015487132593989372,
+                "wrist_image_mae_downsampled": 0.07334558665752411,
+                "current_state_l2": 0.21204480528831482
+              },
+              "source_pair_index": 19,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 19,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 2,
+          "source_pair_index": 2,
+          "pair_mean_coverage_gain": -0.0625,
+          "pair_min_coverage_gain": -0.125,
+          "pair_mean_distance_improvement": -0.005197965681023233,
+          "pair_mean_headroom_recovery": -0.5,
+          "pair_median_memory_effect_to_noise_rms": 0.5220175773490585,
+          "direction_gains": [
+            -0.125,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.0625,
+            "1": -0.0625,
+            "1.25": -0.0625,
+            "1.5": 0.0,
+            "2": -0.125
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "press the button to stop the cube just as it reaches the target for the fourth time",
+            "prompt_b": "press the button to stop the cube just as it reaches the target for the fourth time",
+            "front_image_mae": 0.006708541570925245,
+            "wrist_image_mae": 0.0057645708906884285,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 10912,
+              "b": 10024,
+              "prompt": "press the button to stop the cube just as it reaches the target for the fourth time",
+              "subgoal": "move to the top of the button to prepare",
+              "episodes": [
+                33,
+                30
+              ],
+              "mining_diagnostics": {
+                "score": 0.011448121163994074,
+                "front_image_mae_downsampled": 0.006975081749260426,
+                "wrist_image_mae_downsampled": 0.004473039414733648,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 2,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 2,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 20,
+          "source_pair_index": 20,
+          "pair_mean_coverage_gain": 0.8125,
+          "pair_min_coverage_gain": 0.75,
+          "pair_mean_distance_improvement": 0.35017339713424883,
+          "pair_mean_headroom_recovery": 0.9285714285714286,
+          "pair_median_memory_effect_to_noise_rms": 2.4916071234927446,
+          "direction_gains": [
+            0.875,
+            0.75
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.625,
+            "1": 0.8125,
+            "1.25": 0.8125,
+            "1.5": 0.6875,
+            "2": 0.625
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+            "prompt_b": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+            "front_image_mae": 0.027294362760057637,
+            "wrist_image_mae": 0.07074421153349035,
+            "state_l2": 0.38705298520984194,
+            "pair_metadata": {
+              "a": 18961,
+              "b": 18311,
+              "prompt": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+              "subgoal": "move to the nearest right target by circling around the stick counterclockwise",
+              "episodes": [
+                59,
+                56
+              ],
+              "mining_diagnostics": {
+                "score": 0.11767271235585212,
+                "front_image_mae_downsampled": 0.02899816259741783,
+                "wrist_image_mae_downsampled": 0.0693219006061554,
+                "current_state_l2": 0.387052983045578
+              },
+              "source_pair_index": 20,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 20,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 21,
+          "source_pair_index": 21,
+          "pair_mean_coverage_gain": -0.0625,
+          "pair_min_coverage_gain": -0.125,
+          "pair_mean_distance_improvement": 0.0018583967341428004,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.5546791714739085,
+          "direction_gains": [
+            0.0,
+            -0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.1875,
+            "1": -0.125,
+            "1.25": -0.0625,
+            "1.5": 0.0,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+            "prompt_b": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+            "front_image_mae": 0.02638134862862381,
+            "wrist_image_mae": 0.07790762957404641,
+            "state_l2": 0.26626923730629953,
+            "pair_metadata": {
+              "a": 18211,
+              "b": 18411,
+              "prompt": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+              "subgoal": "move to the nearest right target by circling around the stick clockwise",
+              "episodes": [
+                55,
+                57
+              ],
+              "mining_diagnostics": {
+                "score": 0.11798564605414867,
+                "front_image_mae_downsampled": 0.026894403621554375,
+                "wrist_image_mae_downsampled": 0.07777778059244156,
+                "current_state_l2": 0.2662692368030548
+              },
+              "source_pair_index": 21,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 21,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 3,
+          "source_pair_index": 3,
+          "pair_mean_coverage_gain": -0.1875,
+          "pair_min_coverage_gain": -0.375,
+          "pair_mean_distance_improvement": -0.022679202974969802,
+          "pair_mean_headroom_recovery": -3.0,
+          "pair_median_memory_effect_to_noise_rms": 0.23165293252263316,
+          "direction_gains": [
+            -0.375,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.125,
+            "1": -0.125,
+            "1.25": -0.1875,
+            "1.5": -0.1875,
+            "2": -0.1875
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "press the button to stop the cube just as it reaches the target for the third time",
+            "prompt_b": "press the button to stop the cube just as it reaches the target for the third time",
+            "front_image_mae": 0.007575160849328135,
+            "wrist_image_mae": 0.005838890169181076,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 10669,
+              "b": 10483,
+              "prompt": "press the button to stop the cube just as it reaches the target for the third time",
+              "subgoal": "move to the top of the button to prepare",
+              "episodes": [
+                32,
+                31
+              ],
+              "mining_diagnostics": {
+                "score": 0.012214052025228739,
+                "front_image_mae_downsampled": 0.0065972222946584225,
+                "wrist_image_mae_downsampled": 0.005616829730570316,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 3,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 3,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 4,
+          "source_pair_index": 4,
+          "pair_mean_coverage_gain": -0.25,
+          "pair_min_coverage_gain": -0.375,
+          "pair_mean_distance_improvement": -0.08131550264275325,
+          "pair_mean_headroom_recovery": -3.0,
+          "pair_median_memory_effect_to_noise_rms": 0.10506379504979434,
+          "direction_gains": [
+            -0.125,
+            -0.375
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.1875,
+            "1": -0.3125,
+            "1.25": -0.25,
+            "1.5": -0.0625,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then move the cube to the target in the same manner as before",
+            "prompt_b": "watch the video carefully, then move the cube to the target in the same manner as before",
+            "front_image_mae": 0.0051326176699470075,
+            "wrist_image_mae": 0.0037887075368095847,
+            "state_l2": 1.1077397842998052e-05,
+            "pair_metadata": {
+              "a": 16267,
+              "b": 16790,
+              "prompt": "watch the video carefully, then move the cube to the target in the same manner as before",
+              "subgoal": "pick up the cube",
+              "episodes": [
+                46,
+                49
+              ],
+              "mining_diagnostics": {
+                "score": 0.012332048931421013,
+                "front_image_mae_downsampled": 0.006898488849401474,
+                "wrist_image_mae_downsampled": 0.005433006212115288,
+                "current_state_l2": 1.1077398085035384e-05
+              },
+              "source_pair_index": 4,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 4,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 5,
+          "source_pair_index": 5,
+          "pair_mean_coverage_gain": 0.5,
+          "pair_min_coverage_gain": 0.125,
+          "pair_mean_distance_improvement": 0.5327792235589728,
+          "pair_mean_headroom_recovery": 0.9375,
+          "pair_median_memory_effect_to_noise_rms": 1.839550284746882,
+          "direction_gains": [
+            0.875,
+            0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.375,
+            "1": 0.5,
+            "1.25": 0.5,
+            "1.5": 0.4375,
+            "2": 0.375
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+            "prompt_b": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+            "front_image_mae": 0.009028854557112151,
+            "wrist_image_mae": 0.005707963775185978,
+            "state_l2": 1.7483261465400317e-05,
+            "pair_metadata": {
+              "a": 16994,
+              "b": 17753,
+              "prompt": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+              "subgoal": "pick up the peg by grasping the far end",
+              "episodes": [
+                50,
+                53
+              ],
+              "mining_diagnostics": {
+                "score": 0.012383431313082838,
+                "front_image_mae_downsampled": 0.0076286764815449715,
+                "wrist_image_mae_downsampled": 0.0047538806684315205,
+                "current_state_l2": 1.7483262126916088e-05
+              },
+              "source_pair_index": 5,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 5,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 6,
+          "source_pair_index": 6,
+          "pair_mean_coverage_gain": -0.0625,
+          "pair_min_coverage_gain": -0.125,
+          "pair_mean_distance_improvement": -0.007883630503946967,
+          "pair_mean_headroom_recovery": -1.0,
+          "pair_median_memory_effect_to_noise_rms": 0.29760436566674364,
+          "direction_gains": [
+            -0.125,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.125,
+            "1": -0.0625,
+            "1.25": -0.0625,
+            "1.5": -0.125,
+            "2": -0.125
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "first press the button, then pick up the container hiding the red cube",
+            "prompt_b": "first press the button, then pick up the container hiding the red cube",
+            "front_image_mae": 0.007387049057904412,
+            "wrist_image_mae": 0.005260113641327503,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 2908,
+              "b": 3493,
+              "prompt": "first press the button, then pick up the container hiding the red cube",
+              "subgoal": "press the button",
+              "episodes": [
+                10,
+                12
+              ],
+              "mining_diagnostics": {
+                "score": 0.0125868059694767,
+                "front_image_mae_downsampled": 0.008394608274102211,
+                "wrist_image_mae_downsampled": 0.004192197695374489,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 6,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 6,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 7,
+          "source_pair_index": 7,
+          "pair_mean_coverage_gain": -0.0625,
+          "pair_min_coverage_gain": -0.25,
+          "pair_mean_distance_improvement": -0.011094584940964321,
+          "pair_mean_headroom_recovery": -0.5,
+          "pair_median_memory_effect_to_noise_rms": 0.5605485706816125,
+          "direction_gains": [
+            -0.25,
+            0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.0625,
+            "1": -0.0625,
+            "1.25": -0.0625,
+            "1.5": -0.1875,
+            "2": -0.0625
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+            "prompt_b": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+            "front_image_mae": 0.0077791700176164215,
+            "wrist_image_mae": 0.007281015433517157,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 14085,
+              "b": 15756,
+              "prompt": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+              "subgoal": "press the button",
+              "episodes": [
+                40,
+                44
+              ],
+              "mining_diagnostics": {
+                "score": 0.012923814821988344,
+                "front_image_mae_downsampled": 0.005616829730570316,
+                "wrist_image_mae_downsampled": 0.007306985091418028,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 7,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 7,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 8,
+          "source_pair_index": 8,
+          "pair_mean_coverage_gain": -0.1875,
+          "pair_min_coverage_gain": -0.375,
+          "pair_mean_distance_improvement": -0.01245944358987339,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.21487773244910136,
+          "direction_gains": [
+            -0.375,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.1875,
+            "1": -0.3125,
+            "1.25": -0.1875,
+            "1.5": -0.1875,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "pick up the blue cube and place it on the target, repeating this action three times, then press the button to stop",
+            "prompt_b": "pick up the blue cube and place it on the target, repeating this action three times, then press the button to stop",
+            "front_image_mae": 0.007996842440436868,
+            "wrist_image_mae": 0.006009808708639706,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 9379,
+              "b": 7459,
+              "prompt": "pick up the blue cube and place it on the target, repeating this action three times, then press the button to stop",
+              "subgoal": "pick up the blue cube for the first time",
+              "episodes": [
+                29,
+                26
+              ],
+              "mining_diagnostics": {
+                "score": 0.013459967914968729,
+                "front_image_mae_downsampled": 0.007204861380159855,
+                "wrist_image_mae_downsampled": 0.006255106534808874,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 8,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 8,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 9,
+          "source_pair_index": 9,
+          "pair_mean_coverage_gain": -0.125,
+          "pair_min_coverage_gain": -0.125,
+          "pair_mean_distance_improvement": -0.03782682046036306,
+          "pair_mean_headroom_recovery": -1.0,
+          "pair_median_memory_effect_to_noise_rms": 0.07757363711297004,
+          "direction_gains": [
+            -0.125,
+            -0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.3125,
+            "1": -0.1875,
+            "1.25": -0.125,
+            "1.5": -0.125,
+            "2": -0.0625
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then pick up the container hiding the green cube",
+            "prompt_b": "watch the video carefully, then pick up the container hiding the green cube",
+            "front_image_mae": 0.010160179699168485,
+            "wrist_image_mae": 0.005702319332197601,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 5889,
+              "b": 26601,
+              "prompt": "watch the video carefully, then pick up the container hiding the green cube",
+              "subgoal": "pick up the container that hides the green cube",
+              "episodes": [
+                20,
+                76
+              ],
+              "mining_diagnostics": {
+                "score": 0.013893995201215148,
+                "front_image_mae_downsampled": 0.011008987203240395,
+                "wrist_image_mae_downsampled": 0.0028850079979747534,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 9,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 9,
+              "quality_tier": "strict"
+            }
+          }
+        }
+      ]
+    },
+    "moderate": {
+      "n_pairs": 22,
+      "pair_indices": [
+        0,
+        1,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        2,
+        20,
+        21,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mean_pair_coverage_gain_ci": {
+        "estimate": 0.022727272727272728,
+        "lower": -0.08806818181818182,
+        "upper": 0.14779829545454443,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_pair_coverage_gain": -0.0625,
+      "fraction_positive_pairs": 0.2727272727272727,
+      "pair_gain_sign_test": {
+        "wins": 6,
+        "losses": 14,
+        "ties": 2,
+        "p_value": 0.11531829833984375
+      },
+      "mean_pair_distance_improvement_ci": {
+        "estimate": 0.07991083328194488,
+        "lower": -0.015100726156747861,
+        "upper": 0.20899140170416228,
+        "confidence": 0.95,
+        "resamples": 10000
+      },
+      "median_headroom_recovery": -0.5,
+      "median_memory_effect_to_noise_rms": 0.35012376029619396,
+      "tolerance_sensitivity": [
+        {
+          "tolerance_multiplier": 0.75,
+          "n_pairs": 22,
+          "mean_pair_gain_ci": {
+            "estimate": 0.005681818181818182,
+            "lower": -0.10795454545454546,
+            "upper": 0.125,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.36363636363636365
+        },
+        {
+          "tolerance_multiplier": 1.0,
+          "n_pairs": 22,
+          "mean_pair_gain_ci": {
+            "estimate": 0.014204545454545454,
+            "lower": -0.10511363636363637,
+            "upper": 0.14772727272727273,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.2727272727272727
+        },
+        {
+          "tolerance_multiplier": 1.25,
+          "n_pairs": 22,
+          "mean_pair_gain_ci": {
+            "estimate": 0.022727272727272728,
+            "lower": -0.08522727272727272,
+            "upper": 0.1534090909090909,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.2727272727272727
+        },
+        {
+          "tolerance_multiplier": 1.5,
+          "n_pairs": 22,
+          "mean_pair_gain_ci": {
+            "estimate": 0.028409090909090908,
+            "lower": -0.06818181818181818,
+            "upper": 0.13636363636363635,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.2727272727272727
+        },
+        {
+          "tolerance_multiplier": 2.0,
+          "n_pairs": 22,
+          "mean_pair_gain_ci": {
+            "estimate": 0.03977272727272727,
+            "lower": -0.048295454545454544,
+            "upper": 0.14204545454545456,
+            "confidence": 0.95,
+            "resamples": 10000
+          },
+          "fraction_positive_pairs": 0.18181818181818182
+        }
+      ],
+      "pair_level": [
+        {
+          "pair_index": 0,
+          "source_pair_index": 0,
+          "pair_mean_coverage_gain": -0.125,
+          "pair_min_coverage_gain": -0.25,
+          "pair_mean_distance_improvement": -0.14688582028701186,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.19441115777578424,
+          "direction_gains": [
+            -0.25,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.3125,
+            "1": -0.125,
+            "1.25": -0.125,
+            "1.5": -0.0625,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then move the cube to the target in the same manner as before",
+            "prompt_b": "watch the video carefully, then move the cube to the target in the same manner as before",
+            "front_image_mae": 0.004328589345894608,
+            "wrist_image_mae": 0.0028693304342382094,
+            "state_l2": 6.14292428260447e-07,
+            "pair_metadata": {
+              "a": 16076,
+              "b": 16450,
+              "prompt": "watch the video carefully, then move the cube to the target in the same manner as before",
+              "subgoal": "pick up the peg",
+              "episodes": [
+                45,
+                47
+              ],
+              "mining_diagnostics": {
+                "score": 0.00913503857289868,
+                "front_image_mae_downsampled": 0.006076388526707888,
+                "wrist_image_mae_downsampled": 0.0030586193315684795,
+                "current_state_l2": 6.142924462437804e-07
+              },
+              "source_pair_index": 0,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 0,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 1,
+          "source_pair_index": 1,
+          "pair_mean_coverage_gain": 0.625,
+          "pair_min_coverage_gain": 0.25,
+          "pair_mean_distance_improvement": 1.1029082499151224,
+          "pair_mean_headroom_recovery": 0.7,
+          "pair_median_memory_effect_to_noise_rms": 3.170231720135745,
+          "direction_gains": [
+            0.25,
+            1.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.5625,
+            "1": 0.625,
+            "1.25": 0.625,
+            "1.5": 0.5625,
+            "2": 0.6875
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+            "prompt_b": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+            "front_image_mae": 0.007687477504505831,
+            "wrist_image_mae": 0.004648525107140635,
+            "state_l2": 8.665116570293612e-06,
+            "pair_metadata": {
+              "a": 17970,
+              "b": 17515,
+              "prompt": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+              "subgoal": "pick up the peg by grasping the near end",
+              "episodes": [
+                54,
+                52
+              ],
+              "mining_diagnostics": {
+                "score": 0.011280049295055505,
+                "front_image_mae_downsampled": 0.007322303950786591,
+                "wrist_image_mae_downsampled": 0.00395731208845973,
+                "current_state_l2": 8.66511618369259e-06
+              },
+              "source_pair_index": 1,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 1,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 10,
+          "source_pair_index": 10,
+          "pair_mean_coverage_gain": -0.0625,
+          "pair_min_coverage_gain": -0.125,
+          "pair_mean_distance_improvement": -0.014403399631914091,
+          "pair_mean_headroom_recovery": -0.5,
+          "pair_median_memory_effect_to_noise_rms": 0.3513093236536097,
+          "direction_gains": [
+            -0.125,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.125,
+            "1": -0.125,
+            "1.25": -0.0625,
+            "1.5": -0.125,
+            "2": -0.125
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "first press both buttons on the table, then pick up the container hiding the blue cube, finally pick up another container hiding the green cube",
+            "prompt_b": "first press both buttons on the table, then pick up the container hiding the blue cube, finally pick up another container hiding the green cube",
+            "front_image_mae": 0.004642062561184752,
+            "wrist_image_mae": 0.00467531307070863,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 427,
+              "b": 2376,
+              "prompt": "first press both buttons on the table, then pick up the container hiding the blue cube, finally pick up another container hiding the green cube",
+              "subgoal": "press the first button",
+              "episodes": [
+                5,
+                9
+              ],
+              "mining_diagnostics": {
+                "score": 0.014195261523127556,
+                "front_image_mae_downsampled": 0.006658496800810099,
+                "wrist_image_mae_downsampled": 0.007536764722317457,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 10,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 10,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 11,
+          "source_pair_index": 11,
+          "pair_mean_coverage_gain": 0.0625,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": 0.047288466501001776,
+          "pair_mean_headroom_recovery": 1.0,
+          "pair_median_memory_effect_to_noise_rms": 0.676853368089547,
+          "direction_gains": [
+            0.0,
+            0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.3125,
+            "1": 0.125,
+            "1.25": 0.0625,
+            "1.5": 0.0625,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for two times, finally put it down and press the button to stop",
+            "prompt_b": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for two times, finally put it down and press the button to stop",
+            "front_image_mae": 0.012096849142336379,
+            "wrist_image_mae": 0.008614872951133579,
+            "state_l2": 8.465567169406876e-06,
+            "pair_metadata": {
+              "a": 23789,
+              "b": 24814,
+              "prompt": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for two times, finally put it down and press the button to stop",
+              "subgoal": "pick up the correct cube for the first time",
+              "episodes": [
+                70,
+                72
+              ],
+              "mining_diagnostics": {
+                "score": 0.015068847096199534,
+                "front_image_mae_downsampled": 0.013245507143437862,
+                "wrist_image_mae_downsampled": 0.0018229166744276881,
+                "current_state_l2": 8.465566679660697e-06
+              },
+              "source_pair_index": 11,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 11,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 12,
+          "source_pair_index": 12,
+          "pair_mean_coverage_gain": 0.0625,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": -0.0013555487739066174,
+          "pair_mean_headroom_recovery": 0.25,
+          "pair_median_memory_effect_to_noise_rms": 0.16693046954535937,
+          "direction_gains": [
+            0.0,
+            0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.0625,
+            "1": 0.0,
+            "1.25": 0.0625,
+            "1.5": 0.0625,
+            "2": -0.0625
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then pick up the container hiding the blue cube",
+            "prompt_b": "watch the video carefully, then pick up the container hiding the blue cube",
+            "front_image_mae": 0.013547131594489602,
+            "wrist_image_mae": 0.007235797713784611,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 26428,
+              "b": 6047,
+              "prompt": "watch the video carefully, then pick up the container hiding the blue cube",
+              "subgoal": "pick up the container that hides the blue cube",
+              "episodes": [
+                75,
+                21
+              ],
+              "mining_diagnostics": {
+                "score": 0.015339052304625511,
+                "front_image_mae_downsampled": 0.010753676295280457,
+                "wrist_image_mae_downsampled": 0.004585376009345055,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 12,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 12,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 13,
+          "source_pair_index": 13,
+          "pair_mean_coverage_gain": 0.0,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": -0.01602358054507893,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.25410168230102254,
+          "direction_gains": [
+            0.0,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.125,
+            "1": -0.125,
+            "1.25": 0.0,
+            "1.5": 0.0,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "pick up the red cube and place it on the target, repeating this action two times, then press the button to stop",
+            "prompt_b": "pick up the red cube and place it on the target, repeating this action two times, then press the button to stop",
+            "front_image_mae": 0.009654823939005535,
+            "wrist_image_mae": 0.008007014966478534,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 8087,
+              "b": 6930,
+              "prompt": "pick up the red cube and place it on the target, repeating this action two times, then press the button to stop",
+              "subgoal": "pick up the red cube for the first time",
+              "episodes": [
+                27,
+                25
+              ],
+              "mining_diagnostics": {
+                "score": 0.01769812125712633,
+                "front_image_mae_downsampled": 0.009232026524841785,
+                "wrist_image_mae_downsampled": 0.008466094732284546,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 13,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 13,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 14,
+          "source_pair_index": 14,
+          "pair_mean_coverage_gain": -0.125,
+          "pair_min_coverage_gain": -0.25,
+          "pair_mean_distance_improvement": -0.015610779074342385,
+          "pair_mean_headroom_recovery": -2.0,
+          "pair_median_memory_effect_to_noise_rms": 0.12820379645254848,
+          "direction_gains": [
+            -0.25,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.1875,
+            "1": -0.125,
+            "1.25": -0.125,
+            "1.5": -0.125,
+            "2": -0.125
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "first press the button, then pick up the container hiding the green cube",
+            "prompt_b": "first press the button, then pick up the container hiding the green cube",
+            "front_image_mae": 0.007573964081558527,
+            "wrist_image_mae": 0.00584561217064951,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 4212,
+              "b": 3199,
+              "prompt": "first press the button, then pick up the container hiding the green cube",
+              "subgoal": "press the button",
+              "episodes": [
+                14,
+                11
+              ],
+              "mining_diagnostics": {
+                "score": 0.018448734190315008,
+                "front_image_mae_downsampled": 0.010723039507865906,
+                "wrist_image_mae_downsampled": 0.007725694682449102,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 14,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 14,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 15,
+          "source_pair_index": 15,
+          "pair_mean_coverage_gain": -0.1875,
+          "pair_min_coverage_gain": -0.375,
+          "pair_mean_distance_improvement": -0.019787675050142565,
+          "pair_mean_headroom_recovery": -3.0,
+          "pair_median_memory_effect_to_noise_rms": 0.34893819693877826,
+          "direction_gains": [
+            -0.375,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.0625,
+            "1": -0.125,
+            "1.25": -0.1875,
+            "1.5": -0.1875,
+            "2": -0.1875
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+            "prompt_b": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+            "front_image_mae": 0.010533650716145834,
+            "wrist_image_mae": 0.008377693213668524,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 14393,
+              "b": 14669,
+              "prompt": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+              "subgoal": "press the button",
+              "episodes": [
+                41,
+                42
+              ],
+              "mining_diagnostics": {
+                "score": 0.019163602497428656,
+                "front_image_mae_downsampled": 0.011734068393707275,
+                "wrist_image_mae_downsampled": 0.00742953410372138,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 15,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 15,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 16,
+          "source_pair_index": 16,
+          "pair_mean_coverage_gain": 0.0,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": 0.0029417273340661618,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.8179186761439927,
+          "direction_gains": [
+            0.0,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.0625,
+            "1": 0.0625,
+            "1.25": 0.0,
+            "1.5": 0.0,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then pick up the container hiding the green cube",
+            "prompt_b": "watch the video carefully, then pick up the container hiding the green cube",
+            "front_image_mae": 0.013199949264526367,
+            "wrist_image_mae": 0.007192075486276664,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 6205,
+              "b": 6733,
+              "prompt": "watch the video carefully, then pick up the container hiding the green cube",
+              "subgoal": "pick up the container that hides the green cube",
+              "episodes": [
+                22,
+                24
+              ],
+              "mining_diagnostics": {
+                "score": 0.019235089886933565,
+                "front_image_mae_downsampled": 0.014910130761563778,
+                "wrist_image_mae_downsampled": 0.004324959125369787,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 16,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 16,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 17,
+          "source_pair_index": 17,
+          "pair_mean_coverage_gain": -0.3125,
+          "pair_min_coverage_gain": -0.375,
+          "pair_mean_distance_improvement": -0.1168269518143632,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.14380811110482716,
+          "direction_gains": [
+            -0.375,
+            -0.25
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.5,
+            "1": -0.375,
+            "1.25": -0.3125,
+            "1.5": -0.0625,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then place the blue cube on the target right after the button was pressed",
+            "prompt_b": "watch the video carefully, then place the blue cube on the target right after the button was pressed",
+            "front_image_mae": 0.017459605721866382,
+            "wrist_image_mae": 0.013077480652753045,
+            "state_l2": 1.7086297761554012e-07,
+            "pair_metadata": {
+              "a": 4818,
+              "b": 5063,
+              "prompt": "watch the video carefully, then place the blue cube on the target right after the button was pressed",
+              "subgoal": "pick up the cube",
+              "episodes": [
+                16,
+                17
+              ],
+              "mining_diagnostics": {
+                "score": 0.034089061592832336,
+                "front_image_mae_downsampled": 0.02019505761563778,
+                "wrist_image_mae_downsampled": 0.013893995434045792,
+                "current_state_l2": 1.7086297532387107e-07
+              },
+              "source_pair_index": 17,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 17,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 18,
+          "source_pair_index": 18,
+          "pair_mean_coverage_gain": -0.125,
+          "pair_min_coverage_gain": -0.25,
+          "pair_mean_distance_improvement": -0.014983630454255971,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.7109150899447176,
+          "direction_gains": [
+            -0.25,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.0625,
+            "1": 0.0,
+            "1.25": -0.125,
+            "1.5": -0.125,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for three times, finally put it down and press the button to stop",
+            "prompt_b": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for three times, finally put it down and press the button to stop",
+            "front_image_mae": 0.021191067789115156,
+            "wrist_image_mae": 0.016406588460884844,
+            "state_l2": 8.177465426778486e-06,
+            "pair_metadata": {
+              "a": 25263,
+              "b": 24224,
+              "prompt": "watch the video carefully, then repeatedly pick up and put down the same block that was previously picked up for three times, finally put it down and press the button to stop",
+              "subgoal": "pick up the correct cube for the first time",
+              "episodes": [
+                73,
+                71
+              ],
+              "mining_diagnostics": {
+                "score": 0.03552941235184335,
+                "front_image_mae_downsampled": 0.02034313790500164,
+                "wrist_image_mae_downsampled": 0.015185865573585033,
+                "current_state_l2": 8.177465133485384e-06
+              },
+              "source_pair_index": 18,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 18,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 19,
+          "source_pair_index": 19,
+          "pair_mean_coverage_gain": 0.375,
+          "pair_min_coverage_gain": 0.0,
+          "pair_mean_distance_improvement": 0.24442340745014238,
+          "pair_mean_headroom_recovery": 0.8571428571428571,
+          "pair_median_memory_effect_to_noise_rms": 2.751127303487449,
+          "direction_gains": [
+            0.0,
+            0.75
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.375,
+            "1": 0.4375,
+            "1.25": 0.375,
+            "1.5": 0.375,
+            "2": 0.25
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then use the stick attached to the robot to retrace the same pattern",
+            "prompt_b": "watch the video carefully, then use the stick attached to the robot to retrace the same pattern",
+            "front_image_mae": 0.013913263059129903,
+            "wrist_image_mae": 0.06510442845961627,
+            "state_l2": 0.21204480485967128,
+            "pair_metadata": {
+              "a": 394,
+              "b": 140,
+              "prompt": "watch the video carefully, then use the stick attached to the robot to retrace the same pattern",
+              "subgoal": "move right",
+              "episodes": [
+                4,
+                2
+              ],
+              "mining_diagnostics": {
+                "score": 0.09943495951592922,
+                "front_image_mae_downsampled": 0.015487132593989372,
+                "wrist_image_mae_downsampled": 0.07334558665752411,
+                "current_state_l2": 0.21204480528831482
+              },
+              "source_pair_index": 19,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 19,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 2,
+          "source_pair_index": 2,
+          "pair_mean_coverage_gain": -0.0625,
+          "pair_min_coverage_gain": -0.125,
+          "pair_mean_distance_improvement": -0.005197965681023233,
+          "pair_mean_headroom_recovery": -0.5,
+          "pair_median_memory_effect_to_noise_rms": 0.5220175773490585,
+          "direction_gains": [
+            -0.125,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.0625,
+            "1": -0.0625,
+            "1.25": -0.0625,
+            "1.5": 0.0,
+            "2": -0.125
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "press the button to stop the cube just as it reaches the target for the fourth time",
+            "prompt_b": "press the button to stop the cube just as it reaches the target for the fourth time",
+            "front_image_mae": 0.006708541570925245,
+            "wrist_image_mae": 0.0057645708906884285,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 10912,
+              "b": 10024,
+              "prompt": "press the button to stop the cube just as it reaches the target for the fourth time",
+              "subgoal": "move to the top of the button to prepare",
+              "episodes": [
+                33,
+                30
+              ],
+              "mining_diagnostics": {
+                "score": 0.011448121163994074,
+                "front_image_mae_downsampled": 0.006975081749260426,
+                "wrist_image_mae_downsampled": 0.004473039414733648,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 2,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 2,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 20,
+          "source_pair_index": 20,
+          "pair_mean_coverage_gain": 0.8125,
+          "pair_min_coverage_gain": 0.75,
+          "pair_mean_distance_improvement": 0.35017339713424883,
+          "pair_mean_headroom_recovery": 0.9285714285714286,
+          "pair_median_memory_effect_to_noise_rms": 2.4916071234927446,
+          "direction_gains": [
+            0.875,
+            0.75
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.625,
+            "1": 0.8125,
+            "1.25": 0.8125,
+            "1.5": 0.6875,
+            "2": 0.625
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+            "prompt_b": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+            "front_image_mae": 0.027294362760057637,
+            "wrist_image_mae": 0.07074421153349035,
+            "state_l2": 0.38705298520984194,
+            "pair_metadata": {
+              "a": 18961,
+              "b": 18311,
+              "prompt": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+              "subgoal": "move to the nearest right target by circling around the stick counterclockwise",
+              "episodes": [
+                59,
+                56
+              ],
+              "mining_diagnostics": {
+                "score": 0.11767271235585212,
+                "front_image_mae_downsampled": 0.02899816259741783,
+                "wrist_image_mae_downsampled": 0.0693219006061554,
+                "current_state_l2": 0.387052983045578
+              },
+              "source_pair_index": 20,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 20,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 21,
+          "source_pair_index": 21,
+          "pair_mean_coverage_gain": -0.0625,
+          "pair_min_coverage_gain": -0.125,
+          "pair_mean_distance_improvement": 0.0018583967341428004,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.5546791714739085,
+          "direction_gains": [
+            0.0,
+            -0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.1875,
+            "1": -0.125,
+            "1.25": -0.0625,
+            "1.5": 0.0,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+            "prompt_b": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+            "front_image_mae": 0.02638134862862381,
+            "wrist_image_mae": 0.07790762957404641,
+            "state_l2": 0.26626923730629953,
+            "pair_metadata": {
+              "a": 18211,
+              "b": 18411,
+              "prompt": "watch the video carefully, then use the stick attached to the robot to navigate around the sticks on the table, following the same path",
+              "subgoal": "move to the nearest right target by circling around the stick clockwise",
+              "episodes": [
+                55,
+                57
+              ],
+              "mining_diagnostics": {
+                "score": 0.11798564605414867,
+                "front_image_mae_downsampled": 0.026894403621554375,
+                "wrist_image_mae_downsampled": 0.07777778059244156,
+                "current_state_l2": 0.2662692368030548
+              },
+              "source_pair_index": 21,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 21,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 3,
+          "source_pair_index": 3,
+          "pair_mean_coverage_gain": -0.1875,
+          "pair_min_coverage_gain": -0.375,
+          "pair_mean_distance_improvement": -0.022679202974969802,
+          "pair_mean_headroom_recovery": -3.0,
+          "pair_median_memory_effect_to_noise_rms": 0.23165293252263316,
+          "direction_gains": [
+            -0.375,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.125,
+            "1": -0.125,
+            "1.25": -0.1875,
+            "1.5": -0.1875,
+            "2": -0.1875
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "press the button to stop the cube just as it reaches the target for the third time",
+            "prompt_b": "press the button to stop the cube just as it reaches the target for the third time",
+            "front_image_mae": 0.007575160849328135,
+            "wrist_image_mae": 0.005838890169181076,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 10669,
+              "b": 10483,
+              "prompt": "press the button to stop the cube just as it reaches the target for the third time",
+              "subgoal": "move to the top of the button to prepare",
+              "episodes": [
+                32,
+                31
+              ],
+              "mining_diagnostics": {
+                "score": 0.012214052025228739,
+                "front_image_mae_downsampled": 0.0065972222946584225,
+                "wrist_image_mae_downsampled": 0.005616829730570316,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 3,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 3,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 4,
+          "source_pair_index": 4,
+          "pair_mean_coverage_gain": -0.25,
+          "pair_min_coverage_gain": -0.375,
+          "pair_mean_distance_improvement": -0.08131550264275325,
+          "pair_mean_headroom_recovery": -3.0,
+          "pair_median_memory_effect_to_noise_rms": 0.10506379504979434,
+          "direction_gains": [
+            -0.125,
+            -0.375
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.1875,
+            "1": -0.3125,
+            "1.25": -0.25,
+            "1.5": -0.0625,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then move the cube to the target in the same manner as before",
+            "prompt_b": "watch the video carefully, then move the cube to the target in the same manner as before",
+            "front_image_mae": 0.0051326176699470075,
+            "wrist_image_mae": 0.0037887075368095847,
+            "state_l2": 1.1077397842998052e-05,
+            "pair_metadata": {
+              "a": 16267,
+              "b": 16790,
+              "prompt": "watch the video carefully, then move the cube to the target in the same manner as before",
+              "subgoal": "pick up the cube",
+              "episodes": [
+                46,
+                49
+              ],
+              "mining_diagnostics": {
+                "score": 0.012332048931421013,
+                "front_image_mae_downsampled": 0.006898488849401474,
+                "wrist_image_mae_downsampled": 0.005433006212115288,
+                "current_state_l2": 1.1077398085035384e-05
+              },
+              "source_pair_index": 4,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 4,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 5,
+          "source_pair_index": 5,
+          "pair_mean_coverage_gain": 0.5,
+          "pair_min_coverage_gain": 0.125,
+          "pair_mean_distance_improvement": 0.5327792235589728,
+          "pair_mean_headroom_recovery": 0.9375,
+          "pair_median_memory_effect_to_noise_rms": 1.839550284746882,
+          "direction_gains": [
+            0.875,
+            0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": 0.375,
+            "1": 0.5,
+            "1.25": 0.5,
+            "1.5": 0.4375,
+            "2": 0.375
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+            "prompt_b": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+            "front_image_mae": 0.009028854557112151,
+            "wrist_image_mae": 0.005707963775185978,
+            "state_l2": 1.7483261465400317e-05,
+            "pair_metadata": {
+              "a": 16994,
+              "b": 17753,
+              "prompt": "watch the video carefully, then grasp the same end of the same peg you've picked before and insert it into the same side of the box",
+              "subgoal": "pick up the peg by grasping the far end",
+              "episodes": [
+                50,
+                53
+              ],
+              "mining_diagnostics": {
+                "score": 0.012383431313082838,
+                "front_image_mae_downsampled": 0.0076286764815449715,
+                "wrist_image_mae_downsampled": 0.0047538806684315205,
+                "current_state_l2": 1.7483262126916088e-05
+              },
+              "source_pair_index": 5,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 5,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 6,
+          "source_pair_index": 6,
+          "pair_mean_coverage_gain": -0.0625,
+          "pair_min_coverage_gain": -0.125,
+          "pair_mean_distance_improvement": -0.007883630503946967,
+          "pair_mean_headroom_recovery": -1.0,
+          "pair_median_memory_effect_to_noise_rms": 0.29760436566674364,
+          "direction_gains": [
+            -0.125,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.125,
+            "1": -0.0625,
+            "1.25": -0.0625,
+            "1.5": -0.125,
+            "2": -0.125
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "first press the button, then pick up the container hiding the red cube",
+            "prompt_b": "first press the button, then pick up the container hiding the red cube",
+            "front_image_mae": 0.007387049057904412,
+            "wrist_image_mae": 0.005260113641327503,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 2908,
+              "b": 3493,
+              "prompt": "first press the button, then pick up the container hiding the red cube",
+              "subgoal": "press the button",
+              "episodes": [
+                10,
+                12
+              ],
+              "mining_diagnostics": {
+                "score": 0.0125868059694767,
+                "front_image_mae_downsampled": 0.008394608274102211,
+                "wrist_image_mae_downsampled": 0.004192197695374489,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 6,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 6,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 7,
+          "source_pair_index": 7,
+          "pair_mean_coverage_gain": -0.0625,
+          "pair_min_coverage_gain": -0.25,
+          "pair_mean_distance_improvement": -0.011094584940964321,
+          "pair_mean_headroom_recovery": -0.5,
+          "pair_median_memory_effect_to_noise_rms": 0.5605485706816125,
+          "direction_gains": [
+            -0.25,
+            0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.0625,
+            "1": -0.0625,
+            "1.25": -0.0625,
+            "1.5": -0.1875,
+            "2": -0.0625
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+            "prompt_b": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+            "front_image_mae": 0.0077791700176164215,
+            "wrist_image_mae": 0.007281015433517157,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 14085,
+              "b": 15756,
+              "prompt": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+              "subgoal": "press the button",
+              "episodes": [
+                40,
+                44
+              ],
+              "mining_diagnostics": {
+                "score": 0.012923814821988344,
+                "front_image_mae_downsampled": 0.005616829730570316,
+                "wrist_image_mae_downsampled": 0.007306985091418028,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 7,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 7,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 8,
+          "source_pair_index": 8,
+          "pair_mean_coverage_gain": -0.1875,
+          "pair_min_coverage_gain": -0.375,
+          "pair_mean_distance_improvement": -0.01245944358987339,
+          "pair_mean_headroom_recovery": null,
+          "pair_median_memory_effect_to_noise_rms": 0.21487773244910136,
+          "direction_gains": [
+            -0.375,
+            0.0
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.1875,
+            "1": -0.3125,
+            "1.25": -0.1875,
+            "1.5": -0.1875,
+            "2": 0.0
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "pick up the blue cube and place it on the target, repeating this action three times, then press the button to stop",
+            "prompt_b": "pick up the blue cube and place it on the target, repeating this action three times, then press the button to stop",
+            "front_image_mae": 0.007996842440436868,
+            "wrist_image_mae": 0.006009808708639706,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 9379,
+              "b": 7459,
+              "prompt": "pick up the blue cube and place it on the target, repeating this action three times, then press the button to stop",
+              "subgoal": "pick up the blue cube for the first time",
+              "episodes": [
+                29,
+                26
+              ],
+              "mining_diagnostics": {
+                "score": 0.013459967914968729,
+                "front_image_mae_downsampled": 0.007204861380159855,
+                "wrist_image_mae_downsampled": 0.006255106534808874,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 8,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 8,
+              "quality_tier": "strict"
+            }
+          }
+        },
+        {
+          "pair_index": 9,
+          "source_pair_index": 9,
+          "pair_mean_coverage_gain": -0.125,
+          "pair_min_coverage_gain": -0.125,
+          "pair_mean_distance_improvement": -0.03782682046036306,
+          "pair_mean_headroom_recovery": -1.0,
+          "pair_median_memory_effect_to_noise_rms": 0.07757363711297004,
+          "direction_gains": [
+            -0.125,
+            -0.125
+          ],
+          "coverage_curve_pair_mean_gain": {
+            "0.75": -0.3125,
+            "1": -0.1875,
+            "1.25": -0.125,
+            "1.5": -0.125,
+            "2": -0.0625
+          },
+          "context": {
+            "prompt_match": true,
+            "prompt_a": "watch the video carefully, then pick up the container hiding the green cube",
+            "prompt_b": "watch the video carefully, then pick up the container hiding the green cube",
+            "front_image_mae": 0.010160179699168485,
+            "wrist_image_mae": 0.005702319332197601,
+            "state_l2": 0.0,
+            "pair_metadata": {
+              "a": 5889,
+              "b": 26601,
+              "prompt": "watch the video carefully, then pick up the container hiding the green cube",
+              "subgoal": "pick up the container that hides the green cube",
+              "episodes": [
+                20,
+                76
+              ],
+              "mining_diagnostics": {
+                "score": 0.013893995201215148,
+                "front_image_mae_downsampled": 0.011008987203240395,
+                "wrist_image_mae_downsampled": 0.0028850079979747534,
+                "current_state_l2": 0.0
+              },
+              "source_pair_index": 9,
+              "quality_tier": "strict"
+            },
+            "quality": {
+              "eligible": true,
+              "source_pair_index": 9,
+              "quality_tier": "strict"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1369 @@
+{
+  "experiment": "E13D_pair_readout_recovery",
+  "pair_index": 8,
+  "source_pair_index": 8,
+  "preset": "16gb",
+  "noise_blocks": 5,
+  "directions": [
+    {
+      "direction": "context_a_correct_a_wrong_b",
+      "context_index": 9379,
+      "donor_history_index": 7459,
+      "native_support_tolerance": 0.0599193984510249,
+      "allocations": [
+        {
+          "memory_views": 1,
+          "noises_per_view": 8,
+          "fractions": [
+            {
+              "keep_fraction": 1.0,
+              "valid_tokens_per_view": [
+                16
+              ],
+              "mean_coverage": 1.0,
+              "mean_coverage_gain_vs_wrong_noise_only": 0.0,
+              "mean_headroom_recovery": null,
+              "blocks": [
+                {
+                  "block_index": 0,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.03715094707638544,
+                    "median_nearest_distance": 0.03661581933294372,
+                    "maximum_nearest_distance": 0.04448258118028869
+                  },
+                  "memory_main_fraction": 0.0,
+                  "noise_main_fraction": 1.0,
+                  "interaction_fraction": 0.0,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 1,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.04030336499004159,
+                    "median_nearest_distance": 0.04164506136907743,
+                    "maximum_nearest_distance": 0.047787052598468556
+                  },
+                  "memory_main_fraction": 0.0,
+                  "noise_main_fraction": 1.0,
+                  "interaction_fraction": 0.0,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 2,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.03542901378213217,
+                    "median_nearest_distance": 0.034224101335976344,
+                    "maximum_nearest_distance": 0.040484533083983254
+                  },
+                  "memory_main_fraction": 0.0,
+                  "noise_main_fraction": 1.0,
+                  "interaction_fraction": 0.0,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 3,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.037797955497637606,
+                    "median_nearest_distance": 0.03535311594310746,
+                    "maximum_nearest_distance": 0.056129616953147325
+                  },
+                  "memory_main_fraction": 0.0,
+                  "noise_main_fraction": 1.0,
+                  "interaction_fraction": 0.0,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 4,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.035021574051302955,
+                    "median_nearest_distance": 0.03602838205146133,
+                    "maximum_nearest_distance": 0.047035373704758354
+                  },
+                  "memory_main_fraction": 0.0,
+                  "noise_main_fraction": 1.0,
+                  "interaction_fraction": 0.0,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "memory_views": 2,
+          "noises_per_view": 4,
+          "fractions": [
+            {
+              "keep_fraction": 0.25,
+              "valid_tokens_per_view": [
+                16,
+                4
+              ],
+              "mean_coverage": 0.9,
+              "mean_coverage_gain_vs_wrong_noise_only": -0.1,
+              "mean_headroom_recovery": null,
+              "blocks": [
+                {
+                  "block_index": 0,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.04319745108075221,
+                    "median_nearest_distance": 0.043811454861216334,
+                    "maximum_nearest_distance": 0.05530905919508602
+                  },
+                  "memory_main_fraction": 0.7142475958812582,
+                  "noise_main_fraction": 0.2518047879562296,
+                  "interaction_fraction": 0.03394761616251212,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 1,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.75,
+                    "covered_targets": 6,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.050441022786195236,
+                    "median_nearest_distance": 0.046366691142019745,
+                    "maximum_nearest_distance": 0.08383212276760117
+                  },
+                  "memory_main_fraction": 0.8969492267849261,
+                  "noise_main_fraction": 0.09548408978756938,
+                  "interaction_fraction": 0.007566683427504696,
+                  "coverage_gain_vs_wrong_noise_only": -0.25
+                },
+                {
+                  "block_index": 2,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.03743974690640768,
+                    "median_nearest_distance": 0.03584818036360113,
+                    "maximum_nearest_distance": 0.045647213623946616
+                  },
+                  "memory_main_fraction": 0.8658009105350357,
+                  "noise_main_fraction": 0.11966002466063948,
+                  "interaction_fraction": 0.014539064804324882,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 3,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.044337658736903277,
+                    "median_nearest_distance": 0.043540650843757855,
+                    "maximum_nearest_distance": 0.05972317319844202
+                  },
+                  "memory_main_fraction": 0.8670441267257504,
+                  "noise_main_fraction": 0.11949286360001242,
+                  "interaction_fraction": 0.013463009674237044,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 4,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.75,
+                    "covered_targets": 6,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.04935816912202645,
+                    "median_nearest_distance": 0.04144334741243501,
+                    "maximum_nearest_distance": 0.09638316715458677
+                  },
+                  "memory_main_fraction": 0.8359653796021257,
+                  "noise_main_fraction": 0.1392785841617587,
+                  "interaction_fraction": 0.024756036236115553,
+                  "coverage_gain_vs_wrong_noise_only": -0.25
+                }
+              ]
+            },
+            {
+              "keep_fraction": 0.5,
+              "valid_tokens_per_view": [
+                16,
+                8
+              ],
+              "mean_coverage": 0.925,
+              "mean_coverage_gain_vs_wrong_noise_only": -0.075,
+              "mean_headroom_recovery": null,
+              "blocks": [
+                {
+                  "block_index": 0,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.04319745108075221,
+                    "median_nearest_distance": 0.043811454861216334,
+                    "maximum_nearest_distance": 0.05530905919508602
+                  },
+                  "memory_main_fraction": 0.6262520831679265,
+                  "noise_main_fraction": 0.35599615053876166,
+                  "interaction_fraction": 0.017751766293311808,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 1,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.75,
+                    "covered_targets": 6,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.050441022786195236,
+                    "median_nearest_distance": 0.046366691142019745,
+                    "maximum_nearest_distance": 0.08383212276760117
+                  },
+                  "memory_main_fraction": 0.8235975673248638,
+                  "noise_main_fraction": 0.17108057436147794,
+                  "interaction_fraction": 0.005321858313658437,
+                  "coverage_gain_vs_wrong_noise_only": -0.25
+                },
+                {
+                  "block_index": 2,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.03743974690640768,
+                    "median_nearest_distance": 0.03584818036360113,
+                    "maximum_nearest_distance": 0.045647213623946616
+                  },
+                  "memory_main_fraction": 0.8105217238339902,
+                  "noise_main_fraction": 0.18098775210553492,
+                  "interaction_fraction": 0.008490524060474902,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 3,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.044337658736903277,
+                    "median_nearest_distance": 0.043540650843757855,
+                    "maximum_nearest_distance": 0.05972317319844202
+                  },
+                  "memory_main_fraction": 0.8118798850519989,
+                  "noise_main_fraction": 0.18090675360322894,
+                  "interaction_fraction": 0.007213361344772279,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 4,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.875,
+                    "covered_targets": 7,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.0433550059716259,
+                    "median_nearest_distance": 0.04144334741243501,
+                    "maximum_nearest_distance": 0.06311730752745351
+                  },
+                  "memory_main_fraction": 0.778406134034823,
+                  "noise_main_fraction": 0.20468698579014732,
+                  "interaction_fraction": 0.01690688017502986,
+                  "coverage_gain_vs_wrong_noise_only": -0.125
+                }
+              ]
+            },
+            {
+              "keep_fraction": 0.75,
+              "valid_tokens_per_view": [
+                16,
+                12
+              ],
+              "mean_coverage": 0.95,
+              "mean_coverage_gain_vs_wrong_noise_only": -0.05,
+              "mean_headroom_recovery": null,
+              "blocks": [
+                {
+                  "block_index": 0,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.041909914516758906,
+                    "median_nearest_distance": 0.04218312401211769,
+                    "maximum_nearest_distance": 0.05530905919508602
+                  },
+                  "memory_main_fraction": 0.34575976417666,
+                  "noise_main_fraction": 0.6515445819789684,
+                  "interaction_fraction": 0.002695653844371801,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 1,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.75,
+                    "covered_targets": 6,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.050441022786195236,
+                    "median_nearest_distance": 0.046366691142019745,
+                    "maximum_nearest_distance": 0.08383212276760117
+                  },
+                  "memory_main_fraction": 0.45936633110925473,
+                  "noise_main_fraction": 0.5372769461019387,
+                  "interaction_fraction": 0.0033567227888065074,
+                  "coverage_gain_vs_wrong_noise_only": -0.25
+                },
+                {
+                  "block_index": 2,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.03743974690640768,
+                    "median_nearest_distance": 0.03584818036360113,
+                    "maximum_nearest_distance": 0.045647213623946616
+                  },
+                  "memory_main_fraction": 0.5598788705418847,
+                  "noise_main_fraction": 0.436797561723143,
+                  "interaction_fraction": 0.003323567734972261,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 3,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.04334847077952912,
+                    "median_nearest_distance": 0.04105206832971367,
+                    "maximum_nearest_distance": 0.05678683456753717
+                  },
+                  "memory_main_fraction": 0.5556058928576911,
+                  "noise_main_fraction": 0.44083397728336854,
+                  "interaction_fraction": 0.003560129858940307,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 4,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.037862616798182716,
+                    "median_nearest_distance": 0.0389710342707126,
+                    "maximum_nearest_distance": 0.04763303271559665
+                  },
+                  "memory_main_fraction": 0.612479183411732,
+                  "noise_main_fraction": 0.38406185465522746,
+                  "interaction_fraction": 0.0034589619330404955,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "memory_views": 4,
+          "noises_per_view": 2,
+          "fractions": [
+            {
+              "keep_fraction": 0.25,
+              "valid_tokens_per_view": [
+                16,
+                4,
+                4,
+                4
+              ],
+              "mean_coverage": 0.55,
+              "mean_coverage_gain_vs_wrong_noise_only": -0.45,
+              "mean_headroom_recovery": null,
+              "blocks": [
+                {
+                  "block_index": 0,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.5,
+                    "covered_targets": 4,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.06389007338881444,
+                    "median_nearest_distance": 0.060240923362247234,
+                    "maximum_nearest_distance": 0.10936492234277216
+                  },
+                  "memory_main_fraction": 0.6763985317478941,
+                  "noise_main_fraction": 0.26301185862657916,
+                  "interaction_fraction": 0.06058960962552662,
+                  "coverage_gain_vs_wrong_noise_only": -0.5
+                },
+                {
+                  "block_index": 1,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.375,
+                    "covered_targets": 3,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.08933917142291821,
+                    "median_nearest_distance": 0.08952108935111613,
+                    "maximum_nearest_distance": 0.14570165078055616
+                  },
+                  "memory_main_fraction": 0.9930428031428843,
+                  "noise_main_fraction": 0.006643526080953667,
+                  "interaction_fraction": 0.0003136707761623566,
+                  "coverage_gain_vs_wrong_noise_only": -0.625
+                },
+                {
+                  "block_index": 2,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.75,
+                    "covered_targets": 6,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.050243027777986254,
+                    "median_nearest_distance": 0.04511264954527795,
+                    "maximum_nearest_distance": 0.08159701458821962
+                  },
+                  "memory_main_fraction": 0.993632729731233,
+                  "noise_main_fraction": 0.005777116031796285,
+                  "interaction_fraction": 0.0005901542369708256,
+                  "coverage_gain_vs_wrong_noise_only": -0.25
+                },
+                {
+                  "block_index": 3,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.75,
+                    "covered_targets": 6,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.0550516937608312,
+                    "median_nearest_distance": 0.05128925711406669,
+                    "maximum_nearest_distance": 0.09930892685892082
+                  },
+                  "memory_main_fraction": 0.9861167272843708,
+                  "noise_main_fraction": 0.010898142661940988,
+                  "interaction_fraction": 0.002985130053688277,
+                  "coverage_gain_vs_wrong_noise_only": -0.25
+                },
+                {
+                  "block_index": 4,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.375,
+                    "covered_targets": 3,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.06814965455464968,
+                    "median_nearest_distance": 0.06836029482586702,
+                    "maximum_nearest_distance": 0.10079869037220313
+                  },
+                  "memory_main_fraction": 0.8309410511040289,
+                  "noise_main_fraction": 0.13633631056644221,
+                  "interaction_fraction": 0.03272263832952892,
+                  "coverage_gain_vs_wrong_noise_only": -0.625
+                }
+              ]
+            },
+            {
+              "keep_fraction": 0.5,
+              "valid_tokens_per_view": [
+                16,
+                8,
+                8,
+                8
+              ],
+              "mean_coverage": 0.575,
+              "mean_coverage_gain_vs_wrong_noise_only": -0.425,
+              "mean_headroom_recovery": null,
+              "blocks": [
+                {
+                  "block_index": 0,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.5,
+                    "covered_targets": 4,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.06389007338881444,
+                    "median_nearest_distance": 0.060240923362247234,
+                    "maximum_nearest_distance": 0.10936492234277216
+                  },
+                  "memory_main_fraction": 0.6849348037876807,
+                  "noise_main_fraction": 0.24268899232409882,
+                  "interaction_fraction": 0.07237620388822048,
+                  "coverage_gain_vs_wrong_noise_only": -0.5
+                },
+                {
+                  "block_index": 1,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.375,
+                    "covered_targets": 3,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.08933917142291821,
+                    "median_nearest_distance": 0.08952108935111613,
+                    "maximum_nearest_distance": 0.14570165078055616
+                  },
+                  "memory_main_fraction": 0.9924773632093018,
+                  "noise_main_fraction": 0.0071707193079427415,
+                  "interaction_fraction": 0.000351917482755157,
+                  "coverage_gain_vs_wrong_noise_only": -0.625
+                },
+                {
+                  "block_index": 2,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.75,
+                    "covered_targets": 6,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.050243027777986254,
+                    "median_nearest_distance": 0.04511264954527795,
+                    "maximum_nearest_distance": 0.08159701458821962
+                  },
+                  "memory_main_fraction": 0.9930979062478306,
+                  "noise_main_fraction": 0.006217878371433206,
+                  "interaction_fraction": 0.0006842153807364667,
+                  "coverage_gain_vs_wrong_noise_only": -0.25
+                },
+                {
+                  "block_index": 3,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.75,
+                    "covered_targets": 6,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.0550516937608312,
+                    "median_nearest_distance": 0.05128925711406669,
+                    "maximum_nearest_distance": 0.09930892685892082
+                  },
+                  "memory_main_fraction": 0.9849600370817265,
+                  "noise_main_fraction": 0.011488048157635732,
+                  "interaction_fraction": 0.0035519147606378073,
+                  "coverage_gain_vs_wrong_noise_only": -0.25
+                },
+                {
+                  "block_index": 4,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.5,
+                    "covered_targets": 4,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.059435264416216174,
+                    "median_nearest_distance": 0.0602835260644122,
+                    "maximum_nearest_distance": 0.07343161090893827
+                  },
+                  "memory_main_fraction": 0.8305963668378357,
+                  "noise_main_fraction": 0.13123800470437108,
+                  "interaction_fraction": 0.038165628457793026,
+                  "coverage_gain_vs_wrong_noise_only": -0.5
+                }
+              ]
+            },
+            {
+              "keep_fraction": 0.75,
+              "valid_tokens_per_view": [
+                16,
+                12,
+                12,
+                12
+              ],
+              "mean_coverage": 0.825,
+              "mean_coverage_gain_vs_wrong_noise_only": -0.175,
+              "mean_headroom_recovery": null,
+              "blocks": [
+                {
+                  "block_index": 0,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.03918194639730248,
+                    "median_nearest_distance": 0.03953751896514652,
+                    "maximum_nearest_distance": 0.04624526188174006
+                  },
+                  "memory_main_fraction": 0.6244959669149311,
+                  "noise_main_fraction": 0.24676634928462002,
+                  "interaction_fraction": 0.12873768380044864,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 1,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.375,
+                    "covered_targets": 3,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.08933917142291821,
+                    "median_nearest_distance": 0.08952108935111613,
+                    "maximum_nearest_distance": 0.14570165078055616
+                  },
+                  "memory_main_fraction": 0.9823261021376601,
+                  "noise_main_fraction": 0.016629087615663406,
+                  "interaction_fraction": 0.0010448102466765715,
+                  "coverage_gain_vs_wrong_noise_only": -0.625
+                },
+                {
+                  "block_index": 2,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.875,
+                    "covered_targets": 7,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.04394650441458993,
+                    "median_nearest_distance": 0.04038127690405732,
+                    "maximum_nearest_distance": 0.07005268522041663
+                  },
+                  "memory_main_fraction": 0.9832305023208512,
+                  "noise_main_fraction": 0.014960374218407117,
+                  "interaction_fraction": 0.0018091234607415282,
+                  "coverage_gain_vs_wrong_noise_only": -0.125
+                },
+                {
+                  "block_index": 3,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.04213557913965328,
+                    "median_nearest_distance": 0.0392553401570104,
+                    "maximum_nearest_distance": 0.059623563343103474
+                  },
+                  "memory_main_fraction": 0.968742286506486,
+                  "noise_main_fraction": 0.02099954882345064,
+                  "interaction_fraction": 0.010258164670063276,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 4,
+                  "coverage": {
+                    "tolerance": 0.0599193984510249,
+                    "coverage_fraction": 0.875,
+                    "covered_targets": 7,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.04241844250302407,
+                    "median_nearest_distance": 0.03984603225649973,
+                    "maximum_nearest_distance": 0.0636484633728855
+                  },
+                  "memory_main_fraction": 0.7425855231728906,
+                  "noise_main_fraction": 0.18071204073038885,
+                  "interaction_fraction": 0.07670243609672066,
+                  "coverage_gain_vs_wrong_noise_only": -0.125
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "primary_view_count": 4,
+      "primary_keep_fraction": 0.5,
+      "primary_readout_coverage_gain": -0.425,
+      "sensitivity_only": "non-primary view counts and keep fractions must not be selected per test pair using target coverage"
+    },
+    {
+      "direction": "context_b_correct_b_wrong_a",
+      "context_index": 7459,
+      "donor_history_index": 9379,
+      "native_support_tolerance": 0.08782105004418786,
+      "allocations": [
+        {
+          "memory_views": 1,
+          "noises_per_view": 8,
+          "fractions": [
+            {
+              "keep_fraction": 1.0,
+              "valid_tokens_per_view": [
+                16
+              ],
+              "mean_coverage": 1.0,
+              "mean_coverage_gain_vs_wrong_noise_only": 0.0,
+              "mean_headroom_recovery": null,
+              "blocks": [
+                {
+                  "block_index": 0,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.05534866078693862,
+                    "median_nearest_distance": 0.054515762834016504,
+                    "maximum_nearest_distance": 0.07608670930711549
+                  },
+                  "memory_main_fraction": 0.0,
+                  "noise_main_fraction": 1.0,
+                  "interaction_fraction": 0.0,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 1,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.0527973694691544,
+                    "median_nearest_distance": 0.05063441767310921,
+                    "maximum_nearest_distance": 0.06001901312501576
+                  },
+                  "memory_main_fraction": 0.0,
+                  "noise_main_fraction": 1.0,
+                  "interaction_fraction": 0.0,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 2,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.04920132064886042,
+                    "median_nearest_distance": 0.04866159972129937,
+                    "maximum_nearest_distance": 0.06398413478841099
+                  },
+                  "memory_main_fraction": 0.0,
+                  "noise_main_fraction": 1.0,
+                  "interaction_fraction": 0.0,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 3,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.05645409848961695,
+                    "median_nearest_distance": 0.055467256954052066,
+                    "maximum_nearest_distance": 0.06416235349911728
+                  },
+                  "memory_main_fraction": 0.0,
+                  "noise_main_fraction": 1.0,
+                  "interaction_fraction": 0.0,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 4,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.051796313893397214,
+                    "median_nearest_distance": 0.05222557864710693,
+                    "maximum_nearest_distance": 0.07620781358712422
+                  },
+                  "memory_main_fraction": 0.0,
+                  "noise_main_fraction": 1.0,
+                  "interaction_fraction": 0.0,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "memory_views": 2,
+          "noises_per_view": 4,
+          "fractions": [
+            {
+              "keep_fraction": 0.25,
+              "valid_tokens_per_view": [
+                16,
+                4
+              ],
+              "mean_coverage": 0.825,
+              "mean_coverage_gain_vs_wrong_noise_only": -0.175,
+              "mean_headroom_recovery": null,
+              "blocks": [
+                {
+                  "block_index": 0,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.05892444733561719,
+                    "median_nearest_distance": 0.05945176155446742,
+                    "maximum_nearest_distance": 0.07608670930711549
+                  },
+                  "memory_main_fraction": 0.8371449340092246,
+                  "noise_main_fraction": 0.1390656702843525,
+                  "interaction_fraction": 0.023789395706422956,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 1,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.0561783852095994,
+                    "median_nearest_distance": 0.05534217871283016,
+                    "maximum_nearest_distance": 0.06837969689949173
+                  },
+                  "memory_main_fraction": 0.8850712621089336,
+                  "noise_main_fraction": 0.09083631809027028,
+                  "interaction_fraction": 0.02409241980079637,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 2,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 0.875,
+                    "covered_targets": 7,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.06328651846968884,
+                    "median_nearest_distance": 0.06119149979732137,
+                    "maximum_nearest_distance": 0.09812914771930425
+                  },
+                  "memory_main_fraction": 0.6669078645678299,
+                  "noise_main_fraction": 0.28973804039883605,
+                  "interaction_fraction": 0.043354095033334095,
+                  "coverage_gain_vs_wrong_noise_only": -0.125
+                },
+                {
+                  "block_index": 3,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 0.25,
+                    "covered_targets": 2,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.09756832599130766,
+                    "median_nearest_distance": 0.09489339712428642,
+                    "maximum_nearest_distance": 0.12340732898403939
+                  },
+                  "memory_main_fraction": 0.5569490459455656,
+                  "noise_main_fraction": 0.38265702571272026,
+                  "interaction_fraction": 0.060393928341714066,
+                  "coverage_gain_vs_wrong_noise_only": -0.75
+                },
+                {
+                  "block_index": 4,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.06324390449960628,
+                    "median_nearest_distance": 0.06735205300950926,
+                    "maximum_nearest_distance": 0.07911871523652006
+                  },
+                  "memory_main_fraction": 0.6077773899364475,
+                  "noise_main_fraction": 0.34002646887985866,
+                  "interaction_fraction": 0.05219614118369377,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                }
+              ]
+            },
+            {
+              "keep_fraction": 0.5,
+              "valid_tokens_per_view": [
+                16,
+                8
+              ],
+              "mean_coverage": 0.925,
+              "mean_coverage_gain_vs_wrong_noise_only": -0.075,
+              "mean_headroom_recovery": null,
+              "blocks": [
+                {
+                  "block_index": 0,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.05892444733561719,
+                    "median_nearest_distance": 0.05945176155446742,
+                    "maximum_nearest_distance": 0.07608670930711549
+                  },
+                  "memory_main_fraction": 0.7968033272507609,
+                  "noise_main_fraction": 0.18865102115335475,
+                  "interaction_fraction": 0.014545651595884307,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 1,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.0561783852095994,
+                    "median_nearest_distance": 0.05534217871283016,
+                    "maximum_nearest_distance": 0.06837969689949173
+                  },
+                  "memory_main_fraction": 0.8661941846740087,
+                  "noise_main_fraction": 0.11658113210526369,
+                  "interaction_fraction": 0.017224683220727503,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 2,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.06173271171216399,
+                    "median_nearest_distance": 0.06105979016103173,
+                    "maximum_nearest_distance": 0.0859621129316847
+                  },
+                  "memory_main_fraction": 0.6229182484797873,
+                  "noise_main_fraction": 0.35411901632329973,
+                  "interaction_fraction": 0.02296273519691318,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 3,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 0.625,
+                    "covered_targets": 5,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.0853210339757951,
+                    "median_nearest_distance": 0.07959994403462056,
+                    "maximum_nearest_distance": 0.12340732898403939
+                  },
+                  "memory_main_fraction": 0.48034489689025617,
+                  "noise_main_fraction": 0.4853414820779232,
+                  "interaction_fraction": 0.03431362103182082,
+                  "coverage_gain_vs_wrong_noise_only": -0.375
+                },
+                {
+                  "block_index": 4,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.06045410528771429,
+                    "median_nearest_distance": 0.06100155009413856,
+                    "maximum_nearest_distance": 0.07911871523652006
+                  },
+                  "memory_main_fraction": 0.5474165985599416,
+                  "noise_main_fraction": 0.42340601875576495,
+                  "interaction_fraction": 0.02917738268429341,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                }
+              ]
+            },
+            {
+              "keep_fraction": 0.75,
+              "valid_tokens_per_view": [
+                16,
+                12
+              ],
+              "mean_coverage": 0.95,
+              "mean_coverage_gain_vs_wrong_noise_only": -0.05,
+              "mean_headroom_recovery": null,
+              "blocks": [
+                {
+                  "block_index": 0,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.05892444733561719,
+                    "median_nearest_distance": 0.05945176155446742,
+                    "maximum_nearest_distance": 0.07608670930711549
+                  },
+                  "memory_main_fraction": 0.5684770684218068,
+                  "noise_main_fraction": 0.42716087240969813,
+                  "interaction_fraction": 0.004362059168494932,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 1,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.0561783852095994,
+                    "median_nearest_distance": 0.05534217871283016,
+                    "maximum_nearest_distance": 0.06837969689949173
+                  },
+                  "memory_main_fraction": 0.7363886831966538,
+                  "noise_main_fraction": 0.2598628220958441,
+                  "interaction_fraction": 0.0037484947075022883,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 2,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.06012276210723405,
+                    "median_nearest_distance": 0.0555520478665698,
+                    "maximum_nearest_distance": 0.08690550374571433
+                  },
+                  "memory_main_fraction": 0.4016749115946158,
+                  "noise_main_fraction": 0.5955874431685307,
+                  "interaction_fraction": 0.002737645236853549,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 3,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 0.75,
+                    "covered_targets": 6,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.07868738823397603,
+                    "median_nearest_distance": 0.08092833151747089,
+                    "maximum_nearest_distance": 0.09007196966334012
+                  },
+                  "memory_main_fraction": 0.21738558995551782,
+                  "noise_main_fraction": 0.7801978050873133,
+                  "interaction_fraction": 0.0024166049571689033,
+                  "coverage_gain_vs_wrong_noise_only": -0.25
+                },
+                {
+                  "block_index": 4,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.06215702666275828,
+                    "median_nearest_distance": 0.06667874222929113,
+                    "maximum_nearest_distance": 0.07911871523652006
+                  },
+                  "memory_main_fraction": 0.29654318595936996,
+                  "noise_main_fraction": 0.7002508071191236,
+                  "interaction_fraction": 0.003206006921506391,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "memory_views": 4,
+          "noises_per_view": 2,
+          "fractions": [
+            {
+              "keep_fraction": 0.25,
+              "valid_tokens_per_view": [
+                16,
+                4,
+                4,
+                4
+              ],
+              "mean_coverage": 0.725,
+              "mean_coverage_gain_vs_wrong_noise_only": -0.275,
+              "mean_headroom_recovery": null,
+              "blocks": [
+                {
+                  "block_index": 0,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.05930065253468185,
+                    "median_nearest_distance": 0.060956582350726055,
+                    "maximum_nearest_distance": 0.07608670930711549
+                  },
+                  "memory_main_fraction": 0.847342337118912,
+                  "noise_main_fraction": 0.1185188321929585,
+                  "interaction_fraction": 0.034138830688129666,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 1,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.05769834089709154,
+                    "median_nearest_distance": 0.05635119229710006,
+                    "maximum_nearest_distance": 0.06837969689949173
+                  },
+                  "memory_main_fraction": 0.9213128990479864,
+                  "noise_main_fraction": 0.06650030157900377,
+                  "interaction_fraction": 0.012186799373009772,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 2,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 0.875,
+                    "covered_targets": 7,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.06328651846968884,
+                    "median_nearest_distance": 0.06119149979732137,
+                    "maximum_nearest_distance": 0.09812914771930425
+                  },
+                  "memory_main_fraction": 0.8382000393210778,
+                  "noise_main_fraction": 0.12025772054174329,
+                  "interaction_fraction": 0.041542240137179005,
+                  "coverage_gain_vs_wrong_noise_only": -0.125
+                },
+                {
+                  "block_index": 3,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 0.0,
+                    "covered_targets": 0,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.11215624626781662,
+                    "median_nearest_distance": 0.11030985730668647,
+                    "maximum_nearest_distance": 0.14657396699381203
+                  },
+                  "memory_main_fraction": 0.819568351662206,
+                  "noise_main_fraction": 0.1558908677073575,
+                  "interaction_fraction": 0.02454078063043672,
+                  "coverage_gain_vs_wrong_noise_only": -1.0
+                },
+                {
+                  "block_index": 4,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 0.75,
+                    "covered_targets": 6,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.08464011529655557,
+                    "median_nearest_distance": 0.07785161069898411,
+                    "maximum_nearest_distance": 0.14035423545767403
+                  },
+                  "memory_main_fraction": 0.40783550829767967,
+                  "noise_main_fraction": 0.4623809673939811,
+                  "interaction_fraction": 0.12978352430833914,
+                  "coverage_gain_vs_wrong_noise_only": -0.25
+                }
+              ]
+            },
+            {
+              "keep_fraction": 0.5,
+              "valid_tokens_per_view": [
+                16,
+                8,
+                8,
+                8
+              ],
+              "mean_coverage": 0.725,
+              "mean_coverage_gain_vs_wrong_noise_only": -0.275,
+              "mean_headroom_recovery": null,
+              "blocks": [
+                {
+                  "block_index": 0,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.05930065253468185,
+                    "median_nearest_distance": 0.060956582350726055,
+                    "maximum_nearest_distance": 0.07608670930711549
+                  },
+                  "memory_main_fraction": 0.8403593805885419,
+                  "noise_main_fraction": 0.11702522345561796,
+                  "interaction_fraction": 0.04261539595584022,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 1,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.05769834089709154,
+                    "median_nearest_distance": 0.05635119229710006,
+                    "maximum_nearest_distance": 0.06837969689949173
+                  },
+                  "memory_main_fraction": 0.918192528553871,
+                  "noise_main_fraction": 0.0665457345487379,
+                  "interaction_fraction": 0.015261736897390863,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 2,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 0.875,
+                    "covered_targets": 7,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.06328651846968884,
+                    "median_nearest_distance": 0.06119149979732137,
+                    "maximum_nearest_distance": 0.09812914771930425
+                  },
+                  "memory_main_fraction": 0.8370566130756559,
+                  "noise_main_fraction": 0.11503674311701047,
+                  "interaction_fraction": 0.0479066438073336,
+                  "coverage_gain_vs_wrong_noise_only": -0.125
+                },
+                {
+                  "block_index": 3,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 0.0,
+                    "covered_targets": 0,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.11215624626781662,
+                    "median_nearest_distance": 0.11030985730668647,
+                    "maximum_nearest_distance": 0.14657396699381203
+                  },
+                  "memory_main_fraction": 0.8193160515994655,
+                  "noise_main_fraction": 0.1490642825531109,
+                  "interaction_fraction": 0.03161966584742359,
+                  "coverage_gain_vs_wrong_noise_only": -1.0
+                },
+                {
+                  "block_index": 4,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 0.75,
+                    "covered_targets": 6,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.0786170196502046,
+                    "median_nearest_distance": 0.06209552389450988,
+                    "maximum_nearest_distance": 0.13624202241115443
+                  },
+                  "memory_main_fraction": 0.40686711600549774,
+                  "noise_main_fraction": 0.4459106818100997,
+                  "interaction_fraction": 0.14722220218440246,
+                  "coverage_gain_vs_wrong_noise_only": -0.25
+                }
+              ]
+            },
+            {
+              "keep_fraction": 0.75,
+              "valid_tokens_per_view": [
+                16,
+                12,
+                12,
+                12
+              ],
+              "mean_coverage": 0.825,
+              "mean_coverage_gain_vs_wrong_noise_only": -0.175,
+              "mean_headroom_recovery": null,
+              "blocks": [
+                {
+                  "block_index": 0,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.0539878814582622,
+                    "median_nearest_distance": 0.056020583630275136,
+                    "maximum_nearest_distance": 0.07170401727605408
+                  },
+                  "memory_main_fraction": 0.7963096400146727,
+                  "noise_main_fraction": 0.12463115806939323,
+                  "interaction_fraction": 0.07905920191593409,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 1,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.05263290754260732,
+                    "median_nearest_distance": 0.05082243908512325,
+                    "maximum_nearest_distance": 0.0657623918490341
+                  },
+                  "memory_main_fraction": 0.8617936939368979,
+                  "noise_main_fraction": 0.08843579375695869,
+                  "interaction_fraction": 0.04977051230614364,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 2,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.05609473605210373,
+                    "median_nearest_distance": 0.05579430924982629,
+                    "maximum_nearest_distance": 0.07939386129885123
+                  },
+                  "memory_main_fraction": 0.815519586908328,
+                  "noise_main_fraction": 0.12508016808610914,
+                  "interaction_fraction": 0.05940024500556265,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                },
+                {
+                  "block_index": 3,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 0.125,
+                    "covered_targets": 1,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.10219636750183611,
+                    "median_nearest_distance": 0.09945637295327009,
+                    "maximum_nearest_distance": 0.13111071702067534
+                  },
+                  "memory_main_fraction": 0.775649143627205,
+                  "noise_main_fraction": 0.15151823100879308,
+                  "interaction_fraction": 0.07283262536400188,
+                  "coverage_gain_vs_wrong_noise_only": -0.875
+                },
+                {
+                  "block_index": 4,
+                  "coverage": {
+                    "tolerance": 0.08782105004418786,
+                    "coverage_fraction": 1.0,
+                    "covered_targets": 8,
+                    "total_targets": 8,
+                    "mean_nearest_distance": 0.06016761522578798,
+                    "median_nearest_distance": 0.05910108760110462,
+                    "maximum_nearest_distance": 0.07217276949591529
+                  },
+                  "memory_main_fraction": 0.3936773913690558,
+                  "noise_main_fraction": 0.41372859823088887,
+                  "interaction_fraction": 0.19259401040005528,
+                  "coverage_gain_vs_wrong_noise_only": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "primary_view_count": 4,
+      "primary_keep_fraction": 0.5,
+      "primary_readout_coverage_gain": -0.275,
+      "sensitivity_only": "non-primary view counts and keep fractions must not be selected per test pair using target coverage"
+    }
+  ],
+  "pair_mean_primary_readout_coverage_gain": -0.35,
+  "claim_scope": "parameter-free contiguous readout masks applied to an incorrect donor history; native-history support recovery, not task success"
+}

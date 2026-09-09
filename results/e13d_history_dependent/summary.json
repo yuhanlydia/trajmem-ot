@@ -1,0 +1,36 @@
+{
+  "experiment": "E13D_pair_readout_recovery_aggregate",
+  "n_pairs": 13,
+  "pair_indices": [
+    1,
+    2,
+    18,
+    20,
+    21,
+    3,
+    5,
+    7,
+    9,
+    11,
+    12,
+    15,
+    16
+  ],
+  "mean_pair_primary_coverage_gain_ci": {
+    "estimate": -0.17596153846153847,
+    "lower": -0.2653846153846154,
+    "upper": -0.07884615384615384,
+    "confidence": 0.95,
+    "resamples": 10000
+  },
+  "median_pair_primary_coverage_gain": -0.23750000000000002,
+  "fraction_positive_pairs": 0.23076923076923078,
+  "pair_sign_test": {
+    "wins": 3,
+    "losses": 10,
+    "ties": 0,
+    "p_value": 0.09228515625
+  },
+  "inference_unit": "pairs; the two transplant directions are averaged within pair",
+  "claim_scope": "native-history support recovery under a preregistered readout configuration, not per-pair best selection and not task success"
+}

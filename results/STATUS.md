@@ -65,6 +65,22 @@ The pre-outcome execution-start miner produced 22 episode-disjoint candidates an
 
 Nearest-support distance improved on average and tolerance multiplier `2.0` was weakly positive, but these are secondary sensitivity results. Per the decision table, non-oracle router scaling stops here. The required next dataset consists of identical serialized simulator/current states paired with distinct histories.
 
+Two independent diffusion-noise replications (`seed=17` and `seed=27`) did not change that conclusion. After averaging all three blocks within each pair, the mean gain was `+0.07765`, the pair-bootstrap interval was `[-0.03409,+0.21117]`, the median was `-0.04167`, and the exact sign test counted `7/15/0` wins/losses/ties (`p=0.1338`). Pair effects were highly correlated across blocks (`r=0.927--0.947`), so the uncertainty is dominated by stable pair heterogeneity rather than diffusion-noise sampling.
+
+## Non-oracle readout result
+
+The complete 22-pair E13-D run rejects the preregistered contiguous-mask generator as a recovery method:
+
+- mean pair coverage gain `-0.20227`, 95% CI `[-0.26706,-0.12898]`;
+- median gain `-0.275`;
+- 4 wins and 18 losses; exact sign-test `p=0.00434`.
+
+An explicitly post-hoc history-language subset of 13 pairs gave the same direction (`-0.17596`, interval `[-0.26538,-0.07885]`). Across the tested `2/4`-view and `0.25/0.50/0.75` keep-fraction grid, no configuration recovered native support on average. This is evidence against contiguous hard masks, not against learned readout hypotheses or true counterfactual histories.
+
+## Closed-loop runtime boundary
+
+E14 cannot run in this container because it was launched with `NVIDIA_DRIVER_CAPABILITIES=compute,utility`. The Vulkan loader and Mesa drivers were installed and the exact NVIDIA `595.84` userspace library was tested, but NVIDIA Vulkan still reports `VK_ERROR_INCOMPATIBLE_DRIVER`; CPU `llvmpipe` is enumerated but rejected by SAPIEN as an unsupported physical device. A fresh container must expose `graphics` (for example `NVIDIA_DRIVER_CAPABILITIES=compute,utility,graphics` or `all`) before simulator reset and paired branch execution are possible.
+
 Not yet established:
 
 - strict-pair conditional-support gain with a sufficiently large independent pair set;
@@ -74,11 +90,4 @@ Not yet established:
 
 ## Next execution
 
-Follow `RUN_NEXT.md`:
-
-1. audit and expand strict pairs;
-2. E13-B2 strict pair-level replication;
-3. E13-D non-oracle readout recovery;
-4. E13-C2 replicated mechanism decomposition;
-5. E12-S2 held-out multi-corruption recovery;
-6. E14-A open-loop OT, followed by paired simulator evaluation.
+The remaining decisive experiment requires a Vulkan-capable container: serialize one simulator/current state, attach distinct valid histories, rerun E13-B2 on those true counterfactuals, and execute E14 actions from paired simulator branches. Do not scale the failed contiguous-mask family on the present offline sample.
