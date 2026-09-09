@@ -1,0 +1,11 @@
+{
+  "experiment": "E13B_oracle_history_transplant_aggregate",
+  "n_pairs": 8,
+  "n_directions": 16,
+  "mean_coverage_gain": 0.640625,
+  "median_coverage_gain": 1.0,
+  "fraction_positive_coverage_gain": 0.6875,
+  "mean_distance_improvement": 2.9091692745919318,
+  "median_paired_memory_effect": 1.617396056652069,
+  "prompt_match_fraction": 1.0
+}

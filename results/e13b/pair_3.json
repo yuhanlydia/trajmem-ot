@@ -1,0 +1,145 @@
+{
+  "experiment": "E13B_oracle_history_transplant",
+  "pair_index": 3,
+  "preset": "16gb",
+  "robot_action_dim": 8,
+  "num_steps": 10,
+  "context_diagnostics": {
+    "prompt_match": true,
+    "prompt_a": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+    "prompt_b": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+    "front_image_mae": 0.02747385922600241,
+    "wrist_image_mae": 0.15895922791724112,
+    "state_l2": 1.2193432574578076,
+    "pair_metadata": {
+      "a": 16062,
+      "b": 14610,
+      "prompt": "first press the button, then pick up all cubes that have been highlighteted with white areas on the table",
+      "subgoal": "pick up the highlighted cube, which is red",
+      "epis_a": "[44]",
+      "epis_b": "[41]"
+    }
+  },
+  "directions": [
+    {
+      "direction": "context_a_correct_a_wrong_b",
+      "context_index": 16062,
+      "donor_history_index": 14610,
+      "budget_per_condition": 8,
+      "noise_only_allocation": {
+        "memory_views": 1,
+        "noises_per_view": 8
+      },
+      "oracle_branch_allocation": {
+        "memory_views": 2,
+        "noises_per_view": 4
+      },
+      "coverage": {
+        "tolerance": 0.42154895296802686,
+        "calibration": {
+          "tolerance": 0.42154895296802686,
+          "coverage_fraction": 1.0,
+          "covered_targets": 4,
+          "total_targets": 4,
+          "mean_nearest_distance": 0.2238806565962015,
+          "median_nearest_distance": 0.21125026836570135,
+          "maximum_nearest_distance": 0.35590083415604606
+        },
+        "noise_only": {
+          "tolerance": 0.42154895296802686,
+          "coverage_fraction": 0.0,
+          "covered_targets": 0,
+          "total_targets": 4,
+          "mean_nearest_distance": 5.031498695712914,
+          "median_nearest_distance": 5.0487671567754635,
+          "maximum_nearest_distance": 5.143348710964971
+        },
+        "branched": {
+          "tolerance": 0.42154895296802686,
+          "coverage_fraction": 1.0,
+          "covered_targets": 4,
+          "total_targets": 4,
+          "mean_nearest_distance": 0.19533393334377047,
+          "median_nearest_distance": 0.1596734056174559,
+          "maximum_nearest_distance": 0.3317665983412714
+        },
+        "correct_only": {
+          "tolerance": 0.42154895296802686,
+          "coverage_fraction": 1.0,
+          "covered_targets": 4,
+          "total_targets": 4,
+          "mean_nearest_distance": 0.14036679316032924,
+          "median_nearest_distance": 0.13028282361889093,
+          "maximum_nearest_distance": 0.18900348779602866
+        },
+        "coverage_gain": 1.0,
+        "mean_distance_improvement": 4.836164762369144
+      },
+      "paired_memory_effect_mean": 8.794706344604492,
+      "paired_memory_effect_median": 8.878521919250488,
+      "wrong_noise_variance": 6.143300277643644,
+      "correct_noise_variance": 0.11365067940575171
+    },
+    {
+      "direction": "context_b_correct_b_wrong_a",
+      "context_index": 14610,
+      "donor_history_index": 16062,
+      "budget_per_condition": 8,
+      "noise_only_allocation": {
+        "memory_views": 1,
+        "noises_per_view": 8
+      },
+      "oracle_branch_allocation": {
+        "memory_views": 2,
+        "noises_per_view": 4
+      },
+      "coverage": {
+        "tolerance": 0.3067361063138181,
+        "calibration": {
+          "tolerance": 0.3067361063138181,
+          "coverage_fraction": 1.0,
+          "covered_targets": 4,
+          "total_targets": 4,
+          "mean_nearest_distance": 0.1481475152776887,
+          "median_nearest_distance": 0.1262456974981464,
+          "maximum_nearest_distance": 0.2635123149984783
+        },
+        "noise_only": {
+          "tolerance": 0.3067361063138181,
+          "coverage_fraction": 0.0,
+          "covered_targets": 0,
+          "total_targets": 4,
+          "mean_nearest_distance": 0.9777028539916093,
+          "median_nearest_distance": 0.918479420223357,
+          "maximum_nearest_distance": 1.2512348078956779
+        },
+        "branched": {
+          "tolerance": 0.3067361063138181,
+          "coverage_fraction": 1.0,
+          "covered_targets": 4,
+          "total_targets": 4,
+          "mean_nearest_distance": 0.0902011610854221,
+          "median_nearest_distance": 0.07650046034280247,
+          "maximum_nearest_distance": 0.1409240484138488
+        },
+        "correct_only": {
+          "tolerance": 0.3067361063138181,
+          "coverage_fraction": 1.0,
+          "covered_targets": 4,
+          "total_targets": 4,
+          "mean_nearest_distance": 0.08075598505278928,
+          "median_nearest_distance": 0.07650046034280247,
+          "maximum_nearest_distance": 0.10314334428331753
+        },
+        "coverage_gain": 1.0,
+        "mean_distance_improvement": 0.8875016929061872
+      },
+      "paired_memory_effect_mean": 1.1617169380187988,
+      "paired_memory_effect_median": 1.18239426612854,
+      "wrong_noise_variance": 0.008634607629428422,
+      "correct_noise_variance": 0.030746044332506762
+    }
+  ],
+  "mean_oracle_coverage_gain": 1.0,
+  "claim_scope": "oracle upper-bound test of shared-memory conditional-support failure; not a deployable hypothesis generator and not environment success"
+}

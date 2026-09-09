@@ -17,6 +17,10 @@ It may fail to cover futures associated with a different plausible interpretatio
 - A history-only intervention changes the frozen policy action.
 - Different memory-conditioned actions create different deterministic simulator futures.
 - Therefore \(M\rightarrow A\rightarrow S'\) is established.
+- E11-D replicated FP32-shadow JVP validation on eight released-checkpoint states at one and ten flow steps. The minimum robot-8D cosine was `0.99878` and `0.99989`, respectively.
+- E13-B ran eight pairs in both directions. Mean calibrated correct-mode coverage gain was `+0.640625`, median gain was `+1.0`, and `11/16` directions were positive.
+- E13-C ran eight states. For `(B,N)=(4,2)`, the median robot-action memory-variance fraction was `0.65513`; this is a separation result because no target-action set was supplied.
+- E12-S selected the history basis and `2.5e-4` probe radius on state 0, froze the configuration, and evaluated states 1--7. Fresh-noise recovery was positive for all eight states with median `+0.13243`; the random and negative controls had medians `-0.00304` and `-0.15160`.
 
 ## Raw BF16 JVP diagnosis
 
@@ -49,11 +53,13 @@ Tiny global history-basis edits at relative radius `2.5e-4` produced very small 
 
 Not yet established:
 
-- oracle memory branching improves correct-mode coverage;
-- an automatic readout view generator recovers the oracle gain;
-- finite-response pullback improves fresh-noise behavior;
+- oracle memory branching improves closed-loop task success;
+- contiguous masks recover calibrated correct modes from the oracle experiment;
+- an automatic learned readout view generator recovers the oracle gain;
 - trajectory OT improves simulator return or success;
 - memory branching outperforms matched-compute diffusion-only sampling in closed loop.
+
+E14 cannot yet be executed from this checkout: the repository contains the OT core but no released-checkpoint E14 runner or return-labelled paired simulator trajectories. Those are required to turn the validated E12-S control operator into a return-conditioned experiment.
 
 ## Next execution
 

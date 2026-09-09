@@ -144,6 +144,10 @@ The barycentric action transport `u_OT` is then pulled back through `Y_sec` or a
 - The causal chain \(M\rightarrow A\rightarrow S'\) is established.
 - Exact JAX JVP execution is feasible on the released checkpoint.
 - FP32 shadow analysis localizes the earlier JVP mismatch to low-precision memory-encoder/LLM arithmetic and validates the smooth JVP connection on the diagnostic path.
+- E11-D replicated the FP32-shadow result over eight states at one and ten flow steps. Robot-8D JVP--chord cosine was at least `0.99878` for one step and `0.99989` for ten steps.
+- E13-B completed eight pre-audited history pairs in both directions. Across 16 directions, oracle history branching achieved mean correct-mode coverage gain `+0.6406`, median gain `+1.0`, with `68.75%` positive directions under matched trajectory compute.
+- E13-C completed eight states. At allocation `(4 memory views, 2 noises/view)`, contiguous readout masks produced median robot-8D memory-variance fraction `0.6551`.
+- E12-S froze the history basis and probe radius after state 0, then evaluated all eight states. Fresh-noise recovery was positive on `8/8` states, with median `+0.1324`, versus median random-control recovery `-0.0030` and negative-direction recovery `-0.1516`.
 
 ### Preliminary or negative
 
@@ -153,11 +157,11 @@ The barycentric action transport `u_OT` is then pulled back through `Y_sec` or a
 
 ### Not established
 
-- Shared-memory false consensus on RoboMME;
-- correct-mode coverage improvement from memory branching;
 - environment success improvement;
 - a learned FP32 readout router;
 - trajectory-OT improvement on the released model.
+
+The E13-B result establishes an open-loop conditional-support gap for the audited sample pairs. It does not by itself establish improved closed-loop task success. E13-C currently measures action-distribution separation because no calibrated target-action file was supplied; it does not yet show that contiguous masks recover the correct oracle mode.
 
 ## Repository layout
 

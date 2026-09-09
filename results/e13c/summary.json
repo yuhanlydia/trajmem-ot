@@ -1,0 +1,33 @@
+{
+  "experiment": "E13C_history_readout_mask_branching_aggregate",
+  "n_states": 8,
+  "allocations": [
+    {
+      "memory_views": 1,
+      "noises_per_view": 8,
+      "n_states": 8,
+      "median_between_memory_variance": 0.0,
+      "median_within_noise_variance": 0.017230186706587276,
+      "median_memory_variance_fraction": 0.0,
+      "coverage_fraction_when_available": null
+    },
+    {
+      "memory_views": 2,
+      "noises_per_view": 4,
+      "n_states": 8,
+      "median_between_memory_variance": 0.006273867430853945,
+      "median_within_noise_variance": 0.02228184624575401,
+      "median_memory_variance_fraction": 0.19638853230554104,
+      "coverage_fraction_when_available": null
+    },
+    {
+      "memory_views": 4,
+      "noises_per_view": 2,
+      "n_states": 8,
+      "median_between_memory_variance": 0.0070770206301702925,
+      "median_within_noise_variance": 0.003819785671678212,
+      "median_memory_variance_fraction": 0.6551336840525754,
+      "coverage_fraction_when_available": null
+    }
+  ]
+}

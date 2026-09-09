@@ -68,3 +68,46 @@ def test_experiment_scripts_expose_help_without_robomme_install(script: str):
     )
     assert completed.returncode == 0, completed.stderr
     assert "usage:" in completed.stdout.lower()
+
+
+def test_e13_oracle_analyzer_ignores_pair_audit_report(tmp_path: Path):
+    pair = tmp_path / "pair_0.json"
+    audit = tmp_path / "pair_audit.json"
+    output = tmp_path / "summary.json"
+    pair.write_text(
+        json.dumps(
+            {
+                "experiment": "E13B_oracle_history_transplant",
+                "directions": [
+                    {
+                        "coverage": {
+                            "coverage_gain": 0.25,
+                            "mean_distance_improvement": 0.1,
+                        },
+                        "paired_memory_effect_mean": 0.2,
+                    }
+                ],
+                "context_diagnostics": {"prompt_match": True},
+            }
+        )
+    )
+    audit.write_text(json.dumps({"experiment": "E13B_pair_audit", "rows": []}))
+
+    completed = subprocess.run(
+        [
+            sys.executable,
+            "scripts/analyze_e13_oracle.py",
+            str(pair),
+            str(audit),
+            "--output",
+            str(output),
+        ],
+        cwd=Path.cwd(),
+        capture_output=True,
+        text=True,
+    )
+
+    assert completed.returncode == 0, completed.stderr
+    report = json.loads(output.read_text())
+    assert report["n_pairs"] == 1
+    assert report["mean_coverage_gain"] == pytest.approx(0.25)

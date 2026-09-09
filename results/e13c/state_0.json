@@ -1,0 +1,81 @@
+{
+  "experiment": "E13C_history_readout_mask_branching",
+  "checkpoint": "/root/trajmem-ot/checkpoints/perceptual-framesamp-modul/79999",
+  "data": "/root/trajmem-ot/data/robomme_preprocessed_data_sample",
+  "index": 0,
+  "preset": "16gb",
+  "robot_action_dim": 8,
+  "allocations": [
+    {
+      "memory_views": 1,
+      "noises_per_view": 8,
+      "total_trajectories": 8,
+      "keep_fraction": 1.0,
+      "includes_full_memory_view": true,
+      "valid_tokens_per_view": [
+        512
+      ],
+      "all_action_channels": {
+        "total_variance": 0.029930838335975547,
+        "within_noise_variance": 0.029930838335975547,
+        "between_memory_variance": 0.0,
+        "memory_variance_fraction": 0.0
+      },
+      "robot_action_8d": {
+        "total_variance": 0.02971879767878244,
+        "within_noise_variance": 0.02971879767878244,
+        "between_memory_variance": 0.0,
+        "memory_variance_fraction": 0.0
+      }
+    },
+    {
+      "memory_views": 2,
+      "noises_per_view": 4,
+      "total_trajectories": 8,
+      "keep_fraction": 0.5,
+      "includes_full_memory_view": true,
+      "valid_tokens_per_view": [
+        512,
+        256
+      ],
+      "all_action_channels": {
+        "total_variance": 0.05229305500774887,
+        "within_noise_variance": 0.04303326413879,
+        "between_memory_variance": 0.009259790868958867,
+        "memory_variance_fraction": 0.177074964688652
+      },
+      "robot_action_8d": {
+        "total_variance": 0.0520823114705585,
+        "within_noise_variance": 0.04283525212803083,
+        "between_memory_variance": 0.009247059342527671,
+        "memory_variance_fraction": 0.17754702280744436
+      }
+    },
+    {
+      "memory_views": 4,
+      "noises_per_view": 2,
+      "total_trajectories": 8,
+      "keep_fraction": 0.5,
+      "includes_full_memory_view": true,
+      "valid_tokens_per_view": [
+        512,
+        256,
+        256,
+        256
+      ],
+      "all_action_channels": {
+        "total_variance": 0.020225372095327872,
+        "within_noise_variance": 0.006311478121651266,
+        "between_memory_variance": 0.013913893973676606,
+        "memory_variance_fraction": 0.6879425460306247
+      },
+      "robot_action_8d": {
+        "total_variance": 0.02004177169947912,
+        "within_noise_variance": 0.006162557332137258,
+        "between_memory_variance": 0.013879214367341861,
+        "memory_variance_fraction": 0.6925143433153955
+      }
+    }
+  ],
+  "claim_scope": "deployment-faithful readout branching with unchanged memory values; not learned FP32 attention bias and not environment success"
+}

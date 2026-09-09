@@ -1,0 +1,59 @@
+{
+  "experiment": "E12S_deployed_secant_memory_recovery_aggregate",
+  "n_input_reports": 8,
+  "groups": [
+    {
+      "basis": "history",
+      "probe_radius": 0.00025,
+      "n_states": 8,
+      "median_fresh_noise_recovery": 0.13243457919965881,
+      "fraction_positive_fresh_noise_recovery": 1.0,
+      "median_same_noise_recovery": 0.13084405161056273,
+      "median_negative_direction_recovery": -0.15159964603844467,
+      "median_random_direction_recovery": -0.0030371325788690617,
+      "median_fresh_minus_random": 0.12992066465942695,
+      "median_linear_residual_ratio": 0.8723643029787171,
+      "median_applied_relative_delta_norm": 0.0022064596078771154
+    },
+    {
+      "basis": "history",
+      "probe_radius": 0.001,
+      "n_states": 1,
+      "median_fresh_noise_recovery": 0.15452292326976352,
+      "fraction_positive_fresh_noise_recovery": 1.0,
+      "median_same_noise_recovery": 0.15814234877979938,
+      "median_negative_direction_recovery": -0.22488666777280542,
+      "median_random_direction_recovery": -0.011834250152193082,
+      "median_fresh_minus_random": 0.1663571734219566,
+      "median_linear_residual_ratio": 0.7883508876430578,
+      "median_applied_relative_delta_norm": 0.002461672314490034
+    },
+    {
+      "basis": "history",
+      "probe_radius": 0.0025,
+      "n_states": 1,
+      "median_fresh_noise_recovery": 0.16280256098462462,
+      "fraction_positive_fresh_noise_recovery": 1.0,
+      "median_same_noise_recovery": 0.16026815356253354,
+      "median_negative_direction_recovery": -0.2247138459584035,
+      "median_random_direction_recovery": 0.0003994417462112043,
+      "median_fresh_minus_random": 0.1624031192384134,
+      "median_linear_residual_ratio": 0.8065528914848396,
+      "median_applied_relative_delta_norm": 0.0025846844561015557
+    },
+    {
+      "basis": "history",
+      "probe_radius": 0.005,
+      "n_states": 1,
+      "median_fresh_noise_recovery": 0.16664668133422997,
+      "fraction_positive_fresh_noise_recovery": 1.0,
+      "median_same_noise_recovery": 0.16168686557178713,
+      "median_negative_direction_recovery": -0.22972760788785762,
+      "median_random_direction_recovery": -0.012405326444008269,
+      "median_fresh_minus_random": 0.17905200777823824,
+      "median_linear_residual_ratio": 0.8242821581281004,
+      "median_applied_relative_delta_norm": 0.002572450066804143
+    }
+  ],
+  "selection_note": "choose basis/radius/damping on a predeclared development split; report held-out states without retuning"
+}

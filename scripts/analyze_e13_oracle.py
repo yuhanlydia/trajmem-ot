@@ -19,7 +19,14 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    reports = [json.loads(path.read_text()) for path in args.inputs]
+    reports = [
+        report
+        for path in args.inputs
+        if (report := json.loads(path.read_text())).get("experiment")
+        == "E13B_oracle_history_transplant"
+    ]
+    if not reports:
+        raise ValueError("no E13-B oracle history-transplant reports were provided")
     directions = [direction for report in reports for direction in report["directions"]]
     gains = [direction["coverage"]["coverage_gain"] for direction in directions]
     improvements = [
