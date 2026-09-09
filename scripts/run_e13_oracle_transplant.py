@@ -156,40 +156,15 @@ def _run_direction(
         num_steps=args.num_steps,
         robot_action_dim=args.robot_action_dim,
     )
-    branched_wrong = _sample_set(
-        policy,
-        wrong_observation,
-        model=model,
-        seeds=branch_seeds,
-        num_steps=args.num_steps,
-        robot_action_dim=args.robot_action_dim,
-    )
-    branched_correct = _sample_set(
-        policy,
-        correct_observation,
-        model=model,
-        seeds=branch_seeds,
-        num_steps=args.num_steps,
-        robot_action_dim=args.robot_action_dim,
-    )
+    # Reuse already sampled, seed-aligned trajectories. Besides reducing GPU
+    # work, this makes the only difference between paired branches the history.
+    branched_wrong = noise_only_wrong[: len(branch_seeds)]
+    branched_correct = correct_only[: len(branch_seeds)]
     branched = np.concatenate([branched_wrong, branched_correct], axis=0)
 
-    paired_correct = _sample_set(
-        policy,
-        correct_observation,
-        model=model,
-        seeds=paired_seeds,
-        num_steps=args.num_steps,
-        robot_action_dim=args.robot_action_dim,
-    )
-    paired_wrong = _sample_set(
-        policy,
-        wrong_observation,
-        model=model,
-        seeds=paired_seeds,
-        num_steps=args.num_steps,
-        robot_action_dim=args.robot_action_dim,
-    )
+    paired_count = len(paired_seeds)
+    paired_correct = correct_only[:paired_count]
+    paired_wrong = noise_only_wrong[:paired_count]
     paired_effects = np.linalg.norm(
         (paired_correct - paired_wrong).reshape(paired_correct.shape[0], -1), axis=1
     )

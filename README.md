@@ -171,10 +171,13 @@ src/trajmem_ot/robomme_runtime.py     one-checkpoint multi-state loader
 scripts/run_e11_robomme_jvp.py        BF16 and FP32-shadow diagnostics
 scripts/run_e11_stage_localization.py layer/stage localization
 scripts/run_e12_secant_recovery.py    reward-free deployed secant recovery
+scripts/analyze_e12_secant.py         aggregate deployed recovery sweeps
+scripts/audit_e13_pairs.py            pre-outcome pair/context audit
 scripts/run_e13_oracle_transplant.py  oracle full-history hypothesis test
 scripts/run_e13_readout_mask_branching.py
                                       history-readout branching baseline
 scripts/analyze_e13_oracle.py         aggregate oracle coverage gains
+scripts/analyze_e13_readout.py        aggregate readout-view diagnostics
 RUN_NEXT.md                           exact 16GB/24GB execution handoff
 results/STATUS.md                     claim ledger and current evidence
 ```

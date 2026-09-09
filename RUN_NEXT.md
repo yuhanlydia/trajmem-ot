@@ -75,7 +75,17 @@ This experiment validates the smooth diagnostic operator. It does not convert th
 
 This is the first decisive test of the research gap. It uses complete history bundles rather than a `0.025%` perturbation.
 
-The committed `results/e13_pairs.json` contains candidate same-task pairs. Inspect the reported image/state distances and retain only pairs whose histories represent a plausible competing interpretation for the fixed current context.
+The committed `results/e13_pairs.json` contains candidate same-task pairs. Audit them **before** outcome evaluation and retain pairs using only task semantics and current-context similarity:
+
+```bash
+uv run python "$TRAJMEM_ROOT/scripts/audit_e13_pairs.py" \
+  --checkpoint "$CHECKPOINT" \
+  --data "$DATA" \
+  --pairs "$TRAJMEM_ROOT/results/e13_pairs.json" \
+  --output "$TRAJMEM_ROOT/results/e13b/pair_audit.json"
+```
+
+Do not select pairs using E13-B coverage results. A valid pair must represent a plausible alternative history for the fixed current context, not merely a different episode with the same prompt.
 
 ### 16GB
 
@@ -130,6 +140,10 @@ for INDEX in 0 1 2 3 4 5 6 7; do
     --view-counts 1,2,4 \
     --output "$TRAJMEM_ROOT/results/e13c/state_${INDEX}.json"
 done
+
+uv run python "$TRAJMEM_ROOT/scripts/analyze_e13_readout.py" \
+  "$TRAJMEM_ROOT"/results/e13c/state_*.json \
+  --output "$TRAJMEM_ROOT/results/e13c/summary.json"
 ```
 
 Matched allocations are `(1,8)`, `(2,4)`, and `(4,2)`. Do not interpret `(8,1)` as a variance comparison.
@@ -147,7 +161,18 @@ If oracle transplants help but contiguous masks do not, the gap is real but the 
 
 Run this only after E13-B confirms that alternative history conditioning can recover a useful mode. This path never consumes the unvalidated BF16 AD tangent.
 
-First build or reuse a coherent history basis, then run one-state diagnostics:
+First build or reuse a coherent history basis. On a fresh machine:
+
+```bash
+uv run python "$TRAJMEM_ROOT/scripts/build_history_difference_basis.py" \
+  --data "$DATA" \
+  --pairs "$TRAJMEM_ROOT/results/e13_pairs.json" \
+  --history-config perceptual-framesamp-modul.yaml \
+  --count 7 \
+  --output "$TRAJMEM_ROOT/results/e13_history_basis.npz"
+```
+
+Then run one-state diagnostics:
 
 ```bash
 for BASIS in random history hybrid; do
@@ -168,6 +193,14 @@ for BASIS in random history hybrid; do
     --output "$TRAJMEM_ROOT/results/e12s/${BASIS}_state0.json" \
     "${EXTRA[@]}"
 done
+```
+
+If the smoke result is positive, run states `0–3` as a declared development split, choose one basis/radius/damping configuration, freeze it, and evaluate states `4–7` without retuning. Aggregate with:
+
+```bash
+uv run python "$TRAJMEM_ROOT/scripts/analyze_e12_secant.py" \
+  "$TRAJMEM_ROOT"/results/e12s/*.json \
+  --output "$TRAJMEM_ROOT/results/e12s/summary.json"
 ```
 
 Primary outputs:
