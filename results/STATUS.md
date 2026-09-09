@@ -65,7 +65,7 @@ The pre-outcome execution-start miner produced 22 episode-disjoint candidates an
 
 Nearest-support distance improved on average and tolerance multiplier `2.0` was weakly positive, but these are secondary sensitivity results. Per the decision table, non-oracle router scaling stops here. The required next dataset consists of identical serialized simulator/current states paired with distinct histories.
 
-Two independent diffusion-noise replications (`seed=17` and `seed=27`) did not change that conclusion. After averaging all three blocks within each pair, the mean gain was `+0.07765`, the pair-bootstrap interval was `[-0.03409,+0.21117]`, the median was `-0.04167`, and the exact sign test counted `7/15/0` wins/losses/ties (`p=0.1338`). Pair effects were highly correlated across blocks (`r=0.927--0.947`), so the uncertainty is dominated by stable pair heterogeneity rather than diffusion-noise sampling.
+Three independent diffusion-noise replications (`seed=17`, `27`, and `37`) did not change that conclusion. After averaging all four blocks within each pair, the mean gain was `+0.07386`, the pair-bootstrap interval was `[-0.03196,+0.20170]`, the median was `-0.03906`, and the exact sign test counted `6/15/1` wins/losses/ties (`p=0.07835`). Pair effects were highly correlated across blocks (`r=0.891--0.947`), so the uncertainty is dominated by stable pair heterogeneity rather than diffusion-noise sampling.
 
 ## Non-oracle readout result
 
@@ -77,7 +77,7 @@ The complete 22-pair E13-D run rejects the preregistered contiguous-mask generat
 
 An explicitly post-hoc history-language subset of 13 pairs gave the same direction (`-0.17596`, interval `[-0.26538,-0.07885]`). Across the tested `2/4`-view and `0.25/0.50/0.75` keep-fraction grid, no configuration recovered native support on average. This is evidence against contiguous hard masks, not against learned readout hypotheses or true counterfactual histories.
 
-An exploratory heterogeneity audit correlated the three-block pair gains with eight audit metrics. Front-image mismatch (`rho=0.453`, permutation `p=0.035`) and current-state mismatch (`rho=0.426`, `p=0.046`) were the largest associations, but neither survived BH correction (`q=0.185`). The current-state best-matched half averaged `-0.0606`, whereas the worse-matched half averaged `+0.2159`. These post-hoc statistics are consistent with current-context confounding but are not confirmatory and must not be used to select a favorable subset.
+An exploratory heterogeneity audit correlated the four-block pair gains with eight audit metrics. Front-image mismatch (`rho=0.459`, permutation `p=0.033`) and current-state mismatch (`rho=0.437`, `p=0.041`) were the largest associations, but neither survived BH correction (`q=0.164`). The current-state best-matched half averaged `-0.0597`, whereas the worse-matched half averaged `+0.2074`. These post-hoc statistics are consistent with current-context confounding but are not confirmatory and must not be used to select a favorable subset.
 
 ## Closed-loop runtime boundary
 

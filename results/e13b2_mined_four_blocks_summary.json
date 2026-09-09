@@ -1,0 +1,316 @@
+{
+  "experiment": "E13B2_four_noise_block_pair_aggregate",
+  "inference_unit": "pair after averaging noise blocks and transplant directions",
+  "n_pairs": 22,
+  "n_noise_blocks": 4,
+  "sources": [
+    {
+      "path": "results/e13b2_mined/strict_summary.json",
+      "sha256": "d9dcc4e5c1bc1638888d2f5f42bc0403b9996a70814c97544cc2409c0a117b3c",
+      "summary": {
+        "estimate": 0.07386363636363637,
+        "lower": -0.048295454545454544,
+        "upper": 0.2159090909090909,
+        "confidence": 0.95,
+        "resamples": 10000
+      }
+    },
+    {
+      "path": "results/e13b2_mined_seed17/strict_summary.json",
+      "sha256": "fbf2aef5d86edf462c6f618cafc6aba1da517000f1bbc93ed71c97894c2953bb",
+      "summary": {
+        "estimate": 0.13636363636363635,
+        "lower": 0.028409090909090908,
+        "upper": 0.26420454545454547,
+        "confidence": 0.95,
+        "resamples": 10000
+      }
+    },
+    {
+      "path": "results/e13b2_mined_seed27/strict_summary.json",
+      "sha256": "4a5ed06648d02d2740e0853fea1dda85566ddf4d92b6004d078b10f4e9dcb5f9",
+      "summary": {
+        "estimate": 0.022727272727272728,
+        "lower": -0.08522727272727272,
+        "upper": 0.15056818181818182,
+        "confidence": 0.95,
+        "resamples": 10000
+      }
+    },
+    {
+      "path": "results/e13b2_mined_seed37/strict_summary.json",
+      "sha256": "15373a52ea2d95aa856467ad3b6f32c534e6967ce6cbfdd90895041e88c01328",
+      "summary": {
+        "estimate": 0.0625,
+        "lower": -0.03125,
+        "upper": 0.18181818181818182,
+        "confidence": 0.95,
+        "resamples": 10000
+      }
+    }
+  ],
+  "mean_pair_coverage_gain_ci": {
+    "estimate": 0.07386363636363637,
+    "lower": -0.03196022727272727,
+    "upper": 0.20170454545454544,
+    "confidence": 0.95,
+    "resamples": 10000
+  },
+  "median_pair_coverage_gain": -0.0390625,
+  "fraction_positive_pairs": 0.2727272727272727,
+  "pair_gain_sign_test": {
+    "wins": 6,
+    "losses": 15,
+    "ties": 1,
+    "p_value": 0.0783538818359375
+  },
+  "block_pair_effect_correlations": [
+    [
+      1.0,
+      0.9470805624948216,
+      0.9266988727552605,
+      0.8909076653209754
+    ],
+    [
+      0.9470805624948218,
+      1.0,
+      0.9292697561448452,
+      0.8965781419476435
+    ],
+    [
+      0.9266988727552605,
+      0.9292697561448454,
+      1.0,
+      0.8997552933994444
+    ],
+    [
+      0.8909076653209754,
+      0.8965781419476435,
+      0.8997552933994444,
+      1.0
+    ]
+  ],
+  "pair_level": [
+    {
+      "source_pair_index": 0,
+      "block_gains": [
+        -0.25,
+        0.0625,
+        -0.125,
+        -0.0625
+      ],
+      "mean_gain": -0.09375
+    },
+    {
+      "source_pair_index": 1,
+      "block_gains": [
+        0.75,
+        0.75,
+        0.625,
+        0.875
+      ],
+      "mean_gain": 0.75
+    },
+    {
+      "source_pair_index": 2,
+      "block_gains": [
+        -0.0625,
+        -0.0625,
+        -0.0625,
+        -0.125
+      ],
+      "mean_gain": -0.078125
+    },
+    {
+      "source_pair_index": 3,
+      "block_gains": [
+        -0.25,
+        0.0,
+        -0.1875,
+        0.0
+      ],
+      "mean_gain": -0.109375
+    },
+    {
+      "source_pair_index": 4,
+      "block_gains": [
+        -0.125,
+        0.0,
+        -0.25,
+        -0.125
+      ],
+      "mean_gain": -0.125
+    },
+    {
+      "source_pair_index": 5,
+      "block_gains": [
+        0.5,
+        0.4375,
+        0.5,
+        0.375
+      ],
+      "mean_gain": 0.453125
+    },
+    {
+      "source_pair_index": 6,
+      "block_gains": [
+        -0.0625,
+        0.0,
+        -0.0625,
+        -0.0625
+      ],
+      "mean_gain": -0.046875
+    },
+    {
+      "source_pair_index": 7,
+      "block_gains": [
+        0.125,
+        0.125,
+        -0.0625,
+        0.125
+      ],
+      "mean_gain": 0.078125
+    },
+    {
+      "source_pair_index": 8,
+      "block_gains": [
+        -0.125,
+        0.0,
+        -0.1875,
+        0.0
+      ],
+      "mean_gain": -0.078125
+    },
+    {
+      "source_pair_index": 9,
+      "block_gains": [
+        -0.0625,
+        -0.0625,
+        -0.125,
+        -0.125
+      ],
+      "mean_gain": -0.09375
+    },
+    {
+      "source_pair_index": 10,
+      "block_gains": [
+        -0.1875,
+        0.0,
+        -0.0625,
+        0.0
+      ],
+      "mean_gain": -0.0625
+    },
+    {
+      "source_pair_index": 11,
+      "block_gains": [
+        0.125,
+        0.1875,
+        0.0625,
+        0.0625
+      ],
+      "mean_gain": 0.109375
+    },
+    {
+      "source_pair_index": 12,
+      "block_gains": [
+        -0.1875,
+        0.0,
+        0.0625,
+        0.0
+      ],
+      "mean_gain": -0.03125
+    },
+    {
+      "source_pair_index": 13,
+      "block_gains": [
+        -0.0625,
+        -0.0625,
+        0.0,
+        -0.0625
+      ],
+      "mean_gain": -0.046875
+    },
+    {
+      "source_pair_index": 14,
+      "block_gains": [
+        -0.0625,
+        0.0,
+        -0.125,
+        -0.125
+      ],
+      "mean_gain": -0.078125
+    },
+    {
+      "source_pair_index": 15,
+      "block_gains": [
+        0.0,
+        0.0625,
+        -0.1875,
+        0.0
+      ],
+      "mean_gain": -0.03125
+    },
+    {
+      "source_pair_index": 16,
+      "block_gains": [
+        0.0625,
+        0.0625,
+        0.0,
+        -0.125
+      ],
+      "mean_gain": 0.0
+    },
+    {
+      "source_pair_index": 17,
+      "block_gains": [
+        -0.0625,
+        0.0,
+        -0.3125,
+        -0.1875
+      ],
+      "mean_gain": -0.140625
+    },
+    {
+      "source_pair_index": 18,
+      "block_gains": [
+        0.0625,
+        -0.0625,
+        -0.125,
+        0.0625
+      ],
+      "mean_gain": -0.015625
+    },
+    {
+      "source_pair_index": 19,
+      "block_gains": [
+        0.5,
+        0.625,
+        0.375,
+        0.1875
+      ],
+      "mean_gain": 0.421875
+    },
+    {
+      "source_pair_index": 20,
+      "block_gains": [
+        1.0,
+        1.0,
+        0.8125,
+        0.6875
+      ],
+      "mean_gain": 0.875
+    },
+    {
+      "source_pair_index": 21,
+      "block_gains": [
+        0.0,
+        -0.0625,
+        -0.0625,
+        0.0
+      ],
+      "mean_gain": -0.03125
+    }
+  ],
+  "claim_scope": "offline native-history action-support coverage on mined cross-episode pairs; not task correctness and not a same-state counterfactual"
+}

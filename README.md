@@ -63,11 +63,11 @@ A pre-outcome miner selected one execution-start state per episode/prompt/subgoa
 
 Mean nearest-support distance still improved (`+0.09098`, interval `[+0.00491,+0.21180]`), and the widest tolerance multiplier `2.0` had a slightly positive lower bound. These secondary signals do not rescue the null primary coverage result. The next pair experiment must use identical serialized simulator/current states with only history changed; learned-router scaling is paused until that stricter test supports the gap.
 
-Two independent diffusion-noise blocks confirmed that the primary uncertainty comes from pair choice. Averaging three blocks within each of the 22 pairs gave mean gain `+0.07765`, interval `[-0.03409,+0.21117]`, median `-0.04167`, and `7/15/0` wins/losses/ties (`p=0.1338`). Pair effects correlated `0.927--0.947` across blocks.
+Three independent diffusion-noise replications confirmed that the primary uncertainty comes from pair choice. Averaging four blocks within each of the 22 pairs gave mean gain `+0.07386`, interval `[-0.03196,+0.20170]`, median `-0.03906`, and `6/15/1` wins/losses/ties (`p=0.07835`). Pair effects correlated `0.891--0.947` across blocks.
 
 The complete 22-pair E13-D run also rules out the preregistered contiguous-mask generator: mean coverage gain `-0.20227`, interval `[-0.26706,-0.12898]`, median `-0.275`, with 4 wins and 18 losses (`p=0.00434`). An explicitly post-hoc 13-pair history-language subset and the full view-count/keep-fraction grid had the same negative direction. Hard contiguous masks create different actions but systematically lose native-history support; this result does not test learned readout hypotheses.
 
-A post-hoc heterogeneity audit found that gain increased with current-context mismatch (`Spearman rho=0.426` for robot state and `0.453` for front image). Neither survived correction across eight audited metrics (`BH q>=0.185`). The best-matched half by current-state distance had mean gain `-0.0606`, compared with `+0.2159` in the worse-matched half. This diagnostic cannot establish confounding, but it strengthens the requirement for identical serialized current states.
+A post-hoc heterogeneity audit found that gain increased with current-context mismatch (`Spearman rho=0.437` for robot state and `0.459` for front image). Neither survived correction across eight audited metrics (`BH q>=0.164`). The best-matched half by current-state distance had mean gain `-0.0597`, compared with `+0.2074` in the worse-matched half. This diagnostic cannot establish confounding, but it strengthens the requirement for identical serialized current states.
 
 ## Numerical resolution
 
