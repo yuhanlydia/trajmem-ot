@@ -81,8 +81,8 @@ def test_quantized_action_chord_returns_actual_half_step():
         linear, memory, direction, step=0.25
     )
     np.testing.assert_allclose(
-        np.asarray(actual),
-        (np.asarray(memory_plus) - np.asarray(memory_minus)) / 2,
+        np.asarray(actual, dtype=np.float32),
+        (np.asarray(memory_plus, dtype=np.float32) - np.asarray(memory_minus, dtype=np.float32)) / 2,
     )
 
 
