@@ -1,0 +1,1223 @@
+{
+  "snapshot_utc": "2026-09-11T15:32:47.495057+00:00",
+  "native_cases": 90,
+  "physical_cases": 90,
+  "coverage_note": "Frame-sampling native and main one-chunk physical queues are complete for the 90-case manifest.",
+  "source_files": [
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-0-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-0-k0.json",
+      "uncompressed_sha256": "2ec4f6daa2b7f518c3a2ee4030a4174c484c036b6ab614bfca78b6ced439083e"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-second-model-and-live/PatternLock-episode-0-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-0-k3.json",
+      "uncompressed_sha256": "7576852195eeab79dace06715974f04943ed91785184284c0137d023a77fb11c"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-0-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-0-k7.json",
+      "uncompressed_sha256": "0901679bcd308e98c6bf0f818dd900230861062a6c5689dc27fac72b37809209"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-1-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-1-k0.json",
+      "uncompressed_sha256": "99325b0f4f7062cbdb5d1c0e7ac936aefaa7de1ec144bf3ff899a088ebbea73e"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-1-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-1-k3.json",
+      "uncompressed_sha256": "a7c64d46d283331d43160e6deec021e1c22df650cf6e1780d646b9b68c98c88d"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-1-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-1-k7.json",
+      "uncompressed_sha256": "faca027bac62809cc39d118730879e6200ba4cc71fe6b76c6b129fa946d0f0a7"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-2-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-2-k0.json",
+      "uncompressed_sha256": "a2d5bb07dea0c335954fd7bd0e59d8578274b295f27365b98bd4754b1a47b17f"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-2-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-2-k3.json",
+      "uncompressed_sha256": "27e8f2bcacf1d755f008e80496477d4eb3d7fe906067c6c79cd8c71b24717eed"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-2-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-2-k7.json",
+      "uncompressed_sha256": "12daf614bcba73b3e5c1d38a33d1eadfff0e0ac44c4e9ec04bc5ff3cd932502a"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-3-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-3-k0.json",
+      "uncompressed_sha256": "9060a15116e63aa402659af4a1d2a85a389735330fb695350001cb3557679c31"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-3-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-3-k3.json",
+      "uncompressed_sha256": "e9799fa02e488010e7e2c425e038f62089b75d891fda4ba2a9d5b4dfe78c40dc"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-3-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-3-k7.json",
+      "uncompressed_sha256": "063005268a30fc465c3777c642d61edf6abad0730d4a363577187ef11444d3d6"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-4-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-4-k0.json",
+      "uncompressed_sha256": "fc362f10c875840f03f208aa35986ac6a88016e32e5f6ab70d106bab2b91d7f9"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-4-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-4-k3.json",
+      "uncompressed_sha256": "fe733d6274bc56d9ef58160266fe44891ed7381da6b576330747983237a0c3bf"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-4-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-4-k7.json",
+      "uncompressed_sha256": "ed83677bd2183d234bb632402fdcd09c90a2d755364be279da300ff4f93978ab"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-5-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-5-k0.json",
+      "uncompressed_sha256": "9b28be226f9bcc30fa2519916f4bbc0f7d5ff6f5abedf75507c34c25ac6e7d3e"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-5-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-5-k3.json",
+      "uncompressed_sha256": "464801731662d34d446014eeeb9ab3ae81b76e659b0c1ad127e4916fd75681db"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-5-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-5-k7.json",
+      "uncompressed_sha256": "3371cfdcd89c0d64485a8138a02186cd846734eb3793295a9a4bab70a1acc078"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-6-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-6-k0.json",
+      "uncompressed_sha256": "022ff6a6d970815c72c285d67fe1a162791680a5cba036d7a0cb07ec198fa1be"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-6-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-6-k3.json",
+      "uncompressed_sha256": "232d692ce9cb83ecac7370febc12f58795e3b271277c01ca3c01c325b2890193"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-6-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-6-k7.json",
+      "uncompressed_sha256": "b98906fae128f6e1bd8cc4d1bdf240e74a6d22259d4691cfb0ff30a854e1eb55"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-7-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-7-k0.json",
+      "uncompressed_sha256": "e53a7cb39e1c6b546594236020f56e1cef466cd4de8776768524e5b50cb6a17e"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-7-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-7-k3.json",
+      "uncompressed_sha256": "58ff8e0a183b1b7cc2c61cb7fcb14f5d3782b67845a8af5def93c45aa4d87f6b"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-7-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-7-k7.json",
+      "uncompressed_sha256": "75927d67f28c56317220c4b2e6d00939fa4b771ab9bc870e684b9ad355b8a981"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-8-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-8-k0.json",
+      "uncompressed_sha256": "6e48b7fe8858679c7fc4d2de3d26368bbb22d0b40d1c906d26d4b9f871b4e3f7"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-8-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-8-k3.json",
+      "uncompressed_sha256": "85af6f3231bea0256b1158293358b20acbeb52b3da66968558782fe8964527a7"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-8-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-8-k7.json",
+      "uncompressed_sha256": "a19ccdeceacc2d164b6e94e5d1e52e7d8d219a3620d0663166ec3e55bd863cff"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-9-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-9-k0.json",
+      "uncompressed_sha256": "fca5774e3aebecacfcd690f48ed0a94253f6c5ea06bd4f1b4d6422a67c90bd55"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-9-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-9-k3.json",
+      "uncompressed_sha256": "bd00b3a04308141b45b5820f45b4de434a16ac90e4b485ff31b02234dddf518c"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/PatternLock-episode-9-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-9-k7.json",
+      "uncompressed_sha256": "af1f1258b419989b3b7aa6355eea4fc5fc6db83d484a4b62ad4f4de500a4aeb1"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-10-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-10-k0.json",
+      "uncompressed_sha256": "0ab9e8ae114aa2d2cac504c5935c94697562e4d86b66ce33f8a7f449171bb33b"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-second-model-and-live/RouteStick-episode-10-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-10-k3.json",
+      "uncompressed_sha256": "ef11748e9e874150c69e765d49341c321e34fc66df54715978a1905855127426"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-10-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-10-k7.json",
+      "uncompressed_sha256": "c8ff7ea6494a6cf0d734bcae099f0038afa7e933a3c7607f58718d704da4cbbd"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-11-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-11-k0.json",
+      "uncompressed_sha256": "ce2c7b842967a687e8c9db5fbc51ed23c1b18ac2dc87e9ca416901f446a51c1b"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-11-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-11-k3.json",
+      "uncompressed_sha256": "e45df2fcae84fc7b0694202e118929a980c7708777e778f5209123ed25e3347a"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-11-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-11-k7.json",
+      "uncompressed_sha256": "a5765b60dd6a19edc69b81279561fbb6844f9514ddc9102cfc0f908335fb8cd2"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-12-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-12-k0.json",
+      "uncompressed_sha256": "e00925fac572c6c28c655bce250ec4f18393c6dfa8df20bf2e9a8f6acd16ac07"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-12-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-12-k3.json",
+      "uncompressed_sha256": "4d04d8fc74c1c6e4a802b904264690e491219bbd1c78de676cada4f3f5d7abea"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-12-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-12-k7.json",
+      "uncompressed_sha256": "955f4375e0758b188c4e1b1beefcb213fd65f30beedbfaa8106f68035fdea453"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-13-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-13-k0.json",
+      "uncompressed_sha256": "0955ff72e2c1e400b7d811b5a2c534f0b1f9d4b037399ddd1088a3552c36642d"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-13-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-13-k3.json",
+      "uncompressed_sha256": "93451d2c576c4f40537dd7c243bdbeb4144bbc912800d65e983aa7f6986896fc"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-13-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-13-k7.json",
+      "uncompressed_sha256": "93c23790ecabcb48f02ed1750504db5b47400302e530c91b579fd116bc01e161"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-14-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-14-k0.json",
+      "uncompressed_sha256": "86671724e7a9c6347014172c0b09f8c04724946977e1d80137e4cb085a9e6bba"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-14-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-14-k3.json",
+      "uncompressed_sha256": "e74dfe77abb0f3a9ee12e0c03517de5c1308bb9f15f580d66f4d7b3404b7d46c"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-14-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-14-k7.json",
+      "uncompressed_sha256": "5880c6a3a20d2bc9b8db0089cd432dd781a1a80fb108c60d91aea3034a2df872"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-15-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-15-k0.json",
+      "uncompressed_sha256": "c000e61c8737662ac59ebb270a59e1b775c6dfe061fcd4d486ef06cb30fe59fd"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-15-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-15-k3.json",
+      "uncompressed_sha256": "bf6c322588aeeba4d0d0eceef7d1af0d9adcc52e10e3008c13f0a74b1bb729fb"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-15-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-15-k7.json",
+      "uncompressed_sha256": "cf179fc8f44c370c7c5d59c77363b4fb5e643a03db2a3eab782e9d9bed945670"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-16-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-16-k0.json",
+      "uncompressed_sha256": "e4f507a5ee00c2431b16adfccbdf5c7eac32eaa5016fc27fba83b13c981bafc6"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-16-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-16-k3.json",
+      "uncompressed_sha256": "a3b7c73e2a3d836b04809b6a819ce3ec957a49fa068a43d9f86ded1246b9f673"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-16-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-16-k7.json",
+      "uncompressed_sha256": "6db83014eca8133ef1443f18c45f42b32d6582bf1a138820d53ea9cbf0261a38"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-17-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-17-k0.json",
+      "uncompressed_sha256": "e2006f772d62cd1ef88147d7834457bf9590101ee8fc89cceba99091647a0ab1"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-17-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-17-k3.json",
+      "uncompressed_sha256": "448392ab7cee9a721ae991397b11854291a84bf33d8c46bfcbc9465f12423dc0"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-17-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-17-k7.json",
+      "uncompressed_sha256": "4d51ca715c2f460d25c46d13ffb32e4372e581a56efef09aa092899a90e388e4"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-18-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-18-k0.json",
+      "uncompressed_sha256": "57b054fb6d0f99c542200d7f58f892b8008045e1312e660e00faf54e6ed1d3b8"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-18-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-18-k3.json",
+      "uncompressed_sha256": "b290a72b5df295cf18785d27e59ae9696fad8d1032f98ba80ca1ab0dd960397b"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-18-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-18-k7.json",
+      "uncompressed_sha256": "3cdd2cef77eb44eb0d1df0b933058f6368e88be9c5b04111490e41bdd786b88e"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-19-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-19-k0.json",
+      "uncompressed_sha256": "f09bb77fbabfef87ef1a09ebf922e9f9cf7890697e9a4ffa442343b0bb3ad039"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-19-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-19-k3.json",
+      "uncompressed_sha256": "c9796e4062a6b3f98b4cc62794d20829a478b27c669efdb8249bd463bf240144"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/RouteStick-episode-19-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-19-k7.json",
+      "uncompressed_sha256": "6ef603a56e0b412b3e820b22c3c0b6856331f98c8ff259f031b1220dec4f7fc1"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-20-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-20-k0.json",
+      "uncompressed_sha256": "0d8775c34454076f8219922becc0ef35b46206a611d7b112ca7fa65e173713c5"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-second-model-and-live/VideoPlaceButton-episode-20-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-20-k3.json",
+      "uncompressed_sha256": "b7f8d724150f31a0941cd554fa6724d7a074c746ea6c2dca4d79ab42f577bc67"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-20-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-20-k7.json",
+      "uncompressed_sha256": "b9d4c5bc21ddf7a2ea032a8c277840e52639d1b42e5c07c8fb4df7e0e7f30124"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-21-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-21-k0.json",
+      "uncompressed_sha256": "50587412db5751a06948ec6e420a8736ba1b2fcc992891c0f0fa74b190c1adeb"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-21-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-21-k3.json",
+      "uncompressed_sha256": "6360234818c0cd3ae6bca863f0472c4829fd6e84bb8e74a687e85de66b109f97"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-21-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-21-k7.json",
+      "uncompressed_sha256": "823d69dd9abdb1d7ad923732bd8192d50222dd803f23c9e5dd7235bf92e1b487"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-22-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-22-k0.json",
+      "uncompressed_sha256": "93b1695dc34ce007f809bd6ce736b89ae0f1387de0c009a5d316cfefff92d33c"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-22-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-22-k3.json",
+      "uncompressed_sha256": "8a1294a3acec0934a295d2567b260fbda7f71ff9095a2a655a2fc251b71fdfff"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-22-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-22-k7.json",
+      "uncompressed_sha256": "6a86ae5da3cd35f134acdd360cfb784617fd886e12fce7dcfdd29df17f0b9241"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-23-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-23-k0.json",
+      "uncompressed_sha256": "456e2baaba9e1d479fcc583b7aa7bb02fc91d84522566820a4b57c877e80fb08"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-23-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-23-k3.json",
+      "uncompressed_sha256": "b890e44081d6fde330bf358559168d34d96937191f471b54ff5b37bc6a31d769"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-23-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-23-k7.json",
+      "uncompressed_sha256": "52f9504f7e74801aae3d7ca2dfd8086cccf9afbfe1905b9ab07ef711099faf98"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-24-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-24-k0.json",
+      "uncompressed_sha256": "156acefa184c1bbf208184f42d7afc1ce4cca0e35dace79ed1aadc795f293f08"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-24-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-24-k3.json",
+      "uncompressed_sha256": "7983ea8a7abc8d8991144e8619f64d2a82dd1baf3e3ca37feddc1cb780bb1f30"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-24-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-24-k7.json",
+      "uncompressed_sha256": "204362ca421f5450dafbc2348fd3e17b228495ee31d026fad3a74ed0cf961d5e"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-25-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-25-k0.json",
+      "uncompressed_sha256": "6eb5f47c963e83db428c94cd17de99e4f8e20ed431592dc450069f3ca17480a8"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-25-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-25-k3.json",
+      "uncompressed_sha256": "d4eb50804bd0db490ebd52af2a175be8ff974fec314f86ed7d3935d2bf2cbca3"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-25-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-25-k7.json",
+      "uncompressed_sha256": "f2a355a312d8d9ead3a5968c68bc49fca0602e21c691d9fecc363d0f7b198e89"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-26-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-26-k0.json",
+      "uncompressed_sha256": "45200a7e6e29aa48044a4a608942811c6b96da30779f42540a8c8798da3cecba"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-26-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-26-k3.json",
+      "uncompressed_sha256": "2b67897d8ba02d57e7bb51a2d323b5a8061beac11fa05ec21a681bd90ce5c6fa"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-26-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-26-k7.json",
+      "uncompressed_sha256": "7ee8fbe720ada3f2d9bdba89fd9ff3706c7bd707e3ea4a60d98f9cf209221a69"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-27-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-27-k0.json",
+      "uncompressed_sha256": "da05c5aa65b1492c3c191e4b93033f5e1a884f4d21f85a49932eac35b10b9096"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-27-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-27-k3.json",
+      "uncompressed_sha256": "3f532f21d4893a01b323ec6f42b2c8b37d41462999b6d01079f564b616f7e334"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-27-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-27-k7.json",
+      "uncompressed_sha256": "50247b4047047918b7e3b27eeb30c15a866fad74e8ca9af9d6e6e1c3145c1ad4"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-28-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-28-k0.json",
+      "uncompressed_sha256": "53fe46371e10261349cefb3f0c84409f1f927d9909559ed37b95fda8961774c1"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-28-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-28-k3.json",
+      "uncompressed_sha256": "e61e93185956f3f2d60682bec6bd7326a4b77b0a986e7a9dae38785ac3702d77"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-28-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-28-k7.json",
+      "uncompressed_sha256": "8ed46c5ac2bc6843f582df2611be73798336ebbe6a08df5533420b605b26224d"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-29-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-29-k0.json",
+      "uncompressed_sha256": "2eb300ee2ccb61ffe10b9c2b41e8c8682ebf0e2be0d34e66bb2607e6126a8d75"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-29-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-29-k3.json",
+      "uncompressed_sha256": "ad6da0c3733b172abb8434cc54d0a668b40be899818a58aea5f9309cfcc9c5a0"
+    },
+    {
+      "kind": "native",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/native/VideoPlaceButton-episode-29-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-29-k7.json",
+      "uncompressed_sha256": "eedc51a0fd83f4878ce3dee810acd98634c66f9f54d663c6f9f2a2e33a3ae9b0"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-0-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-0-k0.json",
+      "uncompressed_sha256": "101909b71f71a5fb320fe940566e7050758cbca5e776352166913fc2c314dfce"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-second-model-and-live/PatternLock-episode-0-k3-physical.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-0-k3.json",
+      "uncompressed_sha256": "b52612a241def941f5c194b4f6009ddfd7ced18bf5ca5aaff194e46782775641"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-0-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-0-k7.json",
+      "uncompressed_sha256": "d73267a3f12bff275a5185119ce1ec0b357cb74e0203babee06855a210a4a0d9"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-1-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-1-k0.json",
+      "uncompressed_sha256": "65a5899c0f7787cdb075ca32c0b8ae58a9c5e0ce873dd9310f99b5d8f929120d"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-1-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-1-k3.json",
+      "uncompressed_sha256": "2c8de1ca22c98a954f8d71514f7595c955aca9a149c5bc34333f4d77ae884473"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-1-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-1-k7.json",
+      "uncompressed_sha256": "8d0ae465e6918f88d3a076426f8991a8b1a08dda8d5f12b1aeee9472927d03d1"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-2-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-2-k0.json",
+      "uncompressed_sha256": "e5ee5b0dd112959e72ace32b43aa67edf9ead04549f705ab439b38d5b06a01bd"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-2-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-2-k3.json",
+      "uncompressed_sha256": "b3b157e4eae3bfce34860c1c16a97f79724861e701c53d7849e0f91b65056d08"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-2-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-2-k7.json",
+      "uncompressed_sha256": "1e38eb035950954986a094384f5cb9629601ed0ed5d96b5505954e9f6f0c9d26"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-3-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-3-k0.json",
+      "uncompressed_sha256": "3f87ec89aa0bcbb4b0899786cab063196bdf8ceca3b002976b2a974ca18ea6c7"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-3-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-3-k3.json",
+      "uncompressed_sha256": "7b683e0c030f1afca5f7b5128036a55854e67ba80185c75d69654f2fed3a4853"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-3-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-3-k7.json",
+      "uncompressed_sha256": "d7496e61e83630858fc27cb684e0f32d54eb76d88d56b202869dd5289bf88909"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-4-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-4-k0.json",
+      "uncompressed_sha256": "27a19892cc56828c236ebbc92e0385534987f6cad391797c5b7a8b813f255b07"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-4-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-4-k3.json",
+      "uncompressed_sha256": "98bf75158a5ab6329d71bfe0acff3ba963fb0a6a07e0fbc3b60e9e66a9a6aec0"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-4-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-4-k7.json",
+      "uncompressed_sha256": "7fd82233ae6608c5d462437f3b0422e9b003660b87fc1c4c3c2f927cdef06474"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-5-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-5-k0.json",
+      "uncompressed_sha256": "89172e79deb9e769f504c7fcc8395de3a343d439e5401861e74f92838b286dd0"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-5-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-5-k3.json",
+      "uncompressed_sha256": "3797b7ea8d5aaa2436474a44e196ba55c24009f4ac5891771bac0b3d96daf4aa"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-5-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-5-k7.json",
+      "uncompressed_sha256": "62e1229a70eaa58b9162e1a801817e08e6ad59041055ad5be9056a718437cb7f"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-6-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-6-k0.json",
+      "uncompressed_sha256": "c734fec1823522c3910a522a15ea0870ec137a1414fe4064838800176a555a7b"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-6-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-6-k3.json",
+      "uncompressed_sha256": "c1541bc954858f040296839d6bf29805509aa2cc3a190bfe2ddc210a86f4a02b"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-6-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-6-k7.json",
+      "uncompressed_sha256": "379910d837e0bfea30b4e250599d5b9a537cb32b79905eb003529b6e4e8cdd9d"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-7-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-7-k0.json",
+      "uncompressed_sha256": "015770b9187d9f37a5d4afa2204300c8b4777479891bc63a22cdaa541865263c"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-7-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-7-k3.json",
+      "uncompressed_sha256": "122974c07908324fbbb35b13b3166f2d323d739accd042d11d7e1a414286b6d6"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-7-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-7-k7.json",
+      "uncompressed_sha256": "104a568a25dc991d631c92b5f375ed87e235d3bf3168d7e183475c9ed9bbb5c1"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-8-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-8-k0.json",
+      "uncompressed_sha256": "790a728fb1efe1bef07c174c3caea722ac339c7e8bd11ffe51f556068a13e190"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-8-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-8-k3.json",
+      "uncompressed_sha256": "7f7bcf16f9cc50478a376d0c920a7d8eb29a49513b63dae5e829f983e0599f8e"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-8-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-8-k7.json",
+      "uncompressed_sha256": "b798e75e060c9288afe240d817cd466d1c88afb59986948013534f6265e042d9"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-9-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-9-k0.json",
+      "uncompressed_sha256": "7b11c5f4d227f1ef7a39b36aad02f449655078388fbc0f19bfb3164fa38abb27"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-9-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-9-k3.json",
+      "uncompressed_sha256": "7d50d377419966badfd203043c5a3814eb8a624d397a07cd7a3c9b634859e2e3"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/PatternLock-episode-9-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-9-k7.json",
+      "uncompressed_sha256": "0d929c06e06e8f2d0bd8bb326d1dfce1604220e74b6cf7912790b0912f8aea19"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-10-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-10-k0.json",
+      "uncompressed_sha256": "d884850a2facfbed5ebe54c8fbeb1e8a1b6db504192379ff694490097996d208"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-second-model-and-live/RouteStick-episode-10-k3-physical.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-10-k3.json",
+      "uncompressed_sha256": "f1f3d345a6ba65c534f448b69a09c534ca7831265ae878cf532a5e546c798077"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-10-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-10-k7.json",
+      "uncompressed_sha256": "41c0b3531efc03ad279602e75dc5884721f9dc221fa6b063cc59c42bd2b25178"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-11-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-11-k0.json",
+      "uncompressed_sha256": "291a087bf34843ce8f5384d399a335b9923c0757086beb083333a02ab053f961"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-11-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-11-k3.json",
+      "uncompressed_sha256": "230ebef0ccc788e85c56231def5164fefae2b9cec4adda302c0bbcc457cd90fe"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-11-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-11-k7.json",
+      "uncompressed_sha256": "bb4091697b791b70572f4a8effcc63a35577ff14270255d38252069165057ced"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-12-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-12-k0.json",
+      "uncompressed_sha256": "a6f9d9790608d6df2df2671dbf879d45f2af1109426f33cebe6c514657c9f156"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-12-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-12-k3.json",
+      "uncompressed_sha256": "329907ece4e13bf8f8a1e24f59aee9adbf95df3269b4bf3c75f01cd5a298358a"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-12-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-12-k7.json",
+      "uncompressed_sha256": "e253f9a8650e2ada8a0c853d8fdff57f0d9c361e4b1affb6b096751950c91fcc"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-13-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-13-k0.json",
+      "uncompressed_sha256": "097d442c7cab400345f308cd0d7476e4db909a38d863db54619cae4bcbc50977"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-13-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-13-k3.json",
+      "uncompressed_sha256": "bd3cdb3722fff6990ecdd1c11e45d798569480bad0fc55e2aaa717427ee9453f"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-13-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-13-k7.json",
+      "uncompressed_sha256": "fe5ad14472a7f174be3335678fd8504a77d3e5e085bd156767c82295c2c744d8"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-14-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-14-k0.json",
+      "uncompressed_sha256": "175b2bf2b286284a53bcf1c49b71929c0947b2efdad78d9c23d3542977c44480"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-14-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-14-k3.json",
+      "uncompressed_sha256": "7bb5ee8fae6c86bc09f161029d0b3014e3bae231fb36ce27388097d37ad94965"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-14-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-14-k7.json",
+      "uncompressed_sha256": "b2a1ddb43de86e25fbe0420397d46ccd4b70e4383b3e0faaa5b08566d1fefa7a"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-15-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-15-k0.json",
+      "uncompressed_sha256": "272551d81fd28951b6f71f5202618822109d0756f691594ba4148804e3fd9f5c"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-15-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-15-k3.json",
+      "uncompressed_sha256": "899927ab29d67a9b5381f65fa0c8a54a09ee32916c46f003364c7e5de97dc124"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-15-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-15-k7.json",
+      "uncompressed_sha256": "2fed3808aebfd94911ad6efcf91d2d5c1ccd9167aaa58320c0f14d263bfc3384"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-16-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-16-k0.json",
+      "uncompressed_sha256": "5456528e03e59410c7db384fecfee8d010b95cd23dc8d4910c435aa35da9968d"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-16-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-16-k3.json",
+      "uncompressed_sha256": "35a2a0cd92b3b032c6fb13d4148d92dcb82b5020f5e643eb9e072f07012d6981"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-16-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-16-k7.json",
+      "uncompressed_sha256": "74fe84f987a3dfd0613ba9a4183ed21154bbd8b32739017b4dc60e3f76654860"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-17-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-17-k0.json",
+      "uncompressed_sha256": "49dd6393238d0ee492c28a14e11728de4c40b50ed001d17aa858f74b2e9c3868"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-17-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-17-k3.json",
+      "uncompressed_sha256": "8f5c9eda6c79fe90cafbfe02f75efeb7b5f8c8568d158d0257ad906682c6416a"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-17-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-17-k7.json",
+      "uncompressed_sha256": "56a2c30c94b2885283236e0bedf2aaf666dab97979c14c273224cb29afb2c2ee"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-18-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-18-k0.json",
+      "uncompressed_sha256": "8029c48b676dbe73597301ee1fd28f788aa152e42b5959a4e7d9e04cc970a315"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-18-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-18-k3.json",
+      "uncompressed_sha256": "2af3465c1f99fc10655dd9423966953ea4767c255e794e96bbf4343546e58b0e"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-18-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-18-k7.json",
+      "uncompressed_sha256": "004feef06cbdd2460138dd3f1287b50927a620b7379cbcd8d4a570a18ab7313b"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-19-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-19-k0.json",
+      "uncompressed_sha256": "bb1c1cf04020d2815ace3a6b20d9d8c514e47b17f828a0c418bfc520c6e6e9fa"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-19-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-19-k3.json",
+      "uncompressed_sha256": "4b011290c349efbaf2037b3494c0cb660cac1718f5026d8011cd91dbad3ad3d7"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/RouteStick-episode-19-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-19-k7.json",
+      "uncompressed_sha256": "f4d0c7674d12a9c3eb43f861e752af8df3054fb553492b906c027235b077a394"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-20-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-20-k0.json",
+      "uncompressed_sha256": "6147f9f25eebf9c5cf9114f21794fb81f54c25f547dcf8b225b591bc107ec31a"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-second-model-and-live/VideoPlaceButton-episode-20-k3-physical.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-20-k3.json",
+      "uncompressed_sha256": "69fb46481d2e9ab275064e3e1ebb1e0138731770e6fcf519221bd9cae6d02e07"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-20-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-20-k7.json",
+      "uncompressed_sha256": "d644989ce5d93695895e1f2bea25a38e81ddbbca701c3819bad634881707e5fe"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-21-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-21-k0.json",
+      "uncompressed_sha256": "578fef2caf631e37b23ddd70ac4259ddac2379c815d9f742db652dab62cecd75"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-21-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-21-k3.json",
+      "uncompressed_sha256": "a55848db45ca20dfb61736fedfe0b93bf56029aa59b782f7e6bb9133224c7d7a"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-21-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-21-k7.json",
+      "uncompressed_sha256": "fd43f40dc2ed997c0c24afb60e801e1b3d27babade3697f0fc4a4fa8c041ed6c"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-22-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-22-k0.json",
+      "uncompressed_sha256": "920dac599898b96e440cda9db6537cb7543108f43310dc7a98b22fa1c507edf9"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-22-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-22-k3.json",
+      "uncompressed_sha256": "4008f6b74406bfacca8ab43f4d4c00fb3a5577d977dade33688184caf7686285"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-22-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-22-k7.json",
+      "uncompressed_sha256": "40da23716c9ad6aaa2eaecf7826867db7753eebb0d19907b65779ce7155ef3b4"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-23-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-23-k0.json",
+      "uncompressed_sha256": "daaff526e33b0503c19cb380e3118cf1ec44fabef935ee8711a3d6d489f8649c"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-23-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-23-k3.json",
+      "uncompressed_sha256": "a43c3ec0ff4d82cf099d35c9a2367c4a5e4a6bce670ed3702c67c8bdfa1acb05"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-23-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-23-k7.json",
+      "uncompressed_sha256": "d276b77b8f0512d2df35310623f6e350bf68b358c6ec95c9db84bb43672c2031"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-24-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-24-k0.json",
+      "uncompressed_sha256": "1be3bb9fae6de167d9a7aaf991e109e3fd161acad73e2816529cbe70fc8c8c0b"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-24-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-24-k3.json",
+      "uncompressed_sha256": "038be39bdd780a406ecac8e538796abb2d34ecd0cf7689974ba3b63730008ba0"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-24-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-24-k7.json",
+      "uncompressed_sha256": "e389304a54f424041c3acc0260905a6c77f40ecc684f2653f4cc1206ba2914db"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-25-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-25-k0.json",
+      "uncompressed_sha256": "67e43fafa465ffff0d576d041cbcb7516dd475d2f913858293bf36e366bc8626"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-25-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-25-k3.json",
+      "uncompressed_sha256": "4c7a748fbfa7f255e1fbadad128edb0ee8588fe433eb088b8b7ca17ecbf5e9c2"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-25-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-25-k7.json",
+      "uncompressed_sha256": "a74586533b108c17dae305243131ad5e0c3a238fba3b8306156f8e343ffe930a"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-26-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-26-k0.json",
+      "uncompressed_sha256": "8992f5cb8717fc0ba44bd75b21a0036b7b7ce06dc721af1bdd7a8b2f609af1ab"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-26-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-26-k3.json",
+      "uncompressed_sha256": "81d1bb08382eb2cad753e21efcfb7b1480d30325ac5fadb1f719c0b2e7b3c5b0"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-26-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-26-k7.json",
+      "uncompressed_sha256": "9749316c9c25ad593e023b2da49a8a12a0faa8459ac775217f666284cfae403c"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-27-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-27-k0.json",
+      "uncompressed_sha256": "4ddc61f81d70cdd48f37e16c7d6060a7e64144f75e3aa3dcd01a4535f431e3b7"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-27-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-27-k3.json",
+      "uncompressed_sha256": "bcb95487a64336ffa5f7d286dbe68ffabf1bd4a6bcbc10d0941185d747be809e"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-27-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-27-k7.json",
+      "uncompressed_sha256": "615461add9387ecfea685c3579e12e56c95d3a9f889f051a9a2840d9e61c1c60"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-28-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-28-k0.json",
+      "uncompressed_sha256": "fd9d9ce7c0b80e705cc60b4cb0a7e6cc377f87f3edab0d489bcd1412e142e3ec"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-28-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-28-k3.json",
+      "uncompressed_sha256": "8236184dd6a6c59735ed5fe2641e5bab60c8a9185989681ae792d09f613d3ad0"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-28-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-28-k7.json",
+      "uncompressed_sha256": "9d0c1a82b0d7c3432827937d3c906172222de98e8faedaee9fd65308c27e67d6"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-29-k0.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-29-k0.json",
+      "uncompressed_sha256": "48ed6ff1ced61a375423c40b78d8be9992a1606c7a1f27ebecd03a0979190082"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-29-k3.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-29-k3.json",
+      "uncompressed_sha256": "07e5c1313bd16b9caf8adc62e1d4396574fbdee37fcf8b84677e5a038b7edcdf"
+    },
+    {
+      "kind": "physical",
+      "path": "/root/trajmem-ot/.worktrees/frmd-repair/results/frmd/2026-09-11-framesamp90/physical/VideoPlaceButton-episode-29-k7.json.gz",
+      "source_path": "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-29-k7.json",
+      "uncompressed_sha256": "763ceefc4501efd3e6052f76fb3092518466a7ba2936565e6955da84b7b994b6"
+    }
+  ],
+  "queue": {
+    "plan_sha256": "e7d6f8b54fece9f60d376b197b5c45d6a8d32d23c4ec446b248ae141784bce97",
+    "continuation_policy": "exploratory_no_fixed_metric_gate",
+    "jobs": [
+      {
+        "id": "tokendrop-video-live-preflight",
+        "status": "technical_error",
+        "started_utc": "2026-09-11T05:29:53Z",
+        "pid": 139100,
+        "exit_code": 1,
+        "finished_utc": "2026-09-11T05:29:58Z"
+      },
+      {
+        "id": "e14r-framesamp-first-three-v1",
+        "status": "complete",
+        "started_utc": "2026-09-11T05:29:58Z",
+        "pid": 139261,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T05:40:02Z"
+      },
+      {
+        "id": "e14r-tokendrop90-resume-v1",
+        "status": "complete",
+        "started_utc": "2026-09-11T05:40:02Z",
+        "pid": 151196,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T06:57:22Z"
+      },
+      {
+        "id": "tokendrop-PatternLock-episode-0-k3",
+        "status": "complete",
+        "started_utc": "2026-09-11T06:57:22Z",
+        "pid": 198705,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T07:01:02Z"
+      },
+      {
+        "id": "tokendrop-RouteStick-episode-10-k3",
+        "status": "complete",
+        "started_utc": "2026-09-11T07:01:02Z",
+        "pid": 202488,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T07:07:13Z"
+      },
+      {
+        "id": "tokendrop-VideoPlaceButton-episode-20-k3",
+        "status": "complete",
+        "started_utc": "2026-09-11T07:07:13Z",
+        "pid": 208001,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T07:17:18Z"
+      },
+      {
+        "id": "e14r-framesamp90-v1",
+        "status": "complete",
+        "started_utc": "2026-09-11T07:17:18Z",
+        "pid": 214693,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T08:58:50Z"
+      },
+      {
+        "id": "framesamp-PatternLock-episode-0-k3",
+        "status": "complete",
+        "started_utc": "2026-09-11T08:58:50Z",
+        "pid": 273694,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T09:02:27Z"
+      },
+      {
+        "id": "framesamp-RouteStick-episode-10-k3",
+        "status": "complete",
+        "started_utc": "2026-09-11T09:02:27Z",
+        "pid": 277719,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T09:07:19Z"
+      },
+      {
+        "id": "framesamp-VideoPlaceButton-episode-20-k3",
+        "status": "complete",
+        "started_utc": "2026-09-11T09:07:19Z",
+        "pid": 282414,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T09:16:15Z"
+      },
+      {
+        "id": "e14r-tokendrop90-paired-one-step-v1",
+        "status": "complete",
+        "started_utc": "2026-09-11T09:16:15Z",
+        "pid": 289481,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T10:34:10Z"
+      },
+      {
+        "id": "e14r-tokendrop90-centroid-two-step-v1",
+        "status": "complete",
+        "started_utc": "2026-09-11T10:34:10Z",
+        "pid": 323157,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T12:23:57Z"
+      },
+      {
+        "id": "e14r-tokendrop90-ot-two-step-v1",
+        "status": "complete",
+        "started_utc": "2026-09-11T12:23:57Z",
+        "pid": 331540,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T14:15:05Z"
+      },
+      {
+        "id": "e14r-tokendrop90-random-basis-two-step-v1",
+        "status": "running",
+        "started_utc": "2026-09-11T14:15:05Z",
+        "pid": 339518
+      }
+    ],
+    "status": "running"
+  },
+  "continuation_policy": "exploratory_no_fixed_metric_gate",
+  "by_task": {
+    "PatternLock": {
+      "case_count": 30,
+      "recovery_mean": 0.010064121993733958,
+      "persistence_mean": 0.00010196175365611756
+    },
+    "RouteStick": {
+      "case_count": 30,
+      "recovery_mean": 0.009494577240548096,
+      "persistence_mean": 0.00019556278482216134
+    },
+    "VideoPlaceButton": {
+      "case_count": 30,
+      "recovery_mean": 0.0019503691175486893,
+      "persistence_mean": -0.0003757348425122271
+    }
+  }
+}
