@@ -1,0 +1,3417 @@
+{
+  "case_count": 90,
+  "episode_count": 30,
+  "action": {
+    "case_count": 90,
+    "recovery_mean": 0.0007672894033425513,
+    "persistence_mean": 0.00015527719543165908
+  },
+  "physical": {
+    "case_count": 40,
+    "conditions": {
+      "interfered": {
+        "success": 0.034375,
+        "subgoal_advancement": 0.09375,
+        "ongoing_fraction": 0.94375,
+        "terminal_failure_fraction": 0.021875
+      },
+      "repaired": {
+        "success": 0.034375,
+        "subgoal_advancement": 0.09375,
+        "ongoing_fraction": 0.94375,
+        "terminal_failure_fraction": 0.021875
+      },
+      "teacher": {
+        "success": 0.075,
+        "subgoal_advancement": 0.16875,
+        "ongoing_fraction": 0.925,
+        "terminal_failure_fraction": 0.0
+      },
+      "interpolation": {
+        "success": 0.034375,
+        "subgoal_advancement": 0.09375,
+        "ongoing_fraction": 0.94375,
+        "terminal_failure_fraction": 0.021875
+      },
+      "negative": {
+        "success": 0.034375,
+        "subgoal_advancement": 0.09375,
+        "ongoing_fraction": 0.94375,
+        "terminal_failure_fraction": 0.021875
+      },
+      "random": {
+        "success": 0.034375,
+        "subgoal_advancement": 0.09375,
+        "ongoing_fraction": 0.94375,
+        "terminal_failure_fraction": 0.021875
+      }
+    },
+    "success_gain": 0.0,
+    "teacher_success_headroom": 0.040624999999999994,
+    "repair_ratio": 0.0,
+    "repair_ratio_definition": "ratio of case-averaged one-chunk success gains; missing when teacher headroom is nonpositive"
+  },
+  "technical_error_outcomes": 0,
+  "by_task": {
+    "PatternLock": {
+      "case_count": 30,
+      "recovery_mean": 0.0008977253197372193,
+      "persistence_mean": 0.0002543958142470931
+    },
+    "RouteStick": {
+      "case_count": 30,
+      "recovery_mean": 0.0010287438870970314,
+      "persistence_mean": -8.54574083000949e-05
+    },
+    "VideoPlaceButton": {
+      "case_count": 30,
+      "recovery_mean": 0.0003753990031934033,
+      "persistence_mean": 0.00029689318034797907
+    }
+  },
+  "by_interference_level": {
+    "0": {
+      "case_count": 30,
+      "recovery_mean": 0.0,
+      "persistence_mean": 0.0
+    },
+    "3": {
+      "case_count": 30,
+      "recovery_mean": 0.0005977046116944014,
+      "persistence_mean": -0.00014125463528418753
+    },
+    "7": {
+      "case_count": 30,
+      "recovery_mean": 0.0017041635983332526,
+      "persistence_mean": 0.0006070862215791648
+    }
+  },
+  "cases": [
+    {
+      "case_id": "PatternLock-episode-0-k0",
+      "task": "PatternLock",
+      "episode": 0,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.375,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.375,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.375,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.375,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.375,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.375,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-0-k3",
+      "task": "PatternLock",
+      "episode": 0,
+      "level": 3,
+      "recovery": -0.00013910231064073741,
+      "persistence_mean": -0.00035190198104828596,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.375,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-0-k7",
+      "task": "PatternLock",
+      "episode": 0,
+      "level": 7,
+      "recovery": -0.00460774963721633,
+      "persistence_mean": 0.0008687559748068452,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.375,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-1-k0",
+      "task": "PatternLock",
+      "episode": 1,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-1-k3",
+      "task": "PatternLock",
+      "episode": 1,
+      "level": 3,
+      "recovery": 0.0009134836727753282,
+      "persistence_mean": -0.0016779689249233343,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-1-k7",
+      "task": "PatternLock",
+      "episode": 1,
+      "level": 7,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-2-k0",
+      "task": "PatternLock",
+      "episode": 2,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-2-k3",
+      "task": "PatternLock",
+      "episode": 2,
+      "level": 3,
+      "recovery": 5.8984162023989484e-05,
+      "persistence_mean": 0.0004229819363293548,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-2-k7",
+      "task": "PatternLock",
+      "episode": 2,
+      "level": 7,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-3-k0",
+      "task": "PatternLock",
+      "episode": 3,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-3-k3",
+      "task": "PatternLock",
+      "episode": 3,
+      "level": 3,
+      "recovery": 0.00022592023015022278,
+      "persistence_mean": 0.0004572795587591827,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-3-k7",
+      "task": "PatternLock",
+      "episode": 3,
+      "level": 7,
+      "recovery": -0.0003520525060594082,
+      "persistence_mean": 0.0005034946758920947,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.875,
+            "terminal_failure_fraction": 0.125
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.875,
+            "terminal_failure_fraction": 0.125
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.875,
+            "terminal_failure_fraction": 0.125
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.875,
+            "terminal_failure_fraction": 0.125
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.875,
+            "terminal_failure_fraction": 0.125
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-4-k0",
+      "task": "PatternLock",
+      "episode": 4,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-4-k3",
+      "task": "PatternLock",
+      "episode": 4,
+      "level": 3,
+      "recovery": 0.00028331729117780924,
+      "persistence_mean": 0.006322185508906841,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-4-k7",
+      "task": "PatternLock",
+      "episode": 4,
+      "level": 7,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-5-k0",
+      "task": "PatternLock",
+      "episode": 5,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-5-k3",
+      "task": "PatternLock",
+      "episode": 5,
+      "level": 3,
+      "recovery": 7.451800047419965e-05,
+      "persistence_mean": 0.0028468244709074497,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.75,
+            "terminal_failure_fraction": 0.25
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.75,
+            "terminal_failure_fraction": 0.25
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.75,
+            "terminal_failure_fraction": 0.25
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.75,
+            "terminal_failure_fraction": 0.25
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.75,
+            "terminal_failure_fraction": 0.25
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-5-k7",
+      "task": "PatternLock",
+      "episode": 5,
+      "level": 7,
+      "recovery": 0.0029251438099890947,
+      "persistence_mean": 0.0011341056087985635,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.875,
+            "terminal_failure_fraction": 0.125
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.875,
+            "terminal_failure_fraction": 0.125
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.875,
+            "terminal_failure_fraction": 0.125
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.875,
+            "terminal_failure_fraction": 0.125
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.875,
+            "terminal_failure_fraction": 0.125
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-6-k0",
+      "task": "PatternLock",
+      "episode": 6,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-6-k3",
+      "task": "PatternLock",
+      "episode": 6,
+      "level": 3,
+      "recovery": 0.0022481302730739117,
+      "persistence_mean": -0.00139869493432343,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-6-k7",
+      "task": "PatternLock",
+      "episode": 6,
+      "level": 7,
+      "recovery": 0.00972741562873125,
+      "persistence_mean": -0.00042677822057157755,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-7-k0",
+      "task": "PatternLock",
+      "episode": 7,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.625,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.625,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.625,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.625,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.625,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.625,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-7-k3",
+      "task": "PatternLock",
+      "episode": 7,
+      "level": 3,
+      "recovery": 0.00024914147797971964,
+      "persistence_mean": -0.0001974841725314036,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.625,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-7-k7",
+      "task": "PatternLock",
+      "episode": 7,
+      "level": 7,
+      "recovery": 0.002512659877538681,
+      "persistence_mean": 0.0004545580983782808,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.375,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.375,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.625,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.375,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.375,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.375,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-8-k0",
+      "task": "PatternLock",
+      "episode": 8,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-8-k3",
+      "task": "PatternLock",
+      "episode": 8,
+      "level": 3,
+      "recovery": 0.00552144693210721,
+      "persistence_mean": 0.0017149263003375381,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.625,
+            "terminal_failure_fraction": 0.375
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.625,
+            "terminal_failure_fraction": 0.375
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.625,
+            "terminal_failure_fraction": 0.375
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.625,
+            "terminal_failure_fraction": 0.375
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 0.625,
+            "terminal_failure_fraction": 0.375
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-8-k7",
+      "task": "PatternLock",
+      "episode": 8,
+      "level": 7,
+      "recovery": 2.9790360713377595e-05,
+      "persistence_mean": 0.0009091002284549177,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-9-k0",
+      "task": "PatternLock",
+      "episode": 9,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-9-k3",
+      "task": "PatternLock",
+      "episode": 9,
+      "level": 3,
+      "recovery": 0.002643270418047905,
+      "persistence_mean": 0.0009914946276694536,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.25,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 0.75,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.25,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 0.75,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.25,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 0.75,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.25,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 0.75,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.25,
+            "subgoal_advancement": 0.25,
+            "ongoing_fraction": 0.75,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "PatternLock-episode-9-k7",
+      "task": "PatternLock",
+      "episode": 9,
+      "level": 7,
+      "recovery": 0.004617441911250353,
+      "persistence_mean": -0.004941004328429699,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.125,
+            "subgoal_advancement": 0.125,
+            "ongoing_fraction": 0.875,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.125,
+            "subgoal_advancement": 0.125,
+            "ongoing_fraction": 0.875,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.5,
+            "subgoal_advancement": 0.5,
+            "ongoing_fraction": 0.5,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.125,
+            "subgoal_advancement": 0.125,
+            "ongoing_fraction": 0.875,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.125,
+            "subgoal_advancement": 0.125,
+            "ongoing_fraction": 0.875,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.125,
+            "subgoal_advancement": 0.125,
+            "ongoing_fraction": 0.875,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "RouteStick-episode-10-k0",
+      "task": "RouteStick",
+      "episode": 10,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "RouteStick-episode-10-k3",
+      "task": "RouteStick",
+      "episode": 10,
+      "level": 3,
+      "recovery": -0.0003970362595282495,
+      "persistence_mean": -0.002984260907396674,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "RouteStick-episode-10-k7",
+      "task": "RouteStick",
+      "episode": 10,
+      "level": 7,
+      "recovery": 0.0012519763549789786,
+      "persistence_mean": -0.0009231706499122083,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "RouteStick-episode-11-k0",
+      "task": "RouteStick",
+      "episode": 11,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "RouteStick-episode-11-k3",
+      "task": "RouteStick",
+      "episode": 11,
+      "level": 3,
+      "recovery": 0.002893052063882351,
+      "persistence_mean": -0.0012604919611476362,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "RouteStick-episode-11-k7",
+      "task": "RouteStick",
+      "episode": 11,
+      "level": 7,
+      "recovery": 0.02191494032740593,
+      "persistence_mean": -0.0034753793152049184,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "RouteStick-episode-12-k0",
+      "task": "RouteStick",
+      "episode": 12,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "RouteStick-episode-12-k3",
+      "task": "RouteStick",
+      "episode": 12,
+      "level": 3,
+      "recovery": -0.0017292380798608065,
+      "persistence_mean": -0.001199697775518871,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "RouteStick-episode-12-k7",
+      "task": "RouteStick",
+      "episode": 12,
+      "level": 7,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "RouteStick-episode-13-k0",
+      "task": "RouteStick",
+      "episode": 13,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "RouteStick-episode-13-k3",
+      "task": "RouteStick",
+      "episode": 13,
+      "level": 3,
+      "recovery": 0.00035993580240756273,
+      "persistence_mean": 0.002410002634860575,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-13-k7",
+      "task": "RouteStick",
+      "episode": 13,
+      "level": 7,
+      "recovery": 0.0016534756869077682,
+      "persistence_mean": 0.000417176604969427,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-14-k0",
+      "task": "RouteStick",
+      "episode": 14,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-14-k3",
+      "task": "RouteStick",
+      "episode": 14,
+      "level": 3,
+      "recovery": 0.00098199222702533,
+      "persistence_mean": -0.004161758969227473,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-14-k7",
+      "task": "RouteStick",
+      "episode": 14,
+      "level": 7,
+      "recovery": 0.00016136170597746968,
+      "persistence_mean": 0.004291117424145341,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-15-k0",
+      "task": "RouteStick",
+      "episode": 15,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-15-k3",
+      "task": "RouteStick",
+      "episode": 15,
+      "level": 3,
+      "recovery": 0.0003442860033828765,
+      "persistence_mean": -0.0010626073853927664,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-15-k7",
+      "task": "RouteStick",
+      "episode": 15,
+      "level": 7,
+      "recovery": 2.137120463885367e-05,
+      "persistence_mean": -0.001592094384250231,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-16-k0",
+      "task": "RouteStick",
+      "episode": 16,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-16-k3",
+      "task": "RouteStick",
+      "episode": 16,
+      "level": 3,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-16-k7",
+      "task": "RouteStick",
+      "episode": 16,
+      "level": 7,
+      "recovery": 0.0010958712082356215,
+      "persistence_mean": -0.001812716422136873,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-17-k0",
+      "task": "RouteStick",
+      "episode": 17,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-17-k3",
+      "task": "RouteStick",
+      "episode": 17,
+      "level": 3,
+      "recovery": 0.002361494582146406,
+      "persistence_mean": 0.001301415622492641,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-17-k7",
+      "task": "RouteStick",
+      "episode": 17,
+      "level": 7,
+      "recovery": 0.00010977828787872568,
+      "persistence_mean": 0.006615211605094373,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-18-k0",
+      "task": "RouteStick",
+      "episode": 18,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-18-k3",
+      "task": "RouteStick",
+      "episode": 18,
+      "level": 3,
+      "recovery": 0.0008538756519556046,
+      "persistence_mean": 0.0009043853448626275,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-18-k7",
+      "task": "RouteStick",
+      "episode": 18,
+      "level": 7,
+      "recovery": -0.003273801878094673,
+      "persistence_mean": -0.0024063216211895147,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-19-k0",
+      "task": "RouteStick",
+      "episode": 19,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-19-k3",
+      "task": "RouteStick",
+      "episode": 19,
+      "level": 3,
+      "recovery": -0.00010315593681298196,
+      "persistence_mean": 0.0019474324653856456,
+      "physical": null
+    },
+    {
+      "case_id": "RouteStick-episode-19-k7",
+      "task": "RouteStick",
+      "episode": 19,
+      "level": 7,
+      "recovery": 0.002362137660384178,
+      "persistence_mean": 0.0004280354405636899,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-20-k0",
+      "task": "VideoPlaceButton",
+      "episode": 20,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-20-k3",
+      "task": "VideoPlaceButton",
+      "episode": 20,
+      "level": 3,
+      "recovery": 0.0016861606854945421,
+      "persistence_mean": -0.0006545048236148432,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-20-k7",
+      "task": "VideoPlaceButton",
+      "episode": 20,
+      "level": 7,
+      "recovery": -0.002181018702685833,
+      "persistence_mean": 0.001129989279434085,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-21-k0",
+      "task": "VideoPlaceButton",
+      "episode": 21,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-21-k3",
+      "task": "VideoPlaceButton",
+      "episode": 21,
+      "level": 3,
+      "recovery": -0.006091104820370674,
+      "persistence_mean": -0.0012133402051404119,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-21-k7",
+      "task": "VideoPlaceButton",
+      "episode": 21,
+      "level": 7,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-22-k0",
+      "task": "VideoPlaceButton",
+      "episode": 22,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-22-k3",
+      "task": "VideoPlaceButton",
+      "episode": 22,
+      "level": 3,
+      "recovery": 0.0024809641763567924,
+      "persistence_mean": 0.00020745518850162625,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-22-k7",
+      "task": "VideoPlaceButton",
+      "episode": 22,
+      "level": 7,
+      "recovery": 0.00022860139142721891,
+      "persistence_mean": -0.00018887339683715254,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-23-k0",
+      "task": "VideoPlaceButton",
+      "episode": 23,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-23-k3",
+      "task": "VideoPlaceButton",
+      "episode": 23,
+      "level": 3,
+      "recovery": 0.0017861227970570326,
+      "persistence_mean": 0.00018914748216047883,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-23-k7",
+      "task": "VideoPlaceButton",
+      "episode": 23,
+      "level": 7,
+      "recovery": 0.005088128615170717,
+      "persistence_mean": 0.004101729427929968,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-24-k0",
+      "task": "VideoPlaceButton",
+      "episode": 24,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-24-k3",
+      "task": "VideoPlaceButton",
+      "episode": 24,
+      "level": 3,
+      "recovery": -0.009614956565201283,
+      "persistence_mean": 0.002035980811342597,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-24-k7",
+      "task": "VideoPlaceButton",
+      "episode": 24,
+      "level": 7,
+      "recovery": -0.0019250859040766954,
+      "persistence_mean": -0.00011330878987791948,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-25-k0",
+      "task": "VideoPlaceButton",
+      "episode": 25,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-25-k3",
+      "task": "VideoPlaceButton",
+      "episode": 25,
+      "level": 3,
+      "recovery": 0.0006006468902342021,
+      "persistence_mean": -0.0006969264250074048,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-25-k7",
+      "task": "VideoPlaceButton",
+      "episode": 25,
+      "level": 7,
+      "recovery": -0.001571389613673091,
+      "persistence_mean": 0.004662823906983249,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-26-k0",
+      "task": "VideoPlaceButton",
+      "episode": 26,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-26-k3",
+      "task": "VideoPlaceButton",
+      "episode": 26,
+      "level": 3,
+      "recovery": 0.005973932333290577,
+      "persistence_mean": -0.0012266994453966618,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-26-k7",
+      "task": "VideoPlaceButton",
+      "episode": 26,
+      "level": 7,
+      "recovery": 0.0036569032818078995,
+      "persistence_mean": -0.0010477022442501038,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-27-k0",
+      "task": "VideoPlaceButton",
+      "episode": 27,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-27-k3",
+      "task": "VideoPlaceButton",
+      "episode": 27,
+      "level": 3,
+      "recovery": 0.006274654529988766,
+      "persistence_mean": -0.0034265146678080782,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-27-k7",
+      "task": "VideoPlaceButton",
+      "episode": 27,
+      "level": 7,
+      "recovery": 0.00767900887876749,
+      "persistence_mean": 0.009623837744584307,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-28-k0",
+      "task": "VideoPlaceButton",
+      "episode": 28,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-28-k3",
+      "task": "VideoPlaceButton",
+      "episode": 28,
+      "level": 3,
+      "recovery": -0.0006815996021032333,
+      "persistence_mean": 0.00012776919174939394,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-28-k7",
+      "task": "VideoPlaceButton",
+      "episode": 28,
+      "level": 7,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-29-k0",
+      "task": "VideoPlaceButton",
+      "episode": 29,
+      "level": 0,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-29-k3",
+      "task": "VideoPlaceButton",
+      "episode": 29,
+      "level": 3,
+      "recovery": -0.00212799827568233,
+      "persistence_mean": -0.004604067624313757,
+      "physical": null
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-29-k7",
+      "task": "VideoPlaceButton",
+      "episode": 29,
+      "level": 7,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": null
+    }
+  ],
+  "automatic_metric_stop": false,
+  "continuation_policy": "exploratory_no_fixed_metric_gate",
+  "evidence_scope": "action_offline_persistence_and_one_chunk_physics",
+  "aggregation_unit": "noise replicas averaged within case; cases averaged equally; repeated levels are not independent episodes",
+  "limitation": "Descriptive development results; one-chunk ongoing status is not terminal episode failure; no full closed-loop generalization claim.",
+  "closed_loop_first_cases": [
+    {
+      "case_id": "PatternLock-episode-0-k3",
+      "query_limit": 10,
+      "noise_seeds": [
+        200007
+      ],
+      "outcomes": [
+        {
+          "condition": "interfered",
+          "steps": 29,
+          "queries": 2,
+          "status": "fail",
+          "success": false,
+          "subgoal_advancement": 0
+        },
+        {
+          "condition": "repaired",
+          "steps": 29,
+          "queries": 2,
+          "status": "fail",
+          "success": false,
+          "subgoal_advancement": 0
+        },
+        {
+          "condition": "teacher",
+          "steps": 51,
+          "queries": 3,
+          "status": "success",
+          "success": true,
+          "subgoal_advancement": 2
+        },
+        {
+          "condition": "interpolation",
+          "steps": 29,
+          "queries": 2,
+          "status": "fail",
+          "success": false,
+          "subgoal_advancement": 0
+        },
+        {
+          "condition": "negative",
+          "steps": 29,
+          "queries": 2,
+          "status": "fail",
+          "success": false,
+          "subgoal_advancement": 0
+        },
+        {
+          "condition": "random",
+          "steps": 29,
+          "queries": 2,
+          "status": "fail",
+          "success": false,
+          "subgoal_advancement": 0
+        }
+      ]
+    },
+    {
+      "case_id": "RouteStick-episode-10-k3",
+      "query_limit": 10,
+      "noise_seeds": [
+        200007
+      ],
+      "outcomes": [
+        {
+          "condition": "interfered",
+          "steps": 121,
+          "queries": 7,
+          "status": "success",
+          "success": true,
+          "subgoal_advancement": 2
+        },
+        {
+          "condition": "repaired",
+          "steps": 121,
+          "queries": 7,
+          "status": "success",
+          "success": true,
+          "subgoal_advancement": 2
+        },
+        {
+          "condition": "teacher",
+          "steps": 99,
+          "queries": 5,
+          "status": "success",
+          "success": true,
+          "subgoal_advancement": 2
+        },
+        {
+          "condition": "interpolation",
+          "steps": 121,
+          "queries": 7,
+          "status": "success",
+          "success": true,
+          "subgoal_advancement": 2
+        },
+        {
+          "condition": "negative",
+          "steps": 121,
+          "queries": 7,
+          "status": "success",
+          "success": true,
+          "subgoal_advancement": 2
+        },
+        {
+          "condition": "random",
+          "steps": 121,
+          "queries": 7,
+          "status": "success",
+          "success": true,
+          "subgoal_advancement": 2
+        }
+      ]
+    }
+  ],
+  "snapshot_utc": "2026-09-11T07:13:02.335766+00:00",
+  "source_files": [
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-0-k0.json.gz",
+      "uncompressed_sha256": "0ce27e1434e29067e78fe3dab75d3dcb7479a25e2e4ee48d5e484f0597e29378",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-0-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-0-k3.json.gz",
+      "uncompressed_sha256": "0a4188df565cfe9ee80bae5203204a5ac7e99b0ed7242f64bd571a6cefe8d77c",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-0-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-0-k7.json.gz",
+      "uncompressed_sha256": "fdaec553a3e8344e024a9fe01528fd6a6ee1362140bc995b2135b587035e7072",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-0-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-1-k0.json.gz",
+      "uncompressed_sha256": "1350ce1d9f9af7625530e967490412f3c8a5a4f9df2e92ac96146494753e6332",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-1-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-1-k3.json.gz",
+      "uncompressed_sha256": "2aa02ba4f15d180e40558742875480fbc7c506716d5bbda8c994e75d220d304a",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-1-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-1-k7.json.gz",
+      "uncompressed_sha256": "99eb140a3a2355fe4a3c666d48a3730f4e96d4e681d3a75060a55a71c55254fd",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-1-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-2-k0.json.gz",
+      "uncompressed_sha256": "d2b728a1a198fffd937df3bd944b93da0a3c9b1326aa24b94bfa53d63d0069bc",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-2-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-2-k3.json.gz",
+      "uncompressed_sha256": "aa8cc3b70ea63d9df53ee4821938efd221cc0dd0ed04f26f48dd7f16ba5cc4fd",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-2-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-2-k7.json.gz",
+      "uncompressed_sha256": "9019b78dce89a933d331bf84da16e10a66410e53c698cc87247912e02202f422",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-2-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-3-k0.json.gz",
+      "uncompressed_sha256": "203f4b4374d357025632fb41226c5b710bee3d8a8be82535c533b3de5b41b73e",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-3-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-3-k3.json.gz",
+      "uncompressed_sha256": "4d847c8b3a76eab6e5753883e6083624ed5b12cf8c448fe68c1bc8a45193722f",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-3-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-3-k7.json.gz",
+      "uncompressed_sha256": "3c07ad882447f74214dc895cfb1bade6d2a6101bd4c3b3314ff97620cae6f9c9",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-3-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-4-k0.json.gz",
+      "uncompressed_sha256": "8738fbe416268d20d76ab06a9d18ad33feabbe47b4013b1064a5c2adf185f94d",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-4-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-4-k3.json.gz",
+      "uncompressed_sha256": "58af431be0f09fe2297bf38d3a887b92d4fa2c3bccaae82f9391fd517f450be1",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-4-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-4-k7.json.gz",
+      "uncompressed_sha256": "4e88d19bf0384c3f4e9ca3736bc6db343cb7b979f4bcbe684520bb48ae7611eb",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-4-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-5-k0.json.gz",
+      "uncompressed_sha256": "28e874aab76d9cf7819f7e216a9504f942ef75df7e958963236fdb430aa9c598",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-5-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-5-k3.json.gz",
+      "uncompressed_sha256": "d780343db15dba04008d2d1766835031b5752dfc16f5349654a5f536eb91bcc2",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-5-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-5-k7.json.gz",
+      "uncompressed_sha256": "60a57071cedda0cc9095c714a0de3527db6af6b53248b7dcde3fd36a4367d990",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-5-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-6-k0.json.gz",
+      "uncompressed_sha256": "140f1121be5a7a277c473cd017790ba612e97d2ce81b5ec99c53637815318b0e",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-6-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-6-k3.json.gz",
+      "uncompressed_sha256": "566c31ac9759c101757d9b6884080b2c7ffa5590e45738fb7fd9c1e183920c7b",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-6-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-6-k7.json.gz",
+      "uncompressed_sha256": "d2e82d404cc15e27ada060d413ca85f7b3727e2233cc460eb8c62ce03e61fc74",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-6-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-7-k0.json.gz",
+      "uncompressed_sha256": "c7059253bebb44ad238b15e91573e16eea7dce101c7fb81b41a93ee51f926e44",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-7-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-7-k3.json.gz",
+      "uncompressed_sha256": "5c19023f0b4535f91c3336ed62f070b5d3e8f2b13dd8b4265918c56007c9f893",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-7-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-7-k7.json.gz",
+      "uncompressed_sha256": "9f1982721e15fa70e4ad03adcdf938a22277a2aa95df5771b4058502337d691a",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-7-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-8-k0.json.gz",
+      "uncompressed_sha256": "e839af9b2d80ce423c81f8122f5229f86260fb078016cb27badaeb85443b5ebc",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-8-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-8-k3.json.gz",
+      "uncompressed_sha256": "c2ba778026c02f52005c3a5fa3f3a024af8e64d64205e18984ca7e7039759247",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-8-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-8-k7.json.gz",
+      "uncompressed_sha256": "1be62af2402db964437756ca34c9f224ddc7c42f2271d52c988d964628d85e35",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-8-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-9-k0.json.gz",
+      "uncompressed_sha256": "31d905678c1354baa5923db05788666d65d2fb77612ba6d961c3e009fc6bb3ab",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-9-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-9-k3.json.gz",
+      "uncompressed_sha256": "e28ac7ce082397fa93723d029695b71aa7184917e25e0d6f31cc6bee215bb1bc",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-9-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-9-k7.json.gz",
+      "uncompressed_sha256": "a9c128bf047897e2acdda4ff4c520d32f085462ac2aef909be722955a2be0225",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/PatternLock-episode-9-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-10-k0.json.gz",
+      "uncompressed_sha256": "7466aa3dcdce46a53d1e5a54e941043e9116c33dd312cdab40a4b0d90d59c0f8",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-10-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-10-k3.json.gz",
+      "uncompressed_sha256": "5a219325b1f5ee75b61bb4d65a17cc34b5bacd9bc742b4644145625073361c20",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-10-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-10-k7.json.gz",
+      "uncompressed_sha256": "0093a832028175cfb9b271e988be6a102b5dffc95c384d798497a45267646fa7",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-10-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-11-k0.json.gz",
+      "uncompressed_sha256": "cc26da7c67613d61752378f9b91671db6ae67d0b8a8e1c658bc861bbe34f4b05",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-11-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-11-k3.json.gz",
+      "uncompressed_sha256": "58d93c093c25403a6eb0f3bfd3eefa5c848d608412768dd139421524a1160a89",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-11-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-11-k7.json.gz",
+      "uncompressed_sha256": "37dbcd85db762f5e1b61f79451703e3742086498da56830345b36eea09269270",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-11-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-12-k0.json.gz",
+      "uncompressed_sha256": "dd69e5387f1b60f5553aec4985b26c3cc3486b00b7b0041aea2db7f9e54ce994",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-12-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-12-k3.json.gz",
+      "uncompressed_sha256": "6595b1167eb82a7c394bd28c78ebcfbba664322dda07d52596701b4f2fb8c2f6",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-12-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-12-k7.json.gz",
+      "uncompressed_sha256": "f82cfaca91b5aaf03fa205308e99bc83bf1e45d023eb694e924c06ff4f9b6d18",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-12-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-13-k0.json.gz",
+      "uncompressed_sha256": "2a3269cea91dc61f2b9e93ca8a23abf47b2f1ff35ff8855871612fa77e8f0f86",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-13-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-13-k3.json.gz",
+      "uncompressed_sha256": "d270001416e23756c13ffdf393e3d2a373b29e91f210d105ed38a45c69d7edd3",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-13-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-13-k7.json.gz",
+      "uncompressed_sha256": "4a98fc9612a05b0200462aca75766cdbc7ce847e1cb40d0ffdaec6e4488abb68",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-13-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-14-k0.json.gz",
+      "uncompressed_sha256": "d99617c0c34b2479cad80d5eb09d67e9e001df94cf1446f09bc16e25a820b008",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-14-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-14-k3.json.gz",
+      "uncompressed_sha256": "5785ac342a115dccc2e29ea859c58bd8c3f505e8b2f01e06bcb492be9c8d6c8c",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-14-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-14-k7.json.gz",
+      "uncompressed_sha256": "b8d6a5a74805eefeb4ea8645621fa6044fb6e0dd61d937d347a69418dd4a1dd7",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-14-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-15-k0.json.gz",
+      "uncompressed_sha256": "940be9499ecb8d18c78aba4965b9fc0c531bdd6813714d2827b3a864868ce087",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-15-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-15-k3.json.gz",
+      "uncompressed_sha256": "4f1b496d69058b6e5284a94a20fb68579118c42f058f0724efe58795eea842f5",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-15-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-15-k7.json.gz",
+      "uncompressed_sha256": "f6c2c03b68f2afbe4c3ffe071f07a0b7391f60f232a23e3461dd1ce7308b149a",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-15-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-16-k0.json.gz",
+      "uncompressed_sha256": "cea8491d63f0826f4c951ecca4558b58ef87ca55f8244d32c1888d715795e1b9",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-16-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-16-k3.json.gz",
+      "uncompressed_sha256": "2b7fb379c45371396acc2b3f4217a4bf10a17134a5089cc451af1d8aaf84bc24",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-16-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-16-k7.json.gz",
+      "uncompressed_sha256": "6a4aa6521f74c3295df5927264b3ab242248dee9446b21de209783abd404d5a9",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-16-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-17-k0.json.gz",
+      "uncompressed_sha256": "fee3dcf1922cfb203f29803efcac710350314fa96bfda7c771d0ffb94235f102",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-17-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-17-k3.json.gz",
+      "uncompressed_sha256": "ea39687456378ee333cb56ec779d588b092df5678cc59abe76f832bb6f0fcf95",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-17-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-17-k7.json.gz",
+      "uncompressed_sha256": "898239d5063f03716306223bdd0532998863965a13555dcb7dab86fd94d7fbf4",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-17-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-18-k0.json.gz",
+      "uncompressed_sha256": "bdda7bf64d4689d03c4422903ec55093395a2a1b462643cd06f15c964b9fd0d0",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-18-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-18-k3.json.gz",
+      "uncompressed_sha256": "ec0c79a33396d0055e72e5a379a4d68ebef57f3aa3bb5a98fd161306b6ba1f19",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-18-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-18-k7.json.gz",
+      "uncompressed_sha256": "5a0bb802f85656244828b0adedb26afd879f64b5710ac406bf4e541adae0176f",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-18-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-19-k0.json.gz",
+      "uncompressed_sha256": "cbf7c0fea7cda684d26daf3abae1f79fdd49880cbcd40a6c9e1797a8fbd91251",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-19-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-19-k3.json.gz",
+      "uncompressed_sha256": "97828cc2fb4bf25b6edc8d4cea80c034fdaae7b7554aea20ca6da8ad08f86e46",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-19-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/RouteStick-episode-19-k7.json.gz",
+      "uncompressed_sha256": "16e7cb921b1cc3e4c687aa0c5da3d66a8b0208511c3668fcaa9be28669257660",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/RouteStick-episode-19-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-20-k0.json.gz",
+      "uncompressed_sha256": "4f9f5a71a6eb88052ef3f7f3416f342c3590e7891ff67a4c923fcea6a5db0ae4",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-20-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-20-k3.json.gz",
+      "uncompressed_sha256": "8f518d5aec360f5a25031fe1ea2ca051f680947e95d8f8b15ef108b7fb9f8347",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-20-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-20-k7.json.gz",
+      "uncompressed_sha256": "559658535e3ead41c337df1b349333327c5e98ca2b686faaa4844c1653acb172",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-20-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-21-k0.json.gz",
+      "uncompressed_sha256": "0ef97c77ec01a06ee627f41587126d99e88ec93a7ef2ce5ba3a3fbbd72dd9120",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-21-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-21-k3.json.gz",
+      "uncompressed_sha256": "ee6adb53596c4edaa09c9d8180e9c4a49605220bd3289f0ed5effcc74a3bd655",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-21-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-21-k7.json.gz",
+      "uncompressed_sha256": "4de2107ab1e04bf0d15b837d72addc67571e1547e61903c0f221b00779baa062",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-21-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-22-k0.json.gz",
+      "uncompressed_sha256": "4354874f03f7bbb5be99693782ba44e82be667f15c330c75ba66c17e96b6782e",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-22-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-22-k3.json.gz",
+      "uncompressed_sha256": "135e1ef5d9762045325d02bbb4b32267a236f0b6d9606b9eaf62e9556abe8d22",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-22-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-22-k7.json.gz",
+      "uncompressed_sha256": "33e25f86440637016cdb8050e5c27d84c07c816855442ed5f7cbda40b8352720",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-22-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-23-k0.json.gz",
+      "uncompressed_sha256": "7ed452d1b21fcf21b9b1671e96e19379ff7fe6e480afcf8f230590975127f2bb",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-23-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-23-k3.json.gz",
+      "uncompressed_sha256": "8b9ddc268561f82fd051477aeb6c9426d0e8f7dcc87132d31d5c92d13d54375d",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-23-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-23-k7.json.gz",
+      "uncompressed_sha256": "691204a8ed2d735f155c73327baf3f42933c9993bbed702a10676fa6bbe97f06",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-23-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-24-k0.json.gz",
+      "uncompressed_sha256": "93739fb1a45561645bbf4a8754a24e8c855caceb655aff5e8bd81302821a99ee",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-24-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-24-k3.json.gz",
+      "uncompressed_sha256": "b37b3cf87eea9d2311f4cffe77aa7c1ddbbcb19523f76744570593bdaf647139",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-24-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-24-k7.json.gz",
+      "uncompressed_sha256": "b0245a38f1040bc05a1286764879a02ec20b89ee818bb5d336542c187a94f3df",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-24-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-25-k0.json.gz",
+      "uncompressed_sha256": "f166278873879866b3c8c6c4aee99460b5100d9c73de3c76aa522cb7ce9d5d28",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-25-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-25-k3.json.gz",
+      "uncompressed_sha256": "34e818a0fc7dfa620213c51cb5164e12d3b2d3a5929fe42074720a28cdb26683",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-25-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-25-k7.json.gz",
+      "uncompressed_sha256": "89628d4b478d48b58b200dbdbb0794a6ec76a2b0d0f40ff51e5e1876cb397793",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-25-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-26-k0.json.gz",
+      "uncompressed_sha256": "bfa0c08586eb0428fa256b62b7049f5c7e4001cbd7c3b13e765b72be9d4795be",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-26-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-26-k3.json.gz",
+      "uncompressed_sha256": "6c2484e1ffa4322f40500d7d5a4be580eacbefb3d600d4c48aed63f1d99ef494",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-26-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-26-k7.json.gz",
+      "uncompressed_sha256": "71c1c4d332f1f801f843a3237437eabf1dcc8c9c838458f40798a0da4095bf7e",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-26-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-pilot-progress/native/VideoPlaceButton-episode-27-k0.json.gz",
+      "uncompressed_sha256": "eef13d60200f8e3d53fd4e5cb1c7fad26daab4568e76f65501335547fe9c41a4",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-27-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-tokendrop90/native/VideoPlaceButton-episode-27-k3.json.gz",
+      "uncompressed_sha256": "b6838217eb0f8e32ab64aa6d7c45d214afc0304bb2da4d8fe3bbf3c06226f3e8",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-27-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-tokendrop90/native/VideoPlaceButton-episode-27-k7.json.gz",
+      "uncompressed_sha256": "ba69b3870f4c8a61e832d2bcafb78c0a98fcec43d304deb7155d300c3aa458f9",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-27-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-tokendrop90/native/VideoPlaceButton-episode-28-k0.json.gz",
+      "uncompressed_sha256": "1904c0621727331edf1fb6ffbd71f91a0bad26bd42e0af8176f704360ab9581d",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-28-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-tokendrop90/native/VideoPlaceButton-episode-28-k3.json.gz",
+      "uncompressed_sha256": "9d528faf6315f51fe012e9515cd8e2c4d815599e884e5f36cad4dec207db5786",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-28-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-tokendrop90/native/VideoPlaceButton-episode-28-k7.json.gz",
+      "uncompressed_sha256": "a3775f71d24df69586025178bcfb6586145054cdccd86910e67b4295cc583122",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-28-k7.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-tokendrop90/native/VideoPlaceButton-episode-29-k0.json.gz",
+      "uncompressed_sha256": "d76057278c3a8d08d43c6ff04672727c101a40e7f00f4c9b7516c5ced859ac7c",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-29-k0.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-tokendrop90/native/VideoPlaceButton-episode-29-k3.json.gz",
+      "uncompressed_sha256": "0552a751363ce8c5235da3336fcd5ed72e35f99669565998369e94f59f7b8086",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-29-k3.json"
+    },
+    {
+      "kind": "native",
+      "path": "results/frmd/2026-09-11-tokendrop90/native/VideoPlaceButton-episode-29-k7.json.gz",
+      "uncompressed_sha256": "87676808ed57564b783aa41e5518a8a2807e9e917c9874bf53f645e13a55df34",
+      "source_path": "/root/trajmem-preparation/e14r-pilot90-v1/VideoPlaceButton-episode-29-k7.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-0-k0-physical.json.gz",
+      "uncompressed_sha256": "e1e3cac273258277d490788c074a18a3d470ccb225439bb9f4c7c39a934fc121",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-0-k0.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-0-k3-physical.json.gz",
+      "uncompressed_sha256": "6145cb66ea280a39768deb51bd5dfe3000a9d681c16d581b0ebbab8a42f3324b",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-0-k3.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-0-k7-physical.json.gz",
+      "uncompressed_sha256": "49bec503050a022ab15f8afefb9f7eb24b2597b03ee222ccc2e82b1f5be904c9",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-0-k7.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-1-k0-physical.json.gz",
+      "uncompressed_sha256": "7bd3ab169f158f43b9631147656cdd0d8ee86b150bce74a7b801fd4a6debdb85",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-1-k0.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-1-k3-physical.json.gz",
+      "uncompressed_sha256": "83bda8e2b27fb3d9e80e22c4157ecf2b856f78fd0f9fe31a844eb0b9427ed645",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-1-k3.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-1-k7-physical.json.gz",
+      "uncompressed_sha256": "2d0989e439d1575ef724e9f314c6af1d8261165b53fdd155834dadabffe4378c",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-1-k7.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-2-k0-physical.json.gz",
+      "uncompressed_sha256": "3bf1819c7b02d65da2e172f487c88bde3bf8b6b1f2c37010cdc902f158c0cfb8",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-2-k0.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-2-k3-physical.json.gz",
+      "uncompressed_sha256": "70e33e5d10580e6fea8bb165d12c32cb9121f8c47f098b219b601ad5f8f09ebf",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-2-k3.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pattern30/PatternLock-episode-2-k7-physical.json.gz",
+      "uncompressed_sha256": "1f155c87155319fdabe344996ed4f7d51551519567c5dfab2495d7fd1f90a27b",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-2-k7.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-3-k0.json.gz",
+      "uncompressed_sha256": "19fba937ea7c266ee81c5f2335ec9538d026043b7f8d937e31eb56a293b2d11f",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-3-k0.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-3-k3.json.gz",
+      "uncompressed_sha256": "9f6e54d2cfd5afdc50d409abbe3394ebbf891835ffc2410fa4f42bd5cd307df3",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-3-k3.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-3-k7.json.gz",
+      "uncompressed_sha256": "f3c10aa36c04b29e9d90f7e57c7a04ea17dd80bc82b918e6f30eca9a63feac97",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-3-k7.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-4-k0.json.gz",
+      "uncompressed_sha256": "1fc2210f6bcb351f72b6ba34dbccc6c5f74e6ac3b7ae900a5242864d25d9a1f9",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-4-k0.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-4-k3.json.gz",
+      "uncompressed_sha256": "3125fe4949f55f9c75137ac997e132d2fd6ce91dea78d18cb9d95caf08b0f19e",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-4-k3.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-4-k7.json.gz",
+      "uncompressed_sha256": "817f40204685f12fd274001645c90b09ba756437ecb893f3e4d89f8e53f4863f",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-4-k7.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-5-k0.json.gz",
+      "uncompressed_sha256": "764c935474d70b27e83f45dc384982049611a28cf6cea3ac10440279e088fb93",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-5-k0.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-5-k3.json.gz",
+      "uncompressed_sha256": "42fcf5bfe305c5a07b650fc62deffa19ca36be02de7a715be32b03a71ee09718",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-5-k3.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-5-k7.json.gz",
+      "uncompressed_sha256": "f26a8b4c6d84257dfeefdbe07634648d9faa801782be00c1f2234db936a082e4",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-5-k7.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-6-k0.json.gz",
+      "uncompressed_sha256": "5337e9421d5da96fc2c763624c57b7dfcc1747ff7dbe1d11fe5663e07f7d2f02",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-6-k0.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-6-k3.json.gz",
+      "uncompressed_sha256": "8407ef28d7d574fcc513dc31426bc507a86ecb7524d6364b55e47f5dbe028ea4",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-6-k3.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-6-k7.json.gz",
+      "uncompressed_sha256": "61cb578b531490a8eea0a8d25e221188fa7e96d9da082ba95ef2807e59281c1c",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-6-k7.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-7-k0.json.gz",
+      "uncompressed_sha256": "0c82f0261f57a731c43a716b83c35c9688f9fa12aa2a983047ec14dcc15f6447",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-7-k0.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-7-k3.json.gz",
+      "uncompressed_sha256": "0ccf8efb1c5fc6ee4e01cfed5b7837386da7546773b1f5436d602722f6aa10d0",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-7-k3.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-7-k7.json.gz",
+      "uncompressed_sha256": "a614e7d9378137ef6342e536e935307cf0cbeb5cd8492b5b5c5cb374fb4ce788",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-7-k7.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-8-k0.json.gz",
+      "uncompressed_sha256": "5b7413bcdbc42bc7b5bd17fda9950cecdd8e15fea410798abfc7b896b690da63",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-8-k0.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-8-k3.json.gz",
+      "uncompressed_sha256": "7af34612ff11ac8b0a1056676cbf87094705b2b0d2d9f813b52226d9f7e0bc17",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-8-k3.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-8-k7.json.gz",
+      "uncompressed_sha256": "24e78c24c74fdb70b648b12a8b3be18ac5e772b84a2cefa4e1fc773969a2f29d",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-8-k7.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-9-k0.json.gz",
+      "uncompressed_sha256": "305c9a223232c3a4a03c84aa37cf95d36a34b348c3fdc117bd0b431836d41b02",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-9-k0.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-9-k3.json.gz",
+      "uncompressed_sha256": "8433860aa119d72316dba3ff9510b327bfd06c49799c3113cb27f2cb0f749c02",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-9-k3.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/PatternLock-episode-9-k7.json.gz",
+      "uncompressed_sha256": "fef17ada514c0b68381ef7fca19045e87b4ab6e68f49b1106443915eb0e3e85b",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/PatternLock-episode-9-k7.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/RouteStick-episode-10-k0.json.gz",
+      "uncompressed_sha256": "5676d73626669a712af984131ba08f3ef59a9812332d634988ceca3d5f8c7941",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/RouteStick-episode-10-k0.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/RouteStick-episode-10-k3.json.gz",
+      "uncompressed_sha256": "4667e0527e86a37a1b709e233f857fbec0c8090501ef59b1c0962cda43c2a7c6",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/RouteStick-episode-10-k3.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/RouteStick-episode-10-k7.json.gz",
+      "uncompressed_sha256": "b0a0a11aa29b41bba6401ee2c649f222a64fe83c53760f835140c697f8dbf732",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/RouteStick-episode-10-k7.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/RouteStick-episode-11-k0.json.gz",
+      "uncompressed_sha256": "8b07032776b5c79613120d0a9343cd2f7709cfcbdfe3f465de6eeb38c91e25e1",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/RouteStick-episode-11-k0.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/RouteStick-episode-11-k3.json.gz",
+      "uncompressed_sha256": "0da72170f71b719d5e5c90f4a0be169a704e3561b4c7751c41207494479d4559",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/RouteStick-episode-11-k3.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-pilot-progress/physical/RouteStick-episode-11-k7.json.gz",
+      "uncompressed_sha256": "c2ca930e09af6adde081cd9c9c28d5ca70e405607f996cc7a1eacab5a20ead9e",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/RouteStick-episode-11-k7.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-tokendrop90/physical/RouteStick-episode-12-k0.json.gz",
+      "uncompressed_sha256": "cfe63a07140254501177d892b38f1dea1a47fdf23df17d32ebb66029b28797d5",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/RouteStick-episode-12-k0.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-tokendrop90/physical/RouteStick-episode-12-k3.json.gz",
+      "uncompressed_sha256": "8efb4471b44c7dd4613bf12734cc5d92aea966df9e34ad49149ca5437cdbd375",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/RouteStick-episode-12-k3.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-tokendrop90/physical/RouteStick-episode-12-k7.json.gz",
+      "uncompressed_sha256": "59e32da90bec72dd1560661cec741af6a2f41eb361191883af3c37ce1402e7b7",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/RouteStick-episode-12-k7.json"
+    },
+    {
+      "kind": "physical",
+      "path": "results/frmd/2026-09-11-tokendrop90/physical/RouteStick-episode-13-k0.json.gz",
+      "uncompressed_sha256": "b8a336ddfbbe9dca29113df07516566a1aa6dcd3b215da3dc58df68291184f4a",
+      "source_path": "/root/trajmem-preparation/e14r-physical90-v1/RouteStick-episode-13-k0.json"
+    },
+    {
+      "kind": "closed_loop",
+      "path": "results/frmd/2026-09-11-tokendrop90/closed_loop/tokendrop-PatternLock-episode-0-k3.json.gz",
+      "uncompressed_sha256": "bff00583d676742c37251e82e1cfbb24def7c9a90c5510e80edfba007021b239",
+      "source_path": "/root/trajmem-preparation/e14r-closed-loop-v1/tokendrop-PatternLock-episode-0-k3.json"
+    },
+    {
+      "kind": "closed_loop",
+      "path": "results/frmd/2026-09-11-tokendrop90/closed_loop/tokendrop-RouteStick-episode-10-k3.json.gz",
+      "uncompressed_sha256": "874f25238ce94dda64af2090f0398f40f38ea5a7d2de23baa61eff90aa58e36d",
+      "source_path": "/root/trajmem-preparation/e14r-closed-loop-v1/tokendrop-RouteStick-episode-10-k3.json"
+    }
+  ]
+}
