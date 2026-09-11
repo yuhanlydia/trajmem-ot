@@ -39,8 +39,11 @@ def test_closed_loop_updates_all_frames_and_pairs_noise_and_start_state(tmp_path
     monkeypatch.setitem(sys.modules,'robomme.env_record_wrapper',types.SimpleNamespace(BenchmarkEnvBuilder=Builder))
     monkeypatch.setitem(sys.modules,'robomme.robomme_env',types.ModuleType('robomme.robomme_env'))
     calls=[]
+    policy_python=tmp_path/'policy-venv-python'
+    policy_python.symlink_to(sys.executable)
     class Worker:
         def __init__(self,*a,**kw):
+            assert a[0][0]==str(policy_python.absolute()), 'preserve the virtualenv interpreter path'
             self.messages=deque([{'ready':True}]);self.stdout=self;self.stdin=self;self.code=None
         def readline(self):return 'FRMD_RPC '+json.dumps(self.messages.popleft())+'\n'
         def write(self,line):
@@ -68,7 +71,7 @@ def test_closed_loop_updates_all_frames_and_pairs_noise_and_start_state(tmp_path
     report.with_suffix('.npz').write_bytes(b'original source tensor artifact')
     output=tmp_path/'result.json'
     monkeypatch.setattr(sys,'argv',['closed_loop','--report',str(report),'--data',str(tmp_path),
-        '--policy-python',sys.executable,'--policy-cwd',str(tmp_path),'--output',str(output),
+        '--policy-python',str(policy_python),'--policy-cwd',str(tmp_path),'--output',str(output),
         '--queries','2','--conditions','interfered','repaired'])
     module.main()
     result=json.loads(output.read_text())

@@ -1,0 +1,155 @@
+{
+  "kind": "complete_patternlock_development_task_block",
+  "case_count": 30,
+  "episode_count": 10,
+  "by_level": {
+    "0": {
+      "repaired": 0.0,
+      "random": 0.0,
+      "negative": 0.0,
+      "interpolation": 0.0,
+      "persistence_mean": 0.0,
+      "episodes": 10
+    },
+    "3": {
+      "repaired": 0.0012079110147169558,
+      "random": 0.0010039749664429109,
+      "negative": -0.0009446685908187646,
+      "interpolation": 0.0017722266289638355,
+      "persistence_mean": 0.0009129642390083365,
+      "episodes": 10
+    },
+    "7": {
+      "repaired": 0.0014852649444947019,
+      "random": 0.0017794681480154395,
+      "negative": -0.0031634287326596676,
+      "interpolation": 0.0028803800640162082,
+      "persistence_mean": -0.00014977679626705748,
+      "episodes": 10
+    }
+  },
+  "continuation_policy": "exploratory_no_fixed_metric_gate",
+  "source_reports": [
+    {
+      "file": "PatternLock-episode-0-k0.json.gz",
+      "json_sha256": "0ce27e1434e29067e78fe3dab75d3dcb7479a25e2e4ee48d5e484f0597e29378"
+    },
+    {
+      "file": "PatternLock-episode-0-k3.json.gz",
+      "json_sha256": "0a4188df565cfe9ee80bae5203204a5ac7e99b0ed7242f64bd571a6cefe8d77c"
+    },
+    {
+      "file": "PatternLock-episode-0-k7.json.gz",
+      "json_sha256": "fdaec553a3e8344e024a9fe01528fd6a6ee1362140bc995b2135b587035e7072"
+    },
+    {
+      "file": "PatternLock-episode-1-k0.json.gz",
+      "json_sha256": "1350ce1d9f9af7625530e967490412f3c8a5a4f9df2e92ac96146494753e6332"
+    },
+    {
+      "file": "PatternLock-episode-1-k3.json.gz",
+      "json_sha256": "2aa02ba4f15d180e40558742875480fbc7c506716d5bbda8c994e75d220d304a"
+    },
+    {
+      "file": "PatternLock-episode-1-k7.json.gz",
+      "json_sha256": "99eb140a3a2355fe4a3c666d48a3730f4e96d4e681d3a75060a55a71c55254fd"
+    },
+    {
+      "file": "PatternLock-episode-2-k0.json.gz",
+      "json_sha256": "d2b728a1a198fffd937df3bd944b93da0a3c9b1326aa24b94bfa53d63d0069bc"
+    },
+    {
+      "file": "PatternLock-episode-2-k3.json.gz",
+      "json_sha256": "aa8cc3b70ea63d9df53ee4821938efd221cc0dd0ed04f26f48dd7f16ba5cc4fd"
+    },
+    {
+      "file": "PatternLock-episode-2-k7.json.gz",
+      "json_sha256": "9019b78dce89a933d331bf84da16e10a66410e53c698cc87247912e02202f422"
+    },
+    {
+      "file": "PatternLock-episode-3-k0.json.gz",
+      "json_sha256": "203f4b4374d357025632fb41226c5b710bee3d8a8be82535c533b3de5b41b73e"
+    },
+    {
+      "file": "PatternLock-episode-3-k3.json.gz",
+      "json_sha256": "4d847c8b3a76eab6e5753883e6083624ed5b12cf8c448fe68c1bc8a45193722f"
+    },
+    {
+      "file": "PatternLock-episode-3-k7.json.gz",
+      "json_sha256": "3c07ad882447f74214dc895cfb1bade6d2a6101bd4c3b3314ff97620cae6f9c9"
+    },
+    {
+      "file": "PatternLock-episode-4-k0.json.gz",
+      "json_sha256": "8738fbe416268d20d76ab06a9d18ad33feabbe47b4013b1064a5c2adf185f94d"
+    },
+    {
+      "file": "PatternLock-episode-4-k3.json.gz",
+      "json_sha256": "58af431be0f09fe2297bf38d3a887b92d4fa2c3bccaae82f9391fd517f450be1"
+    },
+    {
+      "file": "PatternLock-episode-4-k7.json.gz",
+      "json_sha256": "4e88d19bf0384c3f4e9ca3736bc6db343cb7b979f4bcbe684520bb48ae7611eb"
+    },
+    {
+      "file": "PatternLock-episode-5-k0.json.gz",
+      "json_sha256": "28e874aab76d9cf7819f7e216a9504f942ef75df7e958963236fdb430aa9c598"
+    },
+    {
+      "file": "PatternLock-episode-5-k3.json.gz",
+      "json_sha256": "d780343db15dba04008d2d1766835031b5752dfc16f5349654a5f536eb91bcc2"
+    },
+    {
+      "file": "PatternLock-episode-5-k7.json.gz",
+      "json_sha256": "60a57071cedda0cc9095c714a0de3527db6af6b53248b7dcde3fd36a4367d990"
+    },
+    {
+      "file": "PatternLock-episode-6-k0.json.gz",
+      "json_sha256": "140f1121be5a7a277c473cd017790ba612e97d2ce81b5ec99c53637815318b0e"
+    },
+    {
+      "file": "PatternLock-episode-6-k3.json.gz",
+      "json_sha256": "566c31ac9759c101757d9b6884080b2c7ffa5590e45738fb7fd9c1e183920c7b"
+    },
+    {
+      "file": "PatternLock-episode-6-k7.json.gz",
+      "json_sha256": "d2e82d404cc15e27ada060d413ca85f7b3727e2233cc460eb8c62ce03e61fc74"
+    },
+    {
+      "file": "PatternLock-episode-7-k0.json.gz",
+      "json_sha256": "c7059253bebb44ad238b15e91573e16eea7dce101c7fb81b41a93ee51f926e44"
+    },
+    {
+      "file": "PatternLock-episode-7-k3.json.gz",
+      "json_sha256": "5c19023f0b4535f91c3336ed62f070b5d3e8f2b13dd8b4265918c56007c9f893"
+    },
+    {
+      "file": "PatternLock-episode-7-k7.json.gz",
+      "json_sha256": "9f1982721e15fa70e4ad03adcdf938a22277a2aa95df5771b4058502337d691a"
+    },
+    {
+      "file": "PatternLock-episode-8-k0.json.gz",
+      "json_sha256": "e839af9b2d80ce423c81f8122f5229f86260fb078016cb27badaeb85443b5ebc"
+    },
+    {
+      "file": "PatternLock-episode-8-k3.json.gz",
+      "json_sha256": "c2ba778026c02f52005c3a5fa3f3a024af8e64d64205e18984ca7e7039759247"
+    },
+    {
+      "file": "PatternLock-episode-8-k7.json.gz",
+      "json_sha256": "1be62af2402db964437756ca34c9f224ddc7c42f2271d52c988d964628d85e35"
+    },
+    {
+      "file": "PatternLock-episode-9-k0.json.gz",
+      "json_sha256": "31d905678c1354baa5923db05788666d65d2fb77612ba6d961c3e009fc6bb3ab"
+    },
+    {
+      "file": "PatternLock-episode-9-k3.json.gz",
+      "json_sha256": "e28ac7ce082397fa93723d029695b71aa7184917e25e0d6f31cc6bee215bb1bc"
+    },
+    {
+      "file": "PatternLock-episode-9-k7.json.gz",
+      "json_sha256": "a9c128bf047897e2acdda4ff4c520d32f085462ac2aef909be722955a2be0225"
+    }
+  ],
+  "limitation": "Action recovery and offline persistence only; controls also improve in some settings; not evidence of physical FRMD superiority."
+}

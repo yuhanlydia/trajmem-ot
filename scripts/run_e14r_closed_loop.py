@@ -50,7 +50,8 @@ def main():
     with h5py.File(case['raw_file'],'r') as f:
         source_joints=f[f"episode_{case['raw_episode']}/timestep_{case['query_step']}/obs/joint_state"][()]
     root=Path(__file__).resolve().parents[1]
-    command=[str(args.policy_python.resolve()),'-u',str(root/'scripts/e14r_live_policy_worker.py'),
+    # Resolving the executable symlink bypasses Python's virtualenv discovery.
+    command=[str(args.policy_python.absolute()),'-u',str(root/'scripts/e14r_live_policy_worker.py'),
              '--report',str(args.report.resolve()),'--data',str(args.data.resolve())]
     worker_log=(artifacts/'worker.log').open('x')
     worker=subprocess.Popen(command,cwd=args.policy_cwd,env={**os.environ,'PYTHONPATH':str(root/'src'),
