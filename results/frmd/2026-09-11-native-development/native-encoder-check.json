@@ -1,0 +1,35 @@
+{
+  "static_image_emb": {
+    "shape": [
+      512,
+      2048
+    ],
+    "maximum_absolute_error": 0.0
+  },
+  "static_pos_emb": {
+    "shape": [
+      512,
+      768
+    ],
+    "maximum_absolute_error": 0.0
+  },
+  "static_state_emb": {
+    "shape": [
+      512,
+      8
+    ],
+    "maximum_absolute_error": 0.0
+  },
+  "static_mask": {
+    "shape": [
+      512
+    ],
+    "maximum_absolute_error": 0.0
+  },
+  "kind": "real_raw_prefix_encoder_equivalence",
+  "raw_file": "/root/trajmem-ot/data/robomme_raw_pilot/selected_10/record_dataset_PatternLock.h5",
+  "episode": 0,
+  "frames": 49,
+  "valid_tokens": 121,
+  "source_revision": "a5e4e25ffe8af34f64944f9533d06455ce5f8337"
+}

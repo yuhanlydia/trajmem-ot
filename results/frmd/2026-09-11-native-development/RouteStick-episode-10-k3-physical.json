@@ -1,0 +1,1319 @@
+{
+  "kind": "headless_native_one_chunk",
+  "case_id": "RouteStick-episode-10-k3",
+  "task": "RouteStick",
+  "episode": 10,
+  "raw_episode": 0,
+  "split": "train",
+  "interference_level": 3,
+  "source_report": "/root/trajmem-preparation/e14r-native-first-three/RouteStick-episode-10-k3.json",
+  "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+  "source_joint_alignment_max_abs_errors": [
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328,
+    0.0001881122589111328
+  ],
+  "outcomes": [
+    {
+      "branch_id": "interfered",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "85f05f5c32bcde5800e67fbc517adafedd4a98ff17ad0c39530757df5cc07e67",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100007,
+      "noise_index": 0,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "repaired",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "85f05f5c32bcde5800e67fbc517adafedd4a98ff17ad0c39530757df5cc07e67",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100007,
+      "noise_index": 0,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "teacher",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "ac408e5c7a8b0e25a2c3f5db55fc98b96ad67d6274fa8494cbe332dccf1017ee",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100007,
+      "noise_index": 0,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "interpolation",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "85f05f5c32bcde5800e67fbc517adafedd4a98ff17ad0c39530757df5cc07e67",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100007,
+      "noise_index": 0,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "negative",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "85f05f5c32bcde5800e67fbc517adafedd4a98ff17ad0c39530757df5cc07e67",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100007,
+      "noise_index": 0,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "random",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "85f05f5c32bcde5800e67fbc517adafedd4a98ff17ad0c39530757df5cc07e67",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100007,
+      "noise_index": 0,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "interfered",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "d9c19a696cb8fc96566348d353a81c43d15f3643b79030f9b31d134f02d422de",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100008,
+      "noise_index": 1,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "repaired",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "d9c19a696cb8fc96566348d353a81c43d15f3643b79030f9b31d134f02d422de",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100008,
+      "noise_index": 1,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "teacher",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "1e0b6fa63a4638564239acada3d7e6cf2bf2c60a3c11de033d9412141e3527a2",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100008,
+      "noise_index": 1,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "interpolation",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "d9c19a696cb8fc96566348d353a81c43d15f3643b79030f9b31d134f02d422de",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100008,
+      "noise_index": 1,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "negative",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "d9c19a696cb8fc96566348d353a81c43d15f3643b79030f9b31d134f02d422de",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100008,
+      "noise_index": 1,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "random",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "d9c19a696cb8fc96566348d353a81c43d15f3643b79030f9b31d134f02d422de",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100008,
+      "noise_index": 1,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "interfered",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "806dbe2be44ec8b311b09fd6354ecd09f26b407a9a28674927afd67310d37725",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100009,
+      "noise_index": 2,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "repaired",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "806dbe2be44ec8b311b09fd6354ecd09f26b407a9a28674927afd67310d37725",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100009,
+      "noise_index": 2,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "teacher",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "f3ee310c4cca6fb67cd465057b01a8ec67c7ffd0b36e3cb8ad912c0eec31a320",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100009,
+      "noise_index": 2,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "interpolation",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "806dbe2be44ec8b311b09fd6354ecd09f26b407a9a28674927afd67310d37725",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100009,
+      "noise_index": 2,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "negative",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "806dbe2be44ec8b311b09fd6354ecd09f26b407a9a28674927afd67310d37725",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100009,
+      "noise_index": 2,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "random",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "806dbe2be44ec8b311b09fd6354ecd09f26b407a9a28674927afd67310d37725",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100009,
+      "noise_index": 2,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "interfered",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "60ae73d61d98f7a2842f1733b7abf8ae40f6eb4c05f1c4f050ec6fc263f459cb",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100010,
+      "noise_index": 3,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "repaired",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "60ae73d61d98f7a2842f1733b7abf8ae40f6eb4c05f1c4f050ec6fc263f459cb",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100010,
+      "noise_index": 3,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "teacher",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "5dea8f9b07c55437ed894f9a694e8a13b53a7c02da34f8873b06b29d61fd6ef4",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100010,
+      "noise_index": 3,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "interpolation",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "60ae73d61d98f7a2842f1733b7abf8ae40f6eb4c05f1c4f050ec6fc263f459cb",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100010,
+      "noise_index": 3,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "negative",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "60ae73d61d98f7a2842f1733b7abf8ae40f6eb4c05f1c4f050ec6fc263f459cb",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100010,
+      "noise_index": 3,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "random",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "60ae73d61d98f7a2842f1733b7abf8ae40f6eb4c05f1c4f050ec6fc263f459cb",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100010,
+      "noise_index": 3,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "interfered",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "c303c6f6d2087dba0ca627665f41cce7f009620791dde4c42216ffcd5bf3b1a0",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100011,
+      "noise_index": 4,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "repaired",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "c303c6f6d2087dba0ca627665f41cce7f009620791dde4c42216ffcd5bf3b1a0",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100011,
+      "noise_index": 4,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "teacher",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "aa945f7357a35306724c06afc2dce2c27328cf6b0439fd9d51aa9d8fc7555fd5",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100011,
+      "noise_index": 4,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "interpolation",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "c303c6f6d2087dba0ca627665f41cce7f009620791dde4c42216ffcd5bf3b1a0",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100011,
+      "noise_index": 4,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "negative",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "c303c6f6d2087dba0ca627665f41cce7f009620791dde4c42216ffcd5bf3b1a0",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100011,
+      "noise_index": 4,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "random",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "c303c6f6d2087dba0ca627665f41cce7f009620791dde4c42216ffcd5bf3b1a0",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100011,
+      "noise_index": 4,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "interfered",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "efce8239642fcba12e1988addf41a7bd9d198fd4db19081d0592c55c614e9d8d",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100012,
+      "noise_index": 5,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "repaired",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "efce8239642fcba12e1988addf41a7bd9d198fd4db19081d0592c55c614e9d8d",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100012,
+      "noise_index": 5,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "teacher",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "d532a937b7b9c35501ee0d5f7644e32f0c19322a8c905fc0e38f140e5ce7bd5f",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100012,
+      "noise_index": 5,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "interpolation",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "efce8239642fcba12e1988addf41a7bd9d198fd4db19081d0592c55c614e9d8d",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100012,
+      "noise_index": 5,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "negative",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "efce8239642fcba12e1988addf41a7bd9d198fd4db19081d0592c55c614e9d8d",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100012,
+      "noise_index": 5,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "random",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "efce8239642fcba12e1988addf41a7bd9d198fd4db19081d0592c55c614e9d8d",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100012,
+      "noise_index": 5,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "interfered",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "22e22eb281af88b6612c18cb16428c1015c78462f685617ad48830b87b8d0901",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100013,
+      "noise_index": 6,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "repaired",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "22e22eb281af88b6612c18cb16428c1015c78462f685617ad48830b87b8d0901",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100013,
+      "noise_index": 6,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "teacher",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "3a06cff013d81b1402b5c0bada796714b8a0f888c6f4705dff88bb62202067e7",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100013,
+      "noise_index": 6,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "interpolation",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "22e22eb281af88b6612c18cb16428c1015c78462f685617ad48830b87b8d0901",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100013,
+      "noise_index": 6,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "negative",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "22e22eb281af88b6612c18cb16428c1015c78462f685617ad48830b87b8d0901",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100013,
+      "noise_index": 6,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "random",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "22e22eb281af88b6612c18cb16428c1015c78462f685617ad48830b87b8d0901",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100013,
+      "noise_index": 6,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "interfered",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "028e31fe989ad4f1758eaf92c65d06ed3ba96ec71010b504c13a0ff87d3900ed",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100014,
+      "noise_index": 7,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "repaired",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "028e31fe989ad4f1758eaf92c65d06ed3ba96ec71010b504c13a0ff87d3900ed",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100014,
+      "noise_index": 7,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "teacher",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "9c7be4d4187422038fdcb7599e3365407dac039d44cb554048225c25d43c4f74",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100014,
+      "noise_index": 7,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "interpolation",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "028e31fe989ad4f1758eaf92c65d06ed3ba96ec71010b504c13a0ff87d3900ed",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100014,
+      "noise_index": 7,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "negative",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "028e31fe989ad4f1758eaf92c65d06ed3ba96ec71010b504c13a0ff87d3900ed",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100014,
+      "noise_index": 7,
+      "subgoal_advancement": 0
+    },
+    {
+      "branch_id": "random",
+      "return_sum": 0.0,
+      "success": false,
+      "status": "ongoing",
+      "steps": 20,
+      "start_fingerprint": "840d42c1e5ace68e0936659385487643d71143836ef089c1f65a9d9cd2c786af",
+      "final_fingerprint": "028e31fe989ad4f1758eaf92c65d06ed3ba96ec71010b504c13a0ff87d3900ed",
+      "start_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 5,
+        "completion_cursor": 5,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "noise_seed": 100014,
+      "noise_index": 7,
+      "subgoal_advancement": 0
+    }
+  ],
+  "seconds": 270.5700855255127,
+  "continuation_policy": "exploratory_no_fixed_metric_gate",
+  "limitation": "Same source seed with measured joint-state reconstruction error; identical branch fingerprints, not an exact raw-recording physics snapshot. One chunk, not closed loop.",
+  "source_report_sha256": "8409fe7c300621712ec31c149baa43c2f8e4c79e3e4c8bff2c387e46c451ee67",
+  "source_report_sha256_annotation": "Added on export by hashing referenced immutable native JSON; outcomes unchanged.",
+  "original_physical_report_sha256": "5e3f3610cf08be14f0be8ec044791710960e6dae125bf4eaf14b24aef8eda4d1"
+}

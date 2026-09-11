@@ -1,0 +1,226 @@
+[
+  {
+    "run": "contiguous_rows-centroid-2step",
+    "recovery_mean": 0.0006636751260121281,
+    "controls": {
+      "negative": {
+        "recovery_mean": -0.00011774188897106797,
+        "loss_mean": 0.02899804152548313,
+        "applied_norm": 0.8067918419837952,
+        "relative_error": 0.00010112956329609983,
+        "matched_within_3_percent": true
+      },
+      "random": {
+        "recovery_mean": -0.0011603254824876785,
+        "loss_mean": 0.029019301757216454,
+        "applied_norm": 0.822037398815155,
+        "relative_error": 0.01879347777107192,
+        "matched_within_3_percent": true
+      },
+      "interpolation": {
+        "recovery_mean": -0.0027802432887256145,
+        "loss_mean": 0.029076378792524338,
+        "applied_norm": 0.8069422841072083,
+        "relative_error": 8.532114361358312e-05,
+        "matched_within_3_percent": true
+      }
+    },
+    "actual_queries": 380
+  },
+  {
+    "run": "contiguous_rows-ot-2step",
+    "recovery_mean": 0.002338635862222594,
+    "controls": {
+      "negative": {
+        "recovery_mean": -0.001293623587116599,
+        "loss_mean": 0.028897592797875404,
+        "applied_norm": 2.342820405960083,
+        "relative_error": 7.67253927978871e-05,
+        "matched_within_3_percent": true
+      },
+      "random": {
+        "recovery_mean": 0.002336331410333514,
+        "loss_mean": 0.0287875197827816,
+        "applied_norm": 2.3254106044769287,
+        "relative_error": 0.007507284587608645,
+        "matched_within_3_percent": true
+      },
+      "interpolation": {
+        "recovery_mean": -0.002575889229774475,
+        "loss_mean": 0.028914909809827805,
+        "applied_norm": 2.34356689453125,
+        "relative_error": 0.0002418783271625698,
+        "matched_within_3_percent": true
+      }
+    },
+    "actual_queries": 380
+  },
+  {
+    "run": "contiguous_rows-paired-1step",
+    "recovery_mean": 0.0010768410069430384,
+    "controls": {
+      "negative": {
+        "recovery_mean": 0.0018920578295364976,
+        "loss_mean": 0.029082220047712326,
+        "applied_norm": 1.141005277633667,
+        "relative_error": 0.00010603333876210099,
+        "matched_within_3_percent": true
+      },
+      "random": {
+        "recovery_mean": 0.0011350876884534955,
+        "loss_mean": 0.02910124696791172,
+        "applied_norm": 1.1083850860595703,
+        "relative_error": 0.02869199467096288,
+        "matched_within_3_percent": true
+      },
+      "interpolation": {
+        "recovery_mean": 0.00128922238945961,
+        "loss_mean": 0.029079381376504898,
+        "applied_norm": 1.1410832405090332,
+        "relative_error": 3.771235004248124e-05,
+        "matched_within_3_percent": true
+      }
+    },
+    "actual_queries": 228
+  },
+  {
+    "run": "contiguous_rows-paired-2step",
+    "recovery_mean": 0.0032539452884761512,
+    "controls": {
+      "negative": {
+        "recovery_mean": -0.0025708633475005627,
+        "loss_mean": 0.029206672683358192,
+        "applied_norm": 3.3114213943481445,
+        "relative_error": 1.677545392542382e-05,
+        "matched_within_3_percent": true
+      },
+      "random": {
+        "recovery_mean": 0.000973678077571094,
+        "loss_mean": 0.029082011431455612,
+        "applied_norm": 3.2997381687164307,
+        "relative_error": 0.0035448766071766833,
+        "matched_within_3_percent": true
+      },
+      "interpolation": {
+        "recovery_mean": 0.005424872972071171,
+        "loss_mean": 0.028937309980392456,
+        "applied_norm": 3.3111448287963867,
+        "relative_error": 0.00010029273527088146,
+        "matched_within_3_percent": true
+      }
+    },
+    "actual_queries": 380
+  },
+  {
+    "run": "random_rows-centroid-2step",
+    "recovery_mean": 0.004024906942331943,
+    "controls": {
+      "negative": {
+        "recovery_mean": -0.0020402930676937103,
+        "loss_mean": 0.016809355467557907,
+        "applied_norm": 2.877224922180176,
+        "relative_error": 2.3118542189475098e-05,
+        "matched_within_3_percent": true
+      },
+      "random": {
+        "recovery_mean": 0.002185612916946411,
+        "loss_mean": 0.01673540472984314,
+        "applied_norm": 2.864027500152588,
+        "relative_error": 0.004609870457444688,
+        "matched_within_3_percent": true
+      },
+      "interpolation": {
+        "recovery_mean": 0.005978948902338743,
+        "loss_mean": 0.016632983461022377,
+        "applied_norm": 2.877298593521118,
+        "relative_error": 2.485864751556462e-06,
+        "matched_within_3_percent": true
+      }
+    },
+    "actual_queries": 380
+  },
+  {
+    "run": "random_rows-ot-2step",
+    "recovery_mean": 0.0004750181533462194,
+    "controls": {
+      "negative": {
+        "recovery_mean": -0.0025576981715857983,
+        "loss_mean": 0.01676463708281517,
+        "applied_norm": 0.9981954097747803,
+        "relative_error": 0.00011469436638109302,
+        "matched_within_3_percent": true
+      },
+      "random": {
+        "recovery_mean": 0.00011693916167132556,
+        "loss_mean": 0.016695689409971237,
+        "applied_norm": 1.0273360013961792,
+        "relative_error": 0.029075230847040882,
+        "matched_within_3_percent": true
+      },
+      "interpolation": {
+        "recovery_mean": 0.004770470783114433,
+        "loss_mean": 0.016598401591181755,
+        "applied_norm": 0.9983124136924744,
+        "relative_error": 2.5076332056251467e-06,
+        "matched_within_3_percent": true
+      }
+    },
+    "actual_queries": 380
+  },
+  {
+    "run": "random_rows-paired-1step",
+    "recovery_mean": -0.0008632720872483313,
+    "controls": {
+      "negative": {
+        "recovery_mean": -0.0032242543529719114,
+        "loss_mean": 0.016750317066907883,
+        "applied_norm": 2.3028812408447266,
+        "relative_error": 7.909109016094416e-05,
+        "matched_within_3_percent": true
+      },
+      "random": {
+        "recovery_mean": 0.0007355063571594656,
+        "loss_mean": 0.016679931432008743,
+        "applied_norm": 2.2837250232696533,
+        "relative_error": 0.008396802897963797,
+        "matched_within_3_percent": true
+      },
+      "interpolation": {
+        "recovery_mean": 0.00020588072948157787,
+        "loss_mean": 0.016659583896398544,
+        "applied_norm": 2.3027403354644775,
+        "relative_error": 0.0001402728104294232,
+        "matched_within_3_percent": true
+      }
+    },
+    "actual_queries": 228
+  },
+  {
+    "run": "random_rows-paired-2step",
+    "recovery_mean": 0.0004975640807344147,
+    "controls": {
+      "negative": {
+        "recovery_mean": -0.0006166327511891723,
+        "loss_mean": 0.016721999272704124,
+        "applied_norm": 0.5874887108802795,
+        "relative_error": 0.00015104615438925518,
+        "matched_within_3_percent": true
+      },
+      "random": {
+        "recovery_mean": 0.00032239718711934984,
+        "loss_mean": 0.01670408621430397,
+        "applied_norm": 0.5909609198570251,
+        "relative_error": 0.005758317631904681,
+        "matched_within_3_percent": true
+      },
+      "interpolation": {
+        "recovery_mean": 0.0027959239669144154,
+        "loss_mean": 0.016650892794132233,
+        "applied_norm": 0.5875943303108215,
+        "relative_error": 2.8707899054505853e-05,
+        "matched_within_3_percent": true
+      }
+    },
+    "actual_queries": 380
+  }
+]

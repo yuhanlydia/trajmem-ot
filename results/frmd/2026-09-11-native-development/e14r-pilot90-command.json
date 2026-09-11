@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+    "-u",
+    "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_pilot.py",
+    "--manifest",
+    "/root/trajmem-preparation/e14r-manifest-90.json",
+    "--checkpoint",
+    "/root/trajmem-ot/checkpoints/mme_vla_suite/perceptual-tokendrop-modul/79999",
+    "--output-dir",
+    "/root/trajmem-preparation/e14r-pilot90-v1",
+    "--resume"
+  ],
+  "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning"
+}

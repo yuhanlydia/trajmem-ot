@@ -17,6 +17,30 @@ class BranchOutcome:
     steps: int
     start_fingerprint: str
     final_fingerprint: str
+    start_progress: dict | None = None
+    final_progress: dict | None = None
+
+
+def task_progress_snapshot(env: object) -> dict:
+    """Count execution subgoals without demonstrations or unrecorded setup steps."""
+    raw = getattr(env, "unwrapped", env)
+    tasks = getattr(raw, "task_list", None)
+    index = getattr(raw, "current_task_index", None)
+    cursor = getattr(raw, "timestep", index)
+    if tasks is None or cursor is None or any(not isinstance(task, dict) for task in tasks):
+        return {"task_index": None, "completed_subgoals": None,
+                "completion_cursor": None, "total_subgoals": None, "progress_fraction": None}
+    index = None if index is None else int(index)
+    cursor = int(cursor)
+    eligible = [i for i, task in enumerate(tasks)
+                if not task.get("demonstration", False)
+                and task.get("subgoal_segment", task.get("name")) != "NO RECORD"]
+    # Upstream increments timestep immediately on completion but may leave the
+    # display index stale until the next evaluation call.
+    completed = sum(i < cursor for i in eligible)
+    return {"task_index": index, "completion_cursor": cursor, "completed_subgoals": completed,
+            "total_subgoals": len(eligible),
+            "progress_fraction": completed / len(eligible) if eligible else None}
 
 
 def observation_fingerprint(observation: dict) -> str:
@@ -102,6 +126,7 @@ class ReplayBranchRunner:
     ) -> BranchOutcome:
         env, observation, info = self._restore_prefix(prefix)
         start = branch_fingerprint(env, observation)
+        start_progress = task_progress_snapshot(env)
         total_return = 0.0
         status = str(info.get("status", "unknown"))
         steps = 0
@@ -113,6 +138,7 @@ class ReplayBranchRunner:
             if bool(terminated) or bool(truncated):
                 break
         final = branch_fingerprint(env, observation)
+        final_progress = task_progress_snapshot(env)
         env.close()
         return BranchOutcome(
             branch_id=branch_id,
@@ -122,4 +148,6 @@ class ReplayBranchRunner:
             steps=steps,
             start_fingerprint=start,
             final_fingerprint=final,
+            start_progress=start_progress,
+            final_progress=final_progress,
         )

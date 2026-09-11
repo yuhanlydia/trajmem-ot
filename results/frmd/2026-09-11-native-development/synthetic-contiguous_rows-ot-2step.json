@@ -1,0 +1,294 @@
+{
+  "kind": "synthetic_row_corruption_frmd_smoke",
+  "config": {
+    "iterations": 2,
+    "rank": 4,
+    "damping": 0.0001,
+    "probe_relative_size": 0.00025,
+    "step_relative_radius": 0.00125,
+    "total_relative_radius": 0.0025,
+    "alphas": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "minimum_improving_fraction": 0.5,
+    "target": "ot",
+    "ot_epsilon": null
+  },
+  "basis_directions": 8,
+  "noises": {
+    "optimize": [
+      1007,
+      1008,
+      1009,
+      1010,
+      1011,
+      1012,
+      1013,
+      1014
+    ],
+    "validation": [
+      10007,
+      10008,
+      10009,
+      10010
+    ],
+    "evaluation": [
+      100007,
+      100008,
+      100009,
+      100010,
+      100011,
+      100012,
+      100013,
+      100014
+    ]
+  },
+  "query_budget": {
+    "finite_response_probes": 256,
+    "repair_total": 340,
+    "controls_additional": 40,
+    "total": 380
+  },
+  "continuation_policy": "exploratory_no_fixed_metric_gate",
+  "limitation": "Synthetic corruption only; no native interference, persistence, or physical outcome claim.",
+  "implementation_sha256": {
+    "run_frmd_smoke.py": "00b59c958e2a20a8666a1c8d9e1939b5fc213bcafba646d674bc4b104a467984",
+    "finite_distillation.py": "503935b09c77f8c32c1a0dd288e105f278730b55623cd9f948a7093c578c77a4",
+    "self_teacher.py": "0a20f106a46c43021e8915b241292d0cb1d80f883c7399790bdc229835837aaf",
+    "repair_acceptance.py": "5177e9bd15f63e8afc64551afa557b19b4d7b7373f1dd6211425e82b30cc6386"
+  },
+  "checkpoint": "/root/trajmem-ot/checkpoints/mme_vla_suite/perceptual-tokendrop-modul/79999",
+  "data": "/root/trajmem-ot/data/robomme_preprocessed_data_sample",
+  "history_config": "perceptual-tokendrop-modul.yaml",
+  "index": 0,
+  "seed": 7,
+  "corruption": "contiguous_rows",
+  "dropped_rows": [
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115
+  ],
+  "basis_source": {
+    "type": "independent_random_rank_one",
+    "seed": 218
+  },
+  "memory_shape": [
+    512,
+    2048
+  ],
+  "memory_dtype": "bfloat16",
+  "trace": [
+    {
+      "iteration": 1,
+      "accepted": true,
+      "chosen_alpha": 1.0,
+      "active_directions": 8,
+      "chord_norms": [
+        0.4325415790081024,
+        0.4338015615940094,
+        0.4344935715198517,
+        0.4331989586353302,
+        0.43242666125297546,
+        0.4298049807548523,
+        0.43041932582855225,
+        0.43695154786109924
+      ],
+      "singular_values": [
+        0.025568565610340568,
+        0.024930905575929783,
+        0.02440355785192838,
+        0.02405452789786245,
+        0.023680033406050877,
+        0.022516130176453757,
+        0.021547954744243182,
+        0.021157687964838065
+      ],
+      "candidates": [
+        {
+          "alpha": 0.25,
+          "effective_alpha": 0.25,
+          "accepted": true,
+          "median_improvement": 2.4212064292782054e-05,
+          "improving_fraction": 0.75,
+          "mean_loss": 0.03867686479209406
+        },
+        {
+          "alpha": 0.5,
+          "effective_alpha": 0.5,
+          "accepted": true,
+          "median_improvement": 6.848532576180996e-05,
+          "improving_fraction": 1.0,
+          "mean_loss": 0.038643051345353445
+        },
+        {
+          "alpha": 1.0,
+          "effective_alpha": 1.0,
+          "accepted": true,
+          "median_improvement": 9.016451227376876e-05,
+          "improving_fraction": 1.0,
+          "mean_loss": 0.038629340557891814
+        }
+      ],
+      "applied_step_norm": 2.278928279876709,
+      "applied_total_norm": 2.278928279876709
+    },
+    {
+      "iteration": 2,
+      "accepted": true,
+      "chosen_alpha": 0.25,
+      "active_directions": 8,
+      "chord_norms": [
+        0.4323430061340332,
+        0.4337478280067444,
+        0.4345015287399292,
+        0.4330745041370392,
+        0.43237626552581787,
+        0.4297880232334137,
+        0.43029841780662537,
+        0.43691736459732056
+      ],
+      "singular_values": [
+        0.026020869556974954,
+        0.02425906820084997,
+        0.023842100630770892,
+        0.02295347173704557,
+        0.02277619819570826,
+        0.022745085180846746,
+        0.022199064822779977,
+        0.020335343759095483
+      ],
+      "candidates": [
+        {
+          "alpha": 0.25,
+          "effective_alpha": 0.25,
+          "accepted": true,
+          "median_improvement": 1.8885058431427834e-05,
+          "improving_fraction": 0.5,
+          "mean_loss": 0.03860528112678245
+        },
+        {
+          "alpha": 0.5,
+          "effective_alpha": 0.5,
+          "accepted": true,
+          "median_improvement": 1.132729719944929e-05,
+          "improving_fraction": 0.5,
+          "mean_loss": 0.03861739250447492
+        },
+        {
+          "alpha": 1.0,
+          "effective_alpha": 0.5,
+          "accepted": true,
+          "median_improvement": 1.132729719944929e-05,
+          "improving_fraction": 0.5,
+          "mean_loss": 0.03861739250447492
+        }
+      ],
+      "applied_step_norm": 0.5738005042076111,
+      "applied_total_norm": 2.3430001735687256
+    }
+  ],
+  "evaluation": {
+    "baseline_losses": [
+      0.052628476939665846,
+      0.012135270433122642,
+      0.020167033678407408,
+      0.03766053547120541,
+      0.033693583860741796,
+      0.00546086596947789,
+      0.03413423367637004,
+      0.03504261261226499
+    ],
+    "repaired_losses": [
+      0.05252863385889025,
+      0.011996352988513852,
+      0.019890083086557663,
+      0.03765388698985027,
+      0.03369861555285081,
+      0.005410833681884184,
+      0.03410055748607372,
+      0.03504042670886635
+    ],
+    "baseline_loss_mean": 0.028865326580157002,
+    "repaired_loss_mean": 0.028789923794185886,
+    "recovery": [
+      0.0009490154892365083,
+      0.005740181013242001,
+      0.006890155761272078,
+      8.827244121356957e-05,
+      -7.466561422503596e-05,
+      0.004591525817216727,
+      0.0004934122849904839,
+      3.118970483442154e-05
+    ],
+    "recovery_mean": 0.002338635862222594,
+    "noise_seeds": [
+      100007,
+      100008,
+      100009,
+      100010,
+      100011,
+      100012,
+      100013,
+      100014
+    ],
+    "repair_headroom_present": true
+  },
+  "controls": {
+    "negative": {
+      "recovery_mean": -0.001293623587116599,
+      "loss_mean": 0.028897592797875404,
+      "applied_norm": 2.342820405960083,
+      "relative_error": 7.67253927978871e-05,
+      "matched_within_3_percent": true
+    },
+    "random": {
+      "recovery_mean": 0.002336331410333514,
+      "loss_mean": 0.0287875197827816,
+      "applied_norm": 2.3254106044769287,
+      "relative_error": 0.007507284587608645,
+      "matched_within_3_percent": true
+    },
+    "interpolation": {
+      "recovery_mean": -0.002575889229774475,
+      "loss_mean": 0.028914909809827805,
+      "applied_norm": 2.34356689453125,
+      "relative_error": 0.0002418783271625698,
+      "matched_within_3_percent": true
+    }
+  },
+  "query_counts": {
+    "teacher": 20,
+    "optimization_baseline": 16,
+    "validation_baseline": 8,
+    "finite_response_probes": 256,
+    "validation_candidates": 24,
+    "evaluation": 16,
+    "total": 340
+  },
+  "actual_policy_queries_including_controls": 380,
+  "applied_norm": 2.3430001735687256,
+  "seconds": 184.7370250225067
+}
