@@ -1,0 +1,43 @@
+{
+  "mapping_source": "RoboMME benchmark 856bc3a189d4172f3f47dbee4424d585f8d78db3 src/robomme/robomme_env/utils/task_goal.py",
+  "task_coverage": {
+    "PatternLock": {
+      "sample_episode_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "count": 5,
+      "required_pilot_episodes": 10,
+      "shortfall": 5
+    },
+    "RouteStick": {
+      "sample_episode_ids": [
+        55,
+        56,
+        57,
+        58,
+        59
+      ],
+      "count": 5,
+      "required_pilot_episodes": 10,
+      "shortfall": 5
+    },
+    "VideoPlaceButton": {
+      "sample_episode_ids": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "count": 5,
+      "required_pilot_episodes": 10,
+      "shortfall": 5
+    }
+  },
+  "interference_manifest_ready": false,
+  "reason": "No provenance-validated concatenated histories; only five released-sample episodes per target task."
+}

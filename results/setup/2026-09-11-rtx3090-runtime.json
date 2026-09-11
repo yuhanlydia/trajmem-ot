@@ -1,0 +1,22 @@
+{
+  "kind": "runtime_only_smoke",
+  "checkpoint": "/root/trajmem-ot/checkpoints/mme_vla_suite/perceptual-tokendrop-modul/79999",
+  "history_config": "perceptual-tokendrop-modul.yaml",
+  "sample_index": 0,
+  "memory_shape": [
+    512,
+    2048
+  ],
+  "memory_dtype": "bfloat16",
+  "action_shape": [
+    20,
+    32
+  ],
+  "all_actions_finite": true,
+  "same_noise_deterministic": true,
+  "input_half_chord_norm": 0.4760815501213074,
+  "action_half_chord_norm": 0.005303168669342995,
+  "policy_queries": 4,
+  "seconds": 133.56169319152832,
+  "limitation": "No teacher/student repair, persistence, or physical success tested; FRMD implementation is absent from fetched main."
+}
