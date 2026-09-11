@@ -1,0 +1,369 @@
+{
+  "kind": "native_rgb_closed_loop_development",
+  "case_id": "VideoPlaceButton-episode-20-k3",
+  "case": {
+    "task": "VideoPlaceButton",
+    "episode": 20,
+    "raw_episode": 0,
+    "raw_file": "/root/trajmem-ot/data/robomme_raw_pilot/selected_10/record_dataset_VideoPlaceButton.h5",
+    "split": "train",
+    "seed": 10000,
+    "execution_start": 765,
+    "timesteps": 1048,
+    "first_sample": 2542,
+    "source_revision": "a5e4e25ffe8af34f64944f9533d06455ce5f8337",
+    "case_id": "VideoPlaceButton-episode-20-k3",
+    "interference_level": 3,
+    "query_step": 765,
+    "query_index": 2542,
+    "teacher_history": [
+      {
+        "task": "VideoPlaceButton",
+        "episode": 20,
+        "raw_episode": 0,
+        "raw_file": "/root/trajmem-ot/data/robomme_raw_pilot/selected_10/record_dataset_VideoPlaceButton.h5",
+        "start": 0,
+        "end_exclusive": 765,
+        "source_revision": "a5e4e25ffe8af34f64944f9533d06455ce5f8337",
+        "split": "train"
+      },
+      {
+        "task": "VideoPlaceButton",
+        "episode": 20,
+        "raw_episode": 0,
+        "raw_file": "/root/trajmem-ot/data/robomme_raw_pilot/selected_10/record_dataset_VideoPlaceButton.h5",
+        "start": 765,
+        "end_exclusive": 766,
+        "source_revision": "a5e4e25ffe8af34f64944f9533d06455ce5f8337",
+        "split": "train"
+      }
+    ],
+    "student_history": [
+      {
+        "task": "VideoPlaceButton",
+        "episode": 20,
+        "raw_episode": 0,
+        "raw_file": "/root/trajmem-ot/data/robomme_raw_pilot/selected_10/record_dataset_VideoPlaceButton.h5",
+        "start": 0,
+        "end_exclusive": 765,
+        "source_revision": "a5e4e25ffe8af34f64944f9533d06455ce5f8337",
+        "split": "train"
+      },
+      {
+        "task": "RouteStick",
+        "episode": 12,
+        "raw_episode": 2,
+        "raw_file": "/root/trajmem-ot/data/robomme_raw_pilot/selected_10/record_dataset_RouteStick.h5",
+        "start": 0,
+        "end_exclusive": 250,
+        "source_revision": "a5e4e25ffe8af34f64944f9533d06455ce5f8337",
+        "split": "train"
+      },
+      {
+        "task": "PatternLock",
+        "episode": 2,
+        "raw_episode": 2,
+        "raw_file": "/root/trajmem-ot/data/robomme_raw_pilot/selected_10/record_dataset_PatternLock.h5",
+        "start": 0,
+        "end_exclusive": 130,
+        "source_revision": "a5e4e25ffe8af34f64944f9533d06455ce5f8337",
+        "split": "train"
+      },
+      {
+        "task": "PatternLock",
+        "episode": 3,
+        "raw_episode": 3,
+        "raw_file": "/root/trajmem-ot/data/robomme_raw_pilot/selected_10/record_dataset_PatternLock.h5",
+        "start": 0,
+        "end_exclusive": 153,
+        "source_revision": "a5e4e25ffe8af34f64944f9533d06455ce5f8337",
+        "split": "train"
+      },
+      {
+        "task": "VideoPlaceButton",
+        "episode": 20,
+        "raw_episode": 0,
+        "raw_file": "/root/trajmem-ot/data/robomme_raw_pilot/selected_10/record_dataset_VideoPlaceButton.h5",
+        "start": 765,
+        "end_exclusive": 766,
+        "source_revision": "a5e4e25ffe8af34f64944f9533d06455ce5f8337",
+        "split": "train"
+      }
+    ],
+    "distractors": [
+      {
+        "task": "RouteStick",
+        "episode": 12,
+        "raw_episode": 2,
+        "raw_file": "/root/trajmem-ot/data/robomme_raw_pilot/selected_10/record_dataset_RouteStick.h5",
+        "start": 0,
+        "end_exclusive": 250,
+        "source_revision": "a5e4e25ffe8af34f64944f9533d06455ce5f8337",
+        "split": "train"
+      },
+      {
+        "task": "PatternLock",
+        "episode": 2,
+        "raw_episode": 2,
+        "raw_file": "/root/trajmem-ot/data/robomme_raw_pilot/selected_10/record_dataset_PatternLock.h5",
+        "start": 0,
+        "end_exclusive": 130,
+        "source_revision": "a5e4e25ffe8af34f64944f9533d06455ce5f8337",
+        "split": "train"
+      },
+      {
+        "task": "PatternLock",
+        "episode": 3,
+        "raw_episode": 3,
+        "raw_file": "/root/trajmem-ot/data/robomme_raw_pilot/selected_10/record_dataset_PatternLock.h5",
+        "start": 0,
+        "end_exclusive": 153,
+        "source_revision": "a5e4e25ffe8af34f64944f9533d06455ce5f8337",
+        "split": "train"
+      }
+    ],
+    "recent_history": {
+      "task": "VideoPlaceButton",
+      "episode": 20,
+      "raw_episode": 0,
+      "raw_file": "/root/trajmem-ot/data/robomme_raw_pilot/selected_10/record_dataset_VideoPlaceButton.h5",
+      "start": 765,
+      "end_exclusive": 766,
+      "source_revision": "a5e4e25ffe8af34f64944f9533d06455ce5f8337",
+      "split": "train"
+    },
+    "persistence_queries": {
+      "1": {
+        "step": 785,
+        "query_index": 2562
+      },
+      "3": {
+        "step": 825,
+        "query_index": 2602
+      },
+      "5": {
+        "step": 865,
+        "query_index": 2642
+      },
+      "10": {
+        "step": 965,
+        "query_index": 2742
+      }
+    },
+    "unavailable_persistence_horizons": [],
+    "selection_seed": 7,
+    "selection_rule": "numeric episodes; unrelated-task seeded permutation",
+    "continuation_policy": "exploratory_no_fixed_metric_gate"
+  },
+  "source_report": "/root/trajmem-preparation/e14r-native-first-three/VideoPlaceButton-episode-20-k3.json",
+  "source_report_sha256": "e454d32f2088f2fa24ad4afe277a3ed33d1207394ff694ea0b1d9606d54a673c",
+  "source_archive_sha256": "8933b646f40ce099eb668bcc4fd74d007912f6aaa1865886f199689e70884d48",
+  "checkpoint": "/root/trajmem-ot/checkpoints/mme_vla_suite/perceptual-tokendrop-modul/79999",
+  "history_config": "perceptual-tokendrop-modul.yaml",
+  "query_limit": 2,
+  "noise_seeds": [
+    200007
+  ],
+  "conditions": [
+    "interfered",
+    "repaired"
+  ],
+  "renderer": "NVIDIA Vulkan with CPU tensor readback and original visual geometry",
+  "vulkan_icd": "/root/trajmem-preparation/nvidia-egl-icd.json",
+  "outcomes": [
+    {
+      "condition": "interfered",
+      "noise_seed": 200007,
+      "steps": 40,
+      "queries": 2,
+      "return_sum": 0.0,
+      "status": "ongoing",
+      "success": false,
+      "terminated_or_truncated": false,
+      "start_fingerprint": "853c68254345a3f3548a74e732320707faf2249ca380a09523c35222c5500dc2",
+      "initial_observation_fingerprint": "ff94a4cba9a56039a62508047464b167f7878f18d8160ea0cd9c9e71471fee2f",
+      "final_fingerprint": "8df490bec950e9b1f9a4248e9bc97a0cfa032eb6d6ef6b45d28e088562a6844f",
+      "source_joint_alignment_max_abs_error": 5.268178711048677e-07,
+      "start_progress": {
+        "task_index": 10,
+        "completion_cursor": 10,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 10,
+        "completion_cursor": 10,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "subgoal_advancement": 0,
+      "query_trace": [
+        {
+          "query": 1,
+          "noise_seed": 200007,
+          "before_progress": {
+            "task_index": 10,
+            "completion_cursor": 10,
+            "completed_subgoals": 0,
+            "total_subgoals": 2,
+            "progress_fraction": 0.0
+          },
+          "after_progress": {
+            "task_index": 10,
+            "completion_cursor": 10,
+            "completed_subgoals": 0,
+            "total_subgoals": 2,
+            "progress_fraction": 0.0
+          },
+          "observation_sha256": "5d601767e567a1ccec5c25eaee38b9ed0c32ce393b4ad6196dbdb518927665b5",
+          "output": "/root/trajmem-preparation/e14r-closed-loop-v1/tokendrop-video-live-preflight-v2.artifacts/interfered-200007-q0-action.npz",
+          "live_frames": 0,
+          "new_vision_frames": 0,
+          "trajectory_queries": 1,
+          "retention": {
+            "retained_tokens": 512,
+            "source_tokens": 512,
+            "retained_token_fraction": 1.0,
+            "transferred_norm": 0.0,
+            "original_norm": 0.0,
+            "applied_norm": 0.0
+          },
+          "action_sha256": "997eacca299d29902b685cbc5f3690a13322409e2b781d0a8d8a23b959571ce1"
+        },
+        {
+          "query": 2,
+          "noise_seed": 201007,
+          "before_progress": {
+            "task_index": 10,
+            "completion_cursor": 10,
+            "completed_subgoals": 0,
+            "total_subgoals": 2,
+            "progress_fraction": 0.0
+          },
+          "after_progress": {
+            "task_index": 10,
+            "completion_cursor": 10,
+            "completed_subgoals": 0,
+            "total_subgoals": 2,
+            "progress_fraction": 0.0
+          },
+          "observation_sha256": "b70df17750914b2432e51c13afd5b95ee87e4a2f619a09f89fd22cd53e77157d",
+          "output": "/root/trajmem-preparation/e14r-closed-loop-v1/tokendrop-video-live-preflight-v2.artifacts/interfered-200007-q1-action.npz",
+          "live_frames": 20,
+          "new_vision_frames": 20,
+          "trajectory_queries": 1,
+          "retention": {
+            "retained_tokens": 505,
+            "source_tokens": 512,
+            "retained_token_fraction": 0.986328125,
+            "transferred_norm": 0.0,
+            "original_norm": 0.0,
+            "applied_norm": 0.0
+          },
+          "action_sha256": "35241a484161d64e2a6b4cc47253bf362d2f01edf09a99efd43a6001163f6780"
+        }
+      ]
+    },
+    {
+      "condition": "repaired",
+      "noise_seed": 200007,
+      "steps": 40,
+      "queries": 2,
+      "return_sum": 0.0,
+      "status": "ongoing",
+      "success": false,
+      "terminated_or_truncated": false,
+      "start_fingerprint": "853c68254345a3f3548a74e732320707faf2249ca380a09523c35222c5500dc2",
+      "initial_observation_fingerprint": "ff94a4cba9a56039a62508047464b167f7878f18d8160ea0cd9c9e71471fee2f",
+      "final_fingerprint": "6ce11caf59a3b9f565b5c2696090fec59efc78a9057f8a73ca358cd6533a0e45",
+      "source_joint_alignment_max_abs_error": 5.268178711048677e-07,
+      "start_progress": {
+        "task_index": 10,
+        "completion_cursor": 10,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "final_progress": {
+        "task_index": 10,
+        "completion_cursor": 10,
+        "completed_subgoals": 0,
+        "total_subgoals": 2,
+        "progress_fraction": 0.0
+      },
+      "subgoal_advancement": 0,
+      "query_trace": [
+        {
+          "query": 1,
+          "noise_seed": 200007,
+          "before_progress": {
+            "task_index": 10,
+            "completion_cursor": 10,
+            "completed_subgoals": 0,
+            "total_subgoals": 2,
+            "progress_fraction": 0.0
+          },
+          "after_progress": {
+            "task_index": 10,
+            "completion_cursor": 10,
+            "completed_subgoals": 0,
+            "total_subgoals": 2,
+            "progress_fraction": 0.0
+          },
+          "observation_sha256": "5d601767e567a1ccec5c25eaee38b9ed0c32ce393b4ad6196dbdb518927665b5",
+          "output": "/root/trajmem-preparation/e14r-closed-loop-v1/tokendrop-video-live-preflight-v2.artifacts/repaired-200007-q0-action.npz",
+          "live_frames": 0,
+          "new_vision_frames": 0,
+          "trajectory_queries": 1,
+          "retention": {
+            "retained_tokens": 512,
+            "source_tokens": 512,
+            "retained_token_fraction": 1.0,
+            "transferred_norm": 0.9015000462532043,
+            "original_norm": 0.9015000462532043,
+            "applied_norm": 0.9015000462532043
+          },
+          "action_sha256": "51049ded070e248057b64026ddd73152e1485d82c0c522cc5752653a4c21b9c0"
+        },
+        {
+          "query": 2,
+          "noise_seed": 201007,
+          "before_progress": {
+            "task_index": 10,
+            "completion_cursor": 10,
+            "completed_subgoals": 0,
+            "total_subgoals": 2,
+            "progress_fraction": 0.0
+          },
+          "after_progress": {
+            "task_index": 10,
+            "completion_cursor": 10,
+            "completed_subgoals": 0,
+            "total_subgoals": 2,
+            "progress_fraction": 0.0
+          },
+          "observation_sha256": "e3a481888bf66b36f47c68ec486dae58a11db57aca7b424cd76a032dc9324253",
+          "output": "/root/trajmem-preparation/e14r-closed-loop-v1/tokendrop-video-live-preflight-v2.artifacts/repaired-200007-q1-action.npz",
+          "live_frames": 20,
+          "new_vision_frames": 20,
+          "trajectory_queries": 1,
+          "retention": {
+            "retained_tokens": 505,
+            "source_tokens": 512,
+            "retained_token_fraction": 0.986328125,
+            "transferred_norm": 0.898496687412262,
+            "original_norm": 0.9015000462532043,
+            "applied_norm": 0.898496687412262
+          },
+          "action_sha256": "a83377ee3ec2501124fe5ae7b106077ec4055c04776fa0be72786258c3fae446"
+        }
+      ]
+    }
+  ],
+  "seconds": 269.0260126590729,
+  "persistence_protocol": "Each subsequent RGB frame encoded by frozen policy; original edit transferred only to surviving source tokens; no teacher retrieval/refit in repaired branch",
+  "continuation_policy": "exploratory_no_fixed_metric_gate",
+  "limitation": "Development/train source, bounded multi-query rollout; no held-out benchmark claim. Initial repair used recorded query; deployment uses reconstructed real RGB state."
+}

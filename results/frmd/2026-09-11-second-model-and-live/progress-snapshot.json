@@ -1,0 +1,39 @@
+{
+  "utc": "2026-09-11T05:49:47.477225+00:00",
+  "native_tokendrop_complete": 36,
+  "native_tokendrop_planned": 90,
+  "native_framesamp_complete": 3,
+  "headless_tokendrop_complete": 15,
+  "frame_sampling_first_three_physical_complete": 3,
+  "live_preflight": "passed after virtualenv-path fix; see immutable retry report",
+  "queue": {
+    "plan_sha256": "e7d6f8b54fece9f60d376b197b5c45d6a8d32d23c4ec446b248ae141784bce97",
+    "continuation_policy": "exploratory_no_fixed_metric_gate",
+    "jobs": [
+      {
+        "id": "tokendrop-video-live-preflight",
+        "status": "technical_error",
+        "started_utc": "2026-09-11T05:29:53Z",
+        "pid": 139100,
+        "exit_code": 1,
+        "finished_utc": "2026-09-11T05:29:58Z"
+      },
+      {
+        "id": "e14r-framesamp-first-three-v1",
+        "status": "complete",
+        "started_utc": "2026-09-11T05:29:58Z",
+        "pid": 139261,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T05:40:02Z"
+      },
+      {
+        "id": "e14r-tokendrop90-resume-v1",
+        "status": "running",
+        "started_utc": "2026-09-11T05:40:02Z",
+        "pid": 151196
+      }
+    ],
+    "status": "running"
+  },
+  "status": "running; no automatic metric gate"
+}

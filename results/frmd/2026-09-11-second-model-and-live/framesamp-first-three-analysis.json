@@ -1,0 +1,245 @@
+{
+  "case_count": 3,
+  "episode_count": 3,
+  "action": {
+    "case_count": 3,
+    "recovery_mean": 0.0010265334737293113,
+    "persistence_mean": 0.0006551031983690336
+  },
+  "physical": {
+    "case_count": 3,
+    "conditions": {
+      "interfered": {
+        "success": 0.0,
+        "subgoal_advancement": 0.25,
+        "ongoing_fraction": 1.0,
+        "terminal_failure_fraction": 0.0
+      },
+      "repaired": {
+        "success": 0.0,
+        "subgoal_advancement": 0.25,
+        "ongoing_fraction": 1.0,
+        "terminal_failure_fraction": 0.0
+      },
+      "teacher": {
+        "success": 0.0,
+        "subgoal_advancement": 0.25,
+        "ongoing_fraction": 1.0,
+        "terminal_failure_fraction": 0.0
+      },
+      "interpolation": {
+        "success": 0.0,
+        "subgoal_advancement": 0.25,
+        "ongoing_fraction": 1.0,
+        "terminal_failure_fraction": 0.0
+      },
+      "negative": {
+        "success": 0.0,
+        "subgoal_advancement": 0.25,
+        "ongoing_fraction": 1.0,
+        "terminal_failure_fraction": 0.0
+      },
+      "random": {
+        "success": 0.0,
+        "subgoal_advancement": 0.25,
+        "ongoing_fraction": 1.0,
+        "terminal_failure_fraction": 0.0
+      }
+    },
+    "success_gain": 0.0,
+    "teacher_success_headroom": 0.0,
+    "repair_ratio": null,
+    "repair_ratio_definition": "ratio of case-averaged one-chunk success gains; missing when teacher headroom is nonpositive"
+  },
+  "technical_error_outcomes": 0,
+  "by_task": {
+    "PatternLock": {
+      "case_count": 1,
+      "recovery_mean": 0.0,
+      "persistence_mean": 0.0
+    },
+    "RouteStick": {
+      "case_count": 1,
+      "recovery_mean": 0.00011168492346769199,
+      "persistence_mean": 0.0006692004244541749
+    },
+    "VideoPlaceButton": {
+      "case_count": 1,
+      "recovery_mean": 0.0029679154977202415,
+      "persistence_mean": 0.001296109170652926
+    }
+  },
+  "by_interference_level": {
+    "3": {
+      "case_count": 3,
+      "recovery_mean": 0.0010265334737293113,
+      "persistence_mean": 0.0006551031983690336
+    }
+  },
+  "cases": [
+    {
+      "case_id": "PatternLock-episode-0-k3",
+      "task": "PatternLock",
+      "episode": 0,
+      "level": 3,
+      "recovery": 0.0,
+      "persistence_mean": 0.0,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.75,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.75,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.75,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.75,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.75,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.75,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "RouteStick-episode-10-k3",
+      "task": "RouteStick",
+      "episode": 10,
+      "level": 3,
+      "recovery": 0.00011168492346769199,
+      "persistence_mean": 0.0006692004244541749,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case_id": "VideoPlaceButton-episode-20-k3",
+      "task": "VideoPlaceButton",
+      "episode": 20,
+      "level": 3,
+      "recovery": 0.0029679154977202415,
+      "persistence_mean": 0.001296109170652926,
+      "physical": {
+        "matched_noise_pairs": 8,
+        "conditions": {
+          "interfered": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "repaired": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "teacher": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "interpolation": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "negative": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          },
+          "random": {
+            "success": 0.0,
+            "subgoal_advancement": 0.0,
+            "ongoing_fraction": 1.0,
+            "terminal_failure_fraction": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "automatic_metric_stop": false,
+  "continuation_policy": "exploratory_no_fixed_metric_gate",
+  "evidence_scope": "action_offline_persistence_and_one_chunk_physics",
+  "aggregation_unit": "noise replicas averaged within case; cases averaged equally; repeated levels are not independent episodes",
+  "limitation": "Descriptive development results; one-chunk ongoing status is not terminal episode failure; no full closed-loop generalization claim.",
+  "source_files": {
+    "repairs": [
+      "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-0-k3.json",
+      "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-10-k3.json",
+      "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-20-k3.json"
+    ],
+    "physical": [
+      "/root/trajmem-preparation/e14r-framesamp90-v1-physics/PatternLock-episode-0-k3.json",
+      "/root/trajmem-preparation/e14r-framesamp90-v1-physics/RouteStick-episode-10-k3.json",
+      "/root/trajmem-preparation/e14r-framesamp90-v1-physics/VideoPlaceButton-episode-20-k3.json"
+    ]
+  }
+}
