@@ -1,0 +1,15 @@
+# Nominal 16GB query preset; actual backend VRAM must be measured.
+basis_directions: 8
+optimize_noises: 8
+validation_noises: 4
+evaluation_noises: 8
+repair:
+  iterations: 2
+  rank: 4
+  damping: 0.0001
+  probe_relative_size: 0.00025
+  step_relative_radius: 0.00125
+  total_relative_radius: 0.0025
+  alphas: [0.25, 0.5, 1.0]
+  minimum_improving_fraction: 0.5
+  target: paired
