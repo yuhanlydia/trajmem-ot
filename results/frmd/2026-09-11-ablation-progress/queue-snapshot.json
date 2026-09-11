@@ -1,0 +1,117 @@
+{
+  "plan_sha256": "e7d6f8b54fece9f60d376b197b5c45d6a8d32d23c4ec446b248ae141784bce97",
+  "continuation_policy": "exploratory_no_fixed_metric_gate",
+  "jobs": [
+    {
+      "id": "tokendrop-video-live-preflight",
+      "status": "technical_error",
+      "started_utc": "2026-09-11T05:29:53Z",
+      "pid": 139100,
+      "exit_code": 1,
+      "finished_utc": "2026-09-11T05:29:58Z"
+    },
+    {
+      "id": "e14r-framesamp-first-three-v1",
+      "status": "complete",
+      "started_utc": "2026-09-11T05:29:58Z",
+      "pid": 139261,
+      "exit_code": 0,
+      "finished_utc": "2026-09-11T05:40:02Z"
+    },
+    {
+      "id": "e14r-tokendrop90-resume-v1",
+      "status": "complete",
+      "started_utc": "2026-09-11T05:40:02Z",
+      "pid": 151196,
+      "exit_code": 0,
+      "finished_utc": "2026-09-11T06:57:22Z"
+    },
+    {
+      "id": "tokendrop-PatternLock-episode-0-k3",
+      "status": "complete",
+      "started_utc": "2026-09-11T06:57:22Z",
+      "pid": 198705,
+      "exit_code": 0,
+      "finished_utc": "2026-09-11T07:01:02Z"
+    },
+    {
+      "id": "tokendrop-RouteStick-episode-10-k3",
+      "status": "complete",
+      "started_utc": "2026-09-11T07:01:02Z",
+      "pid": 202488,
+      "exit_code": 0,
+      "finished_utc": "2026-09-11T07:07:13Z"
+    },
+    {
+      "id": "tokendrop-VideoPlaceButton-episode-20-k3",
+      "status": "complete",
+      "started_utc": "2026-09-11T07:07:13Z",
+      "pid": 208001,
+      "exit_code": 0,
+      "finished_utc": "2026-09-11T07:17:18Z"
+    },
+    {
+      "id": "e14r-framesamp90-v1",
+      "status": "complete",
+      "started_utc": "2026-09-11T07:17:18Z",
+      "pid": 214693,
+      "exit_code": 0,
+      "finished_utc": "2026-09-11T08:58:50Z"
+    },
+    {
+      "id": "framesamp-PatternLock-episode-0-k3",
+      "status": "complete",
+      "started_utc": "2026-09-11T08:58:50Z",
+      "pid": 273694,
+      "exit_code": 0,
+      "finished_utc": "2026-09-11T09:02:27Z"
+    },
+    {
+      "id": "framesamp-RouteStick-episode-10-k3",
+      "status": "complete",
+      "started_utc": "2026-09-11T09:02:27Z",
+      "pid": 277719,
+      "exit_code": 0,
+      "finished_utc": "2026-09-11T09:07:19Z"
+    },
+    {
+      "id": "framesamp-VideoPlaceButton-episode-20-k3",
+      "status": "complete",
+      "started_utc": "2026-09-11T09:07:19Z",
+      "pid": 282414,
+      "exit_code": 0,
+      "finished_utc": "2026-09-11T09:16:15Z"
+    },
+    {
+      "id": "e14r-tokendrop90-paired-one-step-v1",
+      "status": "complete",
+      "started_utc": "2026-09-11T09:16:15Z",
+      "pid": 289481,
+      "exit_code": 0,
+      "finished_utc": "2026-09-11T10:34:10Z"
+    },
+    {
+      "id": "e14r-tokendrop90-centroid-two-step-v1",
+      "status": "complete",
+      "started_utc": "2026-09-11T10:34:10Z",
+      "pid": 323157,
+      "exit_code": 0,
+      "finished_utc": "2026-09-11T12:23:57Z"
+    },
+    {
+      "id": "e14r-tokendrop90-ot-two-step-v1",
+      "status": "complete",
+      "started_utc": "2026-09-11T12:23:57Z",
+      "pid": 331540,
+      "exit_code": 0,
+      "finished_utc": "2026-09-11T14:15:05Z"
+    },
+    {
+      "id": "e14r-tokendrop90-random-basis-two-step-v1",
+      "status": "running",
+      "started_utc": "2026-09-11T14:15:05Z",
+      "pid": 339518
+    }
+  ],
+  "status": "running"
+}

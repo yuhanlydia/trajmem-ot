@@ -1,0 +1,2634 @@
+{
+  "snapshot_utc": "2026-09-11T15:28:31.912186+00:00",
+  "native_main_cases": 90,
+  "physical_main_cases": 90,
+  "methods": [
+    {
+      "method": "tokendrop-paired-one-step",
+      "source_dir": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1",
+      "case_count": 90,
+      "episode_count": 30,
+      "aggregate_recovery": {
+        "interfered": 0.0,
+        "repaired": 0.0014565251072680338,
+        "teacher": 0.6666666666666666,
+        "negative": -0.0009738221742332421,
+        "random": 5.172402931445201e-06,
+        "interpolation": 0.00041526757342782934
+      },
+      "persistence_mean": 0.0001374065114086315,
+      "by_task": {
+        "PatternLock": {
+          "case_count": 30,
+          "recovery_mean": 0.0013206911583741505,
+          "persistence_mean": 2.6512372440063503e-05,
+          "controls": {
+            "interfered": 0.0,
+            "teacher": 0.6666666666666666,
+            "negative": -0.00014742170915269526,
+            "random": 0.0012769402447095975,
+            "interpolation": 0.0014364166377466366
+          }
+        },
+        "RouteStick": {
+          "case_count": 30,
+          "recovery_mean": 0.0018214684650047276,
+          "persistence_mean": 0.0004598132551816687,
+          "controls": {
+            "interfered": 0.0,
+            "teacher": 0.6666666666666666,
+            "negative": -0.0025355914592485834,
+            "random": -0.0014130874377466776,
+            "interpolation": -0.0006730497368456175
+          }
+        },
+        "VideoPlaceButton": {
+          "case_count": 30,
+          "recovery_mean": 0.0012274156984252234,
+          "persistence_mean": -7.410609339583769e-05,
+          "controls": {
+            "interfered": 0.0,
+            "teacher": 0.6666666666666666,
+            "negative": -0.00023845335429844756,
+            "random": 0.0001516644018314158,
+            "interpolation": 0.00048243581938246886
+          }
+        }
+      },
+      "reports": [
+        {
+          "case_id": "PatternLock-episode-0-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-0-k0.json",
+          "sha256": "14bdf52adcc32ae65ed5512aad244335344624450237f652b0a9b9a9f4ccd3da"
+        },
+        {
+          "case_id": "PatternLock-episode-0-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-0-k3.json",
+          "sha256": "23312f700504765d31741769c3d22bced0d197d23b8b5044cd3f1b4f3d048083"
+        },
+        {
+          "case_id": "PatternLock-episode-0-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-0-k7.json",
+          "sha256": "2e8dadd51d7d39abb24eb6af9a641b138d207561a6a92e56531d80fe9fa9505c"
+        },
+        {
+          "case_id": "PatternLock-episode-1-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-1-k0.json",
+          "sha256": "42c22eecd29771f5dd6d9371dab260896f169f1835322c9925de682231bec2e7"
+        },
+        {
+          "case_id": "PatternLock-episode-1-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-1-k3.json",
+          "sha256": "f3850415efa1ba579f833728f50ee09b78110c9e88c899787589337b6e5555b5"
+        },
+        {
+          "case_id": "PatternLock-episode-1-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-1-k7.json",
+          "sha256": "8f1ff71ab321e769e3eb948afe84e50686642d04bd801c5a41645aa08eaf5eed"
+        },
+        {
+          "case_id": "PatternLock-episode-2-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-2-k0.json",
+          "sha256": "e68b29124b1c0504a3b7101665e3850a221933e29f8e54c357a4cea56ca3a330"
+        },
+        {
+          "case_id": "PatternLock-episode-2-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-2-k3.json",
+          "sha256": "82fe2d881fef6ee7b54a6eabeb3fcd2ffa36198e3381ce06736d2c5a7d4d88b6"
+        },
+        {
+          "case_id": "PatternLock-episode-2-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-2-k7.json",
+          "sha256": "fe6c64c4c27fd4f9005c42e102169e65c9f79dc4c246989b0e37aa51b479a839"
+        },
+        {
+          "case_id": "PatternLock-episode-3-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-3-k0.json",
+          "sha256": "180a2d1c93c57123c7df829c7827a8947e0e0de638d407cf0a691661e5675ab2"
+        },
+        {
+          "case_id": "PatternLock-episode-3-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-3-k3.json",
+          "sha256": "7a8bec5f02c9e1cc44edc94d378a2b3e786365d069dd6640b27caa311bc7c3d0"
+        },
+        {
+          "case_id": "PatternLock-episode-3-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-3-k7.json",
+          "sha256": "4b8d12fb3849bb3bf1a693cc8c5d7b959a20d3edbcde675eadda24b406ee0202"
+        },
+        {
+          "case_id": "PatternLock-episode-4-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-4-k0.json",
+          "sha256": "c40e0f6548a92c85334e61e2e0eca02ea4c26f1d60b9cee25b07b4abd9ae1137"
+        },
+        {
+          "case_id": "PatternLock-episode-4-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-4-k3.json",
+          "sha256": "052b8dfa4af9918537498adf210660325b9d12b0c24d4b6df25dfb8bfa515359"
+        },
+        {
+          "case_id": "PatternLock-episode-4-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-4-k7.json",
+          "sha256": "3e1b516338b0ebd7b057f5c9ef4b56b2b45a12d87a93e22892cad5de1a7b8070"
+        },
+        {
+          "case_id": "PatternLock-episode-5-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-5-k0.json",
+          "sha256": "74f032ef277f9c8cbea6efc03d31b9718bd83496552ee4b86cca6b308904844e"
+        },
+        {
+          "case_id": "PatternLock-episode-5-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-5-k3.json",
+          "sha256": "d267098523a2017ba7f912afc9ad0ab4d815fbd4785aded2cdf93a96751c097e"
+        },
+        {
+          "case_id": "PatternLock-episode-5-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-5-k7.json",
+          "sha256": "171f6bb1d6de046d51cd4a400918dc37d426025ed9ef49d3f99816202cd09768"
+        },
+        {
+          "case_id": "PatternLock-episode-6-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-6-k0.json",
+          "sha256": "0f05143a2b59100415f073ed1b78f21224b297021f06cedf108ddda6512ec93d"
+        },
+        {
+          "case_id": "PatternLock-episode-6-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-6-k3.json",
+          "sha256": "4dd5bf7b8c9df462923c962767fc11593256ebadfa78034bc0fe07633771549f"
+        },
+        {
+          "case_id": "PatternLock-episode-6-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-6-k7.json",
+          "sha256": "6ef089226c0cabe605569694d228230b0f6864219a73a7e391562b0adbffdaf5"
+        },
+        {
+          "case_id": "PatternLock-episode-7-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-7-k0.json",
+          "sha256": "e720c5fbde5ba06c7e38ce7af55d6992ad154ecf888c0cc95f7f2b7d67d12b08"
+        },
+        {
+          "case_id": "PatternLock-episode-7-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-7-k3.json",
+          "sha256": "22491598f0556302ac044afd6802358308c77d7fb6123912d09b50849280e32d"
+        },
+        {
+          "case_id": "PatternLock-episode-7-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-7-k7.json",
+          "sha256": "962a01379a5f0362dcb8946aace2c43289a1c4c41f2eec258f06b068f58a6e3d"
+        },
+        {
+          "case_id": "PatternLock-episode-8-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-8-k0.json",
+          "sha256": "08022a1a78851e4bc5fe0cac8909c5972615bf320a24262b840646e4b91ddb6d"
+        },
+        {
+          "case_id": "PatternLock-episode-8-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-8-k3.json",
+          "sha256": "6134d27acea080f08738dc2d10faa7c4748235cc7220d84dc2a85f186abd0ef4"
+        },
+        {
+          "case_id": "PatternLock-episode-8-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-8-k7.json",
+          "sha256": "969fde50b856f0ba604288b738dfbef43d5698545e1b7211c1fd48a68c21d7de"
+        },
+        {
+          "case_id": "PatternLock-episode-9-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-9-k0.json",
+          "sha256": "fec217083cdf8d0f2eabd2bb5ecaebb5e7c6c7e1396e64f3b0a600bf3d4779b9"
+        },
+        {
+          "case_id": "PatternLock-episode-9-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-9-k3.json",
+          "sha256": "df26f3fd8421971e1813dd9d7c342e34c641ab608fdaa3a37a9fbf4f21b6a8db"
+        },
+        {
+          "case_id": "PatternLock-episode-9-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/PatternLock-episode-9-k7.json",
+          "sha256": "c19af3d74ee612caa4de005f83f533b9d3e33e7b3c88920c831ab23b1d537677"
+        },
+        {
+          "case_id": "RouteStick-episode-10-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-10-k0.json",
+          "sha256": "bda1350c41ee88c634f63a73b1de7d05a217dfdd8fab68a7b01786df0de66bd2"
+        },
+        {
+          "case_id": "RouteStick-episode-10-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-10-k3.json",
+          "sha256": "c8b98542a1a8e116002065491cd7351125ad8f7a186e3e9cf7d48df09e3ceaf1"
+        },
+        {
+          "case_id": "RouteStick-episode-10-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-10-k7.json",
+          "sha256": "aa99df7747efb91f78cddf00a7037afa6a8c97adf79575a795e2fa046a06672f"
+        },
+        {
+          "case_id": "RouteStick-episode-11-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-11-k0.json",
+          "sha256": "5e63e1e2ec3cc28b6d24572bdf794000f9a81b3ba900fa543867ac8133aa3a3b"
+        },
+        {
+          "case_id": "RouteStick-episode-11-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-11-k3.json",
+          "sha256": "ff855b8b817084035b2cbf48ec402517153a18dd3f6cc9615ec9397b34ca82dd"
+        },
+        {
+          "case_id": "RouteStick-episode-11-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-11-k7.json",
+          "sha256": "4fba9d4f848186885e939cbbb36b0e6af8c56411060af002d2b866ce33ac1aa5"
+        },
+        {
+          "case_id": "RouteStick-episode-12-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-12-k0.json",
+          "sha256": "aaf543fcf83a59dbe4f628277b867b3fe0b1bef851fe9971acc52010bcf03db7"
+        },
+        {
+          "case_id": "RouteStick-episode-12-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-12-k3.json",
+          "sha256": "d4632aec70d250b0df50fe1702b55876de4dc5c2b7a845c7d377490230fed1c0"
+        },
+        {
+          "case_id": "RouteStick-episode-12-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-12-k7.json",
+          "sha256": "43879ae339a0e01716b5e8060df1b537c3cb2fd286a63620ff0fd7f5476a27c0"
+        },
+        {
+          "case_id": "RouteStick-episode-13-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-13-k0.json",
+          "sha256": "42d52af8cb2cf641d21cdcb1cceea0fe79f8f3faf55f5d7de2836ea81e5d3df5"
+        },
+        {
+          "case_id": "RouteStick-episode-13-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-13-k3.json",
+          "sha256": "8a8a148adbe5f0a70927bf4961b18c213fbb53d9622d1325262e55a45fdb03bc"
+        },
+        {
+          "case_id": "RouteStick-episode-13-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-13-k7.json",
+          "sha256": "6db39741c67862562ab67491c2e8019c39480ea4dfb3cbf1ca4f7c4e4a80b477"
+        },
+        {
+          "case_id": "RouteStick-episode-14-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-14-k0.json",
+          "sha256": "9025c4940e1b8ae3d41d1536004e4be519b16ecc02b58f7dd7905f2df27fda1c"
+        },
+        {
+          "case_id": "RouteStick-episode-14-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-14-k3.json",
+          "sha256": "84992ad4230ff6be26c1a453d98651c1ce7391aee2dd45804159bfc92122f8a1"
+        },
+        {
+          "case_id": "RouteStick-episode-14-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-14-k7.json",
+          "sha256": "a00605b7ad06badc73cbac7fec591318fbc2f7a2467df4914084c186ab933ca6"
+        },
+        {
+          "case_id": "RouteStick-episode-15-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-15-k0.json",
+          "sha256": "fee0f30c4a1d227e2baf8d65afbfd377ab7548d88c089e7ab22682169800bba7"
+        },
+        {
+          "case_id": "RouteStick-episode-15-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-15-k3.json",
+          "sha256": "32064f08de218964be7094dae2c46cdf6972b0cc4b08231a083d965a577534cb"
+        },
+        {
+          "case_id": "RouteStick-episode-15-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-15-k7.json",
+          "sha256": "5c5005200cd5b77833009a087526cb0ec347556c509ec2a7706ef025087f51f2"
+        },
+        {
+          "case_id": "RouteStick-episode-16-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-16-k0.json",
+          "sha256": "b835416b39a8a99568387d5c2fb644d7217f4be8a38a9e7d9a4355a76470fa20"
+        },
+        {
+          "case_id": "RouteStick-episode-16-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-16-k3.json",
+          "sha256": "bd3d4912a8238ca7e67352922e180aecf4a98313dfe7647f9f0780aeeeeff55f"
+        },
+        {
+          "case_id": "RouteStick-episode-16-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-16-k7.json",
+          "sha256": "dcc3f636434d41948df1e0151c6542a0bbbe1bfbd9accd482e1041380885a30d"
+        },
+        {
+          "case_id": "RouteStick-episode-17-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-17-k0.json",
+          "sha256": "b764ad60138c3f3954e4a6d9ff180da4d1b5afdbaf0123175db30a5b26288c6c"
+        },
+        {
+          "case_id": "RouteStick-episode-17-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-17-k3.json",
+          "sha256": "4459f01ca8d3ddb442257ceabaf412371e51b61fa204462ade5f8f34b9081d70"
+        },
+        {
+          "case_id": "RouteStick-episode-17-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-17-k7.json",
+          "sha256": "99907f5a1a1df176e0b684ba4748ecf8d29d7adaeedf8b34f3e13a5b4eeb800c"
+        },
+        {
+          "case_id": "RouteStick-episode-18-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-18-k0.json",
+          "sha256": "c89ae2d59dcef25b509cae2bb8ff65890c56b79a6b8c3cef2223ddd02b66eefe"
+        },
+        {
+          "case_id": "RouteStick-episode-18-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-18-k3.json",
+          "sha256": "65ec0354771f7f50f6e15ec8eecf9e5769c2c79bdfa24ef3ce931a8bda2ef97e"
+        },
+        {
+          "case_id": "RouteStick-episode-18-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-18-k7.json",
+          "sha256": "5a8e4624f78d7a4386326cb5c85be9ae8e07a17c415274c37d3e48d334088443"
+        },
+        {
+          "case_id": "RouteStick-episode-19-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-19-k0.json",
+          "sha256": "2d8deb8ceb43f69b6fd798d524a7da62b7b9964ad8f1bd10a76304a4c49b4aa7"
+        },
+        {
+          "case_id": "RouteStick-episode-19-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-19-k3.json",
+          "sha256": "ae900078846e554d66d0462a21bc48a4e5e642fe3a4bed1d6e27f2180b5aec44"
+        },
+        {
+          "case_id": "RouteStick-episode-19-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/RouteStick-episode-19-k7.json",
+          "sha256": "c9f359541d0df04b4f3088238d8d8da71fda56ee21b92dc657e5542eee6e801f"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-20-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-20-k0.json",
+          "sha256": "c0f160766c2c25bc8a043f3ae54ce74fbab5ce108487bddeec27063f4f815dfd"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-20-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-20-k3.json",
+          "sha256": "5bc8c432ec0a35893d907f9dc1f4ed32cbc88eee9b93202a77739f7d25d7382b"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-20-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-20-k7.json",
+          "sha256": "b6237d9cdd732c3fa5bc4ebbb838eeff7addbb49d2d4125079b93df357c6551f"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-21-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-21-k0.json",
+          "sha256": "a16a0318fd9cc470a9457326e96170f20e2ad7c0aea5d74638e47b4f2218f4a4"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-21-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-21-k3.json",
+          "sha256": "29213bc993bc72e7cb2be6229548eee2ea113e4596bb408ba9a248bbb3c734b8"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-21-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-21-k7.json",
+          "sha256": "56a88ca516a97f5592dc2a340bb649fe434d756fce8bf2a2694b6756722e8549"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-22-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-22-k0.json",
+          "sha256": "03923805a03bc5ca74c246586003464d9fad06ab137904fa1bc7f8af66f5bb9a"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-22-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-22-k3.json",
+          "sha256": "4cdbe1d9bd3ba1ec3d14c6855e4cc7b01d2620997f774ec194731d1415c0933c"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-22-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-22-k7.json",
+          "sha256": "7743c1896d52259830a7f44a95da859393e82edd9a2823dce59bc2133bff1f22"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-23-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-23-k0.json",
+          "sha256": "0d3cb972b3553e1fd0ba802166e08a1880fe6daadf225e8e01882ea0df0697b7"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-23-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-23-k3.json",
+          "sha256": "9d1b73dc6733aedc750311a96acc794785c3c6fdde2bb1f847381539d8e2071c"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-23-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-23-k7.json",
+          "sha256": "6b7ceddcecf24070b64409fb94dfc229ac27d55260182b5d033c873421b61d31"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-24-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-24-k0.json",
+          "sha256": "9b4d58ee7ebbb1bfafd9f8b49245ecab84afc5422c37f4ab53260604f3ec3213"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-24-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-24-k3.json",
+          "sha256": "15841f0711d9cd695b80451640014304c5f6e057fbe591554ad3ede9af09d50d"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-24-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-24-k7.json",
+          "sha256": "b9baa4552f5380d42afe30f5b070a5daa16df985f3a9d0ab10f7ffe3cc5209ca"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-25-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-25-k0.json",
+          "sha256": "fcb80b9bd61394d7604a23fa2ce46092a9a8a50dd73362ecb0d529762edd0243"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-25-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-25-k3.json",
+          "sha256": "14e2e2e78ee7ce1678d2b7d8431e16fc19ad446e2997565ab18d51e4fdf87b26"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-25-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-25-k7.json",
+          "sha256": "5f6137107cc27c9426f504d25d2f391ae9522b1a10468ed5fef32b3110a56440"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-26-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-26-k0.json",
+          "sha256": "0d7ca696822021f1b81cb1df57544f862493a07b9b79763ec569aed0fe87713b"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-26-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-26-k3.json",
+          "sha256": "36425b4eac747c5e6e9549627a3fe0c07accd05ad0f981afecdafe305768cfd2"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-26-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-26-k7.json",
+          "sha256": "c4a5e4d691656433757500b43018dd4e0c070e8d15f4056d5fe4c209f25fbc21"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-27-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-27-k0.json",
+          "sha256": "3d178b8ce6c2bfcdd2408dd0c5f9efbe5445a02442aaf33d11410fd0a6bc5ce3"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-27-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-27-k3.json",
+          "sha256": "2e2b59c7393df34b9c91ded04604739f1e1886440d29bb44a68d531a250bed41"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-27-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-27-k7.json",
+          "sha256": "a028ef1305c97adefc8bcc6ad2155d02975c673e8538ba61279e70f10c574a51"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-28-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-28-k0.json",
+          "sha256": "481fa6e376f934a48a8365c9b537474d09bfd267709e31af6e2aaf65891adaa0"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-28-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-28-k3.json",
+          "sha256": "4cb9ee00074722cb3df93016901f3717c94d57455eb031d73afccee9d388af14"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-28-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-28-k7.json",
+          "sha256": "004c3e250606935c54edabecddd1daba3ffdb326473d8e901232fd7148adf647"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-29-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-29-k0.json",
+          "sha256": "e4f163df16816803b8d793c3a2eaf2ae217c0532a4dfecb87e7ea57615058ab5"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-29-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-29-k3.json",
+          "sha256": "3859c04f41e21192ee693fcabab2c6e2c15ba2d32b3f386ce05d7c04edf84788"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-29-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1/VideoPlaceButton-episode-29-k7.json",
+          "sha256": "32a7ebeb51c452260b6b7b73d15dc6b63bdadca2c228662c45cc8331ff96ef12"
+        }
+      ]
+    },
+    {
+      "method": "tokendrop-centroid-two-step",
+      "source_dir": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1",
+      "case_count": 90,
+      "episode_count": 30,
+      "aggregate_recovery": {
+        "interfered": 0.0,
+        "repaired": 0.0010264029912731428,
+        "teacher": 0.6666666666666666,
+        "negative": -0.0004825591433271054,
+        "random": -0.00037391232670213665,
+        "interpolation": 0.00016945725996164482
+      },
+      "persistence_mean": 0.00028045702958513205,
+      "by_task": {
+        "PatternLock": {
+          "case_count": 30,
+          "recovery_mean": 0.0012486431420256849,
+          "persistence_mean": 0.00018251983856316657,
+          "controls": {
+            "interfered": 0.0,
+            "teacher": 0.6666666666666666,
+            "negative": -0.00034543042953979846,
+            "random": 0.00047965431209983457,
+            "interpolation": 0.001058334839520588
+          }
+        },
+        "RouteStick": {
+          "case_count": 30,
+          "recovery_mean": 0.0006678617378687098,
+          "persistence_mean": 0.0006062173093242664,
+          "controls": {
+            "interfered": 0.0,
+            "teacher": 0.6666666666666666,
+            "negative": -0.0007100537677009318,
+            "random": -0.0013756223282446929,
+            "interpolation": -0.00022937031388513182
+          }
+        },
+        "VideoPlaceButton": {
+          "case_count": 30,
+          "recovery_mean": 0.001162704093925034,
+          "persistence_mean": 5.263394086796325e-05,
+          "controls": {
+            "interfered": 0.0,
+            "teacher": 0.6666666666666666,
+            "negative": -0.000392193232740586,
+            "random": -0.00022576896396155158,
+            "interpolation": -0.00032059274575052163
+          }
+        }
+      },
+      "reports": [
+        {
+          "case_id": "PatternLock-episode-0-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-0-k0.json",
+          "sha256": "e34522a64ddfb630db167ac97b76e97771c2543d5da4592b60991c75c299e920"
+        },
+        {
+          "case_id": "PatternLock-episode-0-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-0-k3.json",
+          "sha256": "b78105a9d204b571f22851cf748c932c0c50fee4ba6898e44dda9dd843d2c0c2"
+        },
+        {
+          "case_id": "PatternLock-episode-0-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-0-k7.json",
+          "sha256": "df3fd23f008d9b6cd98dab91d5db082277af64c1eb768940b0c51a8bd6d1a963"
+        },
+        {
+          "case_id": "PatternLock-episode-1-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-1-k0.json",
+          "sha256": "f6346a4865f986b64e97b4659248d5e8029f44677cfb4385e458d7bc12bf6cad"
+        },
+        {
+          "case_id": "PatternLock-episode-1-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-1-k3.json",
+          "sha256": "417936c9e978e0b362bd402abc23074859b598232b78f4a5e6d0b9906f346b2a"
+        },
+        {
+          "case_id": "PatternLock-episode-1-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-1-k7.json",
+          "sha256": "d3aae201b474baae4f21f57b7e01fab2e288bdf99fdfd79476bc5f61d635f3d7"
+        },
+        {
+          "case_id": "PatternLock-episode-2-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-2-k0.json",
+          "sha256": "e5892557c2847aa714f36544270f3e63bc47ca3cda46ad975a76e178d0562559"
+        },
+        {
+          "case_id": "PatternLock-episode-2-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-2-k3.json",
+          "sha256": "cf0bde63dc74b403200318ddb5c22c96c7e419327379fcc9f21e1de68fc9060b"
+        },
+        {
+          "case_id": "PatternLock-episode-2-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-2-k7.json",
+          "sha256": "ecd9c299bb0d94d48d13845e6e6122bb15b485b9245560ae1b79f087eeba2df1"
+        },
+        {
+          "case_id": "PatternLock-episode-3-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-3-k0.json",
+          "sha256": "576277518d5dda1964e95ba8c9b7c30eddeb05b1f71c9fd018728fbede91af8f"
+        },
+        {
+          "case_id": "PatternLock-episode-3-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-3-k3.json",
+          "sha256": "0010f24f7c4466e8885deea1c431bfa98f68398afbb5ce3578fc2f422a18e2ad"
+        },
+        {
+          "case_id": "PatternLock-episode-3-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-3-k7.json",
+          "sha256": "0169a1671f0eb996a57ce698e64669aa41e9536f9972d136f448ec73d4d6ae6b"
+        },
+        {
+          "case_id": "PatternLock-episode-4-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-4-k0.json",
+          "sha256": "3c78a21a562c279b179163b83cb606c9ec86111ff3475c4d836bdc3a7ce0f55a"
+        },
+        {
+          "case_id": "PatternLock-episode-4-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-4-k3.json",
+          "sha256": "0a8ae0a2929dde2d2f20e89f992f0950c1ae5001d40d7c8d5008dae8ae9483ac"
+        },
+        {
+          "case_id": "PatternLock-episode-4-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-4-k7.json",
+          "sha256": "7759ba0a15b81c7f32bb608ef64d60e6ac034eb80b254cabf22210cb82a62024"
+        },
+        {
+          "case_id": "PatternLock-episode-5-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-5-k0.json",
+          "sha256": "9fcf11c32adc8d09614f50d70d24e24e62110ccb1a86070f221280b2624220f6"
+        },
+        {
+          "case_id": "PatternLock-episode-5-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-5-k3.json",
+          "sha256": "ad259712bb6882f929b158c753512671f06dcfca1de6a77754ccd2512b9f8c0f"
+        },
+        {
+          "case_id": "PatternLock-episode-5-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-5-k7.json",
+          "sha256": "92d0eae38a464f7240d60672e86b9567647f2ea0c78fa93c089714baecc3845d"
+        },
+        {
+          "case_id": "PatternLock-episode-6-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-6-k0.json",
+          "sha256": "f80f2736b8a78a57a1e2695bbf446b7ba883a2a17232b8cba38bcf632154955e"
+        },
+        {
+          "case_id": "PatternLock-episode-6-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-6-k3.json",
+          "sha256": "9284f53db6ba43a776dfef84083cb50a60ab3e25b6401099be7eeb0f2b710eb7"
+        },
+        {
+          "case_id": "PatternLock-episode-6-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-6-k7.json",
+          "sha256": "becf68222be227cacdd47cb51e91ba419ecb04543ab350c1327b058f47b6d564"
+        },
+        {
+          "case_id": "PatternLock-episode-7-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-7-k0.json",
+          "sha256": "915f01b067c2cca8bc652a1231b917f1cb829acd53be51a2bab06c2f7a8cf8d3"
+        },
+        {
+          "case_id": "PatternLock-episode-7-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-7-k3.json",
+          "sha256": "c6410136a67e42255aa3a854dbf85a10d4ae5984b42fc4eebecbb24bc7696faf"
+        },
+        {
+          "case_id": "PatternLock-episode-7-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-7-k7.json",
+          "sha256": "7c61703176ed8ad4867cb3df31003df5343f7bfd7145bf6c713b992017eeffb0"
+        },
+        {
+          "case_id": "PatternLock-episode-8-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-8-k0.json",
+          "sha256": "3ee98ee476ae33ae0a9060f46f15662aa1c8003f5786c5d33ddaf2e7f64dd14a"
+        },
+        {
+          "case_id": "PatternLock-episode-8-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-8-k3.json",
+          "sha256": "b3ee8763610b0d0d01b4ba9a9551c4891e73d00c88ea53e76d2c98cb0d51be11"
+        },
+        {
+          "case_id": "PatternLock-episode-8-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-8-k7.json",
+          "sha256": "47aa7ea24b14de26ee98d8a6b007f84efa194eea0315d831bdd8236eff6e32cc"
+        },
+        {
+          "case_id": "PatternLock-episode-9-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-9-k0.json",
+          "sha256": "5bdaf5acc323615c3fbb51ac762135141dfab44cb5895a2e20472002163632f2"
+        },
+        {
+          "case_id": "PatternLock-episode-9-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-9-k3.json",
+          "sha256": "b21aa63eb9829bfdc2ccae564ddc71de080dc96f938c6f15ee618c6147a0162a"
+        },
+        {
+          "case_id": "PatternLock-episode-9-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/PatternLock-episode-9-k7.json",
+          "sha256": "d95fbdb2b035f7b473074f63e748c019be2f2449daad997b0ad21f71c384e686"
+        },
+        {
+          "case_id": "RouteStick-episode-10-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-10-k0.json",
+          "sha256": "df0f015c80a75cb8d488ffa2b17a36e2aa861629575525ca3839dc941b47df5a"
+        },
+        {
+          "case_id": "RouteStick-episode-10-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-10-k3.json",
+          "sha256": "27123a8631096f7ee3040428f42080a67f77b25a07c6a21bd87aa5ab56ba8689"
+        },
+        {
+          "case_id": "RouteStick-episode-10-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-10-k7.json",
+          "sha256": "9c6913afe8d25505201cd97c2232c2702108e695827b7ea865a868c555dd26b1"
+        },
+        {
+          "case_id": "RouteStick-episode-11-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-11-k0.json",
+          "sha256": "e5fc7043634e787a35cfc610a23266ae893c3c140e7f5692f4ef950bde0497fb"
+        },
+        {
+          "case_id": "RouteStick-episode-11-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-11-k3.json",
+          "sha256": "ea80b8d066dd73d0db829f25f467b8ee67216cb7658d0aa5364ea653f4468611"
+        },
+        {
+          "case_id": "RouteStick-episode-11-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-11-k7.json",
+          "sha256": "d4bee58f091a6705d8b13e99813a9e3e6dc37669392c377b7a71e222470638e5"
+        },
+        {
+          "case_id": "RouteStick-episode-12-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-12-k0.json",
+          "sha256": "d39b0aabc56b208255fb7cb1b17c8da6b351b1c1c4b876955db0864c598e6b86"
+        },
+        {
+          "case_id": "RouteStick-episode-12-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-12-k3.json",
+          "sha256": "935f8511b1a61c845fd22da3486ac103b2c581cea8a35f1f24b7e1ca1a3f4298"
+        },
+        {
+          "case_id": "RouteStick-episode-12-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-12-k7.json",
+          "sha256": "19eea14af8fbda9049dbd4093a6464b3d79c584c88b0d49fd8b5625e62749c8f"
+        },
+        {
+          "case_id": "RouteStick-episode-13-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-13-k0.json",
+          "sha256": "bd347b6c69fa315c81bbd6de9bb0c5fe479e8e5fd6900e83d28f26da8d538470"
+        },
+        {
+          "case_id": "RouteStick-episode-13-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-13-k3.json",
+          "sha256": "dec4d23df3b6555f5dbf4ffb95032268c922555e1eb99488cc82c5c45186acfe"
+        },
+        {
+          "case_id": "RouteStick-episode-13-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-13-k7.json",
+          "sha256": "a6c8ee9037d4306e9ceca49edc095404eb41b4480b30053b0a038e2b005772ce"
+        },
+        {
+          "case_id": "RouteStick-episode-14-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-14-k0.json",
+          "sha256": "ecd119d90928bfc012b514c61b10bf91afffc20437e8cec4c4505fa23d5a30bc"
+        },
+        {
+          "case_id": "RouteStick-episode-14-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-14-k3.json",
+          "sha256": "a5abc6f16d71b9714b23380eb02c5db66f582521600a57beb1f8015b638eac31"
+        },
+        {
+          "case_id": "RouteStick-episode-14-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-14-k7.json",
+          "sha256": "02be140a387da05f8cce6360f7a94b9a06fa042f853ffe10aa7c70a094e77fb9"
+        },
+        {
+          "case_id": "RouteStick-episode-15-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-15-k0.json",
+          "sha256": "ecd216724192ccfad4889995905cd2950e05d3dbd80ba3f4c5a30204f7287ae0"
+        },
+        {
+          "case_id": "RouteStick-episode-15-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-15-k3.json",
+          "sha256": "376ab9080ff5623f4b574fc21bddd663d8d36717acc2e7db32fda039899e1a0e"
+        },
+        {
+          "case_id": "RouteStick-episode-15-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-15-k7.json",
+          "sha256": "e720d1e87b58879fbb644ac2f2be389a8b6dbd110efd2eed5bec2f128ad2c271"
+        },
+        {
+          "case_id": "RouteStick-episode-16-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-16-k0.json",
+          "sha256": "b0bcdd999e714ed08f64a9dd7bebfe5ae6fc09b7c50223e49aebdccde7a31eca"
+        },
+        {
+          "case_id": "RouteStick-episode-16-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-16-k3.json",
+          "sha256": "0c9084764003984568a3854dade47df2715a43daad6edf5ed5ee5d38eef658d6"
+        },
+        {
+          "case_id": "RouteStick-episode-16-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-16-k7.json",
+          "sha256": "1f1e05efd17cbd3096bf31ecec9453999d0fa4c74e8bcfc5862c8af2d3475823"
+        },
+        {
+          "case_id": "RouteStick-episode-17-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-17-k0.json",
+          "sha256": "efebaabde385cb71993ce5d461f6200bf217d9e22c76bb84c20d2b1a331a986b"
+        },
+        {
+          "case_id": "RouteStick-episode-17-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-17-k3.json",
+          "sha256": "d31a528f87ff192e0807e7f186f2ac95bd1fa56f87efe4b48af23a68e8e71c23"
+        },
+        {
+          "case_id": "RouteStick-episode-17-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-17-k7.json",
+          "sha256": "db04ec3e1e60ae1e377bae4a7c3014c52fdf396a1af283e331f9476a2bc33744"
+        },
+        {
+          "case_id": "RouteStick-episode-18-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-18-k0.json",
+          "sha256": "5844fc965a7ae87e794778c72d05f00355007d5d26b561af049ceb8b982d6221"
+        },
+        {
+          "case_id": "RouteStick-episode-18-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-18-k3.json",
+          "sha256": "e8a8a806fcc2c96c7cc118355073425ae5a457f2765b104a0b1323b2032ee728"
+        },
+        {
+          "case_id": "RouteStick-episode-18-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-18-k7.json",
+          "sha256": "ee7512d374619e5f62896fb367334a263669ae04dba1081696bfb4e22e2a32e5"
+        },
+        {
+          "case_id": "RouteStick-episode-19-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-19-k0.json",
+          "sha256": "de3c4478aa6c3a8aa9f8a34b7f2df1faabe16862731c0ed13a88b46b2a95a154"
+        },
+        {
+          "case_id": "RouteStick-episode-19-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-19-k3.json",
+          "sha256": "58b391fffd86d5f2dfc06273ca54d05f4c0e13db2ece75bd1c4cc2077b87ac0e"
+        },
+        {
+          "case_id": "RouteStick-episode-19-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/RouteStick-episode-19-k7.json",
+          "sha256": "5f39e5858cc014211b276c69feb32fe1f86224a25a1f9a8ee406a4c56986c29a"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-20-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-20-k0.json",
+          "sha256": "3e17e68ae285006ac9cd6fa66e717156d8644c04a1e3a574cea46d90bfb8b8eb"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-20-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-20-k3.json",
+          "sha256": "7ce25d6a6394b1f4ceb63e2ed44a7f1daef110755e884004678598f4de69d353"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-20-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-20-k7.json",
+          "sha256": "06a88d00a21489c9817a825e57ddcd77612e7611ebee2c83f546244539e42495"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-21-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-21-k0.json",
+          "sha256": "98dc38eb980409ef4f6b327bf3404f2dd3d4148e37602f865a383ddec68d5c8a"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-21-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-21-k3.json",
+          "sha256": "0b1bb79f11c3053e3d654ff2c2ee5b0d0ce48f55745278cb2fb96e33accc4afa"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-21-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-21-k7.json",
+          "sha256": "b0059a9a9e94d11d030c02c4eee6e02ad1e292770cfc6ac6770a3412ae275bf8"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-22-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-22-k0.json",
+          "sha256": "79e7614eb10771b969d33669bc10b566c38a533cec4331995347cb2c8411fc06"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-22-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-22-k3.json",
+          "sha256": "e23ef842729472e41837fd236b3a06564931875eaa6948c66554940ed30597bc"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-22-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-22-k7.json",
+          "sha256": "afb67c8173228f8f81ae1c933274787a419433e23a1b1da8532a7125d8980a0b"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-23-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-23-k0.json",
+          "sha256": "5d2f66b47447fd27c734edc1ae82327f76e7efc66088f49b956f5472f2465fc6"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-23-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-23-k3.json",
+          "sha256": "aedc79cf5b2eccc585ea3dee18299825d964cbba662707258450c89deab57aec"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-23-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-23-k7.json",
+          "sha256": "1fc7a0fb919d7e5e83584b791e7f0adcc2fa7273546ea26da771a554554d1681"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-24-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-24-k0.json",
+          "sha256": "2343cdf51c1e09b8411104837742d34246fa1b802c5ad746a3bf1e465b84def6"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-24-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-24-k3.json",
+          "sha256": "dc68e83b957baad4765772d514d8218e3c91fb6f4ee5fe3b64183f6991ff09ec"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-24-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-24-k7.json",
+          "sha256": "0e038a4b077938087bbf5435d9f6a811f1b42f7e497bb48e9584c9e3393c41ec"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-25-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-25-k0.json",
+          "sha256": "0a2572bdd1bfd0e57e02c198b5b26d6104f7311a777f1c802a32284e24606cd7"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-25-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-25-k3.json",
+          "sha256": "5722eae30cbda9ace57c54f8a977043d30c520fa9554e4036a88bdbd86fa9b8f"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-25-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-25-k7.json",
+          "sha256": "6da81458dd8aa070fcaec6a35b7684cf443f394e383833fa61fdf2ea536a2ca3"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-26-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-26-k0.json",
+          "sha256": "2389d5271f38c2d01f3896f31a10191076aaf04e426eabf150ddb76f3f3a1534"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-26-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-26-k3.json",
+          "sha256": "37dee18a415e53492f84e51fa2a415ac8b5c5a7627607620d23a114abd5768ac"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-26-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-26-k7.json",
+          "sha256": "d993fb9a0f80dc306e9223ae36d27b957b6fb11d619675c83b7c9c38dc810910"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-27-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-27-k0.json",
+          "sha256": "349e36c8b94db5fc5f1c2f1d64e5a841251911625ae9170a480775bd569e7c44"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-27-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-27-k3.json",
+          "sha256": "afed77c23afbebd141fbe87d70b685775282380d69735b493de7e008b92eb664"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-27-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-27-k7.json",
+          "sha256": "34165489dc7488def549ee930a9fda45ed636546928c8781fe5a2abdab63c7bf"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-28-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-28-k0.json",
+          "sha256": "3ba35976e37cfa9d2f7c02b25f7b4e58c372917fa21be9ed81b3b2091d176d57"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-28-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-28-k3.json",
+          "sha256": "7b152d1b847be41f052e1108ef1b75c240492060062dc87afa75c5eda6699e08"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-28-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-28-k7.json",
+          "sha256": "9b2c63bd01198c7b4756713fb8634848a880096c20935babf96c0f5942b1d1ea"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-29-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-29-k0.json",
+          "sha256": "5e82c3f210910cac1e3318296b864bae127c4f98b066fc4e0bcb4865804f0fb9"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-29-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-29-k3.json",
+          "sha256": "158d8c50eb357e7965a367d427212f5a05d08fb1b27eff2e9f4279e8bcdba2dc"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-29-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1/VideoPlaceButton-episode-29-k7.json",
+          "sha256": "da632bf1be6fd0d1ec461a6cf7b31d3c8244145aecdfc2b007d10ce569f997ab"
+        }
+      ]
+    },
+    {
+      "method": "tokendrop-ot-two-step",
+      "source_dir": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1",
+      "case_count": 90,
+      "episode_count": 30,
+      "aggregate_recovery": {
+        "interfered": 0.0,
+        "repaired": 0.0008604497660093733,
+        "teacher": 0.6666666666666666,
+        "negative": -0.0003987152477849223,
+        "random": -0.000197518263626585,
+        "interpolation": 0.0004973525583207245
+      },
+      "persistence_mean": 0.0002773623325437155,
+      "by_task": {
+        "PatternLock": {
+          "case_count": 30,
+          "recovery_mean": 0.0008002761896932498,
+          "persistence_mean": 0.000346282914850033,
+          "controls": {
+            "interfered": 0.0,
+            "teacher": 0.6666666666666666,
+            "negative": 3.454126344877295e-05,
+            "random": 0.00035255886432423723,
+            "interpolation": 0.0011439512602616257
+          }
+        },
+        "RouteStick": {
+          "case_count": 30,
+          "recovery_mean": 0.001004731114274667,
+          "persistence_mean": 0.000378760301196558,
+          "controls": {
+            "interfered": 0.0,
+            "teacher": 0.6666666666666666,
+            "negative": -0.0009276570919610095,
+            "random": -0.0007638954437425127,
+            "interpolation": 7.773883650467421e-05
+          }
+        },
+        "VideoPlaceButton": {
+          "case_count": 30,
+          "recovery_mean": 0.0007763419940602035,
+          "persistence_mean": 0.00010704378158455559,
+          "controls": {
+            "interfered": 0.0,
+            "teacher": 0.6666666666666666,
+            "negative": -0.00030302991484253047,
+            "random": -0.00018121821146147946,
+            "interpolation": 0.00027036757819587365
+          }
+        }
+      },
+      "reports": [
+        {
+          "case_id": "PatternLock-episode-0-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-0-k0.json",
+          "sha256": "e2f5b936b553a804e2f7a2d150f7f0595fd6ff09499f9b0310bf883b718124ed"
+        },
+        {
+          "case_id": "PatternLock-episode-0-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-0-k3.json",
+          "sha256": "2150ce381c9015f414f5a8d64a08491c07b81bcd78396aacb1937ee387341da8"
+        },
+        {
+          "case_id": "PatternLock-episode-0-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-0-k7.json",
+          "sha256": "f4b0c9f353ef956cc93a29209264177b58e683476f70405196cc0383c3f3755d"
+        },
+        {
+          "case_id": "PatternLock-episode-1-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-1-k0.json",
+          "sha256": "2b6d582d0b622189656b69b2ce545b445ae66748bb31eba13d46cc3f1afb4617"
+        },
+        {
+          "case_id": "PatternLock-episode-1-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-1-k3.json",
+          "sha256": "991077b98f7000e88838ec405ed438cec102e4c50c0d36d77f120be3a62dd14a"
+        },
+        {
+          "case_id": "PatternLock-episode-1-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-1-k7.json",
+          "sha256": "06367cf20fbc78c8e092c1b5996c17e89d62301a55c4ef2a65dc0c5730302e8f"
+        },
+        {
+          "case_id": "PatternLock-episode-2-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-2-k0.json",
+          "sha256": "e68877e4fa297b7a372fe2e24c0f96918782850d86fc952820b2f5bb2c4ff670"
+        },
+        {
+          "case_id": "PatternLock-episode-2-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-2-k3.json",
+          "sha256": "4f4e905ab1155e37ebe41f82cd2cc7b1595034cd892fe6d559cfee4f40f59422"
+        },
+        {
+          "case_id": "PatternLock-episode-2-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-2-k7.json",
+          "sha256": "f21f719216672ba8162e95545a0260d0631a32fd66b4aec1a242779ce915af3b"
+        },
+        {
+          "case_id": "PatternLock-episode-3-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-3-k0.json",
+          "sha256": "e4f5364b96ee58959caa099da972c49882ec54def69152061b50da8f0c4b9ba4"
+        },
+        {
+          "case_id": "PatternLock-episode-3-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-3-k3.json",
+          "sha256": "b7f0980ccc6f438203257802df7a2a7037bfe11720ac3b126c78d548e29ccd7d"
+        },
+        {
+          "case_id": "PatternLock-episode-3-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-3-k7.json",
+          "sha256": "3c44b584d641fa2aefdad9cb2bc0f0e7df1b6938f66849355854d019eaae6c1f"
+        },
+        {
+          "case_id": "PatternLock-episode-4-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-4-k0.json",
+          "sha256": "f459b0de7cca8438a26f951d264a076a5ea3dca6e850dad8154c8c0d80a128e4"
+        },
+        {
+          "case_id": "PatternLock-episode-4-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-4-k3.json",
+          "sha256": "feeddfbca99095e3a5ea4695760ccf3e9b04c25c42afe500268a134f8374856b"
+        },
+        {
+          "case_id": "PatternLock-episode-4-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-4-k7.json",
+          "sha256": "60779841a49de3927c553db8433b5bcefd1935fc71e0a9eecbed571d5a897405"
+        },
+        {
+          "case_id": "PatternLock-episode-5-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-5-k0.json",
+          "sha256": "09fb803704ca53f3317851bedb64008e571da1370f810fdbc46bc858f374f8fa"
+        },
+        {
+          "case_id": "PatternLock-episode-5-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-5-k3.json",
+          "sha256": "ee633d5d13baa717f50bc4dc750c4b7fb2dcb19fa8eaed18453ad542108c1d10"
+        },
+        {
+          "case_id": "PatternLock-episode-5-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-5-k7.json",
+          "sha256": "0cd85c86be15623ad2e40cb270c517f58b176cae2070b31574701929f641e477"
+        },
+        {
+          "case_id": "PatternLock-episode-6-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-6-k0.json",
+          "sha256": "fc4bf46637505b7be1b7e64ff9e4db7634320c18bb1a84442a1bbd1ffd17f436"
+        },
+        {
+          "case_id": "PatternLock-episode-6-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-6-k3.json",
+          "sha256": "6dcd0bfa8568a51bf76e0b3f7db7473142b80fd2788b3b7a952f4ad9397bcc86"
+        },
+        {
+          "case_id": "PatternLock-episode-6-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-6-k7.json",
+          "sha256": "fefbc938f914a38bb69a5af8d1ba9deb9b59bc1f464166ca21391240db15071c"
+        },
+        {
+          "case_id": "PatternLock-episode-7-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-7-k0.json",
+          "sha256": "74e89c4581436aceff5e148e8d32b1f10cbe5cce497013e154bc2b2dec091d7d"
+        },
+        {
+          "case_id": "PatternLock-episode-7-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-7-k3.json",
+          "sha256": "162b6118e48cacab92c4570972072180215ae59710f73697ea2faa5e2792a29f"
+        },
+        {
+          "case_id": "PatternLock-episode-7-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-7-k7.json",
+          "sha256": "9b60e4895f1479cc3b1ac74f088face83cd5f3de06b2be5e078693a684a225b8"
+        },
+        {
+          "case_id": "PatternLock-episode-8-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-8-k0.json",
+          "sha256": "485e2dd31ea5991c1c3740e3514fbb5a3f5bee187612527f3207ae512f5ce3ca"
+        },
+        {
+          "case_id": "PatternLock-episode-8-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-8-k3.json",
+          "sha256": "33e3e9e5abdc5314e71596e8c5d53137480c3d446752d6dac506c3cbfcc7ac39"
+        },
+        {
+          "case_id": "PatternLock-episode-8-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-8-k7.json",
+          "sha256": "0b14cef982f34d9b72895e00fe97b1059ca87ac23ed16c63720a8beb300b5633"
+        },
+        {
+          "case_id": "PatternLock-episode-9-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-9-k0.json",
+          "sha256": "5a8fb07b3faf25dc07f70b1b546d2c29213dd2a10a2535845933ad9d42dd07eb"
+        },
+        {
+          "case_id": "PatternLock-episode-9-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-9-k3.json",
+          "sha256": "a6d73955d7ef8be235ea14764e7bb1a8721524ae3e1219c4bab74f674a1a848e"
+        },
+        {
+          "case_id": "PatternLock-episode-9-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/PatternLock-episode-9-k7.json",
+          "sha256": "f2aadb5857ddf32d4525653c425712529b241ef756d7f8927ab61c6e2f5722e4"
+        },
+        {
+          "case_id": "RouteStick-episode-10-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-10-k0.json",
+          "sha256": "eb42dfe305f512db7e99f38818aa272b2892904420335782e5598586b7ee1b5c"
+        },
+        {
+          "case_id": "RouteStick-episode-10-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-10-k3.json",
+          "sha256": "83355660e11271bb0a27c696a70a8ae8266855f8ead5de3a78da8171d6b43535"
+        },
+        {
+          "case_id": "RouteStick-episode-10-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-10-k7.json",
+          "sha256": "58ad38981427af647e38b31db16cab6e481863ac149d316b05940669c51e27ca"
+        },
+        {
+          "case_id": "RouteStick-episode-11-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-11-k0.json",
+          "sha256": "615afa4462817171303608ebdff3d19d007a83f49ab21b41d33916b4a4c3b785"
+        },
+        {
+          "case_id": "RouteStick-episode-11-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-11-k3.json",
+          "sha256": "3d8e1f173167a05c588c89576056684a5038f77691235d50b3507b7ce9754a85"
+        },
+        {
+          "case_id": "RouteStick-episode-11-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-11-k7.json",
+          "sha256": "5edeb4f64f23c2ce38dd8c1a7e5f4fff18468ba6b2b68a46dd3c8690c557cca6"
+        },
+        {
+          "case_id": "RouteStick-episode-12-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-12-k0.json",
+          "sha256": "d244e1a1b8d0325fc4abae3c6367fc85a65c96983cff0ec3d7e30ce1e3603144"
+        },
+        {
+          "case_id": "RouteStick-episode-12-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-12-k3.json",
+          "sha256": "4afbb26498e268e8024a53c11396b5c99cb2fe9630b3173555b47beb4ccc483c"
+        },
+        {
+          "case_id": "RouteStick-episode-12-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-12-k7.json",
+          "sha256": "f5750899fec21edc6aadc52df4836ab16f7bdc1eb67ae7f36ddedf9526565ddc"
+        },
+        {
+          "case_id": "RouteStick-episode-13-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-13-k0.json",
+          "sha256": "166ea737628e44f5fdf7f98644e3ed4923a5ad849be9a671ba1fcff679427a12"
+        },
+        {
+          "case_id": "RouteStick-episode-13-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-13-k3.json",
+          "sha256": "5290e00a27b4cc174138132833c4aae06df3c36021e5502c49cf9be2d6500f74"
+        },
+        {
+          "case_id": "RouteStick-episode-13-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-13-k7.json",
+          "sha256": "4404f0b0fc9d214143b243cdfd76997f18f1dfc28cdf12f65bb2a6fa741bb05f"
+        },
+        {
+          "case_id": "RouteStick-episode-14-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-14-k0.json",
+          "sha256": "0135c083653fdffc27d0f41cbb817c17180bb5c5fbda7b82668e4f23ed778f90"
+        },
+        {
+          "case_id": "RouteStick-episode-14-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-14-k3.json",
+          "sha256": "a2d0f345de445aa51d570598523c6a9f9e424b1060b28c5179457ae37fb4c5a3"
+        },
+        {
+          "case_id": "RouteStick-episode-14-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-14-k7.json",
+          "sha256": "f6ad9f1d76343f7d0d4753b4aea64ea712d0c25b12ce168ed21f453bbf7b4a68"
+        },
+        {
+          "case_id": "RouteStick-episode-15-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-15-k0.json",
+          "sha256": "bf5285cddaa58c244414470c12784c0cbd1381c56329f2f90759bf9649f7a988"
+        },
+        {
+          "case_id": "RouteStick-episode-15-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-15-k3.json",
+          "sha256": "d9c68395128f753f44e70ef4144d2011a14d7f290645181f4fe34042616ced95"
+        },
+        {
+          "case_id": "RouteStick-episode-15-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-15-k7.json",
+          "sha256": "8c0bc88e979ec40735ec8930127a29ea93a3e852d273a443dcd436d3cc5b27b4"
+        },
+        {
+          "case_id": "RouteStick-episode-16-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-16-k0.json",
+          "sha256": "48fb34743bcc17223bf0db8daced2eeb0d5341a8aea10a9962bc7f8d2b1ed8ef"
+        },
+        {
+          "case_id": "RouteStick-episode-16-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-16-k3.json",
+          "sha256": "867e64b51b6c3a6aa0ae2d5f60c1beb56a9bad4fa041da00a1007f038c7654e1"
+        },
+        {
+          "case_id": "RouteStick-episode-16-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-16-k7.json",
+          "sha256": "201cff5b7f7f9c64bc782aa719fe5738f6fae4d1b84825ec688bf19ac4e25d02"
+        },
+        {
+          "case_id": "RouteStick-episode-17-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-17-k0.json",
+          "sha256": "404e3421006ef8b45c82d4e7dac17cf6c03ee8106e9fe7a87d2672d3e47e01d8"
+        },
+        {
+          "case_id": "RouteStick-episode-17-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-17-k3.json",
+          "sha256": "7fec2915146610c7d12c20f1151d8c8cf8d11c7aa450d191dd3860d90c7570ce"
+        },
+        {
+          "case_id": "RouteStick-episode-17-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-17-k7.json",
+          "sha256": "bbdb0138435f83c5af16ff027319aff3f70a4226d6cd8c843b5f83795d4b77b8"
+        },
+        {
+          "case_id": "RouteStick-episode-18-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-18-k0.json",
+          "sha256": "c04dc7e4926d536b2f58b39b632be18cf9b986d46b70fd73f9fffbe074b8e0dc"
+        },
+        {
+          "case_id": "RouteStick-episode-18-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-18-k3.json",
+          "sha256": "bdb9507cf042e64cd422f208a297183aa099e115964377e98750ff505c3b9b46"
+        },
+        {
+          "case_id": "RouteStick-episode-18-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-18-k7.json",
+          "sha256": "419ba6e1d20b81fc9e8166d0daecaa2f973e59625f9d81693a4296c64e4d2309"
+        },
+        {
+          "case_id": "RouteStick-episode-19-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-19-k0.json",
+          "sha256": "687e11263d305b26852a6b5a1b22d0d219b0e4d59d575a981878d4b2b94edb53"
+        },
+        {
+          "case_id": "RouteStick-episode-19-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-19-k3.json",
+          "sha256": "82cb160ec5671eef1f39101581f1de864882b99ef134868df8a71d95a6361387"
+        },
+        {
+          "case_id": "RouteStick-episode-19-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/RouteStick-episode-19-k7.json",
+          "sha256": "3a4aeb9ae4cc106ec66ef54764eff7d739fb5a1cfcc8f3cc8cb8817f93f0a5ac"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-20-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-20-k0.json",
+          "sha256": "e277298cba8eab438343cbc1764d568e5fcbf9f5a824e761476ca185fbf53b62"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-20-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-20-k3.json",
+          "sha256": "cfa8ede94c533ac09c39857040a4aae48fa7d577c85cb385a4bde6813028aaa2"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-20-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-20-k7.json",
+          "sha256": "f1510fa37029c9d463d0d50150ca13f77dcdd199a4c81f3a1038e974b7aadecd"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-21-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-21-k0.json",
+          "sha256": "d6809a071cb2945d845942fa8d19f3bc72daf98f7de9b89b92f96d52a28e51ee"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-21-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-21-k3.json",
+          "sha256": "873a3e404069fca4e3a9164746791dea4536b37a0b8b36165349811d12daf3b4"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-21-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-21-k7.json",
+          "sha256": "58a655d49284b5454a242119555a7516a4087a4299ba7093d8407789bffb2c1d"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-22-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-22-k0.json",
+          "sha256": "c625ae0402b68911121d1adc8084bbb4dc734fddc21aeb4265b2543ea848e4a0"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-22-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-22-k3.json",
+          "sha256": "e7436f04701dafa65c8d686603ec1add5dee289079559235b6008d63264416c7"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-22-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-22-k7.json",
+          "sha256": "955b7158c01bba2ab50b80a177e835dded616cf64e46c36c50a1927e5b5e5647"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-23-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-23-k0.json",
+          "sha256": "cda0da52ac035c222566dcf85912ca7cb1100ce5f09d78cdce0019b8581bd842"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-23-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-23-k3.json",
+          "sha256": "32c24ce2c01e0c8add55b2156b6724a5cba771f0b0ffe2973b733f190faaafb2"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-23-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-23-k7.json",
+          "sha256": "3144c67c18224e0fa25a194d2170197d836e6aa02b945a3e96dedace0b872eed"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-24-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-24-k0.json",
+          "sha256": "1857b618201d27c5057796b467cd24117b80b728e548fef0bb7bb0e601d0cd30"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-24-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-24-k3.json",
+          "sha256": "fb69509bec3d54793e663c972fddf84c44f530a64116718194ca9beb146fd032"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-24-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-24-k7.json",
+          "sha256": "da4243dcd186f603cfa1df9c5355e39a806687baacd1308254711462538d8bf4"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-25-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-25-k0.json",
+          "sha256": "77dfb38dd541f79fc5e9dbcd8cb2d11368601526572d07ab6bdfd4b7ab5fc0ff"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-25-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-25-k3.json",
+          "sha256": "3c71dfbcc581b5a8dcf42aaf36cdf66d5cab3f8d31ec48a415bedcb38a6a87e6"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-25-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-25-k7.json",
+          "sha256": "023bfdc6eb0bbe069331b9e28890aa59220959a818925576e54ca1455f764770"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-26-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-26-k0.json",
+          "sha256": "993a4a88657f8aa70ee7d840d767b42adb28259ea68a0dd2c193b0f0664ba00c"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-26-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-26-k3.json",
+          "sha256": "d77c0e40a8bb74d51cd5fcb110284e5833714a908ea8abbaf3f4ca897865e6f6"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-26-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-26-k7.json",
+          "sha256": "152c2e81705a0062ca87dbe0bebcf57096e2fb656d27f0f2347e43fe20c56a91"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-27-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-27-k0.json",
+          "sha256": "046d7ef163783c5018c40b63b26f6dd7c633403c3b4f9f1502fbfc60c876dd65"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-27-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-27-k3.json",
+          "sha256": "cff22ec78c26637e599c45d17effd1590f06d47daecf91973c9dd392d98d776b"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-27-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-27-k7.json",
+          "sha256": "a2396605e2f0c268773e1dc9ac494697da0a8bf9ebb7fc3be766af1a79da3b1f"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-28-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-28-k0.json",
+          "sha256": "666691fe3f251f5b51e174cfdec49eb34e0865772552e44d167c85aa80ebf576"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-28-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-28-k3.json",
+          "sha256": "1a8bba8dd52894202349b01af53bcd506486e533631d2c78efd3727574d68bb8"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-28-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-28-k7.json",
+          "sha256": "532d6d252b2ce381294e537dc07b0554455bd44f056f6cf38fe3d9b235a757d9"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-29-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-29-k0.json",
+          "sha256": "57f5984db9e14c28c167d84e63e6227e01c268f60972eb3586a65817fcd08d7f"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-29-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-29-k3.json",
+          "sha256": "048d1b9862bcb22756a30c3f8b861579d55a2c6ad8963260964443262c7fe132"
+        },
+        {
+          "case_id": "VideoPlaceButton-episode-29-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1/VideoPlaceButton-episode-29-k7.json",
+          "sha256": "8d30db1b0730aef6d3ba0ba7849581cc8867c9fe9cc1bb9baad72186d3380b90"
+        }
+      ]
+    },
+    {
+      "method": "tokendrop-random-basis-two-step",
+      "source_dir": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1",
+      "case_count": 59,
+      "episode_count": 20,
+      "aggregate_recovery": {
+        "interfered": 0.0,
+        "repaired": 0.0014440964400433832,
+        "teacher": 0.6610169491525424,
+        "negative": -0.00174767846436811,
+        "random": 9.437043799908232e-05,
+        "interpolation": 8.97088243233403e-05
+      },
+      "persistence_mean": 9.417438482904989e-05,
+      "by_task": {
+        "PatternLock": {
+          "case_count": 30,
+          "recovery_mean": 0.0014435823516881403,
+          "persistence_mean": -7.16564895507569e-05,
+          "controls": {
+            "interfered": 0.0,
+            "teacher": 0.6666666666666666,
+            "negative": -0.0010694097828794233,
+            "random": 0.0010549997784740602,
+            "interpolation": 0.001117757069429596
+          }
+        },
+        "RouteStick": {
+          "case_count": 29,
+          "recovery_mean": 0.0014446282555832897,
+          "persistence_mean": 0.0002657235652219535,
+          "controls": {
+            "interfered": 0.0,
+            "teacher": 0.6551724137931034,
+            "negative": -0.0024493357210805446,
+            "random": -0.0008993840521474466,
+            "interpolation": -0.0009737893602693381
+          }
+        }
+      },
+      "reports": [
+        {
+          "case_id": "PatternLock-episode-0-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-0-k0.json",
+          "sha256": "d290161eb069be62828660ed8b9acf040b52ec4087b2d619dc884abd07e361e5"
+        },
+        {
+          "case_id": "PatternLock-episode-0-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-0-k3.json",
+          "sha256": "a3af493404faf9840318c7728ee4c0929715c9ac699b9e0b0435db863f27d22c"
+        },
+        {
+          "case_id": "PatternLock-episode-0-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-0-k7.json",
+          "sha256": "976dd3342dfbb5764a308f6967d739e4eeb5930be43200149c7b4952c5d1da3a"
+        },
+        {
+          "case_id": "PatternLock-episode-1-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-1-k0.json",
+          "sha256": "5b260041a4feff71d4e45cc0a9b14fdd5866c8fba0920e297ede85f2db05836e"
+        },
+        {
+          "case_id": "PatternLock-episode-1-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-1-k3.json",
+          "sha256": "08b35040a9d052a42e1e9c7890d670ce13cd28b2bfda5b9025a22545cfdb5c40"
+        },
+        {
+          "case_id": "PatternLock-episode-1-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-1-k7.json",
+          "sha256": "251df4dbe9268aa8a58245e8b23f4ddf3e140feb80193ac4d347c874edacdca3"
+        },
+        {
+          "case_id": "PatternLock-episode-2-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-2-k0.json",
+          "sha256": "d962d649e855275bd71672269787d12e64f436ee30671117c0cdda7d66f93820"
+        },
+        {
+          "case_id": "PatternLock-episode-2-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-2-k3.json",
+          "sha256": "f23921553d405362f54e23515058220d3d9b436453e281eaf5c599f618b2c9c0"
+        },
+        {
+          "case_id": "PatternLock-episode-2-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-2-k7.json",
+          "sha256": "5f00c12f0e5540ad275af0fe735f339ae9e2041d676c3b608bfad8cd0d921fe0"
+        },
+        {
+          "case_id": "PatternLock-episode-3-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-3-k0.json",
+          "sha256": "86384eba389253948139219d0a563168523fed4efdcf05289074c153b87bceec"
+        },
+        {
+          "case_id": "PatternLock-episode-3-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-3-k3.json",
+          "sha256": "5f489430295c78e579235a4a3f12440fb9c82f66fee677d38cd10211b61ccbcc"
+        },
+        {
+          "case_id": "PatternLock-episode-3-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-3-k7.json",
+          "sha256": "e3fc4828406dbffc677cc4824590c7c1e3740d772163a85735391a9f1e24bcab"
+        },
+        {
+          "case_id": "PatternLock-episode-4-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-4-k0.json",
+          "sha256": "0e2010ff6a42f8eab0166a0707b4f058d932112c60ce4d77076339b98bf39285"
+        },
+        {
+          "case_id": "PatternLock-episode-4-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-4-k3.json",
+          "sha256": "6c0b8e0870ee4eb91b9ad4f1435272004ff9bbcb73b4be3f0f31cdb283c3545c"
+        },
+        {
+          "case_id": "PatternLock-episode-4-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-4-k7.json",
+          "sha256": "994ffe3887b68524fcff0c82de940b589d39be38d65bbc5641d5909017adbd5b"
+        },
+        {
+          "case_id": "PatternLock-episode-5-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-5-k0.json",
+          "sha256": "da37ebe8191d4af4a367feef5a5c100d386dbdff3d9d5e5bdaa73bcb9a6fc649"
+        },
+        {
+          "case_id": "PatternLock-episode-5-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-5-k3.json",
+          "sha256": "d69f10cbdccf678c99b6c78c8c3cbb1fce2c51c0183b973c11160b39d6b9fe36"
+        },
+        {
+          "case_id": "PatternLock-episode-5-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-5-k7.json",
+          "sha256": "f86d9d103cd0eca3870c4a9ddc69cc1f43c28ebb24f7871ad2853566bd29cd9c"
+        },
+        {
+          "case_id": "PatternLock-episode-6-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-6-k0.json",
+          "sha256": "eb3c2bafdf4d95a12257d7a87483ca9c17c181e739bfd8596cb20dd576680d29"
+        },
+        {
+          "case_id": "PatternLock-episode-6-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-6-k3.json",
+          "sha256": "0913945c95a69481a449376e06af5add3e5dee9ad49f587886e12691b2e503a3"
+        },
+        {
+          "case_id": "PatternLock-episode-6-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-6-k7.json",
+          "sha256": "fbda4fe594df974d2ab122a6e5580f98ee9652dc4794cbb801174097ea964af6"
+        },
+        {
+          "case_id": "PatternLock-episode-7-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-7-k0.json",
+          "sha256": "99e04fd0be006bea7615ca8e3a88a2d6d02867cc9cef32e29d3c32793194ddb4"
+        },
+        {
+          "case_id": "PatternLock-episode-7-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-7-k3.json",
+          "sha256": "e49ec18ec73f61249dd2a4196c71d71c854eae98295774e368d7e5b27671a0f5"
+        },
+        {
+          "case_id": "PatternLock-episode-7-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-7-k7.json",
+          "sha256": "e6bd8aeac89d61bb7a2f0cd64c3854321b7bd61f83673088d41887df5c5c6ac1"
+        },
+        {
+          "case_id": "PatternLock-episode-8-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-8-k0.json",
+          "sha256": "0e73db87afca9b47c193809f6d7da3f1fd351e93abe7b8d14df08ea2954f4078"
+        },
+        {
+          "case_id": "PatternLock-episode-8-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-8-k3.json",
+          "sha256": "67960ba373becc8198ab3d5639736d97c1ba73739e42d0c98cbb93173bb3b621"
+        },
+        {
+          "case_id": "PatternLock-episode-8-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-8-k7.json",
+          "sha256": "41dedcf05cc1062f99662aa3be90bd5b8e79640bf452f9991b28556fe4a79ddc"
+        },
+        {
+          "case_id": "PatternLock-episode-9-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-9-k0.json",
+          "sha256": "19058973dec45058a911304e25cdfb3b3f76d27ea3347cc9ae82e43ae8945e92"
+        },
+        {
+          "case_id": "PatternLock-episode-9-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-9-k3.json",
+          "sha256": "929842faea207f6caabb0060ebc6d886a270c3e8f36e16145cd70d9428c08d82"
+        },
+        {
+          "case_id": "PatternLock-episode-9-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/PatternLock-episode-9-k7.json",
+          "sha256": "7604658d3077f6f6375387b689b45534a0a3f8c694ae686fdf79e70426eb8838"
+        },
+        {
+          "case_id": "RouteStick-episode-10-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-10-k0.json",
+          "sha256": "a7cfd5b5b251d1aceff95b70a9dc38d9c1141456074070e72055bb7a3f246a5b"
+        },
+        {
+          "case_id": "RouteStick-episode-10-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-10-k3.json",
+          "sha256": "07b3056cb8ab52136ac0be973b4938ade4171aa3983f94c4f64db8ca063f08bf"
+        },
+        {
+          "case_id": "RouteStick-episode-10-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-10-k7.json",
+          "sha256": "44602ec6235ed4bdfe72af77f0fec31919c673021864032d56c80e7f43da3da4"
+        },
+        {
+          "case_id": "RouteStick-episode-11-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-11-k0.json",
+          "sha256": "b2601e057d83fecd5e01daebe28f9b8fe95ea1e9c9f19c4acc53c9e3c0100a34"
+        },
+        {
+          "case_id": "RouteStick-episode-11-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-11-k3.json",
+          "sha256": "6a839454059939da5c9d48c72cd4b0516902aee25ee2b10a8cff33508b08fb26"
+        },
+        {
+          "case_id": "RouteStick-episode-11-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-11-k7.json",
+          "sha256": "e7d965caa3afdd92e42effd5168a4f551d61a4b8e24b5d88e2d06c17d29370d3"
+        },
+        {
+          "case_id": "RouteStick-episode-12-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-12-k0.json",
+          "sha256": "a2d10cd636d08b9fa16a92887371584ffc6e7a20ad8e855b1c3f27cdc06d9345"
+        },
+        {
+          "case_id": "RouteStick-episode-12-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-12-k3.json",
+          "sha256": "147650d2149b5af7b9a4e7893452ed9db510d58fc85682c3ea0470adb7642a87"
+        },
+        {
+          "case_id": "RouteStick-episode-12-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-12-k7.json",
+          "sha256": "a93c8524060f46c3d1df07789f1de8922a2a53a07be202a47cab615c34d2c574"
+        },
+        {
+          "case_id": "RouteStick-episode-13-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-13-k0.json",
+          "sha256": "fe559e3313afd824f7f9e0cf4643e1596752e5b72f98da602435ce4ca74a164c"
+        },
+        {
+          "case_id": "RouteStick-episode-13-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-13-k3.json",
+          "sha256": "11c37abfb7361cebfb91e27527fab6181cb31dfe032218f6f5ab50461287a217"
+        },
+        {
+          "case_id": "RouteStick-episode-13-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-13-k7.json",
+          "sha256": "a76caa3f4960a7cdfb68543958bbce122307d2943ed207bff1c56bef88649fed"
+        },
+        {
+          "case_id": "RouteStick-episode-14-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-14-k0.json",
+          "sha256": "4cfa7288e6b8c260651a89c2ae9edf3181a53add73063000fce687576aedfdbe"
+        },
+        {
+          "case_id": "RouteStick-episode-14-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-14-k3.json",
+          "sha256": "238e33ab77b565459202d94cdf96f4a1ba5aa71613d22d84cf9ffeb91af3cb57"
+        },
+        {
+          "case_id": "RouteStick-episode-14-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-14-k7.json",
+          "sha256": "f699139a643930a798bb8512091b215a80b46848e2b5448c18709a836813adf9"
+        },
+        {
+          "case_id": "RouteStick-episode-15-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-15-k0.json",
+          "sha256": "ce58899042dc0cc282153f77a7e96775d5caafc69555c0235fcc9e34b266e4fe"
+        },
+        {
+          "case_id": "RouteStick-episode-15-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-15-k3.json",
+          "sha256": "b5a535507b7676c2054f0ebb65d3754c2975bc310b63db5a07a10b0784d8cd3b"
+        },
+        {
+          "case_id": "RouteStick-episode-15-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-15-k7.json",
+          "sha256": "1799774f332a82c772e2c7e60b48ed1520307199c7c3d7125afd899923e46555"
+        },
+        {
+          "case_id": "RouteStick-episode-16-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-16-k0.json",
+          "sha256": "a9382bb3f71464e046ecf129ab47a61bd9055460b6a99f19fc336a6251c3a98e"
+        },
+        {
+          "case_id": "RouteStick-episode-16-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-16-k3.json",
+          "sha256": "a3f6b9da4126b517bea4636dd3957c847ee05bd6c5176a0662c437ebd2d77c51"
+        },
+        {
+          "case_id": "RouteStick-episode-16-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-16-k7.json",
+          "sha256": "872415a717089155694a542c8fc7c21e0bf2c62df5cca5e895b4b815d6fa32a0"
+        },
+        {
+          "case_id": "RouteStick-episode-17-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-17-k0.json",
+          "sha256": "cb59ef152d8047d2c9dbc8bb332c31cafe1bc3e2b27f574adb60ab03ea967e3e"
+        },
+        {
+          "case_id": "RouteStick-episode-17-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-17-k3.json",
+          "sha256": "58a8b3aa8556df136f52cf3e7b356490934c99b7a512038ba3d164e80856b1b2"
+        },
+        {
+          "case_id": "RouteStick-episode-17-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-17-k7.json",
+          "sha256": "c70d347a40e8c4179d94e42a7aef4a9f6d389ff6a0cf6f5cb6e3781b6f232623"
+        },
+        {
+          "case_id": "RouteStick-episode-18-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-18-k0.json",
+          "sha256": "85a99aec0d2d7b7cb1303e3aeb99c24afac18b733726e909d5fb7848090a61f0"
+        },
+        {
+          "case_id": "RouteStick-episode-18-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-18-k3.json",
+          "sha256": "0b3840efaa9921ceaa0444059554191163779b7e7787329d6a0b2fc25f7cf3ba"
+        },
+        {
+          "case_id": "RouteStick-episode-18-k7",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-18-k7.json",
+          "sha256": "ed49c832c3a47515d3f02bb15bccafaf6f8342ab9d441418376c3a96321b631d"
+        },
+        {
+          "case_id": "RouteStick-episode-19-k0",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-19-k0.json",
+          "sha256": "cf385375d0c9af6499cbcfd402aacf878b5fa541a9bec5ea6143fa2a2299fb66"
+        },
+        {
+          "case_id": "RouteStick-episode-19-k3",
+          "source_path": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1/RouteStick-episode-19-k3.json",
+          "sha256": "0f9107aefe3e258f4589bd0d4135b5cfdffda0cfc59b6e5661f4230a1b11d297"
+        }
+      ]
+    }
+  ],
+  "queue": {
+    "plan_sha256": "e7d6f8b54fece9f60d376b197b5c45d6a8d32d23c4ec446b248ae141784bce97",
+    "continuation_policy": "exploratory_no_fixed_metric_gate",
+    "jobs": [
+      {
+        "id": "tokendrop-video-live-preflight",
+        "status": "technical_error",
+        "started_utc": "2026-09-11T05:29:53Z",
+        "pid": 139100,
+        "exit_code": 1,
+        "finished_utc": "2026-09-11T05:29:58Z"
+      },
+      {
+        "id": "e14r-framesamp-first-three-v1",
+        "status": "complete",
+        "started_utc": "2026-09-11T05:29:58Z",
+        "pid": 139261,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T05:40:02Z"
+      },
+      {
+        "id": "e14r-tokendrop90-resume-v1",
+        "status": "complete",
+        "started_utc": "2026-09-11T05:40:02Z",
+        "pid": 151196,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T06:57:22Z"
+      },
+      {
+        "id": "tokendrop-PatternLock-episode-0-k3",
+        "status": "complete",
+        "started_utc": "2026-09-11T06:57:22Z",
+        "pid": 198705,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T07:01:02Z"
+      },
+      {
+        "id": "tokendrop-RouteStick-episode-10-k3",
+        "status": "complete",
+        "started_utc": "2026-09-11T07:01:02Z",
+        "pid": 202488,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T07:07:13Z"
+      },
+      {
+        "id": "tokendrop-VideoPlaceButton-episode-20-k3",
+        "status": "complete",
+        "started_utc": "2026-09-11T07:07:13Z",
+        "pid": 208001,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T07:17:18Z"
+      },
+      {
+        "id": "e14r-framesamp90-v1",
+        "status": "complete",
+        "started_utc": "2026-09-11T07:17:18Z",
+        "pid": 214693,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T08:58:50Z"
+      },
+      {
+        "id": "framesamp-PatternLock-episode-0-k3",
+        "status": "complete",
+        "started_utc": "2026-09-11T08:58:50Z",
+        "pid": 273694,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T09:02:27Z"
+      },
+      {
+        "id": "framesamp-RouteStick-episode-10-k3",
+        "status": "complete",
+        "started_utc": "2026-09-11T09:02:27Z",
+        "pid": 277719,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T09:07:19Z"
+      },
+      {
+        "id": "framesamp-VideoPlaceButton-episode-20-k3",
+        "status": "complete",
+        "started_utc": "2026-09-11T09:07:19Z",
+        "pid": 282414,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T09:16:15Z"
+      },
+      {
+        "id": "e14r-tokendrop90-paired-one-step-v1",
+        "status": "complete",
+        "started_utc": "2026-09-11T09:16:15Z",
+        "pid": 289481,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T10:34:10Z"
+      },
+      {
+        "id": "e14r-tokendrop90-centroid-two-step-v1",
+        "status": "complete",
+        "started_utc": "2026-09-11T10:34:10Z",
+        "pid": 323157,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T12:23:57Z"
+      },
+      {
+        "id": "e14r-tokendrop90-ot-two-step-v1",
+        "status": "complete",
+        "started_utc": "2026-09-11T12:23:57Z",
+        "pid": 331540,
+        "exit_code": 0,
+        "finished_utc": "2026-09-11T14:15:05Z"
+      },
+      {
+        "id": "e14r-tokendrop90-random-basis-two-step-v1",
+        "status": "running",
+        "started_utc": "2026-09-11T14:15:05Z",
+        "pid": 339518
+      }
+    ],
+    "status": "running"
+  },
+  "followup_physics": {
+    "status": "running",
+    "cases": [
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-0-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-0-k3",
+        "status": "previously_complete"
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-0-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-1-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-1-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-1-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-2-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-2-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-2-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-3-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-3-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-3-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-4-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-4-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-4-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-5-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-5-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-5-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-6-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-6-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-6-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-7-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-7-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-7-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-8-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-8-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-8-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-9-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-9-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "PatternLock-episode-9-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-10-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-10-k3",
+        "status": "previously_complete"
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-10-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-11-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-11-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-11-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-12-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-12-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-12-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-13-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-13-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-13-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-14-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-14-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-14-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-15-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-15-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-15-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-16-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-16-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-16-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-17-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-17-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-17-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-18-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-18-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-18-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-19-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-19-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "RouteStick-episode-19-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-20-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-20-k3",
+        "status": "previously_complete"
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-20-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-21-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-21-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-21-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-22-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-22-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-22-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-23-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-23-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-23-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-24-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-24-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-24-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-25-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-25-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-25-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-26-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-26-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-26-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-27-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-27-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-27-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-28-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-28-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-28-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-29-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-29-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-framesamp90-v1",
+        "case_id": "VideoPlaceButton-episode-29-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-0-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-0-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-0-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-1-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-1-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-1-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-2-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-2-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-2-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-3-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-3-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-3-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-4-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-4-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-4-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-5-k0",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-5-k3",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-5-k7",
+        "status": "complete",
+        "exit_code": 0
+      },
+      {
+        "job": "e14r-tokendrop90-paired-one-step-v1",
+        "case_id": "PatternLock-episode-6-k0",
+        "status": "complete",
+        "exit_code": 0
+      }
+    ]
+  },
+  "continuation_policy": "exploratory_no_fixed_metric_gate"
+}
