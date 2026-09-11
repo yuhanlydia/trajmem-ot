@@ -34,3 +34,24 @@ Research continuation has no fixed metric gate. Do not change the frozen policy.
 8. Analyze episode/task aggregates and reuse across settings. No numerical outcome
    causes automatic program termination; weak/negative results trigger analysis
    and debugging without being relabeled positive or excluded.
+
+## Frame-sampling reuse and closed-loop integration
+
+The same released VLA family now has an independently verified frame-sampling
+checkpoint and encoder. Preserve method/configuration separation and reuse the
+repair core unchanged. Continue all planned ablations regardless of metric gates.
+
+1. Verify frame-sampling output against upstream at short padded and long sampled
+   histories on all three tasks; distinguish pooled token resolutions in identity.
+2. Use a process-local NVIDIA EGL Vulkan ICD and CPU tensor readback for the
+   benchmark environment. Keep visual geometry and real RGB observations enabled.
+3. Run the policy and simulator in their respective pinned Python environments,
+   exchanging local NPZ observations/actions through a persistent worker. Reuse
+   source history features; encode every new executed frame with the frozen policy
+   vision encoder. Apply the original memory delta only to surviving source tokens
+   after each update. Teacher history is available only to the teacher condition.
+4. Compare six branches from identical physical fingerprints with matched noise
+   schedules. Record current observations, action digests, applied-edit retention,
+   subgoal progress, terminal status and query budgets. Offline repair seeds and
+   new closed-loop evaluation seeds remain distinct. This first closed-loop phase
+   is a bounded multi-query development rollout, not a full benchmark claim.

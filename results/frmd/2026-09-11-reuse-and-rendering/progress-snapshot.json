@@ -1,0 +1,15 @@
+{
+  "snapshot_utc": "2026-09-11T05:24:33.615663+00:00",
+  "native_pilot_complete": 25,
+  "native_pilot_planned": 90,
+  "headless_physical_complete": 8,
+  "queue": {
+    "plan_sha256": "6ee7bb92bebb806381bc7aed9471e70f0ee8aef3f9d2c75ec4aa75c91725d309",
+    "continuation_policy": "exploratory_no_fixed_metric_gate",
+    "jobs": [],
+    "status": "waiting_for_predecessor"
+  },
+  "closed_loop_policy_rollouts_complete": 0,
+  "frame_sampling_policy_repairs_complete": 0,
+  "status": "running; preparation and rendering checks are not completed policy experiments"
+}

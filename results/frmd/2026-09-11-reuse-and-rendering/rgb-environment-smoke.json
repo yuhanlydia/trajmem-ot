@@ -1,0 +1,83 @@
+[
+  {
+    "task": "PatternLock",
+    "seed": 15001,
+    "split": "train",
+    "front_shape": [
+      256,
+      256,
+      3
+    ],
+    "wrist_shape": [
+      256,
+      256,
+      3
+    ],
+    "front_min": 0,
+    "front_max": 255,
+    "reset_frames": 49,
+    "progress": {
+      "task_index": 5,
+      "completion_cursor": 5,
+      "completed_subgoals": 0,
+      "total_subgoals": 2,
+      "progress_fraction": 0.0
+    },
+    "seconds": 14.763499975204468,
+    "renderer": "NVIDIA EGL Vulkan ICD, SAPIEN default visual geometry"
+  },
+  {
+    "task": "RouteStick",
+    "seed": 16000,
+    "split": "train",
+    "front_shape": [
+      256,
+      256,
+      3
+    ],
+    "wrist_shape": [
+      256,
+      256,
+      3
+    ],
+    "front_min": 0,
+    "front_max": 255,
+    "reset_frames": 101,
+    "progress": {
+      "task_index": 5,
+      "completion_cursor": 5,
+      "completed_subgoals": 0,
+      "total_subgoals": 2,
+      "progress_fraction": 0.0
+    },
+    "seconds": 27.191935539245605,
+    "renderer": "NVIDIA EGL Vulkan ICD, SAPIEN default visual geometry"
+  },
+  {
+    "task": "VideoPlaceButton",
+    "seed": 10000,
+    "split": "train",
+    "front_shape": [
+      256,
+      256,
+      3
+    ],
+    "wrist_shape": [
+      256,
+      256,
+      3
+    ],
+    "front_min": 0,
+    "front_max": 255,
+    "reset_frames": 766,
+    "progress": {
+      "task_index": 10,
+      "completion_cursor": 10,
+      "completed_subgoals": 0,
+      "total_subgoals": 2,
+      "progress_fraction": 0.0
+    },
+    "seconds": 45.26650047302246,
+    "renderer": "NVIDIA EGL Vulkan ICD, SAPIEN default visual geometry"
+  }
+]

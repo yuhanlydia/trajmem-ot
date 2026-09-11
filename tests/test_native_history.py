@@ -64,3 +64,34 @@ def test_same_episode_number_in_different_raw_shards_is_not_same_token():
     result,report=transfer_memory_delta([source],[target],np.ones((1,2)))
     np.testing.assert_array_equal(result,[[0,0]])
     assert report['retained_tokens']==0
+
+
+def test_frame_sampling_uses_upstream_selection_and_pooled_token_identity():
+    from trajmem_ot.native_history import encode_native_frame_sampling
+    calls=[]
+    class SamplingBuffer:
+        def __init__(self,**kw):pass
+        def get_frame_sampling_indices(self,last,budget,tokens):
+            calls.append((last,budget,tokens));return [0,last]
+        def _prepare_frame_sampling(self,features,indices,budget,tokens):
+            image=np.concatenate([features[i]['image_emb_2x2'][0] for i in indices])
+            pos=np.concatenate([features[i]['pos_emb_2x2'][0] for i in indices])
+            return image,pos,np.zeros((budget,1)),np.ones(budget,bool)
+    segment={'task':'A','episode':0,'raw_episode':0,'raw_file':'A.h5','source_revision':'v1','start':3,'end_exclusive':6}
+    result=encode_native_frame_sampling([segment],token_budget=8,token_per_image=4,
+        feature_loader=lambda ref:{'image_emb_2x2':np.full((1,4,2),ref['step'])},
+        buffer_factory=SamplingBuffer,
+        position_factory=lambda steps,size:np.repeat(np.array(steps)[:,None,None],size*size,axis=1))
+    assert calls==[(2,8,4)]
+    np.testing.assert_array_equal(result.history['static_image_emb'][:,0],[3]*4+[5]*4)
+    np.testing.assert_array_equal(result.history['static_pos_emb'].ravel(),[0]*4+[2]*4)
+    assert [t['step'] for t in result.token_sources]==[3]*4+[5]*4
+    assert all(t['spatial_size']==2 for t in result.token_sources)
+
+
+def test_persistent_token_identity_distinguishes_pooling_resolution():
+    source={'task':'A','raw_file':'A.h5','raw_episode':0,'step':0,'view':0,'patch':0,'source_revision':'v1','spatial_size':8}
+    target={**source,'spatial_size':4}
+    result,report=transfer_memory_delta([source],[target],np.ones((1,2)))
+    assert report['retained_tokens']==0
+    np.testing.assert_array_equal(result,[[0,0]])

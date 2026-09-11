@@ -1,0 +1,324 @@
+{
+  "scope": "30 source episodes x k=0/3/7 x two released memory mechanisms; paired one/two-step, centroid, OT and independent-basis ablations; bounded RGB closed-loop first cases",
+  "continuation_policy": "exploratory_no_fixed_metric_gate",
+  "predecessor_pid": 109207,
+  "predecessor_command_contains": "run_e14r_pilot.py",
+  "jobs": [
+    {
+      "id": "tokendrop-PatternLock-episode-0-k3",
+      "kind": "closed_loop",
+      "output": "/root/trajmem-preparation/e14r-closed-loop-v1/tokendrop-PatternLock-episode-0-k3.json",
+      "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning/third_party/robomme_benchmark",
+      "command": [
+        "/root/trajmem-ot/third_party/robomme_policy_learning/third_party/robomme_benchmark/.venv/bin/python",
+        "-u",
+        "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_closed_loop.py",
+        "--report",
+        "/root/trajmem-preparation/e14r-native-first-three/PatternLock-episode-0-k3.json",
+        "--data",
+        "/root/trajmem-ot/data/robomme_preprocessed_pilot30",
+        "--policy-python",
+        "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+        "--policy-cwd",
+        "/root/trajmem-ot/third_party/robomme_policy_learning",
+        "--output",
+        "/root/trajmem-preparation/e14r-closed-loop-v1/tokendrop-PatternLock-episode-0-k3.json",
+        "--queries",
+        "10"
+      ]
+    },
+    {
+      "id": "tokendrop-RouteStick-episode-10-k3",
+      "kind": "closed_loop",
+      "output": "/root/trajmem-preparation/e14r-closed-loop-v1/tokendrop-RouteStick-episode-10-k3.json",
+      "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning/third_party/robomme_benchmark",
+      "command": [
+        "/root/trajmem-ot/third_party/robomme_policy_learning/third_party/robomme_benchmark/.venv/bin/python",
+        "-u",
+        "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_closed_loop.py",
+        "--report",
+        "/root/trajmem-preparation/e14r-native-first-three/RouteStick-episode-10-k3.json",
+        "--data",
+        "/root/trajmem-ot/data/robomme_preprocessed_pilot30",
+        "--policy-python",
+        "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+        "--policy-cwd",
+        "/root/trajmem-ot/third_party/robomme_policy_learning",
+        "--output",
+        "/root/trajmem-preparation/e14r-closed-loop-v1/tokendrop-RouteStick-episode-10-k3.json",
+        "--queries",
+        "10"
+      ]
+    },
+    {
+      "id": "tokendrop-VideoPlaceButton-episode-20-k3",
+      "kind": "closed_loop",
+      "output": "/root/trajmem-preparation/e14r-closed-loop-v1/tokendrop-VideoPlaceButton-episode-20-k3.json",
+      "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning/third_party/robomme_benchmark",
+      "command": [
+        "/root/trajmem-ot/third_party/robomme_policy_learning/third_party/robomme_benchmark/.venv/bin/python",
+        "-u",
+        "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_closed_loop.py",
+        "--report",
+        "/root/trajmem-preparation/e14r-native-first-three/VideoPlaceButton-episode-20-k3.json",
+        "--data",
+        "/root/trajmem-ot/data/robomme_preprocessed_pilot30",
+        "--policy-python",
+        "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+        "--policy-cwd",
+        "/root/trajmem-ot/third_party/robomme_policy_learning",
+        "--output",
+        "/root/trajmem-preparation/e14r-closed-loop-v1/tokendrop-VideoPlaceButton-episode-20-k3.json",
+        "--queries",
+        "10"
+      ]
+    },
+    {
+      "id": "e14r-framesamp90-v1",
+      "kind": "native",
+      "output_dir": "/root/trajmem-preparation/e14r-framesamp90-v1",
+      "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning",
+      "command": [
+        "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+        "-u",
+        "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_pilot.py",
+        "--manifest",
+        "/root/trajmem-preparation/e14r-manifest-90.json",
+        "--checkpoint",
+        "/root/trajmem-ot/checkpoints/mme_vla_suite/perceptual-framesamp-modul/79999",
+        "--output-dir",
+        "/root/trajmem-preparation/e14r-framesamp90-v1",
+        "--resume"
+      ]
+    },
+    {
+      "id": "framesamp-PatternLock-episode-0-k3",
+      "kind": "closed_loop",
+      "output": "/root/trajmem-preparation/e14r-closed-loop-v1/framesamp-PatternLock-episode-0-k3.json",
+      "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning/third_party/robomme_benchmark",
+      "command": [
+        "/root/trajmem-ot/third_party/robomme_policy_learning/third_party/robomme_benchmark/.venv/bin/python",
+        "-u",
+        "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_closed_loop.py",
+        "--report",
+        "/root/trajmem-preparation/e14r-framesamp90-v1/PatternLock-episode-0-k3.json",
+        "--data",
+        "/root/trajmem-ot/data/robomme_preprocessed_pilot30",
+        "--policy-python",
+        "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+        "--policy-cwd",
+        "/root/trajmem-ot/third_party/robomme_policy_learning",
+        "--output",
+        "/root/trajmem-preparation/e14r-closed-loop-v1/framesamp-PatternLock-episode-0-k3.json",
+        "--queries",
+        "10"
+      ]
+    },
+    {
+      "id": "framesamp-RouteStick-episode-10-k3",
+      "kind": "closed_loop",
+      "output": "/root/trajmem-preparation/e14r-closed-loop-v1/framesamp-RouteStick-episode-10-k3.json",
+      "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning/third_party/robomme_benchmark",
+      "command": [
+        "/root/trajmem-ot/third_party/robomme_policy_learning/third_party/robomme_benchmark/.venv/bin/python",
+        "-u",
+        "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_closed_loop.py",
+        "--report",
+        "/root/trajmem-preparation/e14r-framesamp90-v1/RouteStick-episode-10-k3.json",
+        "--data",
+        "/root/trajmem-ot/data/robomme_preprocessed_pilot30",
+        "--policy-python",
+        "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+        "--policy-cwd",
+        "/root/trajmem-ot/third_party/robomme_policy_learning",
+        "--output",
+        "/root/trajmem-preparation/e14r-closed-loop-v1/framesamp-RouteStick-episode-10-k3.json",
+        "--queries",
+        "10"
+      ]
+    },
+    {
+      "id": "framesamp-VideoPlaceButton-episode-20-k3",
+      "kind": "closed_loop",
+      "output": "/root/trajmem-preparation/e14r-closed-loop-v1/framesamp-VideoPlaceButton-episode-20-k3.json",
+      "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning/third_party/robomme_benchmark",
+      "command": [
+        "/root/trajmem-ot/third_party/robomme_policy_learning/third_party/robomme_benchmark/.venv/bin/python",
+        "-u",
+        "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_closed_loop.py",
+        "--report",
+        "/root/trajmem-preparation/e14r-framesamp90-v1/VideoPlaceButton-episode-20-k3.json",
+        "--data",
+        "/root/trajmem-ot/data/robomme_preprocessed_pilot30",
+        "--policy-python",
+        "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+        "--policy-cwd",
+        "/root/trajmem-ot/third_party/robomme_policy_learning",
+        "--output",
+        "/root/trajmem-preparation/e14r-closed-loop-v1/framesamp-VideoPlaceButton-episode-20-k3.json",
+        "--queries",
+        "10"
+      ]
+    },
+    {
+      "id": "e14r-tokendrop90-paired-one-step-v1",
+      "kind": "native",
+      "output_dir": "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1",
+      "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning",
+      "command": [
+        "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+        "-u",
+        "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_pilot.py",
+        "--manifest",
+        "/root/trajmem-preparation/e14r-manifest-90.json",
+        "--checkpoint",
+        "/root/trajmem-ot/checkpoints/mme_vla_suite/perceptual-tokendrop-modul/79999",
+        "--output-dir",
+        "/root/trajmem-preparation/e14r-tokendrop90-paired-one-step-v1",
+        "--resume",
+        "--iterations",
+        "1"
+      ]
+    },
+    {
+      "id": "e14r-tokendrop90-centroid-two-step-v1",
+      "kind": "native",
+      "output_dir": "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1",
+      "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning",
+      "command": [
+        "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+        "-u",
+        "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_pilot.py",
+        "--manifest",
+        "/root/trajmem-preparation/e14r-manifest-90.json",
+        "--checkpoint",
+        "/root/trajmem-ot/checkpoints/mme_vla_suite/perceptual-tokendrop-modul/79999",
+        "--output-dir",
+        "/root/trajmem-preparation/e14r-tokendrop90-centroid-two-step-v1",
+        "--resume",
+        "--target",
+        "centroid"
+      ]
+    },
+    {
+      "id": "e14r-tokendrop90-ot-two-step-v1",
+      "kind": "native",
+      "output_dir": "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1",
+      "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning",
+      "command": [
+        "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+        "-u",
+        "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_pilot.py",
+        "--manifest",
+        "/root/trajmem-preparation/e14r-manifest-90.json",
+        "--checkpoint",
+        "/root/trajmem-ot/checkpoints/mme_vla_suite/perceptual-tokendrop-modul/79999",
+        "--output-dir",
+        "/root/trajmem-preparation/e14r-tokendrop90-ot-two-step-v1",
+        "--resume",
+        "--target",
+        "ot"
+      ]
+    },
+    {
+      "id": "e14r-tokendrop90-random-basis-two-step-v1",
+      "kind": "native",
+      "output_dir": "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1",
+      "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning",
+      "command": [
+        "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+        "-u",
+        "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_pilot.py",
+        "--manifest",
+        "/root/trajmem-preparation/e14r-manifest-90.json",
+        "--checkpoint",
+        "/root/trajmem-ot/checkpoints/mme_vla_suite/perceptual-tokendrop-modul/79999",
+        "--output-dir",
+        "/root/trajmem-preparation/e14r-tokendrop90-random-basis-two-step-v1",
+        "--resume",
+        "--basis",
+        "random"
+      ]
+    },
+    {
+      "id": "e14r-framesamp90-paired-one-step-v1",
+      "kind": "native",
+      "output_dir": "/root/trajmem-preparation/e14r-framesamp90-paired-one-step-v1",
+      "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning",
+      "command": [
+        "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+        "-u",
+        "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_pilot.py",
+        "--manifest",
+        "/root/trajmem-preparation/e14r-manifest-90.json",
+        "--checkpoint",
+        "/root/trajmem-ot/checkpoints/mme_vla_suite/perceptual-framesamp-modul/79999",
+        "--output-dir",
+        "/root/trajmem-preparation/e14r-framesamp90-paired-one-step-v1",
+        "--resume",
+        "--iterations",
+        "1"
+      ]
+    },
+    {
+      "id": "e14r-framesamp90-centroid-two-step-v1",
+      "kind": "native",
+      "output_dir": "/root/trajmem-preparation/e14r-framesamp90-centroid-two-step-v1",
+      "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning",
+      "command": [
+        "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+        "-u",
+        "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_pilot.py",
+        "--manifest",
+        "/root/trajmem-preparation/e14r-manifest-90.json",
+        "--checkpoint",
+        "/root/trajmem-ot/checkpoints/mme_vla_suite/perceptual-framesamp-modul/79999",
+        "--output-dir",
+        "/root/trajmem-preparation/e14r-framesamp90-centroid-two-step-v1",
+        "--resume",
+        "--target",
+        "centroid"
+      ]
+    },
+    {
+      "id": "e14r-framesamp90-ot-two-step-v1",
+      "kind": "native",
+      "output_dir": "/root/trajmem-preparation/e14r-framesamp90-ot-two-step-v1",
+      "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning",
+      "command": [
+        "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+        "-u",
+        "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_pilot.py",
+        "--manifest",
+        "/root/trajmem-preparation/e14r-manifest-90.json",
+        "--checkpoint",
+        "/root/trajmem-ot/checkpoints/mme_vla_suite/perceptual-framesamp-modul/79999",
+        "--output-dir",
+        "/root/trajmem-preparation/e14r-framesamp90-ot-two-step-v1",
+        "--resume",
+        "--target",
+        "ot"
+      ]
+    },
+    {
+      "id": "e14r-framesamp90-random-basis-two-step-v1",
+      "kind": "native",
+      "output_dir": "/root/trajmem-preparation/e14r-framesamp90-random-basis-two-step-v1",
+      "cwd": "/root/trajmem-ot/third_party/robomme_policy_learning",
+      "command": [
+        "/root/trajmem-ot/third_party/robomme_policy_learning/.venv/bin/python",
+        "-u",
+        "/root/trajmem-ot/.worktrees/frmd-repair/scripts/run_e14r_pilot.py",
+        "--manifest",
+        "/root/trajmem-preparation/e14r-manifest-90.json",
+        "--checkpoint",
+        "/root/trajmem-ot/checkpoints/mme_vla_suite/perceptual-framesamp-modul/79999",
+        "--output-dir",
+        "/root/trajmem-preparation/e14r-framesamp90-random-basis-two-step-v1",
+        "--resume",
+        "--basis",
+        "random"
+      ]
+    }
+  ]
+}

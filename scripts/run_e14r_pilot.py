@@ -14,7 +14,7 @@ import numpy as np
 import yaml
 from trajmem_ot.finite_distillation import NoisePartition, RepairConfig, repair_memory
 from trajmem_ot.memory_basis import normalize_basis, random_rank_one_basis
-from trajmem_ot.native_history import encode_native_history, transfer_memory_delta
+from trajmem_ot.native_history import encode_native_history, encode_native_frame_sampling, transfer_memory_delta
 
 
 def main():
@@ -108,8 +108,8 @@ def main():
     implementation_hashes[Path(__file__).name]=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     runtime=load_runtime_state(checkpoint=args.checkpoint,data=data,index=cases[0]['query_index'],seed=args.seed)
     policy=runtime.policy
-    if runtime.history_config_name!='perceptual-tokendrop-modul.yaml':
-        raise ValueError('native encoder currently validated for perceptual-tokendrop-modul.yaml only')
+    if runtime.history_config_name not in ('perceptual-tokendrop-modul.yaml','perceptual-framesamp-modul.yaml'):
+        raise ValueError('native encoders support the released tokendrop/framesamp modulation configurations')
     quantize=lambda value:np.asarray(jnp.asarray(value,dtype=jnp.bfloat16),dtype=np.float32)
     handles={}
     @lru_cache(maxsize=256)
@@ -120,6 +120,10 @@ def main():
         if path not in handles: handles[path]=h5py.File(path,'r')
         return handles[path][f"episode_{ref['raw_episode']}/timestep_{ref['step']}/obs/front_rgb"][()]
     def encode(segments):
+        if runtime.history_config_name=='perceptual-framesamp-modul.yaml':
+            return encode_native_frame_sampling(segments,
+                feature_loader=lambda ref:feature(ref['episode'],ref['step']),
+                token_budget=512,token_per_image=16)
         return encode_native_history(segments,feature_loader=lambda ref:feature(ref['episode'],ref['step']),
                                      pixel_loader=pixels,token_budget=512)
     def observation(index,encoded):

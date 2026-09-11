@@ -1,0 +1,14 @@
+{
+  "repository": "Yinpei/mme_vla_suite",
+  "source_revision": "5db4d53ddb98c7f80cab08792dd53d985d712ab1",
+  "variant": "perceptual-framesamp-modul",
+  "checkpoint": "79999",
+  "archive_sha256": "86ef2b63d9b8ff4d3ea2e8d06826c45cb126834f176b94defe235acabb649f61",
+  "archive_bytes": 11878954899,
+  "uncompressed_bytes": 11877152238,
+  "files": 18,
+  "sha256_verified": true,
+  "zip_crc_verified_during_full_reads": true,
+  "extracted": true,
+  "history_config": "perceptual-framesamp-modul.yaml"
+}

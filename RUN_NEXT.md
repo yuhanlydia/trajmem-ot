@@ -116,3 +116,43 @@ including gzip JSON. It averages noise replicas within each case and validates
 physical report provenance. Ongoing chunks remain distinct from terminal failure.
 No metric threshold automatically stops experimentation. Current evidence and
 limitations are in [the dated status](results/frmd/2026-09-11-status.md).
+
+## Reuse with the released frame-sampling model
+
+`run_e14r_pilot.py` also supports `perceptual-framesamp-modul/79999`. Set CHECKPOINT
+to that step directory with its original adjacent `history_config.txt`, and use a
+separate output directory. The same prepared 8x8/4x4/2x2 frozen features serve both
+models. This backend delegates 512-token uniform frame sampling with 16 pooled
+tokens per image to upstream, and uses pooled-patch identities for persistence.
+Six prefix checks across the three tasks matched every upstream history array
+exactly, including short padded histories. These are two memory mechanisms in the
+same released VLA family; they are not two unrelated backbone architectures.
+
+## Real RGB closed-loop development rollouts
+
+A process-local EGL ICD resolved the GLX entrypoint failure on this RTX 3090:
+
+```bash
+export VK_ICD_FILENAMES="$TRAJMEM_ROOT/configs/nvidia_egl_icd.json"
+"$ROBOMME_DIR/third_party/robomme_benchmark/.venv/bin/python" \
+  "$TRAJMEM_ROOT/scripts/run_e14r_closed_loop.py" \
+  --report "$NATIVE_RESULTS/PatternLock-episode-0-k3.json" --data "$DATA" \
+  --policy-python "$ROBOMME_DIR/.venv/bin/python" --policy-cwd "$ROBOMME_DIR" \
+  --queries 10 --output "$CLOSED_LOOP_RESULT"
+```
+
+The simulator uses original visual geometry, GPU Vulkan rendering and CPU tensor
+readback; the policy uses its separate CUDA/JAX environment. Keep only one policy
+job on the 24GB GPU. All three benchmark tasks passed real RGB reset checks.
+This configuration changes no system driver or global library files.
+
+The entrypoint defaults to six paired branches and one new noise schedule. Pass
+`--noise-seeds 200007 200008 200009 200010 200011 200012 200013 200014` for eight
+replicas. Every post-action frame enters the next query's history; the frozen
+vision encoder produces live features. The original edit transfers only to
+surviving source tokens after updates, without teacher retrieval/refitting in the
+repaired branch. Both initial physical and RGB/state fingerprints must match.
+JSON records query traces, progress, retention and source hashes; a sibling
+`.artifacts` directory preserves per-query observations, actions and worker logs.
+A technical failure preserves partial artifacts and requires a fresh output path.
+A bounded 10-query rollout is distinct from an episode-completion benchmark.

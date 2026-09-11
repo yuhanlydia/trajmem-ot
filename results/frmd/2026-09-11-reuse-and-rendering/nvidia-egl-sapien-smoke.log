@@ -1,0 +1,4 @@
+imported 3.0.3
+render system initialized
+<stdin>:9: DeprecationWarning: component.set_pose can be ambiguous thus deprecated. It is equivalent to component.set_entity_pose, which should be used instead
+image (64, 64, 4) 0.0 1.0

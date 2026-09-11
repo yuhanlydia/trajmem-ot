@@ -69,7 +69,58 @@ def encode_native_history(segments, *, feature_loader, pixel_loader, token_budge
 
 
 def _token_key(token):
-    return tuple(token[key] for key in ('source_revision','raw_file','task','raw_episode','step','view','patch'))
+    return tuple(token[key] for key in ('source_revision','raw_file','task','raw_episode','step','view','patch')) + (token.get('spatial_size',8),)
+
+
+def encode_native_frame_sampling(segments, *, feature_loader, token_budget=512,
+                                 token_per_image=16, buffer_factory=None,
+                                 position_factory=None):
+    """Apply upstream uniform frame sampling to the concatenated causal history.
+
+    Uses the checkpoint's pooled frozen features and recomputes chronological
+    positions. Pooled patches have distinct identities from 8x8 tokendrop patches.
+    This backend needs no raw pixel scores or additional vision-encoder queries.
+    """
+    spatial_size=int(np.sqrt(token_per_image)) if token_per_image > 0 else 0
+    if spatial_size**2 != token_per_image or spatial_size not in (2,4,8):
+        raise ValueError('token_per_image must be a supported square: 4, 16, or 64')
+    if token_budget < token_per_image or token_budget % token_per_image or not segments:
+        raise ValueError('nonempty history and a whole-frame token budget are required')
+    if buffer_factory is None:
+        from mme_vla_suite.shared.mem_buffer import MemoryBuffer
+        buffer_factory=MemoryBuffer
+    if position_factory is None:
+        from mme_vla_suite.shared.posemb_3d import PosEmb3D
+        import jax.numpy as jnp
+        position=PosEmb3D(dim=768)
+        position_factory=lambda steps,size:np.asarray(position(jnp.asarray(steps),size))
+    frames=[]
+    for segment in segments:
+        start,end=segment['start'],segment['end_exclusive']
+        if not isinstance(start,int) or not isinstance(end,int) or not 0 <= start < end:
+            raise ValueError('history segments require nonempty nonnegative half-open ranges')
+        for step in range(start,end):
+            frames.append({**{key:segment[key] for key in
+                             ('task','episode','raw_episode','raw_file','source_revision')},'step':step})
+    buffer=buffer_factory(prepare_buffer=False,compute_token_drop_score=False)
+    indices=list(buffer.get_frame_sampling_indices(len(frames)-1,token_budget,token_per_image))
+    positions=position_factory(indices,spatial_size)
+    features={};sources=[]
+    key=f'{spatial_size}x{spatial_size}'
+    for offset,index in enumerate(indices):
+        feature=dict(feature_loader(frames[index]))
+        feature[f'pos_emb_{key}']=np.asarray(positions[offset])[None]
+        image=np.asarray(feature[f'image_emb_{key}'])
+        if image.ndim != 3 or image.shape[:2] != (1,token_per_image):
+            raise ValueError('frame-sampling encoder requires one view with aligned pooled features')
+        features[index]=feature
+        sources.extend({**frames[index],'view':0,'patch':patch,'spatial_size':spatial_size}
+                       for patch in range(token_per_image))
+    image,position,state,mask=buffer._prepare_frame_sampling(features,indices,token_budget,token_per_image)
+    sources += [None]*(token_budget-len(sources))
+    history={'static_image_emb':np.asarray(image),'static_pos_emb':np.asarray(position),
+             'static_state_emb':np.asarray(state),'static_mask':np.asarray(mask)}
+    return EncodedHistory(history,sources,len(frames))
 
 
 def transfer_memory_delta(previous_tokens, next_tokens, applied_delta):

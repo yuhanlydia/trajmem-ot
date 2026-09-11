@@ -1,0 +1,78 @@
+{
+  "kind": "released_framesamp_native_prefix_equivalence",
+  "source_revision": "a5e4e25ffe8af34f64944f9533d06455ce5f8337",
+  "checks": [
+    {
+      "task": "PatternLock",
+      "episode": 0,
+      "frames": 3,
+      "valid_tokens": 48,
+      "maximum_absolute_errors": {
+        "static_image_emb": 0.0,
+        "static_pos_emb": 0.0,
+        "static_state_emb": 0.0,
+        "static_mask": 0.0
+      }
+    },
+    {
+      "task": "PatternLock",
+      "episode": 0,
+      "frames": 49,
+      "valid_tokens": 512,
+      "maximum_absolute_errors": {
+        "static_image_emb": 0.0,
+        "static_pos_emb": 0.0,
+        "static_state_emb": 0.0,
+        "static_mask": 0.0
+      }
+    },
+    {
+      "task": "RouteStick",
+      "episode": 10,
+      "frames": 3,
+      "valid_tokens": 48,
+      "maximum_absolute_errors": {
+        "static_image_emb": 0.0,
+        "static_pos_emb": 0.0,
+        "static_state_emb": 0.0,
+        "static_mask": 0.0
+      }
+    },
+    {
+      "task": "RouteStick",
+      "episode": 10,
+      "frames": 101,
+      "valid_tokens": 512,
+      "maximum_absolute_errors": {
+        "static_image_emb": 0.0,
+        "static_pos_emb": 0.0,
+        "static_state_emb": 0.0,
+        "static_mask": 0.0
+      }
+    },
+    {
+      "task": "VideoPlaceButton",
+      "episode": 20,
+      "frames": 3,
+      "valid_tokens": 48,
+      "maximum_absolute_errors": {
+        "static_image_emb": 0.0,
+        "static_pos_emb": 0.0,
+        "static_state_emb": 0.0,
+        "static_mask": 0.0
+      }
+    },
+    {
+      "task": "VideoPlaceButton",
+      "episode": 20,
+      "frames": 766,
+      "valid_tokens": 512,
+      "maximum_absolute_errors": {
+        "static_image_emb": 0.0,
+        "static_pos_emb": 0.0,
+        "static_state_emb": 0.0,
+        "static_mask": 0.0
+      }
+    }
+  ]
+}
